@@ -6,4 +6,3 @@ Game title is a Metroidvania built in Godot using Potions
 Download on Itch.io
     (link here)
 
-# How to compile????
