@@ -4,5 +4,5 @@ Game title is a Metroidvania built in Godot using Potions
 
 # Installation
 Download on Itch.io
-    (link here)
 
+[Link text](https://itch.io/)
