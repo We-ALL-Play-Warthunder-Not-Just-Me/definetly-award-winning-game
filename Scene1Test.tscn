@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btkleiwt6n17y"]
 
-[node name="Node2D" type="Node2D" unique_id=685611168]
+[ext_resource type="Script" uid="uid://mdutoalq4h3y" path="res://Scene1Test.cs" id="1_utk1p"]
 
-[node name="Window" type="Window" parent="." unique_id=1328633744]
-oversampling_override = 1.0
+[node name="Node2D" type="Node2D" unique_id=685611168]
+script = ExtResource("1_utk1p")
