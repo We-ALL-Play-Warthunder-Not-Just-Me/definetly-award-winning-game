@@ -3,8 +3,22 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -200.0f;
+
+	enum PlayerState
+	{
+		IDLE,
+		WALK,
+		JUMP,
+		CLIMB,
+		FALL,
+		LAND,
+		HURT
+	}
+
+
+	public const float SPEED = 300.0f;
+	public const float JUMPVELOCITY = -200.0f;
+	public const float GRAVITY = 700.0f;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -19,7 +33,7 @@ public partial class Player : CharacterBody2D
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 		{
-			velocity.Y = JumpVelocity;
+			velocity.Y = JUMPVELOCITY;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
@@ -27,11 +41,11 @@ public partial class Player : CharacterBody2D
 		Vector2 direction = Input.GetVector("Left", "Right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
-			velocity.X = direction.X * Speed;
+			velocity.X = direction.X * SPEED;
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, SPEED);
 		}
 
 		Velocity = velocity;
