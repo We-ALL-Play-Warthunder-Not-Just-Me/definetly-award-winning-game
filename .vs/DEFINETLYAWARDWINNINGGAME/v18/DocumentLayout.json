@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|d:\\godot engine folder\\godot c projects\\freeza\\definetly-award-winning-game\\scene1test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|solutionrelative:scene1test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|d:\\godot engine folder\\godot c projects\\freeza\\definetly-award-winning-game\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Scene1Test.cs",
-              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scene1Test.cs",
-              "RelativeDocumentMoniker": "Scene1Test.cs",
-              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scene1Test.cs",
-              "RelativeToolTip": "Scene1Test.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player.cs",
+              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
+              "RelativeToolTip": "Scripts\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T20:43:27.636Z",
+              "WhenOpened": "2026-05-20T04:37:24.34Z",
               "EditorCaption": ""
             }
           ]

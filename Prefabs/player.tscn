@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ccobfdldi45wb"]
+
+[ext_resource type="Script" uid="uid://c3qsj1c2jpowp" path="res://Scripts/Player.cs" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://Images/MVM Little Guy.png" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(12, 15)
+
+[node name="Player" type="CharacterBody2D" unique_id=1876432518]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1533614941]
+position = Vector2(-1.1920929e-07, -3)
+scale = Vector2(0.75000006, 1)
+texture = ExtResource("2_i3pqv")
+hframes = 3
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427782164]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=713450811]

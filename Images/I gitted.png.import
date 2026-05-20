@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy4h3hdypjxr8"
-path="res://.godot/imported/Base Tiles.png-42379cd51e802a0c3b490a1d730527b2.ctex"
+uid="uid://b6y3d8sagkyci"
+path="res://.godot/imported/I gitted.png-b12ec12196ea0a262b3d1c9894e66825.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Base Tiles.png"
-dest_files=["res://.godot/imported/Base Tiles.png-42379cd51e802a0c3b490a1d730527b2.ctex"]
+source_file="res://Images/I gitted.png"
+dest_files=["res://.godot/imported/I gitted.png-b12ec12196ea0a262b3d1c9894e66825.ctex"]
 
 [params]
 
