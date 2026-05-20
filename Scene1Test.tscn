@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://btkleiwt6n17y"]
 
 [ext_resource type="Texture2D" uid="uid://cy4h3hdypjxr8" path="res://Base Tiles.png" id="1_e7dg1"]
-[ext_resource type="Script" uid="uid://cvrotdfyw3ukh" path="res://Player.gd" id="2_2x5el"]
+[ext_resource type="Script" path="res://Player.gd" id="2_2x5el"]
 [ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://MVM Little Guy.png" id="3_0vmop"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e7dg1"]
