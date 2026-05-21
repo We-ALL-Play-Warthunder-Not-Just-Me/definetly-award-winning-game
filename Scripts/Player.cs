@@ -20,8 +20,38 @@ public partial class Player : CharacterBody2D
 	public const float JUMPVELOCITY = -200.0f;
 	public const float GRAVITY = 700.0f;
 
+
+	public CharacterBody2D PlayerObject;
+    public Sprite2D PlayerSprite;
+    public CollisionShape2D PlayerCollisionShape;
+
+    public override void _Ready()
+    {
+        PlayerObject = GetNode<CharacterBody2D>("Player");
+		PlayerSprite = GetNode<Sprite2D>("PlayerSprite2D");
+		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
+    }
+
+	private void _apply_gravity(double delta)
+	{
+		if (!PlayerObject.IsOnFloor())
+		{
+			Vector2 velocity = Velocity;
+            velocity += GetGravity() * (float)delta;
+            Velocity = velocity;
+        }
+	}
+
+	private void _process_state(double delta)
+	{
+		
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
+		_apply_gravity(delta);
+
+		/*
 		Vector2 velocity = Velocity;
 
 		// Add the gravity.
@@ -49,6 +79,6 @@ public partial class Player : CharacterBody2D
 		}
 
 		Velocity = velocity;
-		MoveAndSlide();
+		MoveAndSlide();*/
 	}
 }
