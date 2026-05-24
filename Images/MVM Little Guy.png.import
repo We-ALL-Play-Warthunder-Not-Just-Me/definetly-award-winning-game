@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6y3d8sagkyci"
-path="res://.godot/imported/I gitted.png-7e1ffd57767c8c1c1d3dd1802a9a8363.ctex"
+uid="uid://b3gxmf6rxflea"
+path="res://.godot/imported/MVM Little Guy.png-8175ed0be18961eefee5c994d2995332.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://I gitted.png"
-dest_files=["res://.godot/imported/I gitted.png-7e1ffd57767c8c1c1d3dd1802a9a8363.ctex"]
+source_file="res://Images/MVM Little Guy.png"
+dest_files=["res://.godot/imported/MVM Little Guy.png-8175ed0be18961eefee5c994d2995332.ctex"]
 
 [params]
 
