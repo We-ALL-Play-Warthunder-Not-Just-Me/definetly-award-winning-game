@@ -44,14 +44,15 @@ public partial class Player : CharacterBody2D
 
 
 	//Constants
-	public const float SPEED = 300.0f;
+	public const float SPEED = 120.0f;
 	public const float JUMPVELOCITY = -200.0f;
-	public const float GRAVITY = 700.0f;
+	public const float GRAVITY = 600.0f;
 
 	//player parts
 	public CharacterBody2D PlayerObject;
 	public Sprite2D PlayerSprite;
 	public CollisionShape2D PlayerCollisionShape;
+	public AnimationPlayer PlayerAnimations;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE; 
 	public PlayerState ps = PlayerState.FINE;
@@ -64,6 +65,7 @@ public partial class Player : CharacterBody2D
 			//GetNode<CharacterBody2D>("Player");
 		PlayerSprite = GetNode<Sprite2D>("PlayerSprite2D");
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
+		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
 	private void _apply_gravity(double delta, ref Vector2 velocity)
@@ -158,6 +160,33 @@ public partial class Player : CharacterBody2D
 		_process_move_state(delta, ref velocity);
 		_process_jump_state(delta, ref velocity);
 		_apply_gravity(delta, ref velocity);
+		
+		//Animation Handler?
+		if (velocity.X > 0)
+		{
+			PlayerSprite.Flip_H(true);
+		}
+		else if (velocity.X < 0)
+		{
+			PlayerSprite.Flip_H(false);
+		}
+		
+		if (velocity.X == 0 && PlayerObject.IsOnFloor())
+		{
+			PlayerAnimations.Play("PlayerIdle");
+		}
+		else if (velocity.X != 0 && PlayerObject.IsOnFloor())
+		{
+			PlayerAnimations.Play("PlayerRun");
+		}
+		else if (velocity.Y < 0)
+		{
+			PlayerAnimations.Play("PlayerJump");
+		}
+		else if (velocity.Y > 0)
+		{
+			PlayerAnimations.Play("PlayerFall");
+		}
 		
 
 
