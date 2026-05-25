@@ -45,7 +45,7 @@ public partial class Player : CharacterBody2D
 
 	//Constants
 	public const float SPEED = 120.0f;
-	public const float JUMPVELOCITY = -200.0f;
+	public const float JUMPVELOCITY = -240.0f;
 	public const float GRAVITY = 600.0f;
 
 	//player parts
@@ -152,16 +152,13 @@ public partial class Player : CharacterBody2D
 			//_change_State(PlayerState.GROUNDED)
 		}
 	}
-
-	public override void _PhysicsProcess(double delta)
+	
+	private void _animation_handler(double delta, ref Vector2 velocity)
 	{
-		Vector2 velocity = Velocity;
-		_process_environmental_state(delta);
-		_process_move_state(delta, ref velocity);
-		_process_jump_state(delta, ref velocity);
-		_apply_gravity(delta, ref velocity);
-		
 		//Animation Handler?
+		
+		//This is Flipping the Player Sprite depending on  Velocity.
+		//(This is NOT a solid way to do it. Will fix later.)
 		if (velocity.X < 0)
 		{
 			PlayerSprite.SetFlipH(true);
@@ -171,6 +168,8 @@ public partial class Player : CharacterBody2D
 			PlayerSprite.SetFlipH(false);
 		}
 		
+		//This is handling switching between movement animations.
+		//This is ALSO not ideal. Might need tweeking.
 		if (velocity.X == 0 && PlayerObject.IsOnFloor())
 		{
 			PlayerAnimations.Play("PlayerIdle");
@@ -187,7 +186,16 @@ public partial class Player : CharacterBody2D
 		{
 			PlayerAnimations.Play("PlayerFall");
 		}
-		
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		Vector2 velocity = Velocity;
+		_process_environmental_state(delta);
+		_process_move_state(delta, ref velocity);
+		_process_jump_state(delta, ref velocity);
+		_apply_gravity(delta, ref velocity);
+		_animation_handler(delta, ref velocity);
 
 
 		Velocity = velocity;
