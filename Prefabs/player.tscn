@@ -129,35 +129,36 @@ zoom = Vector2(3, 3)
 libraries/ = SubResource("AnimationLibrary_knrd4")
 
 [node name="PlayerStateLabel" type="RichTextLabel" parent="." unique_id=753505469]
-offset_left = -211.0
-offset_top = 23.0
-offset_right = 20.0
-offset_bottom = 53.0
-theme_override_font_sizes/normal_font_size = 10
+offset_left = -213.0
+offset_top = -57.0
+offset_right = -1.0
+offset_bottom = -27.0
+theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
 offset_left = -212.0
-offset_top = -74.0
-offset_right = 145.0
-offset_bottom = -44.0
-theme_override_font_sizes/normal_font_size = 10
+offset_top = -122.0
+offset_right = -1.0
+offset_bottom = -92.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerMoveStateLabel" type="RichTextLabel" parent="." unique_id=1182586622]
-offset_left = -212.0
-offset_top = -53.0
-offset_right = 19.0
-offset_bottom = -23.0
-theme_override_font_sizes/normal_font_size = 10
+offset_left = -213.0
+offset_top = -107.0
+offset_right = -1.0
+offset_bottom = -77.0
+theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
-offset_left = -211.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = 2.0
-theme_override_font_sizes/normal_font_size = 10
+offset_left = -213.0
+offset_top = -90.0
+offset_right = -1.0
+offset_bottom = -60.0
+theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerAttackStateLabel" type="RichTextLabel" parent="." unique_id=765422879]
