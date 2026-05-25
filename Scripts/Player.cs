@@ -162,13 +162,13 @@ public partial class Player : CharacterBody2D
 		_apply_gravity(delta, ref velocity);
 		
 		//Animation Handler?
-		if (velocity.X > 0)
+		if (velocity.X < 0)
 		{
-			PlayerSprite.Flip_H(true);
+			PlayerSprite.SetFlipH(true);
 		}
-		else if (velocity.X < 0)
+		else if (velocity.X > 0)
 		{
-			PlayerSprite.Flip_H(false);
+			PlayerSprite.SetFlipH(false);
 		}
 		
 		if (velocity.X == 0 && PlayerObject.IsOnFloor())
