@@ -13,28 +13,28 @@ public partial class Player : CharacterBody2D
 		DASH
 	}
 
-    public enum PlayerJumpState
-    {
-        NONE,
-        JUMPING,
-        FALLING,
+	public enum PlayerJumpState
+	{
+		NONE,
+		JUMPING,
+		FALLING,
 		LANDING
-    }
-    public enum PlayerState
-    {
-        HURT,
+	}
+	public enum PlayerState
+	{
+		HURT,
 		RECOVING,
 		FINE
-    }
+	}
 
-    public enum  PlayerAttackState
-    {
+	public enum  PlayerAttackState
+	{
 		ATTACKING,    
 		RECOVERING,
 		IDLE
-    }
+	}
 
-    public enum EnvironmentalState
+	public enum EnvironmentalState
 	{
 		GROUNDED,
 		AIRBORN,
@@ -51,13 +51,14 @@ public partial class Player : CharacterBody2D
 
 	//player parts
 	public CharacterBody2D PlayerObject;
-    public Sprite2D PlayerSprite;
-    public CollisionShape2D PlayerCollisionShape;
+	public Sprite2D PlayerSprite;
+	public CollisionShape2D PlayerCollisionShape;
     public RichTextLabel PlayerStateLabel;
     public RichTextLabel PlayerMoveStateLabel;
     public RichTextLabel PlayerJumpStateLabel;
     public RichTextLabel EnvironmentalStateLabel;
     public RichTextLabel PlayerAttackStateLabel;
+	public AnimationPlayer PlayerAnimations;
 
     public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
@@ -71,6 +72,7 @@ public partial class Player : CharacterBody2D
 		PlayerObject = this;
 		PlayerSprite = GetNode<Sprite2D>("PlayerSprite2D");
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
+		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
         PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
         _player_text_helper();
         PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
@@ -88,8 +90,8 @@ public partial class Player : CharacterBody2D
 	{
 		if (!PlayerObject.IsOnFloor())
 		{
-            velocity.Y += GRAVITY * (float)delta;
-        }
+			velocity.Y += GRAVITY * (float)delta;
+		}
 	}
 
     //returns true if state changes and false if state is the same as before.
@@ -242,7 +244,7 @@ public partial class Player : CharacterBody2D
         }   
     }
 
-    private void _process_environmental_state(double delta, ref Vector2 velocity)
+	private void _process_environmental_state(double delta, ref Vector2 velocity)
     {
         //right now we just check if the player is on the floor or not.
         if (PlayerObject.IsOnFloor())
@@ -253,15 +255,50 @@ public partial class Player : CharacterBody2D
         {
             _change_Environmental_State(EnvironmentalState.AIRBORN);
         }
-    }
+    }	
+	private void _animation_handler(double delta, ref Vector2 velocity)
+	{
+		//Animation Handler?
+		
+		//This is Flipping the Player Sprite depending on  Velocity.
+		//(This is NOT a solid way to do it. Will fix later.)
+		if (velocity.X < 0)
+		{
+			PlayerSprite.SetFlipH(true);
+		}
+		else if (velocity.X > 0)
+		{
+			PlayerSprite.SetFlipH(false);
+		}
+		
+		//This is handling switching between movement animations.
+		//This is ALSO not ideal. Might need tweeking.
+		if (velocity.X == 0 && PlayerObject.IsOnFloor())
+		{
+			PlayerAnimations.Play("PlayerIdle");
+		}
+		else if (velocity.X != 0 && PlayerObject.IsOnFloor())
+		{
+			PlayerAnimations.Play("PlayerRun");
+		}
+		else if (velocity.Y < 0)
+		{
+			PlayerAnimations.Play("PlayerJump");
+		}
+		else if (velocity.Y > 0)
+		{
+			PlayerAnimations.Play("PlayerFall");
+		}
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
         Vector2 velocity = Velocity;
         _process_environmental_state(delta, ref velocity);
 		_process_move_state(delta, ref velocity);
 		_process_jump_state(delta, ref velocity);
-        _apply_gravity(delta, ref velocity);
-        
+		_apply_gravity(delta, ref velocity);
+		_animation_handler(delta, ref velocity);
 
 
 		Velocity = velocity;
