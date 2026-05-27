@@ -53,14 +53,17 @@ public partial class Player : CharacterBody2D
 	public CharacterBody2D PlayerObject;
 	public Sprite2D PlayerSprite;
 	public CollisionShape2D PlayerCollisionShape;
-    public RichTextLabel PlayerStateLabel;
-    public RichTextLabel PlayerMoveStateLabel;
-    public RichTextLabel PlayerJumpStateLabel;
-    public RichTextLabel EnvironmentalStateLabel;
-    public RichTextLabel PlayerAttackStateLabel;
-    public RichTextLabel PlayerXSpeedLabel;
-    public RichTextLabel PlayerYSpeedLabel;
-    public AnimationPlayer PlayerAnimations;
+	public RichTextLabel PlayerStateLabel;
+	public RichTextLabel PlayerMoveStateLabel;
+	public RichTextLabel PlayerJumpStateLabel;
+	public RichTextLabel EnvironmentalStateLabel;
+	public RichTextLabel PlayerAttackStateLabel;
+	public RichTextLabel PlayerXSpeedLabel;
+	public RichTextLabel PlayerYSpeedLabel;
+	public AnimationPlayer PlayerAnimations;
+
+	//Random Health Bar class
+	public HealthBar Health_Bar;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
@@ -75,19 +78,19 @@ public partial class Player : CharacterBody2D
 		PlayerSprite = GetNode<Sprite2D>("PlayerSprite2D");
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
-        PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
-        _player_text_helper();
-        PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
-        _move_text_helper();
-        PlayerJumpStateLabel = GetNode<RichTextLabel>("PlayerJumpStateLabel");
-        _jump_text_helper();
-        EnvironmentalStateLabel = GetNode<RichTextLabel>("EnvironmentalStateLabel");
-        _environmental_text_helper();
-        PlayerAttackStateLabel = GetNode<RichTextLabel>("PlayerAttackStateLabel");
-        _attack_text_helper();
-        PlayerXSpeedLabel = GetNode<RichTextLabel>("XSpeed");
-        PlayerYSpeedLabel = GetNode<RichTextLabel>("YSpeed");
-    }
+		PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
+		_player_text_helper();
+		PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
+		_move_text_helper();
+		PlayerJumpStateLabel = GetNode<RichTextLabel>("PlayerJumpStateLabel");
+		_jump_text_helper();
+		EnvironmentalStateLabel = GetNode<RichTextLabel>("EnvironmentalStateLabel");
+		_environmental_text_helper();
+		PlayerAttackStateLabel = GetNode<RichTextLabel>("PlayerAttackStateLabel");
+		_attack_text_helper();
+		PlayerXSpeedLabel = GetNode<RichTextLabel>("XSpeed");
+		PlayerYSpeedLabel = GetNode<RichTextLabel>("YSpeed");
+	}
 
 	//this will eventually be changed to be part of the environmental state process fuction
 	private void _apply_gravity(double delta, ref Vector2 velocity)
@@ -304,42 +307,42 @@ public partial class Player : CharacterBody2D
 		_apply_gravity(delta, ref velocity);
 		_animation_handler(delta, ref velocity);
 		Velocity = velocity;
-        _playerXSpeed_helper();
-        _playerYSpeed_helper();
+		_playerXSpeed_helper();
+		_playerYSpeed_helper();
 
-        MoveAndSlide();
-        
-    }
+		MoveAndSlide();
+		
+	}
 
 
 
-    // these are helpers that update the text labels onscreen.
-    private void _jump_text_helper()
-    {
-        PlayerJumpStateLabel.Text = "Jump State: " + pjs.ToString();
-    }
-    private void _player_text_helper()
-    {
-        PlayerStateLabel.Text = "Player State: " + ps.ToString();
-    }
-    private void _environmental_text_helper()
-    {
-        EnvironmentalStateLabel.Text = "Environmental State: " + es.ToString();
-    }
-    private void _move_text_helper()
-    {
-        PlayerMoveStateLabel.Text = "Move State: " + pms.ToString();
-    }
-    private void _attack_text_helper()
-    {
-        PlayerAttackStateLabel.Text = "Attack State: " + pas.ToString();
-    }
-    private void _playerXSpeed_helper()
-    {
-        PlayerXSpeedLabel.Text = "X: " + Velocity.X.ToString();
-    }
-    private void _playerYSpeed_helper()
-    {
-        PlayerYSpeedLabel.Text = "Y: " + Velocity.Y.ToString();
-    }
+	// these are helpers that update the text labels onscreen.
+	private void _jump_text_helper()
+	{
+		PlayerJumpStateLabel.Text = "Jump State: " + pjs.ToString();
+	}
+	private void _player_text_helper()
+	{
+		PlayerStateLabel.Text = "Player State: " + ps.ToString();
+	}
+	private void _environmental_text_helper()
+	{
+		EnvironmentalStateLabel.Text = "Environmental State: " + es.ToString();
+	}
+	private void _move_text_helper()
+	{
+		PlayerMoveStateLabel.Text = "Move State: " + pms.ToString();
+	}
+	private void _attack_text_helper()
+	{
+		PlayerAttackStateLabel.Text = "Attack State: " + pas.ToString();
+	}
+	private void _playerXSpeed_helper()
+	{
+		PlayerXSpeedLabel.Text = "X: " + Velocity.X.ToString();
+	}
+	private void _playerYSpeed_helper()
+	{
+		PlayerYSpeedLabel.Text = "Y: " + Velocity.Y.ToString();
+	}
 }
