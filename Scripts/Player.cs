@@ -336,10 +336,10 @@ public partial class Player : CharacterBody2D
     }
     private void _playerXSpeed_helper()
     {
-        PlayerXSpeedLabel.Text = "X: " + Velocity.X.ToString();
+		PlayerXSpeedLabel.Text = "X: " + this.GetRealVelocity().X.ToString();
     }
     private void _playerYSpeed_helper()
     {
-        PlayerYSpeedLabel.Text = "Y: " + Velocity.Y.ToString();
+        PlayerYSpeedLabel.Text = "Y: " + this.GetRealVelocity().Y.ToString();
     }
 }
