@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3qsj1c2jpowp" path="res://Scripts/Player.cs" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dr5ex5v11qxd6" path="res://Images/MVM Base Character.png" id="2_5wxv7"]
+[ext_resource type="PackedScene" uid="uid://wh7cc2hwouuu" path="res://Prefabs/HealthBar.tscn" id="3_y5hcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5hcb"]
 size = Vector2(8, 20)
@@ -184,3 +185,9 @@ offset_right = 206.0
 offset_bottom = -14.0
 theme_override_font_sizes/normal_font_size = 10
 text = "aaaaaaa"
+
+[node name="HealthBar" parent="." unique_id=286525542 instance=ExtResource("3_y5hcb")]
+offset_left = -204.0
+offset_top = 94.0
+offset_right = -4.0
+offset_bottom = 109.0
