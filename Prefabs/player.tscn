@@ -8,6 +8,7 @@ size = Vector2(8, 20)
 
 [sub_resource type="Animation" id="Animation_knrd4"]
 resource_name = "PlayerFall"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -40,6 +41,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hck1p"]
 resource_name = "PlayerJump"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -129,36 +131,36 @@ zoom = Vector2(3, 3)
 libraries/ = SubResource("AnimationLibrary_knrd4")
 
 [node name="PlayerStateLabel" type="RichTextLabel" parent="." unique_id=753505469]
-offset_left = -11.0
-offset_top = -91.0
-offset_right = 220.0
-offset_bottom = -61.0
+offset_left = -213.0
+offset_top = -22.0
+offset_right = 18.0
+offset_bottom = 8.0
 text = "aaaaaaa"
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
-offset_left = -9.0
-offset_top = -190.0
-offset_right = 348.0
-offset_bottom = -160.0
+offset_left = -211.0
+offset_top = -121.0
+offset_right = 146.0
+offset_bottom = -91.0
 text = "aaaaaaa"
 
 [node name="PlayerMoveStateLabel" type="RichTextLabel" parent="." unique_id=1182586622]
-offset_left = -12.0
-offset_top = -167.0
-offset_right = 219.0
-offset_bottom = -137.0
+offset_left = -214.0
+offset_top = -98.0
+offset_right = 17.0
+offset_bottom = -68.0
 text = "aaaaaaa"
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
-offset_left = -11.0
-offset_top = -142.0
-offset_right = 220.0
-offset_bottom = -112.0
+offset_left = -213.0
+offset_top = -73.0
+offset_right = 18.0
+offset_bottom = -43.0
 text = "aaaaaaa"
 
 [node name="PlayerAttackStateLabel" type="RichTextLabel" parent="." unique_id=765422879]
-offset_left = -11.0
-offset_top = -117.0
-offset_right = 220.0
-offset_bottom = -87.0
+offset_left = -213.0
+offset_top = -48.0
+offset_right = 18.0
+offset_bottom = -18.0
 text = "aaaaaaa"
