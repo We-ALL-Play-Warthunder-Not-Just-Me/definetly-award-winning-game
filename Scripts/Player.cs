@@ -62,6 +62,9 @@ public partial class Player : CharacterBody2D
 	public RichTextLabel PlayerYSpeedLabel;
 	public AnimationPlayer PlayerAnimations;
 
+	//Random Health Bar class
+	public HealthBar Health_Bar;
+
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
 	public PlayerJumpState pjs = PlayerJumpState.FALLING;

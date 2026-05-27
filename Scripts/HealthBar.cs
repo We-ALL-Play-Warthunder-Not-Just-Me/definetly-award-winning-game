@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 public partial class HealthBar : ProgressBar
 {
@@ -10,7 +11,7 @@ public partial class HealthBar : ProgressBar
 	public ProgressBar Damage_Bar;
 	public Timer timer;
 
-	private void init_health(double h)
+	private void _init_health(double h)
 	{
 		max_hp = h;
 		curr_hp = h;
@@ -24,6 +25,8 @@ public partial class HealthBar : ProgressBar
 	public void setmaxhealth(double h)
 	{
 		max_hp = h;
+		Health_Bar.MaxValue = h;
+		Damage_Bar.MaxValue = h;
 	}
 
 	public void setcurrenthealth(double h)
@@ -32,17 +35,35 @@ public partial class HealthBar : ProgressBar
 		curr_hp = Math.Min(Health_Bar.MaxValue, h);
 		Health_Bar.Value = curr_hp;
 
-		if (curr_hp < 0)
+		// when die
+		if (curr_hp <= 0)
 		{
-			
+			//I dunno health bar gone
+			QueueFree();
+		}
+		if (curr_hp < prev_hp)
+		{
+			timer.Start();
+		}
+		else
+		{
+			Damage_Bar.Value = curr_hp;
 		}
 
 	}
-	// Returns the current health you have after taking damage
+
+	private void _on_timer_timeout()
+	{
+		Damage_Bar.Value = curr_hp;
+	}
+
+
+	// Returns and sets the current health you have after taking damage
 	public double hurt(double d)
 	{
-		curr_hp -= d;
-		return curr_hp;
+		double new_hp = curr_hp - d;
+		setcurrenthealth(new_hp);
+		return new_hp;
 	}
 
 	// Called when the node enters the scene tree for the first time.
@@ -51,11 +72,17 @@ public partial class HealthBar : ProgressBar
 		Health_Bar = this;
 		Damage_Bar = GetNode<ProgressBar>("DamageBar");
 		timer = GetNode<Timer>("Timer");
-
+		//WAH
+		_init_health(100);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (Input.IsActionJustPressed("Jump"))
+		{
+			//Healthbar pain testing
+			hurt(10);
+		}
 	}
 }
