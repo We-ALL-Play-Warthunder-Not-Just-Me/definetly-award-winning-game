@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3qsj1c2jpowp" path="res://Scripts/Player.cs" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dr5ex5v11qxd6" path="res://Images/MVM Base Character.png" id="2_5wxv7"]
+[ext_resource type="PackedScene" uid="uid://wh7cc2hwouuu" path="res://Prefabs/HealthBar.tscn" id="3_y5hcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5hcb"]
 size = Vector2(8, 20)
@@ -132,35 +133,63 @@ libraries/ = SubResource("AnimationLibrary_knrd4")
 
 [node name="PlayerStateLabel" type="RichTextLabel" parent="." unique_id=753505469]
 offset_left = -213.0
-offset_top = -22.0
-offset_right = 18.0
-offset_bottom = 8.0
+offset_top = -57.0
+offset_right = -1.0
+offset_bottom = -27.0
+theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
-offset_left = -211.0
-offset_top = -121.0
-offset_right = 146.0
-offset_bottom = -91.0
+offset_left = -212.0
+offset_top = -122.0
+offset_right = -1.0
+offset_bottom = -92.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerMoveStateLabel" type="RichTextLabel" parent="." unique_id=1182586622]
-offset_left = -214.0
-offset_top = -98.0
-offset_right = 17.0
-offset_bottom = -68.0
+offset_left = -213.0
+offset_top = -107.0
+offset_right = -1.0
+offset_bottom = -77.0
+theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
 offset_left = -213.0
-offset_top = -73.0
-offset_right = 18.0
-offset_bottom = -43.0
+offset_top = -90.0
+offset_right = -1.0
+offset_bottom = -60.0
+theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerAttackStateLabel" type="RichTextLabel" parent="." unique_id=765422879]
-offset_left = -213.0
-offset_top = -48.0
-offset_right = 18.0
-offset_bottom = -18.0
+offset_left = -211.0
+offset_top = -3.0
+offset_right = 20.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 10
 text = "aaaaaaa"
+
+[node name="XSpeed" type="RichTextLabel" parent="." unique_id=1456457850]
+offset_left = 30.0
+offset_top = -16.0
+offset_right = 206.0
+offset_bottom = 14.0
+theme_override_font_sizes/normal_font_size = 10
+text = "aaaaaaa"
+
+[node name="YSpeed" type="RichTextLabel" parent="." unique_id=493191004]
+offset_left = 30.0
+offset_top = -44.0
+offset_right = 206.0
+offset_bottom = -14.0
+theme_override_font_sizes/normal_font_size = 10
+text = "aaaaaaa"
+
+[node name="HealthBar" parent="." unique_id=286525542 instance=ExtResource("3_y5hcb")]
+offset_left = -204.0
+offset_top = 94.0
+offset_right = -4.0
+offset_bottom = 109.0

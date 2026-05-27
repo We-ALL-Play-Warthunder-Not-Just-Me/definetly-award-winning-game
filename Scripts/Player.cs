@@ -58,7 +58,12 @@ public partial class Player : CharacterBody2D
 	public RichTextLabel PlayerJumpStateLabel;
 	public RichTextLabel EnvironmentalStateLabel;
 	public RichTextLabel PlayerAttackStateLabel;
+	public RichTextLabel PlayerXSpeedLabel;
+	public RichTextLabel PlayerYSpeedLabel;
 	public AnimationPlayer PlayerAnimations;
+
+	//Random Health Bar class
+	public HealthBar Health_Bar;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
@@ -83,8 +88,11 @@ public partial class Player : CharacterBody2D
 		_environmental_text_helper();
 		PlayerAttackStateLabel = GetNode<RichTextLabel>("PlayerAttackStateLabel");
 		_attack_text_helper();
+		PlayerXSpeedLabel = GetNode<RichTextLabel>("XSpeed");
+		PlayerYSpeedLabel = GetNode<RichTextLabel>("YSpeed");
 	}
 
+	//this will eventually be changed to be part of the environmental state process fuction
 	//this will eventually be changed to be part of the environmental state process fuction
 	private void _apply_gravity(double delta, ref Vector2 velocity)
 	{
@@ -299,10 +307,10 @@ public partial class Player : CharacterBody2D
 		_process_jump_state(delta, ref velocity);
 		_apply_gravity(delta, ref velocity);
 		_animation_handler(delta, ref velocity);
-
-
 		Velocity = velocity;
-		//GD.Print(Velocity); 
+		_playerXSpeed_helper();
+		_playerYSpeed_helper();
+
 		MoveAndSlide();
 		
 	}
@@ -329,5 +337,13 @@ public partial class Player : CharacterBody2D
 	private void _attack_text_helper()
 	{
 		PlayerAttackStateLabel.Text = "Attack State: " + pas.ToString();
+	}
+	private void _playerXSpeed_helper()
+	{
+		PlayerXSpeedLabel.Text = "X: " + Velocity.X.ToString();
+	}
+	private void _playerYSpeed_helper()
+	{
+		PlayerYSpeedLabel.Text = "Y: " + Velocity.Y.ToString();
 	}
 }
