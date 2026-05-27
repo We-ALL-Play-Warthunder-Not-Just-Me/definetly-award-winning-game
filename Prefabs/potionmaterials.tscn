@@ -15,6 +15,7 @@ script = ExtResource("2_squ5u")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=1283663150]
 stream = ExtResource("3_p3nax")
+volume_db = -3.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=75596821]
 
