@@ -66,11 +66,8 @@ public partial class Player : CharacterBody2D
 	public HealthBar Health_Bar;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
-	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
 	public PlayerJumpState pjs = PlayerJumpState.FALLING;
-	public EnvironmentalState es = EnvironmentalState.AIRBORN;
-	public PlayerAttackState pas = PlayerAttackState.IDLE;
 	public EnvironmentalState es = EnvironmentalState.AIRBORN;
 	public PlayerAttackState pas = PlayerAttackState.IDLE;
 
