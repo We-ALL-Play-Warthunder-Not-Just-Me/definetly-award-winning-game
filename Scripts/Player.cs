@@ -44,9 +44,9 @@ public partial class Player : CharacterBody2D
 
 
 	//Constants
-	public const float SPEED = 200.0f;
+	public const float SPEED = 160.0f;
 	public const float DASHSPEED = 350.0f;
-	public const float JUMPVELOCITY = -250.0f;
+	public const float JUMPVELOCITY = -240.0f;
 	public const float GRAVITY = 500.0f;
 
 	//player parts
@@ -66,8 +66,11 @@ public partial class Player : CharacterBody2D
 	public HealthBar Health_Bar;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
+	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
 	public PlayerJumpState pjs = PlayerJumpState.FALLING;
+	public EnvironmentalState es = EnvironmentalState.AIRBORN;
+	public PlayerAttackState pas = PlayerAttackState.IDLE;
 	public EnvironmentalState es = EnvironmentalState.AIRBORN;
 	public PlayerAttackState pas = PlayerAttackState.IDLE;
 
@@ -92,6 +95,7 @@ public partial class Player : CharacterBody2D
 		PlayerYSpeedLabel = GetNode<RichTextLabel>("YSpeed");
 	}
 
+	//this will eventually be changed to be part of the environmental state process fuction
 	//this will eventually be changed to be part of the environmental state process fuction
 	private void _apply_gravity(double delta, ref Vector2 velocity)
 	{

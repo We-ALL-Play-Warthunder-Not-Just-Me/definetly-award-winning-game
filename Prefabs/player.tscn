@@ -9,6 +9,7 @@ size = Vector2(8, 20)
 
 [sub_resource type="Animation" id="Animation_knrd4"]
 resource_name = "PlayerFall"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -41,6 +42,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hck1p"]
 resource_name = "PlayerJump"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

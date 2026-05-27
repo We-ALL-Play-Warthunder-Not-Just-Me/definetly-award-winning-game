@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://r427386qtinh"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Materials.png" id="1_aq145"]
+[ext_resource type="Script" uid="uid://cvyfrbg3sal35" path="res://Scripts/Materials.cs" id="2_squ5u"]
+[ext_resource type="AudioStream" uid="uid://bxyo4ypak67qp" path="res://Pickup.wav" id="3_p3nax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47obr"]
+size = Vector2(16, 16)
+
+[node name="Materials" type="Sprite2D" unique_id=394079897]
+texture = ExtResource("1_aq145")
+hframes = 2
+vframes = 2
+script = ExtResource("2_squ5u")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=1283663150]
+stream = ExtResource("3_p3nax")
+volume_db = -3.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=75596821]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1265861765]
+shape = SubResource("RectangleShape2D_47obr")
+
+[connection signal="finished" from="Pickup" to="." method="NoiseFinished"]
+[connection signal="body_entered" from="Area2D" to="." method="OnArea2DBodyEntered"]
