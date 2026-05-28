@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Scripts/InventoryScreen.cs" id="1_8w81r"]
+[ext_resource type="Script" uid="uid://cmwil7qkv3wgm" path="res://Scripts/Inventory.cs" id="2_x0qmb"]
 
 [node name="InventoryScreen" type="CanvasLayer" unique_id=1270476485]
 process_mode = 3
@@ -38,8 +39,10 @@ offset_right = 620.0
 offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 tab_alignment = 1
 current_tab = 0
+script = ExtResource("2_x0qmb")
 
 [node name="Inventory" type="TabBar" parent="Control/Panel/TabContainer" unique_id=628281717]
 layout_mode = 2
