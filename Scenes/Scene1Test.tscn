@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://r427386qtinh" path="res://Prefabs/potionmaterials.tscn" id="3_47obr"]
 [ext_resource type="Texture2D" uid="uid://ceeo0v5pswqyj" path="res://Images/MVM Maw Idle.png" id="5_h7acc"]
 [ext_resource type="AudioStream" uid="uid://1x070y8sfxqv" path="res://MVM Song Idea.wav" id="6_47obr"]
+[ext_resource type="PackedScene" uid="uid://2fsdvfr1lhbl" path="res://Prefabs/InventoryScreen.tscn" id="7_0ld12"]
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scenes/MvmSongIdea.cs" id="7_h5fhn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
@@ -524,5 +525,8 @@ stream = ExtResource("6_47obr")
 volume_db = -4.0
 autoplay = true
 script = ExtResource("7_h5fhn")
+
+[node name="InventoryScreen" parent="." unique_id=1270476485 instance=ExtResource("7_0ld12")]
+visible = false
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
