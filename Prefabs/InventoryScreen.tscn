@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
+
+[node name="InventoryScreen" type="Control" unique_id=1470159862]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1732745010]
+layout_mode = 0
+offset_right = 573.3
+offset_bottom = 196.0
+tab_alignment = 1
+current_tab = 0
+
+[node name="Inventory" type="TabBar" parent="TabContainer" unique_id=628281717]
+layout_mode = 2
+current_tab = 0
+tab_alignment = 1
+tab_count = 3
+tab_0/title = "Equipment"
+tab_1/title = "Character?"
+tab_2/title = "Materials"
+metadata/_tab_index = 0
+
+[node name="Crafting" type="TabBar" parent="TabContainer" unique_id=1970230215]
+visible = false
+layout_mode = 2
+current_tab = 0
+tab_alignment = 1
+tab_count = 3
+tab_0/title = "Crafting"
+tab_1/title = "Materials"
+tab_2/title = "Recipes"
+metadata/_tab_index = 1
+
+[node name="Settings Maybe" type="TabBar" parent="TabContainer" unique_id=817815592]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
