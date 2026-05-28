@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://1x070y8sfxqv" path="res://MVM Song Idea.wav" id="6_47obr"]
 [ext_resource type="PackedScene" uid="uid://2fsdvfr1lhbl" path="res://Prefabs/InventoryScreen.tscn" id="7_0ld12"]
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scenes/MvmSongIdea.cs" id="7_h5fhn"]
+[ext_resource type="PackedScene" uid="uid://gcbkh1y08iwi" path="res://Prefabs/PauseScreen.tscn" id="8_0ld12"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -527,6 +528,11 @@ autoplay = true
 script = ExtResource("7_h5fhn")
 
 [node name="InventoryScreen" parent="." unique_id=1270476485 instance=ExtResource("7_0ld12")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1365776688]
+
+[node name="PauseScreen" parent="CanvasLayer" unique_id=431672971 instance=ExtResource("8_0ld12")]
 visible = false
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
