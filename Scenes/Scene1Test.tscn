@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://btkleiwt6n17y"]
 
-[ext_resource type="Texture2D" uid="uid://c8tor7no3yypj" path="res://Images/Base Tiles but Grass.png" id="1_0467u"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="1_47obr"]
 [ext_resource type="PackedScene" uid="uid://ccobfdldi45wb" path="res://Prefabs/player.tscn" id="2_aydrw"]
 [ext_resource type="PackedScene" uid="uid://r427386qtinh" path="res://Prefabs/potionmaterials.tscn" id="3_47obr"]
 [ext_resource type="Texture2D" uid="uid://ceeo0v5pswqyj" path="res://Images/MVM Maw Idle.png" id="5_h7acc"]
@@ -14,7 +14,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e7dg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybr40"]
-texture = ExtResource("1_0467u")
+texture = ExtResource("1_47obr")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
