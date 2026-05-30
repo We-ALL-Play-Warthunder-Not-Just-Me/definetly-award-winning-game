@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dau2v1lpi4lgw"]
 
 [ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/MVM Maw.png" id="1_34u0m"]
-[ext_resource type="Script" uid="uid://c2sxhf6dhq27v" path="res://Prefabs/Maw.cs" id="2_m5uoj"]
+[ext_resource type="Script" uid="uid://c2sxhf6dhq27v" path="res://Maw.cs" id="2_m5uoj"]
 
 [sub_resource type="Animation" id="Animation_47obr"]
 resource_name = "MawIdle"
