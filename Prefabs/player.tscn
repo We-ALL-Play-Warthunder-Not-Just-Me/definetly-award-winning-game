@@ -131,6 +131,7 @@ zoom = Vector2(3, 3)
 libraries/ = SubResource("AnimationLibrary_knrd4")
 
 [node name="PlayerStateLabel" type="RichTextLabel" parent="." unique_id=753505469]
+z_index = 20
 offset_left = -213.0
 offset_top = -22.0
 offset_right = 18.0
@@ -138,6 +139,7 @@ offset_bottom = 8.0
 text = "aaaaaaa"
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
+z_index = 20
 offset_left = -211.0
 offset_top = -121.0
 offset_right = 146.0
@@ -145,6 +147,7 @@ offset_bottom = -91.0
 text = "aaaaaaa"
 
 [node name="PlayerMoveStateLabel" type="RichTextLabel" parent="." unique_id=1182586622]
+z_index = 20
 offset_left = -214.0
 offset_top = -98.0
 offset_right = 17.0
@@ -152,6 +155,7 @@ offset_bottom = -68.0
 text = "aaaaaaa"
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
+z_index = 20
 offset_left = -213.0
 offset_top = -73.0
 offset_right = 18.0
@@ -159,6 +163,7 @@ offset_bottom = -43.0
 text = "aaaaaaa"
 
 [node name="PlayerAttackStateLabel" type="RichTextLabel" parent="." unique_id=765422879]
+z_index = 20
 offset_left = -213.0
 offset_top = -48.0
 offset_right = 18.0
