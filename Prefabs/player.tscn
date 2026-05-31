@@ -132,6 +132,7 @@ zoom = Vector2(3, 3)
 libraries/ = SubResource("AnimationLibrary_knrd4")
 
 [node name="PlayerStateLabel" type="RichTextLabel" parent="." unique_id=753505469]
+z_index = 20
 offset_left = -213.0
 offset_top = -57.0
 offset_right = -1.0
@@ -157,6 +158,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
+z_index = 20
 offset_left = -213.0
 offset_top = -90.0
 offset_right = -1.0
