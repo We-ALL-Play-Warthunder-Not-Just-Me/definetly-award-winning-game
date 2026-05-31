@@ -6,7 +6,9 @@ public partial class MapTransitioner : Area2D
 	[Export]
 	public int NewSpawn;
 	[Export]
-	public string NewMap;
+	public string NextMap;
+	[Export]
+	public string CurrentMap;
 	MapManager MapMan;
 	
 	public override void _Ready()
@@ -18,8 +20,6 @@ public partial class MapTransitioner : Area2D
 	{
 		//This will take the stored information and send it to
 		//the MapManager once it's ready
-		GD.Print(NewSpawn);
-		GD.Print(NewMap);
-		MapMan.Test();
+		MapMan.CollectInfo(NewSpawn, NextMap, CurrentMap);
 	}
 }

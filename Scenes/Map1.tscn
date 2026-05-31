@@ -418,6 +418,14 @@ position = Vector2(0, -6)
 scale = Vector2(640, 180)
 texture = SubResource("CanvasTexture_47obr")
 
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1470575852]
+
+[node name="Spawn0" type="Node2D" parent="SpawnPoints" unique_id=145992364]
+position = Vector2(0, -12)
+
+[node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=1999859720]
+position = Vector2(-310, 0)
+
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 position = Vector2(-526, 53)
 
