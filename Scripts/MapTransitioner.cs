@@ -9,6 +9,8 @@ public partial class MapTransitioner : Area2D
 	public string NextMap;
 	[Export]
 	public string CurrentMap;
+	[Export]
+	public bool VertTrans;
 	MapManager MapMan;
 	
 	public override void _Ready()
@@ -20,6 +22,6 @@ public partial class MapTransitioner : Area2D
 	{
 		//This will take the stored information and send it to
 		//the MapManager once it's ready
-		MapMan.CollectInfo(NewSpawn, NextMap, CurrentMap);
+		MapMan.CollectInfo(NewSpawn, NextMap, CurrentMap, VertTrans);
 	}
 }
