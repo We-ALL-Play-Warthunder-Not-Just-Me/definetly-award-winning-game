@@ -590,7 +590,7 @@ position = Vector2(-112, -56)
 texture = ExtResource("7_3ue40")
 
 [node name="Player" parent="." unique_id=1876432518 instance=ExtResource("2_3ue40")]
-position = Vector2(-78, -10)
+position = Vector2(-80, -10)
 
 [node name="ElderBerries" parent="." unique_id=394079897 instance=ExtResource("3_0odef")]
 position = Vector2(-334, -248)

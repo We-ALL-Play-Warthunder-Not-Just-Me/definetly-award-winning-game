@@ -44,7 +44,7 @@ public partial class Player : CharacterBody2D
 
 
 	//Constants
-	public const float SPEED = 130.0f;
+	public const float SPEED = 100.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -240.0f;
 	public const float GRAVITY = 500.0f;
