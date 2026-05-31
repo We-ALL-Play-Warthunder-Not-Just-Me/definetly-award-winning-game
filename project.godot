@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="DefinetlyAwardWinningGame"
-run/main_scene="uid://btkleiwt6n17y"
+run/main_scene="uid://bwvmk5l8bfwat"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://Images/icon.svg"
 run/size/viewport_width=1280
+
+[autoload]
+
+MapManager="*uid://ci01wourqhhwe"
 
 [display]
 

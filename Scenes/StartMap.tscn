@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="2_5bunb"]
 [ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="3_6s8b1"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="4_iw0qa"]
-[ext_resource type="AudioStream" uid="uid://cy8s4qhyq3y21" path="res://MVM Song Idea (Idea #70).wav" id="7_awqvu"]
-[ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scripts/MvmSongIdea.cs" id="8_iw6tp"]
-[ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="9_eb23n"]
+[ext_resource type="Script" uid="uid://rplm4gjy4bs6" path="res://Scripts/MapTransitioner.cs" id="5_0trb5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -411,6 +409,9 @@ terrain_set_0/terrain_0/color = Color(0.98039216, 0.16078432, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8puf"]
+size = Vector2(8, 180)
+
 [node name="StartMap" type="Node2D" unique_id=685611168]
 
 [node name="TempBacking" type="Sprite2D" parent="." unique_id=985320539]
@@ -420,6 +421,14 @@ material = SubResource("CanvasItemMaterial_h7acc")
 position = Vector2(0, -6)
 scale = Vector2(320, 180)
 texture = SubResource("CanvasTexture_47obr")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1182682481]
+
+[node name="Spawn0" type="Node2D" parent="SpawnPoints" unique_id=369802554]
+position = Vector2(0, 54)
+
+[node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=802397266]
+position = Vector2(150, 0)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 position = Vector2(-526, 53)
@@ -458,21 +467,20 @@ tile_set = SubResource("TileSet_a4htl")
 position = Vector2(-80, 8)
 texture = ExtResource("4_iw0qa")
 
-[node name="MvmSongIdea" type="AudioStreamPlayer" parent="." unique_id=1017186869]
-stream = ExtResource("7_awqvu")
-volume_db = -4.0
-autoplay = true
-script = ExtResource("8_iw6tp")
-
-[node name="Enemies" type="Node2D" parent="." unique_id=471699235]
-position = Vector2(259, -48)
-
-[node name="Maw" parent="Enemies" unique_id=1423301954 instance=ExtResource("9_eb23n")]
-position = Vector2(-202, 80)
-IsSproutMaw = true
-
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 tile_map_data = PackedByteArray("AAD2/wIAAQAAAAEAAAD4/wMAAQAAAAEAAAD7/wMAAQAAAAEAAAABAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAACAAIAAQACAAEAAAAGAAIAAQACAAEAAAD+/wMAAQACAAEAAAD5/wMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
-[connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
+[node name="MapTransitioner" type="Area2D" parent="." unique_id=662294968]
+position = Vector2(160, -6)
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("5_0trb5")
+NewSpawn = 1
+NewMap = "res://Scenes/Map1.tscn"
+
+[node name="TransitionerCollision" type="CollisionShape2D" parent="MapTransitioner" unique_id=834269509]
+shape = SubResource("RectangleShape2D_i8puf")
+debug_color = Color(0.7375561, 0.22491822, 0.9999998, 0.41960785)
+
+[connection signal="body_entered" from="MapTransitioner" to="MapTransitioner" method="_SendInfo"]
