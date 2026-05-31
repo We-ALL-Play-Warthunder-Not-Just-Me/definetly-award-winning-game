@@ -46,8 +46,8 @@ public partial class Player : CharacterBody2D
 	//Constants
 	public const float SPEED = 200.0f;
 	public const float DASHSPEED = 350.0f;
-	public const float JUMPVELOCITY = -250.0f;
-	public const float GRAVITY = 500.0f;
+	public const float JUMPVELOCITY = -230.0f;
+	public const float GRAVITY = 400.0f;
 
 	//player parts
 	public CharacterBody2D PlayerObject;
@@ -204,14 +204,15 @@ public partial class Player : CharacterBody2D
 			velocity.Y = JUMPVELOCITY;
 		}
 		//if the player is jumping and the velocity is less than 0 we are now falling
-		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && velocity.Y > 0.0)
+		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && this.GetRealVelocity().Y > 0.0)
 		{
-			_change_Jump_State(PlayerJumpState.FALLING);
+			velocity.Y = -40;
+            _change_Jump_State(PlayerJumpState.FALLING);
 		}
 		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
 		else if (es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
 		{
-			velocity.Y = 0;
+			velocity.Y = -40;
 			_change_Jump_State(PlayerJumpState.FALLING);
 		}
 		//if the player is falling and hits the ground we are now landing
@@ -281,7 +282,7 @@ public partial class Player : CharacterBody2D
 		{
 			PlayerAnimations.Play("PlayerIdle");
 		}
-		else if (velocity.X != 0 && PlayerObject.IsOnFloor())
+		else if (this.GetRealVelocity().X != 0 && PlayerObject.IsOnFloor())
 		{
 			PlayerAnimations.Play("PlayerRun");
 		}

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d00qr55soteyj"]
+
+[ext_resource type="Script" uid="uid://c3v68v4fga6cl" path="res://Scripts/ExampleBasicEnemy.cs" id="1_738cg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw5q7"]
+
+[node name="ExampleBasicEnemy" type="CharacterBody2D" unique_id=1127321626]
+script = ExtResource("1_738cg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=909683266]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1358458469]
+
+[node name="Body" type="CollisionShape2D" parent="." unique_id=566746701]
+shape = SubResource("RectangleShape2D_qw5q7")
+
+[node name="EnemyStateLabel" type="RichTextLabel" parent="." unique_id=1789824999]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 41.0
+offset_bottom = -14.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyMoveStateLabel" type="RichTextLabel" parent="." unique_id=1445569916]
+offset_left = -25.0
+offset_top = -78.0
+offset_right = 41.0
+offset_bottom = -66.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyJumpStateLabel" type="RichTextLabel" parent="." unique_id=2132466558]
+offset_left = -23.0
+offset_top = -65.0
+offset_right = 43.0
+offset_bottom = -53.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=1260272756]
+offset_left = -25.0
+offset_top = -55.0
+offset_right = 41.0
+offset_bottom = -43.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyAttackStateLabel" type="RichTextLabel" parent="." unique_id=397808088]
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 41.0
+offset_bottom = -28.0
+theme_override_font_sizes/normal_font_size = 10

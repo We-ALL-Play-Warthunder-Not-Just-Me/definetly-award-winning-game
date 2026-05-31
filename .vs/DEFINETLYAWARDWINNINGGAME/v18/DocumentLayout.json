@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\CreatureBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\CreatureBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|d:\\godot engine folder\\godot c projects\\freeza\\definetly-award-winning-game\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\ExampleBasicEnemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ExampleBasicEnemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|d:\\godot engine folder\\godot c projects\\freeza\\definetly-award-winning-game\\scripts\\examplebasicenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|solutionrelative:scripts\\examplebasicenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player.cs",
+              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
+              "RelativeToolTip": "Scripts\\Player.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAiwCoBAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T04:37:24.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -30,28 +51,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExampleBasicEnemy.cs",
-              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\ExampleBasicEnemy.cs",
-              "RelativeDocumentMoniker": "ExampleBasicEnemy.cs",
-              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\ExampleBasicEnemy.cs",
-              "RelativeToolTip": "ExampleBasicEnemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CreatureBase.cs",
+              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\CreatureBase.cs",
+              "RelativeDocumentMoniker": "Scripts\\CreatureBase.cs",
+              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\CreatureBase.cs",
+              "RelativeToolTip": "Scripts\\CreatureBase.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAkwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T11:36:31.558Z",
+              "WhenOpened": "2026-05-28T04:09:44.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Scripts\\Player.cs",
-              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
-              "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAAMcAAAAAAAAAAAAswKUAAAADAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ExampleBasicEnemy.cs",
+              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\ExampleBasicEnemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\ExampleBasicEnemy.cs",
+              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\ExampleBasicEnemy.cs",
+              "RelativeToolTip": "Scripts\\ExampleBasicEnemy.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAmwHgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T04:37:24.34Z",
+              "WhenOpened": "2026-05-28T01:02:50.897Z",
               "EditorCaption": ""
             }
           ]
