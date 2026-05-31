@@ -3,13 +3,7 @@
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Scripts/InventoryScreen.cs" id="1_8w81r"]
 [ext_resource type="Script" uid="uid://cmwil7qkv3wgm" path="res://Scripts/Inventory.cs" id="2_x0qmb"]
 
-[node name="InventoryScreen" type="CanvasLayer" unique_id=1270476485]
-process_mode = 3
-script = ExtResource("1_8w81r")
-metadata/_edit_vertical_guides_ = [20.0, 1260.0]
-metadata/_edit_horizontal_guides_ = [20.0, 700.0]
-
-[node name="Control" type="Control" parent="." unique_id=1124835720]
+[node name="InventoryScreen" type="Control" unique_id=1470520716]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -17,8 +11,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8w81r")
+metadata/_edit_vertical_guides_ = [20.0, 1260.0]
+metadata/_edit_horizontal_guides_ = [20.0, 700.0]
 
-[node name="Panel" type="Panel" parent="Control" unique_id=248658047]
+[node name="Panel" type="Panel" parent="." unique_id=248658047]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TabContainer" type="TabContainer" parent="Control/Panel" unique_id=1732745010]
+[node name="TabContainer" type="TabContainer" parent="Panel" unique_id=1732745010]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,7 +41,7 @@ tab_alignment = 1
 current_tab = 0
 script = ExtResource("2_x0qmb")
 
-[node name="Inventory" type="TabBar" parent="Control/Panel/TabContainer" unique_id=628281717]
+[node name="Inventory" type="TabBar" parent="Panel/TabContainer" unique_id=628281717]
 layout_mode = 2
 current_tab = 0
 tab_alignment = 1
@@ -54,13 +51,18 @@ tab_1/title = "Character"
 tab_2/title = "Materials"
 metadata/_tab_index = 0
 
-[node name="Button" type="Button" parent="Control/Panel/TabContainer/Inventory" unique_id=1078618117]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Button" type="Button" parent="Panel/TabContainer/Inventory" unique_id=1078618117]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 127.0
+offset_bottom = 15.5
+grow_vertical = 2
 text = "I AM A BUTTON"
 
-[node name="Crafting" type="TabBar" parent="Control/Panel/TabContainer" unique_id=1970230215]
+[node name="Crafting" type="TabBar" parent="Panel/TabContainer" unique_id=1970230215]
 visible = false
 layout_mode = 2
 current_tab = 0

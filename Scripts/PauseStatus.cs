@@ -1,40 +1,37 @@
 using Godot;
 using System;
-using System.Diagnostics;
 
-public partial class PauseScreen : Control
+public partial class PauseStatus : CanvasLayer
 {
+	private static Control pause;
+	private static Control inventory;
+
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		pause = GetNode<Control>("PauseScreen");
+		inventory = GetNode<Control>("InventoryScreen");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//GD.Print("apple");
-		// if (Input.IsActionJustPressed("escape"))
-		// {
-		// 	pauseToggle();
-		// }
 	}
-
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("escape") && Visible == true)
+		if (@event.IsActionPressed("escape"))
 		{
-			GetViewport().SetInputAsHandled();
-			//GD.Print("apple");
-			OnCloseButtonPressed();
+			OnPauseButtonPressed();
+			pause.Show();
+		}
+		else if (@event.IsActionPressed("InventoryOpen"))
+		{
+			OnPauseButtonPressed();
+			inventory.Show();
 		}
 	}
-
-	private void _on_resume_pressed()
-	{
-		OnCloseButtonPressed();
-	}
-
 
 	private void pauseToggle()
 	{
@@ -59,5 +56,11 @@ public partial class PauseScreen : Control
 		Hide();
 		GetTree().Paused = false;
 	}
+
+
+
+
+
+
 
 }

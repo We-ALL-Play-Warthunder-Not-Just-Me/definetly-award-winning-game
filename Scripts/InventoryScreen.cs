@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class InventoryScreen : CanvasLayer
+public partial class InventoryScreen : Control
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -11,12 +11,26 @@ public partial class InventoryScreen : CanvasLayer
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("InventoryOpen") )
+		// if (Input.IsActionJustPressed("InventoryOpen") )
+		// {
+		// 	inventoryToggle();
+		// }
+
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("InventoryOpen"))
 		{
+			GetViewport().SetInputAsHandled();
 			inventoryToggle();
 		}
-
-		// inventoryClose();
+		else if (@event.IsActionPressed("escape"))
+		{
+			GetViewport().SetInputAsHandled();
+			//GD.Print("apple");
+			OnCloseButtonPressed();
+		}
 	}
 
 	private void inventoryToggle()
@@ -24,6 +38,11 @@ public partial class InventoryScreen : CanvasLayer
 		if (GetTree().Paused == false)
 		{
 			OnPauseButtonPressed();
+		}
+		else if (GetTree().Paused == true && Visible == false)
+		{
+			GetNode<Control>("../PauseScreen").Hide();
+			Show();
 		}
 		else
 		{
@@ -33,7 +52,7 @@ public partial class InventoryScreen : CanvasLayer
 
 	private void inventoryClose()
 	{
-		if (Input.IsActionJustPressed("ui_cancel"))
+		if (Input.IsActionJustPressed("escape"))
 		{
 			OnCloseButtonPressed();
 		}

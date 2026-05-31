@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://r427386qtinh" path="res://Prefabs/potionmaterials.tscn" id="3_47obr"]
 [ext_resource type="Texture2D" uid="uid://ceeo0v5pswqyj" path="res://Images/MVM Maw Idle.png" id="5_h7acc"]
 [ext_resource type="AudioStream" uid="uid://1x070y8sfxqv" path="res://MVM Song Idea.wav" id="6_47obr"]
-[ext_resource type="PackedScene" uid="uid://2fsdvfr1lhbl" path="res://Prefabs/InventoryScreen.tscn" id="7_0ld12"]
+[ext_resource type="PackedScene" uid="uid://bkxfy70udf36n" path="res://Prefabs/PauseStatus/PauseStatus.tscn" id="7_0ld12"]
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scenes/MvmSongIdea.cs" id="7_h5fhn"]
-[ext_resource type="PackedScene" uid="uid://gcbkh1y08iwi" path="res://Prefabs/PauseScreen.tscn" id="8_0ld12"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -527,12 +526,7 @@ volume_db = -4.0
 autoplay = true
 script = ExtResource("7_h5fhn")
 
-[node name="InventoryScreen" parent="." unique_id=1270476485 instance=ExtResource("7_0ld12")]
-visible = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1365776688]
-
-[node name="PauseScreen" parent="CanvasLayer" unique_id=431672971 instance=ExtResource("8_0ld12")]
+[node name="PauseStatus" parent="." unique_id=1296144696 instance=ExtResource("7_0ld12")]
 visible = false
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]

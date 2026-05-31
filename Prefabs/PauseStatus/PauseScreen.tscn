@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Scripts/PauseScreen.cs" id="1_hbagr"]
 
 [node name="PauseScreen" type="Control" unique_id=431672971]
-process_mode = 3
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,8 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hbagr")
 
-[node name="Node2D" type="Control" parent="." unique_id=445709077]
-process_mode = 2
+[node name="Panel" type="Panel" parent="." unique_id=2072410390]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,15 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Node2D" unique_id=2072410390]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/Panel" unique_id=1202538356]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1202538356]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,16 +34,16 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Resume" type="Button" parent="Node2D/Panel/VBoxContainer" unique_id=431469758]
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=431469758]
 layout_mode = 2
 text = "Resume"
 
-[node name="Settings" type="Button" parent="Node2D/Panel/VBoxContainer" unique_id=1911109532]
+[node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=1911109532]
 layout_mode = 2
 text = "Settings"
 
-[node name="Quit" type="Button" parent="Node2D/Panel/VBoxContainer" unique_id=2124335933]
+[node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=2124335933]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Node2D/Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
