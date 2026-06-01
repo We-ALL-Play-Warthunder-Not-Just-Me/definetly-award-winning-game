@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://dl0qjx7n7r4g8"]
 
 [ext_resource type="Script" uid="uid://cocko3ajeu6km" path="res://Scripts/TheCamera.cs" id="1_kmm2e"]
-[ext_resource type="PackedScene" uid="uid://wh7cc2hwouuu" path="res://Prefabs/HealthBar.tscn" id="1_xno3d"]
 
 [node name="TheCamera" type="Camera2D" unique_id=946100206]
 offset = Vector2(0, -6)
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 script = ExtResource("1_kmm2e")
-
-[node name="HealthBar" parent="." unique_id=286525542 instance=ExtResource("1_xno3d")]
-visible = false
-offset_left = -157.0
-offset_top = -93.0
-offset_right = 43.0
-offset_bottom = -78.0
+Map = "StartMap"

@@ -5,16 +5,19 @@ public partial class MapManager : Node2D
 {
 	public int TestSpawn;
 	Node2D Player;
+	CollisionShape2D PlayerCollision;
 	Node2D SpawnPoint;
+	Node2D SpawnOffset;
 	Node2D GameScene;
 	Camera2D Camera;
-	Node2D Background;
-	int Halt;
+	Node2D Restraints;
+	bool Halt;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Player = GetNode<Node2D>("/root/GameScene/Player");
+		PlayerCollision = Player.GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		GameScene = GetNode<Node2D>("/root/GameScene");
 		Camera = GetNode<Camera2D>("/root/GameScene/TheCamera");
 	}
@@ -22,6 +25,10 @@ public partial class MapManager : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (!Halt)
+		{
+			PlayerCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+		}
 	}
 	
 	public void ChangeMap(int S, string NM, string CM)
@@ -43,26 +50,18 @@ public partial class MapManager : Node2D
 		//Player to the correct spot based on if it's a Vertical
 		//Transition or not while maintaining the other position
 		SpawnPoint = GetNode<Node2D>("/root/GameScene/"+NM+"/SpawnPoints/Spawn"+S);
+		SpawnOffset = GetNode<Node2D>("/root/GameScene/"+NM+"/SpawnPoints");
+		var ActualSpawn = new Vector2(SpawnPoint.Position.X + SpawnOffset.Position.X, SpawnPoint.Position.Y + SpawnOffset.Position.Y);
 		
-		if (SpawnPoint is null)
+		if (VT == true)
 		{
-			GD.Print("Blergh! Don't got it...");
-			//Dangerous?
-			//MovePlayer(S, NM, VT, P);
+			P.Position = new Vector2(P.Position.X, ActualSpawn.Y);
 		}
-		else
+		else if (VT == false)
 		{
-			GD.Print("Got it!");
-			if (VT == true)
-			{
-				P.Position = new Vector2(P.Position.X, SpawnPoint.Position.Y);
-			}
-			else if (VT == false)
-			{
-				P.Position = new Vector2(SpawnPoint.Position.X, P.Position.Y);
-			}
-			MoveCamera(NM);
+			P.Position = new Vector2(ActualSpawn.X, P.Position.Y);
 		}
+		MoveCamera(NM);
 	}
 	
 	public void MoveCamera(string NM)
@@ -72,20 +71,21 @@ public partial class MapManager : Node2D
 		//else {Camera.Position = new Vector2(0, 0);}
 		
 		//Move the Camera to the correct spot
-		Background = GetNode<Node2D>("/root/GameScene/"+NM+"/TempBacking");
-		var TopLimit = -(Background.Scale.Y / 2);
-		var BottomLimit = (Background.Scale.Y / 2);
-		var LeftLimit = -(Background.Scale.X / 2);
-		var RightLimit = (Background.Scale.X / 2);
-		Camera.LimitTop = (int)TopLimit;
-		Camera.LimitBottom = (int)BottomLimit;
-		Camera.LimitLeft = (int)LeftLimit;
-		Camera.LimitRight = (int)RightLimit;
+		Restraints = GetNode<Node2D>("/root/GameScene/"+NM+"/CameraRestraints");
+		Marker2D TopLeft = Restraints.GetNode<Marker2D>("TopLeft");
+		Marker2D BottomRight = Restraints.GetNode<Marker2D>("BottomRight");
+		Camera.LimitTop = (int)(TopLeft.Position.Y + Restraints.Position.Y);
+		Camera.LimitBottom = (int)(BottomRight.Position.Y + Restraints.Position.Y);
+		Camera.LimitLeft = (int)(TopLeft.Position.X + Restraints.Position.X);
+		Camera.LimitRight = (int)(BottomRight.Position.X + Restraints.Position.X);
 	}
 	
 	public void ProcessInfo(int Spawn, string NextMap, string CurrentMap, bool VertTrans)
 	{
+		Halt = true;
+		PlayerCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 		ChangeMap(Spawn, NextMap, CurrentMap);
 		CallDeferred(MapManager.MethodName.MovePlayer, Spawn, NextMap, VertTrans, Player);
+		Halt = false;
 	}
 }

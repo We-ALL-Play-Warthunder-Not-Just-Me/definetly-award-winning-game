@@ -3,15 +3,21 @@ using System;
 
 public partial class TheCamera : Camera2D
 {
+	[Export]
+	public string Map;
+	Node2D Restraints;
 	Node2D Player;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Player = GetNode<Node2D>("/root/GameScene/Player");
-		this.LimitTop = -90;
-		this.LimitBottom = 90;
-		this.LimitLeft = -160;
-		this.LimitRight = 160;
+		Restraints = GetNode<Node2D>("/root/GameScene/"+Map+"/CameraRestraints");
+		Marker2D TopLeft = Restraints.GetNode<Marker2D>("TopLeft");
+		Marker2D BottomRight = Restraints.GetNode<Marker2D>("BottomRight");
+		this.LimitTop = (int)TopLeft.Position.Y;
+		this.LimitBottom = (int)BottomRight.Position.Y;
+		this.LimitLeft = (int)TopLeft.Position.X;
+		this.LimitRight = (int)BottomRight.Position.X;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
