@@ -24,7 +24,7 @@ public partial class Inventory : Control
 		{
 			// invi.GrabFocus();
 			GrabFocus();
-			GD.Print(HasFocus());
+			//GD.Print(HasFocus());
 		}
 	}
 }

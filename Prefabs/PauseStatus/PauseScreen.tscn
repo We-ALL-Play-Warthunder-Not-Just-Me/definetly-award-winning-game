@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gcbkh1y08iwi"]
 
 [ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Scripts/PauseScreen.cs" id="1_hbagr"]
+[ext_resource type="Script" uid="uid://csqqi24rpdd4h" path="res://Prefabs/PauseStatus/Resume.cs" id="2_iy0nc"]
 
 [node name="PauseScreen" type="Control" unique_id=431672971]
 process_mode = 2
@@ -37,6 +38,7 @@ grow_vertical = 2
 [node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=431469758]
 layout_mode = 2
 text = "Resume"
+script = ExtResource("2_iy0nc")
 
 [node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=1911109532]
 layout_mode = 2

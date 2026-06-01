@@ -24,8 +24,9 @@ public partial class PauseScreen : Control
 	{
 		if (@event.IsActionPressed("escape") && Visible == true)
 		{
-			GetViewport().SetInputAsHandled();
+			//GetViewport().SetInputAsHandled();
 			//GD.Print("apple");
+			AcceptEvent();
 			OnCloseButtonPressed();
 		}
 	}
