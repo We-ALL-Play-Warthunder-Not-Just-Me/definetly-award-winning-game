@@ -22,6 +22,6 @@ public partial class MapTransitioner : Area2D
 	{
 		//This will take the stored information and send it to
 		//the MapManager once it's ready
-		MapMan.CollectInfo(NewSpawn, NextMap, CurrentMap, VertTrans);
+		MapMan.ProcessInfo(NewSpawn, NextMap, CurrentMap, VertTrans);
 	}
 }

@@ -470,3 +470,6 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_0trb5")]
 position = Vector2(160, -6)
+NewSpawn = 1
+NextMap = "Map1"
+CurrentMap = "StartMap"
