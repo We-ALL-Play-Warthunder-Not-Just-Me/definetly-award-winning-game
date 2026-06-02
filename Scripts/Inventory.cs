@@ -3,14 +3,14 @@ using System;
 
 public partial class Inventory : Control
 {
-	private TabBar invi;
+	//private TabContainer invi;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// invi = GetNode<TabBar>("Inventory");
+		//invi = GetNode<TabContainer>("TabContainer");
 		// Callable.From(invi.GrabFocus).CallDeferred();
 
-		Callable.From(GrabFocus).CallDeferred();
+		//Callable.From(GrabFocus).CallDeferred();
 		//GetNode<TabBar>("Inventory");
 		//Callable.From(GetNode<TabBar>("Inventory").GrabFocus).CallDeferred();
 		//GrabFocus();
@@ -22,8 +22,8 @@ public partial class Inventory : Control
 	{
 		if (Input.IsActionJustPressed("InventoryOpen") )
 		{
-			// invi.GrabFocus();
-			GrabFocus();
+			//invi.GrabFocus();
+			//GrabFocus();
 			//GD.Print(HasFocus());
 		}
 	}
