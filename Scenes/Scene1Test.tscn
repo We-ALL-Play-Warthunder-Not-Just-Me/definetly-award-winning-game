@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://r427386qtinh" path="res://Prefabs/potionmaterials.tscn" id="3_47obr"]
 [ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="4_47obr"]
 [ext_resource type="AudioStream" uid="uid://cy8s4qhyq3y21" path="res://MVM Song Idea (Idea #70).wav" id="5_47obr"]
-[ext_resource type="AudioStream" uid="uid://1x070y8sfxqv" path="res://MVM Song Idea.wav" id="6_47obr"]
 [ext_resource type="PackedScene" uid="uid://bkxfy70udf36n" path="res://Prefabs/PauseStatus/PauseStatus.tscn" id="7_0ld12"]
-[ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scenes/MvmSongIdea.cs" id="7_h5fhn"]
+[ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scripts/MvmSongIdea.cs" id="7_h5fhn"]
+[ext_resource type="Script" uid="uid://dgfnejsbyaui1" path="res://Prefabs/PauseStatus/HealthContainer.cs" id="8_0ld12"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -457,4 +457,13 @@ script = ExtResource("7_h5fhn")
 [node name="PauseStatus" parent="." unique_id=1296144696 instance=ExtResource("7_0ld12")]
 visible = false
 
+[node name="HealthContainer" parent="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1296144696, 1270476485, 40196574) index="0" unique_id=787408528]
+script = ExtResource("8_0ld12")
+
+[connection signal="changed" from="Player/HealthBar" to="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" method="_on_health_bar_changed"]
+[connection signal="value_changed" from="Player/HealthBar" to="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" method="_on_health_bar_value_changed"]
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
+
+[editable path="Player"]
+[editable path="PauseStatus"]
+[editable path="PauseStatus/InventoryScreen"]

@@ -49,11 +49,10 @@ offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
+current_tab = 0
 script = ExtResource("2_x0qmb")
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -259,6 +258,7 @@ item_0/icon = ExtResource("3_48de8")
 item_1/text = "Crafting 2"
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
