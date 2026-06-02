@@ -1,10 +1,9 @@
-[gd_scene format=4 uid="uid://djtcug1akay2d"]
+[gd_scene format=4 uid="uid://bcrrgjgkndqqw"]
 
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="1_3pqft"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="2_5bunb"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="3_6s8b1"]
-[ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="4_iw0qa"]
-[ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_0trb5"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_tox86"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_pg6pn"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_jsua1"]
+[ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_m0dnb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -13,7 +12,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aw55h"]
-texture = ExtResource("1_3pqft")
+texture = ExtResource("2_pg6pn")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -392,7 +391,7 @@ texture = ExtResource("1_3pqft")
 6:5/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tc4t5"]
-texture = ExtResource("2_5bunb")
+texture = ExtResource("3_jsua1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -409,83 +408,87 @@ terrain_set_0/terrain_0/color = Color(0.98039216, 0.16078432, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
-[node name="StartMap" type="Node2D" unique_id=685611168]
+[node name="Forest9" type="Node2D" unique_id=685611168]
 
 [node name="TempBacking" type="Sprite2D" parent="." unique_id=985320539]
-modulate = Color(0.654902, 0.8745098, 0.84705883, 1)
+modulate = Color(0.4509804, 0.7529412, 0.7882353, 1)
 z_index = -4
 material = SubResource("CanvasItemMaterial_h7acc")
-position = Vector2(0, -6)
-scale = Vector2(320, 180)
+position = Vector2(-6240, 354)
+scale = Vector2(640, 180)
 texture = SubResource("CanvasTexture_47obr")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1182682481]
+position = Vector2(-6240, 354)
 
 [node name="Spawn0" type="Node2D" parent="SpawnPoints" unique_id=369802554]
-position = Vector2(0, 54)
+position = Vector2(0, 16)
 
 [node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=802397266]
-position = Vector2(150, 0)
+position = Vector2(310, 0)
 
-[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=883001839]
-position = Vector2(-150, 0)
+[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=1623526722]
+position = Vector2(-310, 0)
+
+[node name="Spawn3" type="Node2D" parent="SpawnPoints" unique_id=1249100259]
+position = Vector2(0, -70)
 
 [node name="CameraRestraints" type="Node2D" parent="." unique_id=446028177]
+position = Vector2(-6240, 354)
 
 [node name="TopLeft" type="Marker2D" parent="CameraRestraints" unique_id=1273075595]
-position = Vector2(-160, -96)
+position = Vector2(-320, -90)
 
 [node name="BottomRight" type="Marker2D" parent="CameraRestraints" unique_id=1840288519]
-position = Vector2(160, 84)
+position = Vector2(320.00024, 90)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
+position = Vector2(-6240, 354)
 
 [node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
 position = Vector2(105, 10.5)
-texture = ExtResource("3_6s8b1")
+texture = ExtResource("1_tox86")
 region_enabled = true
 region_rect = Rect2(7, 308, 88, 75)
 
 [node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
 position = Vector2(25, 28)
-texture = ExtResource("3_6s8b1")
+texture = ExtResource("1_tox86")
 region_enabled = true
 region_rect = Rect2(172, 4, 42, 72)
 
 [node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
 position = Vector2(-20, 29)
-texture = ExtResource("3_6s8b1")
+texture = ExtResource("1_tox86")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(253, 82, 42, 70)
 
 [node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
 position = Vector2(-126, 26.5)
-texture = ExtResource("3_6s8b1")
+texture = ExtResource("1_tox86")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(339, 77, 44, 75)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
-tile_map_data = PackedByteArray("AAAJAAUAAAACAAMAAAAJAAQAAAACAAIAAAAIAAUAAAACAAMAAAAIAAQAAAACAAIAAAAHAAUAAAACAAMAAAAHAAQAAAACAAIAAAAGAAUAAAACAAMAAAAGAAQAAAACAAIAAAAFAAUAAAACAAMAAAAFAAQAAAACAAIAAAAEAAUAAAACAAMAAAAEAAQAAAACAAIAAAADAAUAAAACAAMAAAADAAQAAAACAAIAAAACAAUAAAACAAMAAAACAAQAAAAFAAUAAAABAAUAAAACAAMAAAABAAQAAAACAAEAAAAAAAUAAAACAAMAAAAAAAQAAAACAAEAAAD//wUAAAACAAMAAAD+/wUAAAACAAMAAAD+/wQAAAACAAEAAAD9/wUAAAACAAMAAAD9/wQAAAACAAEAAAD8/wUAAAACAAMAAAD8/wQAAAACAAEAAAD7/wUAAAACAAMAAAD7/wQAAAACAAEAAAD6/wUAAAACAAMAAAD6/wQAAAACAAEAAAD5/wUAAAACAAMAAAD5/wQAAAACAAEAAAD4/wUAAAACAAMAAAD4/wQAAAACAAEAAAD3/wUAAAACAAMAAAD3/wQAAAACAAEAAAD2/wUAAAACAAMAAAD2/wQAAAAEAAUAAAD1/wUAAAABAAMAAAD1/wQAAAABAAIAAAD1/wMAAAABAAEAAAAJAAMAAAACAAEAAAAIAAMAAAACAAEAAAAHAAMAAAACAAEAAAAGAAMAAAACAAEAAAAFAAMAAAACAAEAAAAEAAMAAAACAAEAAAADAAMAAAACAAEAAAD2/wMAAAADAAEAAAAKAAUAAAADAAMAAAAKAAQAAAADAAIAAAAKAAMAAAADAAEAAAACAAMAAAABAAEAAAD1//r/AAAAAAEAAAAKAAEAAAAAAAMAAAAKAAAAAAAAAAIAAAAKAP//AAAAAAIAAAAKAP7/AAAAAAIAAAAKAP3/AAAAAAIAAAAKAPz/AAAAAAIAAAAKAPv/AAAAAAIAAAAKAPr/AAAAAAEAAAD//wQAAAACAAEAAAD1//z/AAAAAAIAAAD1//7/AAAAAAIAAAD1/wAAAAAAAAIAAAD1/wEAAAAAAAMAAAD1////AAAAAAIAAAD1//3/AAAAAAIAAAD1//v/AAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AACO/hsAAAADAAAAAACN/hsAAAACAAAAAACO/hkAAAAAAAMAAACO/hgAAAAAAAIAAACO/hcAAAAAAAIAAACO/hYAAAAAAAIAAACO/hUAAAAAAAIAAACO/hQAAAAAAAIAAACO/hMAAAAAAAIAAACO/hIAAAAAAAIAAACO/hEAAAAAAAIAAACO/hAAAAAAAAEAAACM/hsAAAACAAAAAACL/hsAAAACAAAAAACK/hsAAAACAAAAAACJ/hsAAAACAAAAAACI/hsAAAACAAAAAACH/hsAAAACAAAAAACG/hsAAAACAAAAAACF/hsAAAAGAAEAAACE/hsAAAACAAMAAACD/hsAAAACAAMAAACC/hsAAAACAAMAAACB/hsAAAACAAMAAACA/hsAAAACAAMAAAB//hsAAAACAAMAAAB+/hsAAAACAAMAAAB9/hsAAAACAAMAAAB8/hsAAAACAAMAAAB7/hsAAAACAAMAAAB6/hsAAAACAAMAAAB5/hsAAAACAAMAAAB4/hsAAAACAAMAAAB3/hsAAAACAAMAAAB2/hsAAAACAAMAAAB1/hsAAAACAAMAAAB0/hsAAAACAAMAAABz/hsAAAACAAMAAABy/hsAAAACAAMAAABx/hsAAAACAAMAAABw/hsAAAACAAMAAABv/hsAAAACAAMAAABu/hsAAAACAAMAAABt/hsAAAACAAMAAABs/hsAAAACAAMAAABr/hsAAAACAAMAAABq/hsAAAACAAMAAABp/hsAAAACAAMAAABo/hsAAAACAAMAAABn/hsAAAACAAMAAABm/hsAAAACAAMAAABl/hsAAAABAAMAAABl/hkAAAABAAIAAABl/hgAAAABAAIAAABl/hcAAAABAAIAAABl/hYAAAABAAIAAABl/hUAAAABAAIAAABl/hQAAAABAAIAAABl/hMAAAABAAIAAABl/hIAAAABAAIAAABl/hEAAAABAAIAAABl/hAAAAABAAEAAABn/hQAAAACAAIAAABn/hMAAAACAAIAAABn/hIAAAACAAIAAABn/hEAAAACAAIAAABn/hAAAAACAAEAAABm/hQAAAACAAIAAABm/hMAAAACAAIAAABm/hIAAAACAAIAAABm/hEAAAACAAIAAABm/hAAAAACAAEAAABr/hEAAAADAAMAAABq/hIAAAADAAMAAABq/hEAAAAEAAQAAABp/hQAAAADAAIAAABp/hMAAAADAAIAAABp/hIAAAAEAAQAAABp/hEAAAACAAIAAABo/hQAAAACAAIAAABo/hMAAAACAAIAAABo/hIAAAACAAIAAABo/hEAAAACAAIAAABv/hoAAAAEAAUAAABv/hkAAAADAAIAAABv/hgAAAADAAEAAABu/hoAAAACAAIAAABu/hkAAAACAAIAAABu/hgAAAACAAEAAABt/hoAAAACAAIAAABt/hkAAAACAAIAAABt/hgAAAACAAEAAABs/hoAAAACAAIAAABs/hkAAAACAAIAAABs/hgAAAAEAAUAAABr/hoAAAACAAIAAABr/hkAAAACAAIAAABr/hgAAAACAAIAAABr/hcAAAACAAIAAABr/hYAAAACAAIAAABr/hUAAAACAAEAAABq/hoAAAACAAIAAABq/hkAAAACAAIAAABq/hgAAAACAAIAAABq/hcAAAACAAIAAABq/hYAAAACAAIAAABq/hUAAAACAAEAAABp/hoAAAACAAIAAABp/hkAAAACAAIAAABp/hgAAAACAAIAAABp/hcAAAACAAIAAABp/hYAAAACAAIAAABp/hUAAAAEAAUAAABo/hoAAAACAAIAAABo/hkAAAACAAIAAABo/hgAAAACAAIAAABo/hcAAAACAAIAAABo/hYAAAACAAIAAABo/hUAAAACAAIAAABn/hoAAAACAAIAAABn/hkAAAACAAIAAABn/hgAAAACAAIAAABn/hcAAAACAAIAAABn/hYAAAACAAIAAABn/hUAAAACAAIAAABm/hoAAAACAAIAAABm/hkAAAACAAIAAABm/hgAAAACAAIAAABm/hcAAAACAAIAAABm/hYAAAACAAIAAABm/hUAAAACAAIAAABl/hoAAAABAAIAAAB1/hoAAAACAAIAAAB1/hkAAAACAAIAAAB1/hgAAAACAAEAAAB0/hoAAAAFAAUAAAB0/hkAAAABAAIAAAB0/hgAAAABAAEAAABr/hAAAAAGAAAAAABq/hAAAAACAAEAAABp/hAAAAACAAEAAABo/hAAAAACAAEAAABs/hcAAAADAAIAAABs/hYAAAADAAIAAABs/hUAAAADAAEAAABz/hQAAAACAAMAAABy/hQAAAACAAMAAABx/hQAAAABAAMAAAB0/hQAAAACAAMAAAB1/hQAAAACAAMAAAB5/hQAAAADAAMAAAB5/hMAAAAEAAQAAAB5/hIAAAACAAIAAAB5/hEAAAACAAIAAAB5/hAAAAACAAEAAAB4/hQAAAACAAMAAAB4/hMAAAACAAIAAAB4/hIAAAACAAIAAAB4/hEAAAACAAIAAAB4/hAAAAACAAEAAAB3/hQAAAACAAMAAAB3/hMAAAACAAIAAAB3/hIAAAACAAIAAAB3/hEAAAACAAIAAAB3/hAAAAACAAEAAAB2/hQAAAACAAMAAAB2/hMAAAAFAAUAAAB2/hIAAAABAAIAAAB2/hEAAAABAAIAAAB2/hAAAAABAAEAAAB1/hMAAAACAAEAAAB0/hMAAAACAAEAAABz/hMAAAACAAEAAABy/hMAAAACAAEAAABx/hMAAAAHAAAAAABw/hMAAAACAAAAAABv/hMAAAABAAAAAABs/hAAAAACAAAAAABx/hAAAAACAAAAAABw/hAAAAACAAAAAABv/hAAAAACAAAAAABu/hAAAAACAAAAAABt/hAAAAACAAAAAABy/hAAAAADAAAAAAB9/hIAAAADAAMAAAB9/hEAAAAEAAQAAAB9/hAAAAACAAEAAAB8/hIAAAACAAMAAAB8/hEAAAACAAIAAAB8/hAAAAACAAEAAAB7/hIAAAAEAAQAAAB7/hEAAAACAAIAAAB7/hAAAAACAAEAAAB6/hIAAAACAAIAAAB6/hEAAAACAAIAAAB6/hAAAAACAAEAAAB7/hMAAAADAAMAAAB6/hMAAAACAAMAAAB+/hEAAAADAAMAAAB+/hAAAAADAAEAAACF/hoAAAADAAEAAACE/hoAAAACAAEAAACD/hoAAAAEAAUAAACC/hoAAAACAAIAAACB/hoAAAACAAIAAACA/hoAAAAFAAUAAAB//hoAAAACAAEAAAB+/hoAAAACAAEAAAB9/hoAAAACAAEAAAB8/hoAAAACAAEAAAB7/hoAAAACAAEAAAB6/hoAAAACAAEAAAB5/hoAAAACAAEAAAB4/hoAAAACAAEAAAB3/hoAAAAEAAUAAAB2/hoAAAACAAIAAABz/hoAAAACAAEAAABy/hoAAAACAAEAAABx/hoAAAACAAEAAABw/hoAAAACAAEAAAB3/hkAAAADAAEAAAB2/hkAAAAEAAUAAAB2/hgAAAADAAEAAACD/hkAAAADAAEAAACC/hkAAAACAAEAAACB/hkAAAACAAEAAACA/hkAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
-
-[node name="TempWitchHouse" type="Sprite2D" parent="." unique_id=1952648152]
-position = Vector2(-80, 8)
-texture = ExtResource("4_iw0qa")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAEAAAD4/wMAAQAAAAEAAAD7/wMAAQAAAAEAAAABAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAACAAIAAQACAAEAAAAGAAIAAQACAAEAAAD+/wMAAQACAAEAAAD5/wMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
-[node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_0trb5")]
-position = Vector2(160, -6)
-NewSpawn = 1
-NextMap = "Map1"
-CurrentMap = "StartMap"
+[node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_m0dnb")]
+position = Vector2(-5920, 354)
+NewSpawn = 2
+NextMap = "Forest8"
+CurrentMap = "Forest9"
 
-[node name="MapTransitioner2" parent="." unique_id=391673480 instance=ExtResource("5_0trb5")]
-position = Vector2(-160, -6)
-NewSpawn = 1
-NextMap = "Forest1"
-CurrentMap = "StartMap"
+[node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_m0dnb")]
+position = Vector2(-6380, 264)
+rotation = 1.5707964
+scale = Vector2(1, 2)
+NewSpawn = 4
+NextMap = "Forest10"
+CurrentMap = "Forest9"
+VertTrans = true

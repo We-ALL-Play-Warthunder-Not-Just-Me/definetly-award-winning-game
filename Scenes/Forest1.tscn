@@ -1,10 +1,9 @@
-[gd_scene format=4 uid="uid://djtcug1akay2d"]
+[gd_scene format=4 uid="uid://cpqomweudbca7"]
 
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="1_3pqft"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="2_5bunb"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="3_6s8b1"]
-[ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="4_iw0qa"]
-[ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_0trb5"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_40ngu"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_aoeht"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_hik1n"]
+[ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_ybs72"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -13,7 +12,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aw55h"]
-texture = ExtResource("1_3pqft")
+texture = ExtResource("2_aoeht")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -392,7 +391,7 @@ texture = ExtResource("1_3pqft")
 6:5/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tc4t5"]
-texture = ExtResource("2_5bunb")
+texture = ExtResource("3_hik1n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -409,83 +408,107 @@ terrain_set_0/terrain_0/color = Color(0.98039216, 0.16078432, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
-[node name="StartMap" type="Node2D" unique_id=685611168]
+[node name="Forest1" type="Node2D" unique_id=685611168]
 
 [node name="TempBacking" type="Sprite2D" parent="." unique_id=985320539]
-modulate = Color(0.654902, 0.8745098, 0.84705883, 1)
+modulate = Color(0.4509804, 0.7529412, 0.7882353, 1)
 z_index = -4
 material = SubResource("CanvasItemMaterial_h7acc")
-position = Vector2(0, -6)
-scale = Vector2(320, 180)
+position = Vector2(-480.00003, -6.0000005)
+scale = Vector2(640, 180)
 texture = SubResource("CanvasTexture_47obr")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1182682481]
+position = Vector2(-480, 0)
 
 [node name="Spawn0" type="Node2D" parent="SpawnPoints" unique_id=369802554]
-position = Vector2(0, 54)
+position = Vector2(0, 38)
 
 [node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=802397266]
-position = Vector2(150, 0)
+position = Vector2(310, 0)
 
-[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=883001839]
-position = Vector2(-150, 0)
+[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=896199662]
+position = Vector2(-310, 0)
 
 [node name="CameraRestraints" type="Node2D" parent="." unique_id=446028177]
+position = Vector2(-480, 0)
 
 [node name="TopLeft" type="Marker2D" parent="CameraRestraints" unique_id=1273075595]
-position = Vector2(-160, -96)
+position = Vector2(-320, -96)
 
 [node name="BottomRight" type="Marker2D" parent="CameraRestraints" unique_id=1840288519]
-position = Vector2(160, 84)
+position = Vector2(320, 84)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
+position = Vector2(-480, 0)
 
 [node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(105, 10.5)
-texture = ExtResource("3_6s8b1")
+position = Vector2(15, -37.5)
+texture = ExtResource("1_40ngu")
+region_enabled = true
+region_rect = Rect2(98, 231, 186, 75)
+
+[node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=1355594740]
+position = Vector2(171, -21.5)
+texture = ExtResource("1_40ngu")
+region_enabled = true
+region_rect = Rect2(287, 154, 90, 75)
+
+[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
+position = Vector2(114, -37.5)
+texture = ExtResource("1_40ngu")
+region_enabled = true
+region_rect = Rect2(290, 308, 87, 75)
+
+[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
+position = Vector2(-78, -37.5)
+texture = ExtResource("1_40ngu")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(8, 154, 86, 75)
+
+[node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
+position = Vector2(-190, -5.5)
+texture = ExtResource("1_40ngu")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(5, 231, 88, 75)
+
+[node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=2072398909]
+position = Vector2(270, 10.5)
+texture = ExtResource("1_40ngu")
+flip_h = true
 region_enabled = true
 region_rect = Rect2(7, 308, 88, 75)
 
-[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
-position = Vector2(25, 28)
-texture = ExtResource("3_6s8b1")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
-[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
-position = Vector2(-20, 29)
-texture = ExtResource("3_6s8b1")
+[node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1833273155]
+position = Vector2(-268, 10.5)
+texture = ExtResource("1_40ngu")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(253, 82, 42, 70)
+region_rect = Rect2(290, 308, 87, 75)
 
-[node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
-position = Vector2(-126, 26.5)
-texture = ExtResource("3_6s8b1")
-flip_h = true
+[node name="Trees8" type="Sprite2D" parent="All Trees" unique_id=1126892921]
+position = Vector2(-130, -37.5)
+texture = ExtResource("1_40ngu")
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(87, 77, 44, 75)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
-tile_map_data = PackedByteArray("AAAJAAUAAAACAAMAAAAJAAQAAAACAAIAAAAIAAUAAAACAAMAAAAIAAQAAAACAAIAAAAHAAUAAAACAAMAAAAHAAQAAAACAAIAAAAGAAUAAAACAAMAAAAGAAQAAAACAAIAAAAFAAUAAAACAAMAAAAFAAQAAAACAAIAAAAEAAUAAAACAAMAAAAEAAQAAAACAAIAAAADAAUAAAACAAMAAAADAAQAAAACAAIAAAACAAUAAAACAAMAAAACAAQAAAAFAAUAAAABAAUAAAACAAMAAAABAAQAAAACAAEAAAAAAAUAAAACAAMAAAAAAAQAAAACAAEAAAD//wUAAAACAAMAAAD+/wUAAAACAAMAAAD+/wQAAAACAAEAAAD9/wUAAAACAAMAAAD9/wQAAAACAAEAAAD8/wUAAAACAAMAAAD8/wQAAAACAAEAAAD7/wUAAAACAAMAAAD7/wQAAAACAAEAAAD6/wUAAAACAAMAAAD6/wQAAAACAAEAAAD5/wUAAAACAAMAAAD5/wQAAAACAAEAAAD4/wUAAAACAAMAAAD4/wQAAAACAAEAAAD3/wUAAAACAAMAAAD3/wQAAAACAAEAAAD2/wUAAAACAAMAAAD2/wQAAAAEAAUAAAD1/wUAAAABAAMAAAD1/wQAAAABAAIAAAD1/wMAAAABAAEAAAAJAAMAAAACAAEAAAAIAAMAAAACAAEAAAAHAAMAAAACAAEAAAAGAAMAAAACAAEAAAAFAAMAAAACAAEAAAAEAAMAAAACAAEAAAADAAMAAAACAAEAAAD2/wMAAAADAAEAAAAKAAUAAAADAAMAAAAKAAQAAAADAAIAAAAKAAMAAAADAAEAAAACAAMAAAABAAEAAAD1//r/AAAAAAEAAAAKAAEAAAAAAAMAAAAKAAAAAAAAAAIAAAAKAP//AAAAAAIAAAAKAP7/AAAAAAIAAAAKAP3/AAAAAAIAAAAKAPz/AAAAAAIAAAAKAPv/AAAAAAIAAAAKAPr/AAAAAAEAAAD//wQAAAACAAEAAAD1//z/AAAAAAIAAAD1//7/AAAAAAIAAAD1/wAAAAAAAAIAAAD1/wEAAAAAAAMAAAD1////AAAAAAIAAAD1//3/AAAAAAIAAAD1//v/AAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAD2/wUAAAADAAMAAAD2/wQAAAADAAIAAAD1/wUAAAACAAMAAAD1/wQAAAACAAIAAAD1/wMAAAACAAEAAAD2/wMAAAADAAEAAAD2/wEAAAAAAAMAAAD2/wAAAAAAAAIAAAD2////AAAAAAIAAAD2//7/AAAAAAIAAAD2//3/AAAAAAIAAAD2//z/AAAAAAIAAAD2//v/AAAAAAIAAAD2//r/AAAAAAEAAAD0/wUAAAACAAMAAAD0/wQAAAACAAIAAAD0/wMAAAACAAEAAADz/wUAAAACAAMAAADz/wQAAAACAAIAAADz/wMAAAACAAEAAADy/wUAAAACAAMAAADy/wQAAAACAAIAAADy/wMAAAACAAEAAADx/wUAAAACAAMAAADx/wQAAAACAAIAAADx/wMAAAACAAEAAADw/wUAAAACAAMAAADw/wQAAAACAAIAAADw/wMAAAACAAEAAADv/wUAAAACAAMAAADv/wQAAAACAAIAAADv/wMAAAAEAAUAAADu/wUAAAACAAMAAADu/wQAAAACAAIAAADu/wMAAAACAAIAAADt/wUAAAACAAMAAADt/wQAAAACAAIAAADt/wMAAAACAAIAAADs/wUAAAACAAMAAADs/wQAAAACAAIAAADs/wMAAAACAAIAAADr/wUAAAACAAMAAADr/wQAAAACAAIAAADr/wMAAAACAAIAAADq/wUAAAACAAMAAADq/wQAAAACAAIAAADq/wMAAAACAAIAAADp/wUAAAACAAMAAADp/wQAAAACAAIAAADp/wMAAAACAAIAAADo/wUAAAACAAMAAADo/wQAAAACAAIAAADo/wMAAAACAAIAAADn/wUAAAACAAMAAADn/wQAAAACAAIAAADn/wMAAAACAAIAAADm/wUAAAACAAMAAADm/wQAAAACAAIAAADm/wMAAAACAAIAAADl/wUAAAACAAMAAADl/wQAAAACAAIAAADl/wMAAAACAAIAAADk/wUAAAACAAMAAADk/wQAAAACAAIAAADk/wMAAAACAAIAAADj/wUAAAACAAMAAADj/wQAAAACAAIAAADj/wMAAAACAAIAAADi/wUAAAACAAMAAADi/wQAAAACAAIAAADi/wMAAAACAAIAAADh/wUAAAACAAMAAADh/wQAAAACAAIAAADh/wMAAAACAAIAAADg/wUAAAACAAMAAADg/wQAAAACAAIAAADg/wMAAAACAAIAAADf/wUAAAACAAMAAADf/wQAAAACAAIAAADf/wMAAAACAAIAAADe/wUAAAACAAMAAADe/wQAAAACAAIAAADe/wMAAAACAAIAAADd/wUAAAACAAMAAADd/wQAAAACAAIAAADd/wMAAAACAAIAAADc/wUAAAACAAMAAADc/wQAAAACAAIAAADc/wMAAAACAAIAAADb/wUAAAACAAMAAADb/wQAAAACAAIAAADb/wMAAAACAAIAAADa/wUAAAACAAMAAADa/wQAAAACAAIAAADa/wMAAAACAAIAAADZ/wUAAAACAAMAAADZ/wQAAAACAAIAAADZ/wMAAAACAAIAAADY/wUAAAACAAMAAADY/wQAAAACAAIAAADY/wMAAAACAAIAAADX/wUAAAACAAMAAADX/wQAAAACAAIAAADX/wMAAAACAAIAAADW/wUAAAACAAMAAADW/wQAAAACAAIAAADW/wMAAAACAAIAAADV/wUAAAACAAMAAADV/wQAAAACAAIAAADV/wMAAAACAAIAAADU/wUAAAACAAMAAADU/wQAAAACAAIAAADU/wMAAAACAAIAAADT/wUAAAACAAMAAADT/wQAAAACAAIAAADT/wMAAAAFAAUAAADS/wUAAAACAAMAAADS/wQAAAACAAIAAADS/wMAAAACAAEAAADR/wUAAAACAAMAAADR/wQAAAACAAIAAADR/wMAAAACAAEAAADQ/wUAAAACAAMAAADQ/wQAAAACAAIAAADQ/wMAAAACAAEAAADP/wUAAAACAAMAAADP/wQAAAACAAIAAADP/wMAAAACAAEAAADO/wUAAAACAAMAAADO/wQAAAACAAIAAADO/wMAAAACAAEAAADN/wUAAAABAAMAAADN/wQAAAABAAIAAADN/wMAAAABAAEAAADN/wEAAAAAAAMAAADN/wAAAAAAAAIAAADN////AAAAAAIAAADN//7/AAAAAAIAAADN//3/AAAAAAIAAADN//z/AAAAAAIAAADN//v/AAAAAAIAAADN//r/AAAAAAEAAADr/wIAAAACAAIAAADr/wEAAAAEAAUAAADq/wEAAAACAAIAAADq/wAAAAACAAEAAADp/wAAAAACAAEAAADo/wAAAAACAAEAAADn/wAAAAACAAEAAADm/wAAAAACAAEAAADm/wEAAAACAAIAAADm/wIAAAACAAIAAADn/wIAAAACAAIAAADo/wIAAAACAAIAAADp/wIAAAACAAIAAADp/wEAAAACAAIAAADq/wIAAAACAAIAAADo/wEAAAACAAIAAADn/wEAAAACAAIAAADr/wAAAAADAAEAAADl/wAAAAACAAEAAADk/wAAAAACAAEAAADj/wAAAAACAAEAAADi/wAAAAACAAEAAADh/wAAAAACAAEAAADg/wAAAAACAAEAAADf/wAAAAACAAEAAADe/wAAAAACAAEAAADd/wAAAAACAAEAAADc/wAAAAACAAEAAADb/wAAAAACAAEAAADa/wAAAAACAAEAAADZ/wAAAAABAAEAAADY/wEAAAABAAEAAADZ/wIAAAACAAIAAADa/wIAAAACAAIAAADb/wEAAAACAAIAAADc/wEAAAACAAIAAADd/wEAAAACAAIAAADe/wEAAAACAAIAAADf/wEAAAACAAIAAADf/wIAAAACAAIAAADg/wIAAAACAAIAAADh/wIAAAACAAIAAADi/wIAAAACAAIAAADj/wIAAAACAAIAAADk/wIAAAACAAIAAADl/wIAAAACAAIAAADl/wEAAAACAAIAAADk/wEAAAACAAIAAADj/wEAAAACAAIAAADi/wEAAAACAAIAAADh/wEAAAACAAIAAADg/wEAAAACAAIAAADe/wIAAAACAAIAAADd/wIAAAACAAIAAADc/wIAAAACAAIAAADb/wIAAAACAAIAAADa/wEAAAACAAIAAADZ/wEAAAAFAAUAAADY/wIAAAAFAAUAAADX/wIAAAACAAEAAADW/wIAAAACAAEAAADV/wIAAAACAAEAAADs/wEAAAACAAEAAADt/wEAAAACAAEAAADu/wEAAAADAAEAAADv/wIAAAADAAEAAADu/wIAAAAEAAUAAADt/wIAAAACAAIAAADs/wIAAAACAAIAAADU/wIAAAACAAEAAADT/wIAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
-
-[node name="TempWitchHouse" type="Sprite2D" parent="." unique_id=1952648152]
-position = Vector2(-80, 8)
-texture = ExtResource("4_iw0qa")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAEAAAD4/wMAAQAAAAEAAAD7/wMAAQAAAAEAAAABAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAACAAIAAQACAAEAAAAGAAIAAQACAAEAAAD+/wMAAQACAAEAAAD5/wMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
-[node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_0trb5")]
-position = Vector2(160, -6)
-NewSpawn = 1
-NextMap = "Map1"
-CurrentMap = "StartMap"
-
-[node name="MapTransitioner2" parent="." unique_id=391673480 instance=ExtResource("5_0trb5")]
+[node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_ybs72")]
 position = Vector2(-160, -6)
 NewSpawn = 1
-NextMap = "Forest1"
-CurrentMap = "StartMap"
+NextMap = "StartMap"
+CurrentMap = "Forest1"
+
+[node name="MapTransitioner2" parent="." unique_id=1349367978 instance=ExtResource("5_ybs72")]
+position = Vector2(-800, -6)
+NewSpawn = 1
+NextMap = "Forest2"
+CurrentMap = "Forest1"

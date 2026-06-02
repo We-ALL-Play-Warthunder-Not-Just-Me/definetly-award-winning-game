@@ -44,7 +44,7 @@ public partial class Player : CharacterBody2D
 
 
 	//Constants
-	public const float SPEED = 100.0f;
+	public const float SPEED = 120.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
@@ -280,7 +280,7 @@ public partial class Player : CharacterBody2D
 		}
 		
 		//This is handling switching between movement animations.
-		//This is ALSO not ideal. Might need tweeking.
+		//(This is ALSO not ideal. Might need tweeking.)
 		if (velocity.X == 0 && PlayerObject.IsOnFloor())
 		{
 			PlayerAnimations.Play("PlayerIdle");

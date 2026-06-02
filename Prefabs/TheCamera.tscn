@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cocko3ajeu6km" path="res://Scripts/TheCamera.cs" id="1_kmm2e"]
 
 [node name="TheCamera" type="Camera2D" unique_id=946100206]
-offset = Vector2(0, -6)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 script = ExtResource("1_kmm2e")
