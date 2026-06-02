@@ -463,4 +463,3 @@ position = Vector2(-7200, 354)
 NewSpawn = 2
 NextMap = "Forest11"
 CurrentMap = "ForestToTown"
-VertTrans = true
