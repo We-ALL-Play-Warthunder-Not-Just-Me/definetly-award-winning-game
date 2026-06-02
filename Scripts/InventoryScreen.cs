@@ -22,12 +22,12 @@ public partial class InventoryScreen : Control
 	{
 		if (@event.IsActionPressed("InventoryOpen"))
 		{
-			GetViewport().SetInputAsHandled();
+			AcceptEvent();
 			inventoryToggle();
 		}
 		else if (@event.IsActionPressed("escape"))
 		{
-			GetViewport().SetInputAsHandled();
+			AcceptEvent();
 			//GD.Print("apple");
 			OnCloseButtonPressed();
 		}
