@@ -39,7 +39,8 @@ public partial class HealthBar : ProgressBar
 		if (curr_hp <= 0)
 		{
 			//I dunno health bar gone
-			QueueFree();
+			//QueueFree();
+			//maybe we handle this particular part in the player script.
 		}
 		if (curr_hp < prev_hp)
 		{
@@ -79,10 +80,6 @@ public partial class HealthBar : ProgressBar
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("Jump"))
-		{
-			//Healthbar pain testing
-			hurt(10);
-		}
+		
 	}
 }

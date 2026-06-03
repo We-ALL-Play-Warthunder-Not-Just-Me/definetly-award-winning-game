@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class Player : CharacterBody2D
+public partial class Player : CharacterBody2D, DamagableEntity
 {
 
 	public enum PlayerMoveState
@@ -42,15 +42,20 @@ public partial class Player : CharacterBody2D
 		WALL//Uncertain if this should be here
 	}
 
-
-	//Constants
-	public const float SPEED = 160.0f;
+	public void dealDamage(float damage)
+    {
+		//change the player state here
+        Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
+    }
+    //Constants
+    public const float SPEED = 160.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -240.0f;
 	public const float GRAVITY = 500.0f;
+	public const double FALLGRACEPERIOD = 0.5;
 
-	//player parts
-	public CharacterBody2D PlayerObject;
+    //player parts
+    public CharacterBody2D PlayerObject;
 	public Sprite2D PlayerSprite;
 	public CollisionShape2D PlayerCollisionShape;
 	public RichTextLabel PlayerStateLabel;
@@ -79,7 +84,8 @@ public partial class Player : CharacterBody2D
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
 		PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
-		_player_text_helper();
+		Health_Bar = GetNode<HealthBar>("HealthBar");
+        _player_text_helper();
 		PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
 		_move_text_helper();
 		PlayerJumpStateLabel = GetNode<RichTextLabel>("PlayerJumpStateLabel");
@@ -101,6 +107,26 @@ public partial class Player : CharacterBody2D
 			velocity.Y += GRAVITY * (float)delta;
 		}
 	}
+
+
+	//check if there are events that might change your environmental state
+	private void _pes(ref Vector2 v)
+	{
+
+	}
+
+	//change your environmental state, 
+	private void _ces(EnvironmentalState s)
+	{
+
+	}
+
+	private void _ees(double delta)
+	{
+
+	}
+
+
 
 	//returns true if state changes and false if state is the same as before.
 	private bool _change_Environmental_State(EnvironmentalState s)
