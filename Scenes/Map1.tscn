@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dddnv2y8gls5u"]
 
+[ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_es4yc"]
 [ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_uifhc"]
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_j2fs2"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_kpjo8"]
@@ -411,6 +412,10 @@ sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="Map1" type="Node2D" unique_id=685611168]
 
+[node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_es4yc")]
+position = Vector2(480, -6)
+scale = Vector2(640, 180)
+
 [node name="TempBacking" type="Sprite2D" parent="." unique_id=985320539]
 modulate = Color(0.654902, 0.8745098, 0.84705883, 1)
 z_index = -4
@@ -418,18 +423,6 @@ material = SubResource("CanvasItemMaterial_h7acc")
 position = Vector2(480, -6)
 scale = Vector2(640, 180)
 texture = SubResource("CanvasTexture_47obr")
-
-[node name="SpawnPoints" type="Node2D" parent="." unique_id=1470575852]
-position = Vector2(480, 0)
-
-[node name="Spawn0" type="Node2D" parent="SpawnPoints" unique_id=145992364]
-position = Vector2(0, -12)
-
-[node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=1999859720]
-position = Vector2(-310, 0)
-
-[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=232668840]
-position = Vector2(310, 0)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 position = Vector2(480, 0)
@@ -490,21 +483,12 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_f6pk4")]
 position = Vector2(160, -6)
-NewSpawn = 1
+SpawnSide = "Right"
 NextMap = "StartMap"
 CurrentMap = "Map1"
 
 [node name="MapTransitioner2" parent="." unique_id=1524056354 instance=ExtResource("5_f6pk4")]
 position = Vector2(800, -6)
-NewSpawn = 1
+SpawnSide = "Left"
 NextMap = "Map2"
 CurrentMap = "Map1"
-
-[node name="CameraRestraints" type="Node2D" parent="." unique_id=45662584]
-position = Vector2(480, 0)
-
-[node name="TopLeft" type="Marker2D" parent="CameraRestraints" unique_id=547652417]
-position = Vector2(-320, -96)
-
-[node name="BottomRight" type="Marker2D" parent="CameraRestraints" unique_id=1895474226]
-position = Vector2(320, 84)

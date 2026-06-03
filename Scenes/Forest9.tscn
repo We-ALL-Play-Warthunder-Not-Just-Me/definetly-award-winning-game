@@ -1,13 +1,10 @@
 [gd_scene format=4 uid="uid://bcrrgjgkndqqw"]
 
+[ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_pg6pn"]
 [ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_tox86"]
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_pg6pn"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_jsua1"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_m0dnb"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_47obr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -410,37 +407,10 @@ sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="Forest9" type="Node2D" unique_id=685611168]
 
-[node name="TempBacking" type="Sprite2D" parent="." unique_id=985320539]
+[node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_pg6pn")]
 modulate = Color(0.4509804, 0.7529412, 0.7882353, 1)
-z_index = -4
-material = SubResource("CanvasItemMaterial_h7acc")
 position = Vector2(-6240, 354)
 scale = Vector2(640, 180)
-texture = SubResource("CanvasTexture_47obr")
-
-[node name="SpawnPoints" type="Node2D" parent="." unique_id=1182682481]
-position = Vector2(-6240, 354)
-
-[node name="Spawn0" type="Node2D" parent="SpawnPoints" unique_id=369802554]
-position = Vector2(0, 16)
-
-[node name="Spawn1" type="Node2D" parent="SpawnPoints" unique_id=802397266]
-position = Vector2(310, 0)
-
-[node name="Spawn2" type="Node2D" parent="SpawnPoints" unique_id=1623526722]
-position = Vector2(-310, 0)
-
-[node name="Spawn3" type="Node2D" parent="SpawnPoints" unique_id=1249100259]
-position = Vector2(0, -70)
-
-[node name="CameraRestraints" type="Node2D" parent="." unique_id=446028177]
-position = Vector2(-6240, 354)
-
-[node name="TopLeft" type="Marker2D" parent="CameraRestraints" unique_id=1273075595]
-position = Vector2(-320, -90)
-
-[node name="BottomRight" type="Marker2D" parent="CameraRestraints" unique_id=1840288519]
-position = Vector2(320.00024, 90)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 position = Vector2(-6240, 354)
@@ -480,15 +450,13 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_m0dnb")]
 position = Vector2(-5920, 354)
-NewSpawn = 2
+SpawnSide = "Left"
 NextMap = "Forest8"
 CurrentMap = "Forest9"
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_m0dnb")]
-position = Vector2(-6380, 264)
-rotation = 1.5707964
-scale = Vector2(1, 2)
-NewSpawn = 4
+position = Vector2(-6400, 264)
+SpawnSide = "Bottom"
 NextMap = "Forest10"
 CurrentMap = "Forest9"
 VertTrans = true

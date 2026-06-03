@@ -9,14 +9,18 @@
 
 [node name="GameScene" type="Node2D" unique_id=359298613]
 
+[node name="StartMap" parent="." unique_id=685611168 instance=ExtResource("3_lg2j6")]
+
 [node name="Player" parent="." unique_id=1876432518 instance=ExtResource("1_kilg5")]
 z_index = 5
 position = Vector2(0, 53)
 
 [node name="TheCamera" parent="." unique_id=946100206 instance=ExtResource("2_x6js8")]
 z_index = 5
-
-[node name="StartMap" parent="." unique_id=685611168 instance=ExtResource("3_lg2j6")]
+limit_left = -160
+limit_top = -96
+limit_right = 160
+limit_bottom = 84
 
 [node name="MvmSongIdea" type="AudioStreamPlayer" parent="." unique_id=1289639467]
 stream = ExtResource("4_y30xb")

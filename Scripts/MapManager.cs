@@ -34,7 +34,7 @@ public partial class MapManager : Node2D
 		}
 	}
 	
-	public void ChangeMap(int S, string NM, string CM)
+	public void ChangeMap(string NM, string CM)
 	{
 		//This isn't the best way to do it, there should probably
 		//be a script that holds all the levels in a series of
@@ -52,13 +52,14 @@ public partial class MapManager : Node2D
 		OldMap.CallDeferred(Node2D.MethodName.QueueFree);
 	}
 	
-	public void MovePlayer(int S, string NM, bool VT, Node2D P)
+	public void MovePlayer(string S, string NM, bool VT, Node2D P)
 	{
 		//This finds the corresponding SpawnPoint needed from the
 		//scene tree AND its Offset from the center to make sure
 		//the Player will move the correct distance.
-		SpawnPoint = GetNode<Node2D>("/root/GameScene/"+NM+"/SpawnPoints/Spawn"+S);
-		SpawnOffset = GetNode<Node2D>("/root/GameScene/"+NM+"/SpawnPoints");
+		SpawnOffset = GetNode<Node2D>("/root/GameScene/"+NM+"/BoundingBox");
+		SpawnPoint = SpawnOffset.GetNode<Node2D>("Spawn"+S);
+		
 		var ActualSpawn = new Vector2(SpawnPoint.Position.X + SpawnOffset.Position.X, SpawnPoint.Position.Y + SpawnOffset.Position.Y);
 		
 		//This is just checking if the Player is moving through a
@@ -78,7 +79,7 @@ public partial class MapManager : Node2D
 	{
 		//These are all about grabbing the markers that define the
 		//edges of the camera bounds on the newly spawned in map.
-		Restraints = GetNode<Node2D>("/root/GameScene/"+NM+"/CameraRestraints");
+		Restraints = GetNode<Node2D>("/root/GameScene/"+NM+"/BoundingBox");
 		Marker2D TopLeft = Restraints.GetNode<Marker2D>("TopLeft");
 		Marker2D BottomRight = Restraints.GetNode<Marker2D>("BottomRight");
 		//This sets the contraints of the camera to that of the
@@ -89,14 +90,14 @@ public partial class MapManager : Node2D
 		Camera.LimitRight = (int)(BottomRight.Position.X + Restraints.Position.X);
 	}
 	
-	public void ProcessInfo(int Spawn, string NextMap, string CurrentMap, bool VertTrans)
+	public void ProcessInfo(string Spawn, string NextMap, string CurrentMap, bool VertTrans)
 	{
 		//Set up Halt to track how long the Player's Collision will
 		//be disabled for to clear the Area2Ds to prevent map fuckery.
 		Halt = true;
 		PlayerCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 		//Pretty self explanitory what this is doing.
-		ChangeMap(Spawn, NextMap, CurrentMap);
+		ChangeMap(NextMap, CurrentMap);
 		//This is making sure that the MovePlayer and MoveCamera
 		//functions only run in the safe zone after the maps have
 		//been successfully swapped.

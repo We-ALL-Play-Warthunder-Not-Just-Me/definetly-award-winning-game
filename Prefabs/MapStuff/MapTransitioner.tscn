@@ -5,13 +5,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8puf"]
 size = Vector2(8, 180)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prkx5"]
+size = Vector2(320, 8)
+
 [node name="MapTransitioner" type="Area2D" unique_id=910484519]
 collision_layer = 128
 collision_mask = 128
 script = ExtResource("1_prkx5")
 
-[node name="TransitionerCollision" type="CollisionShape2D" parent="." unique_id=895322637]
+[node name="TransitionerLeftRight" type="CollisionShape2D" parent="." unique_id=895322637]
 shape = SubResource("RectangleShape2D_i8puf")
+disabled = true
 debug_color = Color(0.7375561, 0.22491822, 0.9999998, 0.41960785)
+
+[node name="TransitionerUpDown" type="CollisionShape2D" parent="." unique_id=913314311]
+shape = SubResource("RectangleShape2D_prkx5")
+disabled = true
+debug_color = Color(0.87336904, 0.00045897483, 0.8426201, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_SendInfo"]
