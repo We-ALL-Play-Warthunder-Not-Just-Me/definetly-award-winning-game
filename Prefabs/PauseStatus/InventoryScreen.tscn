@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
-[ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Scripts/InventoryScreen.cs" id="1_8w81r"]
-[ext_resource type="Script" uid="uid://cmwil7qkv3wgm" path="res://Scripts/Inventory.cs" id="2_x0qmb"]
+[ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Prefabs/PauseStatus/InventoryScreen.cs" id="1_8w81r"]
+[ext_resource type="Script" uid="uid://cmwil7qkv3wgm" path="res://InventoryStuff/Inventory.cs" id="2_x0qmb"]
 [ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Materials.png" id="3_48de8"]
 [ext_resource type="Texture2D" uid="uid://dr5ex5v11qxd6" path="res://Images/MVM Base Character.png" id="4_gfnk6"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Texture2D" uid="uid://b6y3d8sagkyci" path="res://Images/I gitted.png" id="6_1c2wn"]
+[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="7_1c2wn"]
+[ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/Mats.cs" id="7_wkbcb"]
+[ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="9_ievbo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -49,10 +52,11 @@ offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 script = ExtResource("2_x0qmb")
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -258,7 +262,6 @@ item_0/icon = ExtResource("3_48de8")
 item_1/text = "Crafting 2"
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -288,10 +291,9 @@ offset_top = -245.5
 offset_bottom = 244.5
 grow_horizontal = 0
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 
 [node name="Materials" type="Control" parent="Panel/TabContainer/Inventory/TabContainer" unique_id=63658824]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -310,11 +312,18 @@ theme_override_constants/margin_bottom = 10
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889]
 layout_mode = 2
 item_count = 3
+fixed_icon_size = Vector2i(50, 50)
 item_0/text = "WAH"
+item_0/icon = ExtResource("3_48de8")
 item_1/text = "WAH"
+item_1/icon = ExtResource("7_1c2wn")
 item_2/text = "awwawawawa"
+item_2/icon = ExtResource("5_wkbcb")
+script = ExtResource("7_wkbcb")
+blankicon = ExtResource("9_ievbo")
 
 [node name="KeyItems" type="Control" parent="Panel/TabContainer/Inventory/TabContainer" unique_id=945712878]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

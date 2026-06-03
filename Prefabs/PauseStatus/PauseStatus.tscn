@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkxfy70udf36n"]
 
-[ext_resource type="Script" uid="uid://one8qmaty3oi" path="res://Scripts/PauseStatus.cs" id="1_iml0i"]
+[ext_resource type="Script" uid="uid://one8qmaty3oi" path="res://Prefabs/PauseStatus/PauseStatus.cs" id="1_iml0i"]
 [ext_resource type="PackedScene" uid="uid://2fsdvfr1lhbl" path="res://Prefabs/PauseStatus/InventoryScreen.tscn" id="2_4dlbn"]
 [ext_resource type="PackedScene" uid="uid://gcbkh1y08iwi" path="res://Prefabs/PauseStatus/PauseScreen.tscn" id="3_njtq0"]
 
