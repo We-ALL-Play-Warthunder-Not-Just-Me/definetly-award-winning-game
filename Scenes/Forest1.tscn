@@ -455,7 +455,7 @@ region_enabled = true
 region_rect = Rect2(287, 154, 90, 75)
 
 [node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
-position = Vector2(114, -37.5)
+position = Vector2(114.5, -37.5)
 texture = ExtResource("1_40ngu")
 region_enabled = true
 region_rect = Rect2(290, 308, 87, 75)
@@ -482,7 +482,7 @@ region_enabled = true
 region_rect = Rect2(7, 308, 88, 75)
 
 [node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1833273155]
-position = Vector2(-268, 10.5)
+position = Vector2(-268.5, 10.5)
 texture = ExtResource("1_40ngu")
 flip_h = true
 region_enabled = true
