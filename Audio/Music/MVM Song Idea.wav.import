@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1x070y8sfxqv"
-path="res://.godot/imported/MVM Song Idea.wav-825dcaa2ef047159508bd03ab6e18509.sample"
+path="res://.godot/imported/MVM Song Idea.wav-70f82cb06fe22f9e69583fa3ce1f3fc7.sample"
 
 [deps]
 
-source_file="res://MVM Song Idea.wav"
-dest_files=["res://.godot/imported/MVM Song Idea.wav-825dcaa2ef047159508bd03ab6e18509.sample"]
+source_file="res://Audio/Music/MVM Song Idea.wav"
+dest_files=["res://.godot/imported/MVM Song Idea.wav-70f82cb06fe22f9e69583fa3ce1f3fc7.sample"]
 
 [params]
 
