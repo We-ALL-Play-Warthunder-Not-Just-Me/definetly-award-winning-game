@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bmt7vjmpofedt"]
+
+[ext_resource type="Script" uid="uid://ctxybmn1wl0c7" path="res://Scripts/Map Scripts/RoomSetUp.cs" id="1_6365n"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6365n"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_47obr"]
+
+[node name="BoundingBox" type="Sprite2D" unique_id=524676693]
+modulate = Color(0.654902, 0.8745098, 0.84705883, 1)
+z_index = -4
+material = SubResource("CanvasItemMaterial_6365n")
+scale = Vector2(320, 192)
+texture = SubResource("CanvasTexture_47obr")
+script = ExtResource("1_6365n")
+ChunkSizeX = 320
+ChunkSizeY = 192
+
+[node name="Spawn0" type="Node2D" parent="." unique_id=1015858986]
+
+[node name="SpawnLeft" type="Node2D" parent="." unique_id=2140945456]
+
+[node name="SpawnRight" type="Node2D" parent="." unique_id=1406645808]
+
+[node name="SpawnTop" type="Node2D" parent="." unique_id=9088657]
+
+[node name="SpawnBottom" type="Node2D" parent="." unique_id=1897566402]
+
+[node name="TopLeft" type="Marker2D" parent="." unique_id=1736614841]
+
+[node name="BottomRight" type="Marker2D" parent="." unique_id=1102464507]

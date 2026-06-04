@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkxfy70udf36n" path="res://Prefabs/PauseStatus/PauseStatus.tscn" id="7_0ld12"]
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scripts/MvmSongIdea.cs" id="7_h5fhn"]
 [ext_resource type="Script" uid="uid://dgfnejsbyaui1" path="res://Prefabs/PauseStatus/HealthContainer.cs" id="8_0ld12"]
+[ext_resource type="PackedScene" uid="uid://dl0qjx7n7r4g8" path="res://Prefabs/TheCamera.tscn" id="8_0ld12"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h7acc"]
 
@@ -462,6 +463,8 @@ script = ExtResource("8_0ld12")
 
 [connection signal="changed" from="Player/HealthBar" to="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" method="_on_health_bar_changed"]
 [connection signal="value_changed" from="Player/HealthBar" to="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" method="_on_health_bar_value_changed"]
+[node name="TheCamera" parent="." unique_id=946100206 instance=ExtResource("8_0ld12")]
+
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
 
 [editable path="Player"]

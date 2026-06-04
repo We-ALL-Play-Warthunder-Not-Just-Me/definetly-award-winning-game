@@ -82,7 +82,7 @@ public partial class HealthBar : ProgressBar
 		if (Input.IsActionJustPressed("Jump"))
 		{
 			//Healthbar pain testing
-			hurt(10);
+			//hurt(10);
 		}
 	}
 }
