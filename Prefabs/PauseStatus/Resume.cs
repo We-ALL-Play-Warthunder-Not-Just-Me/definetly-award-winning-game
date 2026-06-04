@@ -18,6 +18,7 @@ public partial class Resume : Button
 	{
 		if(@event.IsActionPressed("escape"))
 		{
+			AcceptEvent();
 			GrabFocus();
 		}
 	}
