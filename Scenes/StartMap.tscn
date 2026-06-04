@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://djtcug1akay2d"]
 
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="1_3pqft"]
-[ext_resource type="PackedScene" uid="uid://ighuyc0ken47" path="res://Prefabs/MapStuff/ChunkBounds.tscn" id="1_agnmu"]
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_wx46j"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="2_5bunb"]
 [ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="3_6s8b1"]
@@ -409,10 +408,7 @@ sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="StartMap" type="Node2D" unique_id=685611168]
 
-[node name="ChunkBounds" parent="." unique_id=2073062852 instance=ExtResource("1_agnmu")]
-
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_wx46j")]
-position = Vector2(0, -6)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 

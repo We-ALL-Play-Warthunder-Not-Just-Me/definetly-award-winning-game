@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://48kam2rbjvbc"]
 
-[ext_resource type="PackedScene" uid="uid://ighuyc0ken47" path="res://Prefabs/MapStuff/ChunkBounds.tscn" id="1_c654x"]
 [ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_kqoek"]
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_pwfoa"]
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_pwfoa"]
@@ -407,9 +406,6 @@ sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="Forest10" type="Node2D" unique_id=685611168]
-
-[node name="ChunkBounds" parent="." unique_id=2073062852 instance=ExtResource("1_c654x")]
-scale = Vector2(640, 192)
 
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_pwfoa")]
 modulate = Color(0.4509804, 0.7529412, 0.7882353, 1)

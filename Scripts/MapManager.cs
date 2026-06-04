@@ -45,16 +45,16 @@ public partial class MapManager : Node2D
 		//This finds the New Map among the resources and loads it up.
 		var NewMap = GD.Load<PackedScene>("res://Scenes/" + NM + ".tscn");
 		var SpawnNewMap = NewMap.Instantiate();
-		//GameScene.CallDeferred(Node2D.MethodName.AddChild, SpawnNewMap);
-		//CallDeferred(MapManager.MethodName.MoveMap, S, NM, TC, CM, FC);
 		GameScene.AddChild(SpawnNewMap);
 		MoveMap(S, NM, TC, CM, FC);
 		//This spawns in the New Map when it's safe and adds it to
 		//the scene before killing the Old Map in the safe zone.
 		//We're all about safety here lest Godot screams at us.
 		Node2D OldMap = GetNode<Node2D>("/root/GameScene/" + CM);
-		//OldMap.CallDeferred(Node2D.MethodName.QueueFree);
 		OldMap.QueueFree();
+		//This is making sure that the MovePlayer and MoveCamera
+		//functions only run in the safe zone after the maps have
+		//been successfully swapped.
 		MovePlayer(S, NM, VT, Player);
 		MoveCamera(NM);
 	}
@@ -63,10 +63,10 @@ public partial class MapManager : Node2D
 	{
 		Node2D SpawnedMap = GetNode<Node2D>("/root/GameScene/"+NM);
 		Node2D OldMap = GetNode<Node2D>("/root/GameScene/"+CM);
-		Node2D CCB = GetNode<Node2D>("/root/GameScene/"+CM+"/ChunkBounds");
-		Node2D NCB = GetNode<Node2D>("/root/GameScene/"+NM+"/ChunkBounds");
-		Marker2D GTC = GetNode<Marker2D>("/root/GameScene/"+CM+"/ChunkBounds/Chunk"+TC);
-		Marker2D GFC = GetNode<Marker2D>("/root/GameScene/"+NM+"/ChunkBounds/Chunk"+FC);
+		Node2D CCB = GetNode<Node2D>("/root/GameScene/"+CM+"/BoundingBox");
+		Node2D NCB = GetNode<Node2D>("/root/GameScene/"+NM+"/BoundingBox");
+		Marker2D GTC = CCB.GetNode<Marker2D>("Chunk"+TC);
+		Marker2D GFC = NCB.GetNode<Marker2D>("Chunk"+FC);
 		
 		SpawnedMap.Position = OldMap.Position;
 		
@@ -162,12 +162,6 @@ public partial class MapManager : Node2D
 		PlayerCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 		//Pretty self explanitory what this is doing.
 		CallDeferred(MapManager.MethodName.ChangeMap, Spawn, NextMap, ToChunk, CurrentMap, FromChunk, VertTrans);
-		//ChangeMap(Spawn, NextMap, ToChunk, CurrentMap, FromChunk);
-		//This is making sure that the MovePlayer and MoveCamera
-		//functions only run in the safe zone after the maps have
-		//been successfully swapped.
-		//CallDeferred(MapManager.MethodName.MovePlayer, Spawn, NextMap, VertTrans, Player);
-		//CallDeferred(MapManager.MethodName.MoveCamera, NextMap);
 		//Sends the update that the Player can have their collision back.
 		Halt = false;
 	}
