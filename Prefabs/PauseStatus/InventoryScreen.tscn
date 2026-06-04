@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dr5ex5v11qxd6" path="res://Images/MVM Base Character.png" id="4_gfnk6"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Texture2D" uid="uid://b6y3d8sagkyci" path="res://Images/I gitted.png" id="6_1c2wn"]
-[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="7_1c2wn"]
 [ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/InventoryLogic.cs" id="7_wkbcb"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemTest.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="9_6r2q2"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="9_ievbo"]
+[ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="9_sygrt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -303,6 +303,24 @@ inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 5
 itemData = ExtResource("9_6r2q2")
 
+[node name="ImportantBlueberry" type="Button" parent="Panel/TabContainer/Inventory" unique_id=1838932799 node_paths=PackedStringArray("inv")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -311.0
+offset_top = -31.0
+offset_right = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Add an Important Blueberry"
+script = ExtResource("7_x2suf")
+inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
+qty = 1
+itemData = ExtResource("9_sygrt")
+
 [node name="TabContainer" type="TabContainer" parent="Panel/TabContainer/Inventory" unique_id=898869370]
 layout_mode = 1
 anchors_preset = 6
@@ -336,14 +354,7 @@ theme_override_constants/margin_bottom = 10
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889]
 layout_mode = 2
 allow_rmb_select = true
-item_count = 3
 fixed_icon_size = Vector2i(50, 50)
-item_0/text = "WAH"
-item_0/icon = ExtResource("3_48de8")
-item_1/text = "WAH"
-item_1/icon = ExtResource("7_1c2wn")
-item_2/text = "awwawawawa"
-item_2/icon = ExtResource("5_wkbcb")
 script = ExtResource("7_wkbcb")
 blankicon = ExtResource("9_ievbo")
 
@@ -366,10 +377,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer" unique_id=907363798]
 layout_mode = 2
-item_count = 3
-item_0/text = "123"
-item_1/text = "164"
-item_2/text = "awwawawawa"
+script = ExtResource("7_wkbcb")
 
 [node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Inventory" unique_id=1529148487]
 layout_mode = 1

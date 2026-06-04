@@ -87,7 +87,12 @@ public partial class InventoryLogic : ItemList
 	public void RemoveInventoryItem(int index)
 	{
 		if (index < 0 || index >= InventorySize) return;
-
+		// When the item is important don't get rid of it!!!!!!
+		if (items[index].important == true)
+		{
+			GD.Print("This is an important item!!");
+			return;
+		}
 		items[index] = null;
 		SetItemIcon(index, blankicon);
 		SetItemText(index, " ");
