@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://btkleiwt6n17y"]
-
-[node name="Node2D" type="Node2D" unique_id=685611168]
-
-[node name="Window" type="Window" parent="." unique_id=1328633744]
-oversampling_override = 1.0
