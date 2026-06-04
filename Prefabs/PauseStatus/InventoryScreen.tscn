@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b6y3d8sagkyci" path="res://Images/I gitted.png" id="6_1c2wn"]
 [ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="7_1c2wn"]
 [ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/Mats.cs" id="7_wkbcb"]
+[ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemTest.cs" id="7_x2suf"]
+[ext_resource type="Texture2D" uid="uid://t8aidlaga8lm" path="res://Images/blueberry.png" id="8_sygrt"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="9_ievbo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
@@ -265,7 +267,7 @@ item_1/text = "Crafting 2"
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Button" type="Button" parent="Panel/TabContainer/Inventory" unique_id=1369581487]
+[node name="Blueberry" type="Button" parent="Panel/TabContainer/Inventory" unique_id=1369581487 node_paths=PackedStringArray("inv")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -277,7 +279,14 @@ offset_top = -31.0
 offset_right = 56.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "I am BUTTON"
+text = "Add a Blueberry"
+script = ExtResource("7_x2suf")
+inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
+id = 1
+name = "Blueberry"
+itemIcon = ExtResource("8_sygrt")
+max_qty = 50
+qty = 1
 
 [node name="TabContainer" type="TabContainer" parent="Panel/TabContainer/Inventory" unique_id=898869370]
 layout_mode = 1
@@ -311,6 +320,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889]
 layout_mode = 2
+allow_rmb_select = true
 item_count = 3
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "WAH"
