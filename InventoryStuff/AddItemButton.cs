@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class AddItemTest : Button
+public partial class AddItemButton : Button
 {
 	[Export] InventoryLogic inv;
 	// [Export] int id;
