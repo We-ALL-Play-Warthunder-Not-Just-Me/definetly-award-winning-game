@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3qsj1c2jpowp" path="res://Scripts/Player.cs" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dfito6lpduaml" path="res://Images/MVM Witch Character Red.png" id="2_5wxv7"]
+[ext_resource type="PackedScene" path="res://Prefabs/HealthBar.tscn" id="3_y5hcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5hcb"]
 size = Vector2(8, 22)
@@ -112,17 +113,18 @@ _data = {
 &"RESET": SubResource("Animation_2nftw")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1876432518]
+[node name="Player" type="CharacterBody2D" unique_id=1876432518 node_paths=PackedStringArray("Health_Bar") groups=["Player"]]
 collision_layer = 129
 script = ExtResource("1_onrkg")
+Health_Bar = NodePath("HealthBar")
 
-[node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1533614941]
+[node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1533614941 groups=["Player"]]
 texture = ExtResource("2_5wxv7")
 offset = Vector2(0, -13)
 hframes = 4
 vframes = 4
 
-[node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="." unique_id=427782164]
+[node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="." unique_id=427782164 groups=["Player"]]
 shape = SubResource("RectangleShape2D_y5hcb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=293176502]
@@ -138,6 +140,7 @@ offset_right = -1.0
 offset_bottom = -27.0
 theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
 visible = false
@@ -148,6 +151,7 @@ offset_bottom = -92.0
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 12
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayerMoveStateLabel" type="RichTextLabel" parent="." unique_id=1182586622]
 visible = false
@@ -157,6 +161,7 @@ offset_right = -1.0
 offset_bottom = -77.0
 theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
 visible = false
@@ -167,6 +172,7 @@ offset_right = -1.0
 offset_bottom = -60.0
 theme_override_font_sizes/normal_font_size = 12
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayerAttackStateLabel" type="RichTextLabel" parent="." unique_id=765422879]
 visible = false
@@ -176,6 +182,7 @@ offset_right = 20.0
 offset_bottom = 27.0
 theme_override_font_sizes/normal_font_size = 10
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
 
 [node name="XSpeed" type="RichTextLabel" parent="." unique_id=1456457850]
 visible = false
@@ -185,6 +192,7 @@ offset_right = 206.0
 offset_bottom = 14.0
 theme_override_font_sizes/normal_font_size = 10
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
 
 [node name="YSpeed" type="RichTextLabel" parent="." unique_id=493191004]
 visible = false
@@ -194,3 +202,11 @@ offset_right = 206.0
 offset_bottom = -14.0
 theme_override_font_sizes/normal_font_size = 10
 text = "aaaaaaa"
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" parent="." unique_id=286525542 instance=ExtResource("3_y5hcb")]
+offset_left = -204.0
+offset_top = 94.0
+offset_right = -4.0
+offset_bottom = 109.0
+metadata/_edit_use_anchors_ = true

@@ -451,7 +451,7 @@ position = Vector2(-80, 224)
 
 [node name="MvmSongIdea" type="AudioStreamPlayer" parent="." unique_id=1017186869]
 stream = ExtResource("5_47obr")
-volume_db = -4.0
+volume_db = -35.93
 autoplay = true
 script = ExtResource("7_h5fhn")
 
@@ -464,6 +464,9 @@ script = ExtResource("8_0ld12")
 [connection signal="changed" from="Player/HealthBar" to="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" method="_on_health_bar_changed"]
 [connection signal="value_changed" from="Player/HealthBar" to="PauseStatus/InventoryScreen/Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" method="_on_health_bar_value_changed"]
 [node name="TheCamera" parent="." unique_id=946100206 instance=ExtResource("8_0ld12")]
+
+[node name="ExampleBasicEnemy" parent="." unique_id=1127321626 instance=ExtResource("7_0ld12")]
+position = Vector2(-306, -93)
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
 
