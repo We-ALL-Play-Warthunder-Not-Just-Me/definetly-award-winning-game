@@ -8,9 +8,14 @@ public partial class MapTransitioner : Area2D
 	[Export]
 	public string NextMap;
 	[Export]
+	public int ToChunk;
+	[Export]
 	public string CurrentMap;
 	[Export]
+	public int FromChunk;
+	[Export]
 	public bool VertTrans;
+	
 	MapManager MapMan;
 	CollisionShape2D CollLR;
 	CollisionShape2D CollUD;
@@ -41,6 +46,7 @@ public partial class MapTransitioner : Area2D
 	{
 		//This will take the stored information and send it to
 		//the MapManager upon the Player entering the Area2D.
-		MapMan.ProcessInfo(SpawnSide, NextMap, CurrentMap, VertTrans);
+		MapMan.ProcessInfo(SpawnSide, NextMap, ToChunk,
+							CurrentMap, FromChunk, VertTrans);
 	}
 }

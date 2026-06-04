@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://ctxybmn1wl0c7" path="res://Scripts/BoundingBox.cs" id="1_6365n"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6365n"]
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_47obr"]
 
 [node name="BoundingBox" type="Sprite2D" unique_id=524676693]
 modulate = Color(0.654902, 0.8745098, 0.84705883, 1)
 z_index = -4
+material = SubResource("CanvasItemMaterial_6365n")
 scale = Vector2(320, 180)
 texture = SubResource("CanvasTexture_47obr")
 script = ExtResource("1_6365n")

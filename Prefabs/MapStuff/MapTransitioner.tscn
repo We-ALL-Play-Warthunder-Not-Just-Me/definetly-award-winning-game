@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://rplm4gjy4bs6" path="res://Scripts/MapTransitioner.cs" id="1_prkx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8puf"]
-size = Vector2(8, 180)
+size = Vector2(8, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prkx5"]
 size = Vector2(320, 8)

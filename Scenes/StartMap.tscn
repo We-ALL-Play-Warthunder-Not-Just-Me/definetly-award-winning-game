@@ -455,13 +455,15 @@ tile_map_data = PackedByteArray("AAD2/wIAAQAAAAEAAAD4/wMAAQAAAAEAAAD7/wMAAQAAAAE
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=1095225344 instance=ExtResource("5_0trb5")]
-position = Vector2(160, -6)
+position = Vector2(160, 0)
 SpawnSide = "Left"
 NextMap = "Map1"
+ToChunk = 1
 CurrentMap = "StartMap"
+FromChunk = 1
 
 [node name="MapTransitioner2" parent="." unique_id=391673480 instance=ExtResource("5_0trb5")]
-position = Vector2(-160, -6)
+position = Vector2(-160, 0)
 SpawnSide = "Right"
 NextMap = "Forest1"
 CurrentMap = "StartMap"
