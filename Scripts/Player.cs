@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class Player : CharacterBody2D
+public partial class Player : CharacterBody2D, DamagableEntity
 {
 
 	public enum PlayerMoveState
@@ -42,15 +42,21 @@ public partial class Player : CharacterBody2D
 		WALL//Uncertain if this should be here
 	}
 
-
-	//Constants
-	public const float SPEED = 120.0f;
+	public void dealDamage(float damage)
+    {
+		//change the player state here
+        //Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
+		GD.Print(Health_Bar.hurt(damage));
+    }
+    //Constants
+    public const float SPEED = 120.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
+	public const double FALLGRACEPERIOD = 0.5;
 
-	//player parts
-	public CharacterBody2D PlayerObject;
+    //player parts
+    public CharacterBody2D PlayerObject;
 	public Sprite2D PlayerSprite;
 	public CollisionShape2D PlayerCollisionShape;
 	public RichTextLabel PlayerStateLabel;
@@ -79,7 +85,8 @@ public partial class Player : CharacterBody2D
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
 		PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
-		_player_text_helper();
+		Health_Bar = GetNode<HealthBar>("HealthBar");
+        _player_text_helper();
 		PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
 		_move_text_helper();
 		PlayerJumpStateLabel = GetNode<RichTextLabel>("PlayerJumpStateLabel");
@@ -101,6 +108,50 @@ public partial class Player : CharacterBody2D
 			velocity.Y += GRAVITY * (float)delta;
 		}
 	}
+
+
+	//check if there are events that might change your environmental state
+	private void _pes(ref Vector2 v)
+	{
+		if (PlayerObject.IsOnFloor())
+		{
+			_ces(EnvironmentalState.GROUNDED);
+		}
+		else if (!PlayerObject.IsOnFloor())
+		{
+			_ces(EnvironmentalState.AIRBORN);
+		}
+
+	}
+
+	//change your environmental state, 
+	private void _ces(EnvironmentalState s)
+	{
+		if(s == es) return;
+        
+		switch(s)
+		{
+			case (EnvironmentalState.GROUNDED):
+				es = EnvironmentalState.GROUNDED;
+				break;
+			case (EnvironmentalState.AIRBORN):
+				es = EnvironmentalState.AIRBORN;
+				break;
+		}
+	}
+
+	//enacts the environmental state
+	private void _enact_environmental_state(double delta)
+	{
+		switch(es)
+		{
+			case (EnvironmentalState.GROUNDED):
+				//right now we don'
+				break;
+		}
+	}
+
+
 
 	//returns true if state changes and false if state is the same as before.
 	private bool _change_Environmental_State(EnvironmentalState s)
@@ -208,14 +259,15 @@ public partial class Player : CharacterBody2D
 			velocity.Y = JUMPVELOCITY;
 		}
 		//if the player is jumping and the velocity is less than 0 we are now falling
-		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && velocity.Y > 0.0)
+		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && this.GetRealVelocity().Y > 0.0)
 		{
-			_change_Jump_State(PlayerJumpState.FALLING);
+			velocity.Y = -40;
+            _change_Jump_State(PlayerJumpState.FALLING);
 		}
 		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
 		else if (es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
 		{
-			velocity.Y = 0;
+			velocity.Y = -40;
 			_change_Jump_State(PlayerJumpState.FALLING);
 		}
 		//if the player is falling and hits the ground we are now landing
@@ -285,7 +337,7 @@ public partial class Player : CharacterBody2D
 		{
 			PlayerAnimations.Play("PlayerIdle");
 		}
-		else if (velocity.X != 0 && PlayerObject.IsOnFloor())
+		else if (this.GetRealVelocity().X != 0 && PlayerObject.IsOnFloor())
 		{
 			PlayerAnimations.Play("PlayerRun");
 		}

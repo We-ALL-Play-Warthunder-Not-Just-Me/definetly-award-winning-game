@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bhj0dajg2c4m3"]
+
+[ext_resource type="Script" uid="uid://upf77qw4f4ty" path="res://Scripts/Bullet.cs" id="1_m4f65"]
+[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="2_tuf4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nxya"]
+
+[node name="Bullet" type="Area2D" unique_id=1836443465]
+script = ExtResource("1_m4f65")
+_speed = 100.0
+_damage = 50.0
+_lifetime = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=234270926]
+shape = SubResource("RectangleShape2D_1nxya")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=919846749]
+position = Vector2(-7.1525574e-07, -7.1525574e-07)
+scale = Vector2(0.15625, 0.15624997)
+texture = ExtResource("2_tuf4i")
+
+[connection signal="body_entered" from="." to="." method="_on_enemy_detector_body_entered"]

@@ -29,6 +29,11 @@ window/size/viewport_height=720
 
 project/assembly_name="DefinetlyAwardWinningGame"
 
+[global_group]
+
+Enemy=""
+Player=""
+
 [input]
 
 Jump={

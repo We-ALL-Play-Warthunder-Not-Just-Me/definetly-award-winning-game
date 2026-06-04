@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gcbkh1y08iwi"]
 
-[ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Prefabs/PauseStatus/PauseScreen.cs" id="1_hbagr"]
-[ext_resource type="Script" uid="uid://csqqi24rpdd4h" path="res://Prefabs/PauseStatus/Resume.cs" id="2_iy0nc"]
+[ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Prefabs/PauseStatus/ScriptsofPause/PauseScreen.cs" id="1_hbagr"]
+[ext_resource type="Script" uid="uid://csqqi24rpdd4h" path="res://Prefabs/PauseStatus/ScriptsofPause/Resume.cs" id="2_iy0nc"]
 
 [node name="PauseScreen" type="Control" unique_id=431672971]
 process_mode = 2

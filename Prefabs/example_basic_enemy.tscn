@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://d00qr55soteyj"]
+
+[ext_resource type="Script" uid="uid://7vsop8081ber" path="res://Scripts/SimpleShooterNPC.cs" id="1_qw5q7"]
+[ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://Images/MVM Little Guy.png" id="2_3uy5i"]
+[ext_resource type="PackedScene" uid="uid://bhj0dajg2c4m3" path="res://Prefabs/bullet.tscn" id="2_4outw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw5q7"]
+size = Vector2(14, 15)
+
+[node name="ExampleBasicEnemy" type="CharacterBody2D" unique_id=1127321626 groups=["Enemy"]]
+script = ExtResource("1_qw5q7")
+Bullets = ExtResource("2_4outw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=909683266]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1358458469]
+texture = ExtResource("2_3uy5i")
+offset = Vector2(0, -6)
+hframes = 3
+vframes = 6
+
+[node name="Body" type="CollisionShape2D" parent="." unique_id=566746701]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_qw5q7")
+
+[node name="EnemyStateLabel" type="RichTextLabel" parent="." unique_id=1789824999]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 41.0
+offset_bottom = -14.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyMoveStateLabel" type="RichTextLabel" parent="." unique_id=1445569916]
+offset_left = -25.0
+offset_top = -78.0
+offset_right = 41.0
+offset_bottom = -66.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyJumpStateLabel" type="RichTextLabel" parent="." unique_id=2132466558]
+offset_left = -23.0
+offset_top = -65.0
+offset_right = 43.0
+offset_bottom = -53.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=1260272756]
+offset_left = -25.0
+offset_top = -55.0
+offset_right = 41.0
+offset_bottom = -43.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyAttackStateLabel" type="RichTextLabel" parent="." unique_id=397808088]
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 41.0
+offset_bottom = -28.0
+theme_override_font_sizes/normal_font_size = 10
+
+[node name="EnemyDetector" type="Area2D" parent="." unique_id=1266920515]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyDetector" unique_id=1344563259]
+polygon = PackedVector2Array(-4, -145, 124, -123, 177, -18, 133, 90, -47, 108, -173, 12, -147, -116)
+
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
