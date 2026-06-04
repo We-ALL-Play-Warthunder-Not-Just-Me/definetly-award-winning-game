@@ -112,18 +112,42 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	//check if there are events that might change your environmental state
 	private void _pes(ref Vector2 v)
 	{
+		if (PlayerObject.IsOnFloor())
+		{
+			_ces(EnvironmentalState.GROUNDED);
+		}
+		else if (!PlayerObject.IsOnFloor())
+		{
+			_ces(EnvironmentalState.AIRBORN);
+		}
 
 	}
 
 	//change your environmental state, 
 	private void _ces(EnvironmentalState s)
 	{
-
+		if(s == es) return;
+        
+		switch(s)
+		{
+			case (EnvironmentalState.GROUNDED):
+				es = EnvironmentalState.GROUNDED;
+				break;
+			case (EnvironmentalState.AIRBORN):
+				es = EnvironmentalState.AIRBORN;
+				break;
+		}
 	}
 
-	private void _ees(double delta)
+	//enacts the environmental state
+	private void _enact_environmental_state(double delta)
 	{
-
+		switch(es)
+		{
+			case (EnvironmentalState.GROUNDED):
+				//right now we don'
+				break;
+		}
 	}
 
 

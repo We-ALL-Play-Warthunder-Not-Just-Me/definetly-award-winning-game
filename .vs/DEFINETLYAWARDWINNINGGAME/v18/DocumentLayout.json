@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|d:\\godot engine folder\\godot c projects\\freeza\\definetly-award-winning-game\\scripts\\simpleshooternpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|solutionrelative:scripts\\simpleshooternpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\DamagableEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\DamagableEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D4954CC-DE9E-4F31-8AAD-8905BD4EB254}|DefinetlyAwardWinningGame.csproj|d:\\godot engine folder\\godot c projects\\freeza\\definetly-award-winning-game\\scripts\\healthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -40,12 +44,21 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SimpleShooterNPC.cs",
+              "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\SimpleShooterNPC.cs",
+              "RelativeDocumentMoniker": "Scripts\\SimpleShooterNPC.cs",
+              "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\SimpleShooterNPC.cs",
+              "RelativeToolTip": "Scripts\\SimpleShooterNPC.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T21:37:36.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Node.cs",
               "DocumentMoniker": "C:\\Users\\ValentineCats\\AppData\\Local\\Temp\\.vsdbgsrc\\71246fd56f7999d0787c963da3362569a11209b41237bf6d1930bffe45250502\\Node.cs",
               "ToolTip": "C:\\Users\\ValentineCats\\AppData\\Local\\Temp\\.vsdbgsrc\\71246fd56f7999d0787c963da3362569a11209b41237bf6d1930bffe45250502\\Node.cs [Read Only]",
@@ -56,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Bullet.cs",
               "RelativeDocumentMoniker": "Bullet.cs",
               "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Bullet.cs",
               "RelativeToolTip": "Bullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-03T07:35:50.261Z",
               "EditorCaption": ""
@@ -82,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HealthBar.cs",
               "DocumentMoniker": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\HealthBar.cs",
               "RelativeDocumentMoniker": "Scripts\\HealthBar.cs",
@@ -101,7 +114,7 @@
               "RelativeDocumentMoniker": "Scripts\\Player.cs",
               "ToolTip": "D:\\Godot Engine Folder\\Godot C Projects\\FREEZA\\definetly-award-winning-game\\Scripts\\Player.cs",
               "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAuwBIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAAAIIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T12:41:13.562Z",
               "EditorCaption": ""
