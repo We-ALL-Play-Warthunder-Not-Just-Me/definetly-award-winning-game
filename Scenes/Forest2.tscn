@@ -409,8 +409,7 @@ sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_mf8xp")]
 modulate = Color(0.4509804, 0.7529412, 0.7882353, 1)
-position = Vector2(0, -6)
-scale = Vector2(1280, 180)
+scale = Vector2(1280, 192)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
@@ -536,10 +535,14 @@ tile_set = SubResource("TileSet_a4htl")
 position = Vector2(640, 0)
 SpawnSide = "Left"
 NextMap = "Forest1"
+ToChunk = 1
 CurrentMap = "Forest2"
+FromChunk = 4
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_1u6to")]
 position = Vector2(-640, 0)
 SpawnSide = "Right"
 NextMap = "Forest3"
+ToChunk = 3
 CurrentMap = "Forest2"
+FromChunk = 1

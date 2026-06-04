@@ -11,19 +11,12 @@ public partial class TheCamera : Camera2D
 	public override void _Ready()
 	{
 		Player = GetNode<Node2D>("/root/GameScene/Player");
-		//Deprecated for now. Might just get rid of it.
-		//Restraints = GetNode<Node2D>("/root/GameScene/"+Map+"/CameraRestraints");
-		//Marker2D TopLeft = Restraints.GetNode<Marker2D>("TopLeft");
-		//Marker2D BottomRight = Restraints.GetNode<Marker2D>("BottomRight");
-		//this.LimitTop = (int)TopLeft.Position.Y;
-		//this.LimitBottom = (int)BottomRight.Position.Y;
-		//this.LimitLeft = (int)TopLeft.Position.X;
-		//this.LimitRight = (int)BottomRight.Position.X;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		//I probably could've left this on the player...
 		this.Position = Player.Position;
 	}
 }

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmt7vjmpofedt"]
 
-[ext_resource type="Script" uid="uid://ctxybmn1wl0c7" path="res://Scripts/RoomSetUp.cs" id="1_6365n"]
+[ext_resource type="Script" uid="uid://ctxybmn1wl0c7" path="res://Scripts/Map Scripts/RoomSetUp.cs" id="1_6365n"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6365n"]
 

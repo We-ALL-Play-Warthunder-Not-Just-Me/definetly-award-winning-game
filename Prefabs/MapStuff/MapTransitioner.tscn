@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6vpvyy06qabc"]
 
-[ext_resource type="Script" uid="uid://rplm4gjy4bs6" path="res://Scripts/MapTransitioner.cs" id="1_prkx5"]
+[ext_resource type="Script" uid="uid://rplm4gjy4bs6" path="res://Scripts/Map Scripts/MapTransitioner.cs" id="1_prkx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8puf"]
 size = Vector2(8, 192)

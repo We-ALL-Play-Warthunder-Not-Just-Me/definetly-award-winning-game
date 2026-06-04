@@ -20,9 +20,11 @@ public partial class RoomSetUp : Sprite2D
 	Node2D SpawnRight;
 	Node2D SpawnTop;
 	Node2D SpawnBottom;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		//This is just grabbing all relevant information for later.
 		BoundBox = this;
 		TopLeft = GetNode<Marker2D>("TopLeft");
 		BottomRight = GetNode<Marker2D>("BottomRight");
@@ -103,6 +105,8 @@ public partial class RoomSetUp : Sprite2D
 		var BBEdge = new Vector2(BoundBox.Scale.X/2, BoundBox.Scale.Y/2);
 		TopLeft.Position = new Vector2(-BBEdge.X, -BBEdge.Y);
 		BottomRight.Position = new Vector2(BBEdge.X, BBEdge.Y - 12);
+		//That -12 is just to keep the small rooms in a 320/180 restraint
+		//and to keep the camera fairly even across all maps.
 	}
 	
 	private void SetUpSpawns()
@@ -114,5 +118,8 @@ public partial class RoomSetUp : Sprite2D
 		SpawnRight.Position = new Vector2((BBEdge.X-10), 0);
 		SpawnTop.Position = new Vector2(0, -(BBEdge.Y-20));
 		SpawnBottom.Position = new Vector2(0, (BBEdge.Y-20));
+		//Those minus 10s and 20s are padding for dodging transitioners so
+		//you're not endlessly bouncing between two rooms. There's a better way
+		//of doing this, I'm sure.
 	}
 }

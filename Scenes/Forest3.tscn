@@ -487,10 +487,14 @@ tile_set = SubResource("TileSet_a4htl")
 position = Vector2(160, 96)
 SpawnSide = "Left"
 NextMap = "Forest2"
+ToChunk = 1
 CurrentMap = "Forest3"
+FromChunk = 3
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_ohodk")]
 position = Vector2(-160, 288)
 SpawnSide = "Right"
 NextMap = "Forest4"
+ToChunk = 4
 CurrentMap = "Forest3"
+FromChunk = 4
