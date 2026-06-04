@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryDictionary" format=3 uid="uid://b2t4xih7225ws"]
+
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="1_4p5oo"]
+[ext_resource type="Script" uid="uid://bfw00m6csyt5i" path="res://Resources/BaseCases/InventoryDictionary.cs" id="2_phcll"]
+
+[resource]
+script = ExtResource("2_phcll")
+items = Dictionary[int, Resource]({
+1: ExtResource("1_4p5oo")
+})
