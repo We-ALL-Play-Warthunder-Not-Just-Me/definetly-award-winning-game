@@ -9,6 +9,7 @@ public partial class Mats : ItemList
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		// Initalizes the inventory of Size 20 filled with spaces and text so that it looks even
 		items = new Item[InventorySize];
 		for (int i = 0; i < InventorySize; i++)
 		{
@@ -25,12 +26,15 @@ public partial class Mats : ItemList
 			return false;
 		}
 
+		//if the item is stackable
 		bool couldPickup = AddStackableItem(item);
 
+		// There is an item there, it used to be there soooo true (because it was stackable)
 		if (item.qty == 0) return true;
 
 		for (int i = 0; i < InventorySize; i++)
 		{
+			//Basically checks for an empty slot in the array to add an item
 			if(items[i] != null) continue;
 
 			items[i] = item;
@@ -47,6 +51,8 @@ public partial class Mats : ItemList
 		return couldPickup;
 	}
 
+	//Adds item to the stack, adds item to next inventory slot if the stack is full
+	//Could change max stack behavior later on depending on what we want
 	private bool AddStackableItem(Item item)
 	{
 		bool couldPickup = false;
@@ -77,6 +83,7 @@ public partial class Mats : ItemList
 		return couldPickup;
 	}
 
+	//YOU DROP THE ITEM
 	public void RemoveInventoryItem(int index)
 	{
 		if (index < 0 || index >= InventorySize) return;
