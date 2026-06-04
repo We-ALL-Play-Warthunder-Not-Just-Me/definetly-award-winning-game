@@ -3,7 +3,7 @@ using System;
 
 public partial class AddItemTest : Button
 {
-	[Export] Mats inv;
+	[Export] InventoryLogic inv;
 	// [Export] int id;
 	// [Export] string name;
 	// [Export] Texture2D itemIcon;

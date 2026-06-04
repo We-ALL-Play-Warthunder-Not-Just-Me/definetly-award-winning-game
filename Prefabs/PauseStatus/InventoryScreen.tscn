@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Texture2D" uid="uid://b6y3d8sagkyci" path="res://Images/I gitted.png" id="6_1c2wn"]
 [ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="7_1c2wn"]
-[ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/Mats.cs" id="7_wkbcb"]
+[ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/InventoryLogic.cs" id="7_wkbcb"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemTest.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="9_6r2q2"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="9_ievbo"]

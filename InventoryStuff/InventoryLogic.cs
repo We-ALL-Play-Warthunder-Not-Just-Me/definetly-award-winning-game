@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Mats : ItemList
+public partial class InventoryLogic : ItemList
 {
 	[Export] int InventorySize = 20;
 	[Export] Texture2D blankicon;
