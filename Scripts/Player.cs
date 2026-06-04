@@ -45,7 +45,8 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public void dealDamage(float damage)
     {
 		//change the player state here
-        Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
+        //Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
+		GD.Print(Health_Bar.hurt(damage));
     }
     //Constants
     public const float SPEED = 120.0f;
