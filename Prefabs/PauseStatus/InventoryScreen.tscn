@@ -1,16 +1,51 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Prefabs/PauseStatus/InventoryScreen.cs" id="1_8w81r"]
-[ext_resource type="Script" uid="uid://cmwil7qkv3wgm" path="res://InventoryStuff/Inventory.cs" id="2_x0qmb"]
 [ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Materials.png" id="3_48de8"]
 [ext_resource type="Texture2D" uid="uid://dr5ex5v11qxd6" path="res://Images/MVM Base Character.png" id="4_gfnk6"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Texture2D" uid="uid://b6y3d8sagkyci" path="res://Images/I gitted.png" id="6_1c2wn"]
 [ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/InventoryLogic.cs" id="7_wkbcb"]
-[ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemTest.cs" id="7_x2suf"]
+[ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="9_6r2q2"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="9_ievbo"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="9_sygrt"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_x2suf"]
+script/source = "using Godot;
+using System;
+
+public partial class Inventory : Control
+{
+
+	public Item apple = new Item();
+
+	//private TabContainer invi;
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		//invi = GetNode<TabContainer>(\"TabContainer\");
+		// Callable.From(invi.GrabFocus).CallDeferred();
+
+		//Callable.From(GrabFocus).CallDeferred();
+		//GetNode<TabBar>(\"Inventory\");
+		//Callable.From(GetNode<TabBar>(\"Inventory\").GrabFocus).CallDeferred();
+		//GrabFocus();
+		//GD.Print(HasFocus());
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed(\"InventoryOpen\") )
+		{
+			//invi.GrabFocus();
+			//GrabFocus();
+			//GD.Print(HasFocus());
+		}
+	}
+}
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -54,8 +89,8 @@ offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
-script = ExtResource("2_x0qmb")
+current_tab = 1
+script = SubResource("CSharpScript_x2suf")
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
@@ -183,7 +218,6 @@ layout_mode = 2
 text = "wah Flask"
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -211,6 +245,7 @@ placeholder_text = "Search"
 layout_mode = 2
 size_flags_vertical = 3
 item_count = 6
+fixed_icon_size = Vector2i(50, 50)
 item_0/text = "ITEM 1"
 item_0/icon = ExtResource("3_48de8")
 item_1/text = "ITEM 2"
@@ -264,6 +299,7 @@ item_0/icon = ExtResource("3_48de8")
 item_1/text = "Crafting 2"
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
