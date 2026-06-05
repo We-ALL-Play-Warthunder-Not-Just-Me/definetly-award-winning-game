@@ -38,6 +38,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	{
 		GROUNDED,
 		AIRBORN,
+		COYOTE,
 		LIQUID,
 		WALL//Uncertain if this should be here
 	}
@@ -53,7 +54,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
-	public const double FALLGRACEPERIOD = 0.5;
+	public const double COYOTEPERIOD = 0.5;
 
     //player parts
     public CharacterBody2D PlayerObject;
@@ -111,17 +112,21 @@ public partial class Player : CharacterBody2D, DamagableEntity
 
 
 	//check if there are events that might change your environmental state
-	private void _pes(ref Vector2 v)
+	private double coyote_timer = 0.0;
+	private void _pes(ref Vector2 v, double delta)
 	{
 		if (PlayerObject.IsOnFloor())
 		{
 			_ces(EnvironmentalState.GROUNDED);
 		}
+		else if(!PlayerObject.IsOnFloor() && es == EnvironmentalState.GROUNDED && pjs != PlayerJumpState.JUMPING)
+		{
+			_ces(EnvironmentalState.COYOTE);
+		}
 		else if (!PlayerObject.IsOnFloor())
 		{
 			_ces(EnvironmentalState.AIRBORN);
 		}
-
 	}
 
 	//change your environmental state, 
@@ -134,6 +139,10 @@ public partial class Player : CharacterBody2D, DamagableEntity
 			case (EnvironmentalState.GROUNDED):
 				es = EnvironmentalState.GROUNDED;
 				break;
+			case (EnvironmentalState.COYOTE):
+				es = EnvironmentalState.COYOTE;
+				coyote_timer = COYOTEPERIOD;
+				break;
 			case (EnvironmentalState.AIRBORN):
 				es = EnvironmentalState.AIRBORN;
 				break;
@@ -141,17 +150,75 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	}
 
 	//enacts the environmental state
-	private void _enact_environmental_state(double delta)
+	private void _enact_environmental_state(double delta, ref Vector2 velocity)
 	{
 		switch(es)
 		{
 			case (EnvironmentalState.GROUNDED):
-				//right now we don'
+				//right now we don't need to do anthing
+				break;
+			case (EnvironmentalState.COYOTE):
+				coyote_timer -= delta;
+				if(coyote_timer <= 0)
+				{
+					_ces(EnvironmentalState.AIRBORN);
+				}
+				break;
+			case (EnvironmentalState.AIRBORN):
+				_apply_gravity(delta, ref velocity);
 				break;
 		}
 	}
 
+	//check if there are events that might change your jumping state
+	private void _pjs(ref Vector2 v)
+	{
+		//if we are on the ground or in coyote time and press jump we jump
+		if (Input.IsActionJustPressed("Jump") && (es == EnvironmentalState.GROUNDED || es == EnvironmentalState.COYOTE))
+		{
+			_cjs(PlayerJumpState.JUMPING);
+			v.Y = JUMPVELOCITY;
+		}
+		//if the player is jumping and the velocity is less than 0 we are now falling
+		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && this.GetRealVelocity().Y > 0.0)
+		{
+			_cjs(PlayerJumpState.FALLING);
+		}
+		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
+		else if (es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
+		{
+			//I want this to be a little more smooth than just hitting 0 velocity.
+			v.Y = -100;
+			_cjs(PlayerJumpState.FALLING);
+		}
+		//if the player is falling and hits the ground we are now landing. Right now not much is going on with landing, but
+		//this could be used to trigger landing animations or something like that.
+		else if (pjs == PlayerJumpState.FALLING && es == EnvironmentalState.GROUNDED)
+		{
+			_cjs(PlayerJumpState.LANDING);
+		}
+	}
 
+	private void _cjs(PlayerJumpState s)
+	{
+		if(s == pjs) return;
+		
+		switch(s)
+		{
+			case (PlayerJumpState.NONE):
+				pjs = PlayerJumpState.NONE;
+				break;
+			case (PlayerJumpState.JUMPING):
+				pjs = PlayerJumpState.JUMPING;
+				break;
+			case (PlayerJumpState.FALLING):
+				pjs = PlayerJumpState.FALLING;
+				break;
+			case (PlayerJumpState.LANDING):
+				pjs = PlayerJumpState.LANDING;
+				break;
+		}
+	}
 
 	//returns true if state changes and false if state is the same as before.
 	private bool _change_Environmental_State(EnvironmentalState s)
