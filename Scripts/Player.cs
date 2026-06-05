@@ -159,6 +159,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				break;
 			case (EnvironmentalState.COYOTE):
 				coyote_timer -= delta;
+				_apply_gravity(delta, ref velocity);
 				if(coyote_timer <= 0)
 				{
 					_ces(EnvironmentalState.AIRBORN);
@@ -173,33 +174,32 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	//check if there are events that might change your jumping state
 	private void _pjs(ref Vector2 v)
 	{
-		//if we are on the ground or in coyote time and press jump we jump
-		if (Input.IsActionJustPressed("Jump") && (es == EnvironmentalState.GROUNDED || es == EnvironmentalState.COYOTE))
+		//lets try to jump.
+		if (Input.IsActionJustPressed("Jump"))
 		{
-			_cjs(PlayerJumpState.JUMPING);
-			v.Y = JUMPVELOCITY;
+			_cjs(PlayerJumpState.JUMPING, ref v);
 		}
-		//if the player is jumping and the velocity is less than 0 we are now falling
-		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && this.GetRealVelocity().Y > 0.0)
+		//if velocity is less than 0 we are now falling even if we werent jumping.
+		else if(es == EnvironmentalState.AIRBORN && this.GetRealVelocity().Y > 0.0)
 		{
-			_cjs(PlayerJumpState.FALLING);
+			_cjs(PlayerJumpState.FALLING, ref v);
 		}
 		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
-		else if (es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
+		else if (pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
 		{
-			//I want this to be a little more smooth than just hitting 0 velocity.
-			v.Y = -100;
-			_cjs(PlayerJumpState.FALLING);
+			_cjs(PlayerJumpState.FALLING, ref v);
 		}
 		//if the player is falling and hits the ground we are now landing. Right now not much is going on with landing, but
 		//this could be used to trigger landing animations or something like that.
 		else if (pjs == PlayerJumpState.FALLING && es == EnvironmentalState.GROUNDED)
 		{
-			_cjs(PlayerJumpState.LANDING);
+			_cjs(PlayerJumpState.LANDING, ref v);
+			//since landing doesnt do anything we actually just want none
+			_cjs(PlayerJumpState.NONE, ref v);
 		}
 	}
 
-	private void _cjs(PlayerJumpState s)
+	private void _cjs(PlayerJumpState s, ref Vector2 v)
 	{
 		if(s == pjs) return;
 		
@@ -209,13 +209,52 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				pjs = PlayerJumpState.NONE;
 				break;
 			case (PlayerJumpState.JUMPING):
-				pjs = PlayerJumpState.JUMPING;
+				if(es == EnvironmentalState.GROUNDED || es == EnvironmentalState.COYOTE)
+				{
+					pjs = PlayerJumpState.JUMPING;	
+					v.Y = JUMPVELOCITY;
+				}
 				break;
 			case (PlayerJumpState.FALLING):
-				pjs = PlayerJumpState.FALLING;
+				//we were jumping and our velocity has hit 0 so we begin to fall
+				if(pjs == PlayerJumpState.JUMPING && v.Y >= 0)
+				{
+					pjs = PlayerJumpState.FALLING;	
+				}
+				//we were jumping and we let go of the jump button so we begin to fall, this allows for variable jump height.
+				else if(pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump") && v.Y < 0)
+				{
+					//if we are still going upwards I want to keep some of that momentum so its a little smoother transition to falling
+					//instead of just losing all upward momentum and falling
+					if(v.Y < -100)	
+					{
+						v.Y = -100;
+					}	
+					pjs = PlayerJumpState.FALLING;	
+				}
 				break;
 			case (PlayerJumpState.LANDING):
+				//if the player aint falling then we don't land, eventually we will want to add a timer if this feature is included
+				if(pjs != PlayerJumpState.FALLING) return;
 				pjs = PlayerJumpState.LANDING;
+				break;
+		}
+	}
+
+	private void _enact_jump_state(double delta, ref Vector2 velocity)
+	{
+		switch(pjs)
+		{
+			//I dunno exactly what would go here, but I am sure in testing it will come up. Especially landing.
+			//a gravity is handled by player state.
+			case (PlayerJumpState.NONE):
+				break;
+			case (PlayerJumpState.JUMPING):
+				break;
+			case (PlayerJumpState.FALLING):
+				break;
+			case (PlayerJumpState.LANDING):
+				//landing animation and -time
 				break;
 		}
 	}
@@ -421,14 +460,18 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-		_process_environmental_state(delta, ref velocity);
+		_pes(ref velocity, delta);
 		_process_move_state(delta, ref velocity);
-		_process_jump_state(delta, ref velocity);
-		_apply_gravity(delta, ref velocity);
+		_pjs(ref velocity);
+		
 		_animation_handler(delta, ref velocity);
+		
+		_enact_environmental_state(delta, ref velocity);
+		_enact_jump_state(delta, ref velocity);
 		Velocity = velocity;
 		_playerXSpeed_helper();
 		_playerYSpeed_helper();
+
 
 		MoveAndSlide();
 		
