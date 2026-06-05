@@ -1,14 +1,18 @@
 using Godot;
 using System;
+using System.Collections;
 
 public partial class InventoryLogic : ItemList
 {
+	[Export] public Godot.Collections.Dictionary<int,Item> inventory = [];
 	[Export] int InventorySize = 20;
 	[Export] Texture2D blankicon;
 	private Item[] items;
+	//private ArrayList myList;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		//inventory[0]=(items[0]);
 		// Initalizes the inventory of Size 20 filled with spaces and text so that it looks even
 		items = new Item[InventorySize];
 		for (int i = 0; i < InventorySize; i++)
@@ -39,6 +43,7 @@ public partial class InventoryLogic : ItemList
 
 			items[i] = item;
 			SetItemIcon(i,item.icon);
+			inventory[i] = item;
 
 			if(item.max_qty > 1)
 			{
@@ -94,6 +99,7 @@ public partial class InventoryLogic : ItemList
 			return;
 		}
 		items[index] = null;
+		inventory[index] = null;
 		SetItemIcon(index, blankicon);
 		SetItemText(index, " ");
 	}
@@ -130,6 +136,7 @@ public partial class InventoryLogic : ItemList
 				return;
 			}
 			GD.Print($"You Clicked {item.Name} there are {item.qty}");
+			GD.Print($"You clicky {inventory[(int)index].Name} yipeee" );
 		}
 	}
 
