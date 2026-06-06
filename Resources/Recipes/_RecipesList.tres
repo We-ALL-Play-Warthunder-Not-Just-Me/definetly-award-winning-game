@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="RecipesList" format=3 uid="uid://cjud4tr1avren"]
 
-[ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="1_xfxxt"]
-[ext_resource type="Script" uid="uid://dvdn1ky531oj6" path="res://Resources/BaseCases/RecipesList.cs" id="2_3pmji"]
+[ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="1_elok7"]
+[ext_resource type="Resource" uid="uid://ptac64tt3fvw" path="res://Resources/Recipes/BlueberryPieRecipe.tres" id="2_uomo0"]
+[ext_resource type="Script" uid="uid://dvdn1ky531oj6" path="res://Resources/BaseCases/RecipesList.cs" id="3_7pemj"]
 
 [resource]
-script = ExtResource("2_3pmji")
-recipes = Dictionary[int, ExtResource("1_xfxxt")]({
-5: null
+script = ExtResource("3_7pemj")
+recipes = Dictionary[int, ExtResource("1_elok7")]({
+5: ExtResource("2_uomo0")
 })
 metadata/_custom_type_script = "uid://dvdn1ky531oj6"
