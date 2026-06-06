@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/InventoryLogic.cs" id="7_wkbcb"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="9_6r2q2"]
+[ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/FlaskofPinkTears.tres" id="9_ou5ub"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="9_sygrt"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://InventoryStuff/InventoryLogic2.cs" id="9_x2suf"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/BaseCases/ItemDatabase.tres" id="10_sygrt"]
@@ -285,7 +286,7 @@ inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 1
 itemData = ExtResource("9_6r2q2")
 
-[node name="Blueberry0" type="Button" parent="Panel/TabContainer/Inventory" unique_id=2129708712 node_paths=PackedStringArray("inv")]
+[node name="Blueberry5" type="Button" parent="Panel/TabContainer/Inventory" unique_id=2129708712 node_paths=PackedStringArray("inv")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -320,6 +321,25 @@ script = ExtResource("7_x2suf")
 inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 1
 itemData = ExtResource("9_sygrt")
+
+[node name="FlaskofPinkTears" type="Button" parent="Panel/TabContainer/Inventory" unique_id=866026083 node_paths=PackedStringArray("inv")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -67.0
+offset_right = 100.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Add a Flask of Pink Tears"
+script = ExtResource("7_x2suf")
+inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
+qty = 1
+itemData = ExtResource("9_ou5ub")
 
 [node name="TabContainer" type="TabContainer" parent="Panel/TabContainer/Inventory" unique_id=898869370]
 layout_mode = 1
