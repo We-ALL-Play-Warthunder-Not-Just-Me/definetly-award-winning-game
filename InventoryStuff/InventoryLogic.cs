@@ -1,24 +1,43 @@
 using Godot;
 using System;
+using System.Collections;
+using System.Data.Common;
 
 public partial class InventoryLogic : ItemList
 {
-	[Export] int InventorySize = 20;
-	[Export] Texture2D blankicon;
-	private Item[] items;
+	[Export] private ItemDictionary itemDatabase;
+	[Export] public InventoryStorage inventory;
+	// [Export] private Resource itemDatabase;
+	// [Export] public Resource inventory;
+	//[Export] int InventorySize = 20;
+	//[Export] Texture2D blankicon;
+	//private Item[] items;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// Initalizes the inventory of Size 20 filled with spaces and text so that it looks even
-		items = new Item[InventorySize];
-		for (int i = 0; i < InventorySize; i++)
-		{
-			AddItem(" ", blankicon);
-		}
-		
+		UpdateItemlist();
 		ItemClicked += OnInventoryItemClicked;
 	}
 
+	public void UpdateItemlist()
+	{
+		Clear();
+		foreach (var (id,amount) in inventory.inventory)
+		{
+			if (itemDatabase.items[id].max_qty == 1)
+			{
+				int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
+				SetItemMetadata(i, itemDatabase.items[id].ID);
+			}
+			else
+			{
+				int i = AddItem($"{itemDatabase.items[id].Name} : {amount}", itemDatabase.items[id].icon);
+				SetItemMetadata(i, itemDatabase.items[id].ID);
+			}
+		}
+		ResourceSaver.Save(inventory);
+	}
 	public bool AddInventoryItem(Item item)
 	{
 		if (item == null || item.qty <= 0)
@@ -32,19 +51,19 @@ public partial class InventoryLogic : ItemList
 		// There is an item there, it used to be there soooo true (because it was stackable)
 		if (item.qty == 0) return true;
 
-		for (int i = 0; i < InventorySize; i++)
-		{
-			//Basically checks for an empty slot in the array to add an item
-			if(items[i] != null) continue;
-
-			items[i] = item;
-			SetItemIcon(i,item.icon);
-
-			if(item.max_qty > 1)
+		if (inventory.inventory.ContainsKey(item.ID))
+		{	// we kinda are already checking for this in AddStackable
+			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
-				SetItemText(i, items[i].Name + " " + items[i].qty.ToString());
+				GD.Print($"Your inventory is full of {item.Name}");
+				return couldPickup;
 			}
-
+		}
+		// if there is no item in the bag yet
+		if (!inventory.inventory.ContainsKey(item.ID))
+		{
+			inventory.inventory.Add(item.ID,item.qty);
+			UpdateItemlist();
 			return true;
 		}
 
@@ -56,53 +75,60 @@ public partial class InventoryLogic : ItemList
 	private bool AddStackableItem(Item item)
 	{
 		bool couldPickup = false;
-		for (int i = 0; i < items.Length; i++)
+		if (inventory.inventory.ContainsKey(item.ID))
 		{
-			if (items[i] == null) continue;
-			
-			if (items[i].ID != item.ID || items[i].qty >= items[i].max_qty) continue;
-		
-			if (items[i].qty + item.qty > items[i].max_qty)
+			// Your BAG IS TOO FULL GOOBER
+			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
-				int AmtToRemove = items[i].max_qty - items[i].qty;
-
-				items[i].qty = items[i].max_qty;
-				item.qty = item.qty - AmtToRemove;
-
-				couldPickup = true;
-				SetItemText(i, items[i].Name + " " + items[i].qty.ToString());
-				continue;
+				GD.Print($"Your inventory is full of {item.Name}");
+				return couldPickup;
 			}
-
-			items[i].qty = item.qty + items[i].qty;
-			item.qty = 0;
-			SetItemText(i, items[i].Name + " " + items[i].qty.ToString());
-			return true;
+			// When you can't pick up ALL the item
+			if (inventory.inventory[item.ID] + item.qty > item.max_qty)
+			{
+				int AmtToRemove = item.max_qty - inventory.inventory[item.ID];
+				inventory.inventory[item.ID] = item.max_qty;
+				item.qty -= AmtToRemove;
+				couldPickup = true;
+			}
+			//Pick up ALL the item and add it to your bag
+			if (inventory.inventory[item.ID] + item.qty <= item.max_qty)
+			{
+				inventory.inventory[item.ID] = item.qty + inventory.inventory[item.ID];
+				item.qty = 0;
+				couldPickup = true;
+			}
 		}
-
+		UpdateItemlist();
 		return couldPickup;
 	}
 
 	//YOU DROP THE ITEM
 	public void RemoveInventoryItem(int index)
 	{
-		if (index < 0 || index >= InventorySize) return;
+		if (index < 0 || index >= inventory.inventory.Count) return;
 		// When the item is important don't get rid of it!!!!!!
-		if (items[index].important == true)
+		int id = (int)GetItemMetadata(index);
+		if (itemDatabase.items[id].important == true)
 		{
 			GD.Print("This is an important item!!");
 			return;
 		}
-		items[index] = null;
-		SetItemIcon(index, blankicon);
-		SetItemText(index, " ");
+        inventory.inventory.Remove(id);
+        RemoveItem(index);
+		UpdateItemlist();
 	}
 
 	public Item GetInventoryItem(int index)
 	{
-		if (index < 0 || index >= InventorySize) return null;
-
-		return items[index];
+		if (index < 0 || index >= inventory.inventory.Count) return null;
+		int id = (int)GetItemMetadata(index);
+		Item temp = itemDatabase.items[id].shallowCopy();
+		if (inventory.inventory.ContainsKey(id))
+		{
+			temp.qty = inventory.inventory[id];
+		}
+		return temp;
 	}
 
 	private void OnInventoryItemClicked(long index, Vector2 pos, long mousebuttonindex)
@@ -132,5 +158,15 @@ public partial class InventoryLogic : ItemList
 			GD.Print($"You Clicked {item.Name} there are {item.qty}");
 		}
 	}
+
+	[Signal]
+	public delegate void sentItemDataEventHandler(Item item);
+
+	private void _on_item_selected(int index)
+	{
+		Item item = GetInventoryItem(index);
+		EmitSignal(SignalName.sentItemData, item);
+	}
+
 
 }
