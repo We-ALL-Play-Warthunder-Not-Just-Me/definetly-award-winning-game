@@ -7,10 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_qu823"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_1p4jt"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_puk6l"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_qu823"]
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aw55h"]
@@ -534,13 +530,7 @@ texture = ExtResource("1_ogw0s")
 region_enabled = true
 region_rect = Rect2(106, 308, 177, 75)
 
-[node name="TestShade" type="Sprite2D" parent="." unique_id=767982097]
-modulate = Color(0.19607843, 0.31764707, 0.3764706, 0.09803922)
-material = SubResource("CanvasItemMaterial_puk6l")
-scale = Vector2(1280, 192)
-texture = SubResource("CanvasTexture_qu823")
-
-[node name="TestShade2" parent="." unique_id=1811497297 instance=ExtResource("3_1p4jt")]
+[node name="TestShade" parent="." unique_id=1811497297 instance=ExtResource("3_1p4jt")]
 scale = Vector2(1280, 192)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]

@@ -5,7 +5,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_aoeht"]
 
 [node name="TestShade" type="Sprite2D" unique_id=1811497297]
-modulate = Color(0.12156863, 0.17254902, 0.21568628, 0.15686275)
+modulate = Color(0.3392097, 0.2752009, 0.69875675, 0.15686275)
 material = SubResource("CanvasItemMaterial_40ngu")
 scale = Vector2(320, 192)
 texture = SubResource("CanvasTexture_aoeht")
