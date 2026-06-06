@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dr5ex5v11qxd6" path="res://Images/MVM Base Character.png" id="4_gfnk6"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Texture2D" uid="uid://b6y3d8sagkyci" path="res://Images/I gitted.png" id="6_1c2wn"]
+[ext_resource type="Script" uid="uid://5hfqkgk7au4i" path="res://Scripts/Crafting/CraftingMaterial.cs" id="6_j3iwo"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemButton.cs" id="7_x2suf"]
+[ext_resource type="Resource" uid="uid://cjud4tr1avren" path="res://Resources/Recipes/_RecipesList.tres" id="8_8jsly"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="9_6r2q2"]
 [ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="9_ou5ub"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="9_sygrt"]
@@ -57,7 +59,7 @@ offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
+current_tab = 1
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
@@ -185,7 +187,6 @@ layout_mode = 2
 text = "wah Flask"
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -225,6 +226,10 @@ item_3/icon = ExtResource("5_wkbcb")
 item_4/text = "5"
 item_4/icon = ExtResource("6_1c2wn")
 item_5/text = "6"
+script = ExtResource("6_j3iwo")
+itemDatabase = ExtResource("10_sygrt")
+recipesList = ExtResource("8_8jsly")
+materialInventory = ExtResource("12_8wvro")
 
 [node name="CRAFTING?!" type="Panel" parent="Panel/TabContainer/Crafting" unique_id=743441488]
 layout_mode = 1
@@ -267,6 +272,7 @@ item_0/icon = ExtResource("3_48de8")
 item_1/text = "Crafting 2"
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

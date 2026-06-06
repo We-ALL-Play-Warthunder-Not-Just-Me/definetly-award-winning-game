@@ -16,11 +16,11 @@ public partial class InventoryLogic : ItemList
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		updateItemlist();
+		UpdateItemlist();
 		ItemClicked += OnInventoryItemClicked;
 	}
 
-	public void updateItemlist()
+	public void UpdateItemlist()
 	{
 		Clear();
 		foreach (var (id,amount) in inventory.inventory)
@@ -63,7 +63,7 @@ public partial class InventoryLogic : ItemList
 		if (!inventory.inventory.ContainsKey(item.ID))
 		{
 			inventory.inventory.Add(item.ID,item.qty);
-			updateItemlist();
+			UpdateItemlist();
 			return true;
 		}
 
@@ -99,7 +99,7 @@ public partial class InventoryLogic : ItemList
 				couldPickup = true;
 			}
 		}
-		updateItemlist();
+		UpdateItemlist();
 		return couldPickup;
 	}
 
@@ -116,7 +116,7 @@ public partial class InventoryLogic : ItemList
 		}
         inventory.inventory.Remove(id);
         RemoveItem(index);
-		updateItemlist();
+		UpdateItemlist();
 	}
 
 	public Item GetInventoryItem(int index)
