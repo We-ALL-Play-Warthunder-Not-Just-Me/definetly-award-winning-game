@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RecipesList" format=3 uid="uid://cjud4tr1avren"]
+
+[ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="1_xfxxt"]
+[ext_resource type="Script" uid="uid://dvdn1ky531oj6" path="res://Resources/BaseCases/RecipesList.cs" id="2_3pmji"]
+
+[resource]
+script = ExtResource("2_3pmji")
+recipes = Dictionary[int, ExtResource("1_xfxxt")]({
+5: null
+})
+metadata/_custom_type_script = "uid://dvdn1ky531oj6"

@@ -10,9 +10,8 @@ public partial class RecipesList : Resource
         OKAY SO
         RECIPES IS GONNA BE: ID , INGREDIENTS
     
-        INGREDIENTS ARE GONNA BE: ID, AMOUNT NEEDED FOR RECIPE
+        INGREDIENTS ARE GONNA BE: Item/ ID , AMOUNT NEEDED FOR RECIPE
      */
-    public Godot.Collections.Dictionary<Item,int> ingredients = [];
-    [Export] public Godot.Collections.Dictionary<int,Godot.Collections.Dictionary<Item,int>> recipes = [];
+    [Export] public Godot.Collections.Dictionary<int,Ingredients> recipes = [];
 
 }

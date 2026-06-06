@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredients" format=3 uid="uid://ptac64tt3fvw"]
+
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_33nnx"]
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="2_u4mfd"]
+[ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="3_7p8j1"]
+
+[resource]
+script = ExtResource("3_7p8j1")
+ingredients = Dictionary[ExtResource("1_33nnx"), int]({
+ExtResource("2_u4mfd"): 5
+})
+metadata/_custom_type_script = "uid://clr3e7yjs53yd"
