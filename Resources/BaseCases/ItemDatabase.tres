@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="InventoryDictionary" format=3 uid="uid://b2t4xih7225ws"]
+[gd_resource type="Resource" script_class="ItemDictionary" format=3 uid="uid://b2t4xih7225ws"]
 
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="1_4p5oo"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_g3e45"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="2_phcll"]
 [ext_resource type="Script" uid="uid://bfw00m6csyt5i" path="res://Resources/BaseCases/ItemDictionary.cs" id="3_r8lrb"]
+[ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/FlaskofPinkTears.tres" id="4_wkujr"]
 
 [resource]
 script = ExtResource("3_r8lrb")
-items = Dictionary[int, Resource]({
+items = Dictionary[int, ExtResource("1_g3e45")]({
 1: ExtResource("1_4p5oo"),
-2: ExtResource("2_phcll")
+2: ExtResource("2_phcll"),
+3: ExtResource("4_wkujr")
 })

@@ -8,8 +8,9 @@
 [ext_resource type="Script" uid="uid://bu2bxvrvfpwon" path="res://InventoryStuff/InventoryLogic.cs" id="7_wkbcb"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Blueberry.tres" id="9_6r2q2"]
-[ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="9_ievbo"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="9_sygrt"]
+[ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://InventoryStuff/InventoryLogic2.cs" id="9_x2suf"]
+[ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/BaseCases/ItemDatabase.tres" id="10_sygrt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -53,7 +54,7 @@ offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
@@ -181,6 +182,7 @@ layout_mode = 2
 text = "wah Flask"
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -262,7 +264,6 @@ item_0/icon = ExtResource("3_48de8")
 item_1/text = "Crafting 2"
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -354,8 +355,8 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 allow_rmb_select = true
 fixed_icon_size = Vector2i(50, 50)
-script = ExtResource("7_wkbcb")
-blankicon = ExtResource("9_ievbo")
+script = ExtResource("9_x2suf")
+itemDatabase = ExtResource("10_sygrt")
 
 [node name="KeyItems" type="Control" parent="Panel/TabContainer/Inventory/TabContainer" unique_id=945712878]
 visible = false

@@ -3,7 +3,7 @@ using System;
 
 public partial class AddItemButton : Button
 {
-	[Export] InventoryLogic inv;
+	[Export] InventoryLogic2 inv;
 	// [Export] int id;
 	// [Export] string name;
 	// [Export] Texture2D itemIcon;
