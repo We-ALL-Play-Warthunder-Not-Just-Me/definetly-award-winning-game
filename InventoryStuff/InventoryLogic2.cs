@@ -6,23 +6,24 @@ using System.Data.Common;
 public partial class InventoryLogic2 : ItemList
 {
 	[Export] private ItemDictionary itemDatabase;
-	[Export] public Godot.Collections.Dictionary<int,int> inventory = [];
+	[Export] public InventoryStorage inventory;
 	// [Export] private Resource itemDatabase;
 	// [Export] public Resource inventory;
-	[Export] int InventorySize = 20;
-	[Export] Texture2D blankicon;
+	//[Export] int InventorySize = 20;
+	//[Export] Texture2D blankicon;
 	//private Item[] items;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		updateItemlist();
 		ItemClicked += OnInventoryItemClicked;
 	}
 
 	public void updateItemlist()
 	{
 		Clear();
-		foreach (var (id,amount) in inventory)
+		foreach (var (id,amount) in inventory.inventory)
 		{
 			if (itemDatabase.items[id].max_qty == 1)
 			{
@@ -35,6 +36,7 @@ public partial class InventoryLogic2 : ItemList
 				SetItemMetadata(i, itemDatabase.items[id].ID);
 			}
 		}
+		
 	}
 	public bool AddInventoryItem(Item item)
 	{
@@ -49,18 +51,18 @@ public partial class InventoryLogic2 : ItemList
 		// There is an item there, it used to be there soooo true (because it was stackable)
 		if (item.qty == 0) return true;
 
-		if (inventory.ContainsKey(item.ID))
+		if (inventory.inventory.ContainsKey(item.ID))
 		{	// we kinda are already checking for this in AddStackable
-			if (inventory[item.ID] >= item.max_qty)
+			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
 				GD.Print($"Your inventory is full of {item.Name}");
 				return couldPickup;
 			}
 		}
 		// if there is no item in the bag yet
-		if (!inventory.ContainsKey(item.ID))
+		if (!inventory.inventory.ContainsKey(item.ID))
 		{
-			inventory.Add(item.ID,item.qty);
+			inventory.inventory.Add(item.ID,item.qty);
 			updateItemlist();
 			return true;
 		}
@@ -73,26 +75,26 @@ public partial class InventoryLogic2 : ItemList
 	private bool AddStackableItem(Item item)
 	{
 		bool couldPickup = false;
-		if (inventory.ContainsKey(item.ID))
+		if (inventory.inventory.ContainsKey(item.ID))
 		{
 			// Your BAG IS TOO FULL GOOBER
-			if (inventory[item.ID] >= item.max_qty)
+			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
 				GD.Print($"Your inventory is full of {item.Name}");
 				return couldPickup;
 			}
 			// When you can't pick up ALL the item
-			if (inventory[item.ID] + item.qty > item.max_qty)
+			if (inventory.inventory[item.ID] + item.qty > item.max_qty)
 			{
-				int AmtToRemove = item.max_qty - inventory[item.ID];
-				inventory[item.ID] = item.max_qty;
+				int AmtToRemove = item.max_qty - inventory.inventory[item.ID];
+				inventory.inventory[item.ID] = item.max_qty;
 				item.qty -= AmtToRemove;
 				couldPickup = true;
 			}
 			//Pick up ALL the item and add it to your bag
-			if (inventory[item.ID] + item.qty <= item.max_qty)
+			if (inventory.inventory[item.ID] + item.qty <= item.max_qty)
 			{
-				inventory[item.ID] = item.qty + inventory[item.ID];
+				inventory.inventory[item.ID] = item.qty + inventory.inventory[item.ID];
 				item.qty = 0;
 				couldPickup = true;
 			}
@@ -104,7 +106,7 @@ public partial class InventoryLogic2 : ItemList
 	//YOU DROP THE ITEM
 	public void RemoveInventoryItem(int index)
 	{
-		if (index < 0 || index >= InventorySize) return;
+		if (index < 0 || index >= inventory.inventory.Count) return;
 		// When the item is important don't get rid of it!!!!!!
 		int id = (int)GetItemMetadata(index);
 		if (itemDatabase.items[id].important == true)
@@ -112,19 +114,19 @@ public partial class InventoryLogic2 : ItemList
 			GD.Print("This is an important item!!");
 			return;
 		}
-        inventory.Remove(id);
+        inventory.inventory.Remove(id);
         RemoveItem(index);
 		updateItemlist();
 	}
 
 	public Item GetInventoryItem(int index)
 	{
-		if (index < 0 || index >= InventorySize) return null;
+		if (index < 0 || index >= inventory.inventory.Count) return null;
 		int id = (int)GetItemMetadata(index);
 		Item temp = itemDatabase.items[id].shallowCopy();
-		if (inventory.ContainsKey(id))
+		if (inventory.inventory.ContainsKey(id))
 		{
-			temp.qty = inventory[id];
+			temp.qty = inventory.inventory[id];
 		}
 		return temp;
 	}

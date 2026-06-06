@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="9_sygrt"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://InventoryStuff/InventoryLogic2.cs" id="9_x2suf"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/BaseCases/ItemDatabase.tres" id="10_sygrt"]
+[ext_resource type="Resource" uid="uid://b21hk50n5nvax" path="res://Resources/MaterialInventoryTest.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
@@ -378,6 +379,7 @@ allow_rmb_select = true
 fixed_icon_size = Vector2i(50, 50)
 script = ExtResource("9_x2suf")
 itemDatabase = ExtResource("10_sygrt")
+inventory = ExtResource("12_8wvro")
 
 [node name="KeyItems" type="Control" parent="Panel/TabContainer/Inventory/TabContainer" unique_id=945712878]
 visible = false
