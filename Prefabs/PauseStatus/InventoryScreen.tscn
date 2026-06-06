@@ -405,18 +405,18 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 3.0
+offset_left = 75.0
 offset_top = -245.5
-offset_right = 609.0
+offset_right = 575.0
 offset_bottom = 244.5
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/TabContainer/Inventory/PanelContainer" unique_id=90566633]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="Texturerect" type="TextureRect" parent="Panel/TabContainer/Inventory/PanelContainer/MarginContainer" unique_id=2015891040]
 layout_mode = 2

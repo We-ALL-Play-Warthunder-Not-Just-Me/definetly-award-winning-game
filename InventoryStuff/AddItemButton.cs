@@ -9,7 +9,7 @@ public partial class AddItemButton : Button
 	// [Export] Texture2D itemIcon;
 	// [Export] int max_qty;
 	[Export] int qty;
-	[Export] public Resource itemData;
+	[Export] public Item itemData;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
