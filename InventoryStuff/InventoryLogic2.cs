@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Data.Common;
 
-public partial class InventoryLogic2 : ItemList
+public partial class InventoryLogic : ItemList
 {
 	[Export] private ItemDictionary itemDatabase;
 	[Export] public InventoryStorage inventory;
@@ -36,7 +36,7 @@ public partial class InventoryLogic2 : ItemList
 				SetItemMetadata(i, itemDatabase.items[id].ID);
 			}
 		}
-		
+		ResourceSaver.Save(inventory);
 	}
 	public bool AddInventoryItem(Item item)
 	{
