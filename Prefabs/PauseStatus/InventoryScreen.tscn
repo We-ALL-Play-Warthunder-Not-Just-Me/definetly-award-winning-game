@@ -427,4 +427,6 @@ layout_mode = 2
 script = ExtResource("13_ou5ub")
 
 [connection signal="item_selected" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" method="_on_item_selected"]
+[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
 [connection signal="item_selected" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" method="_on_item_selected"]
+[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
