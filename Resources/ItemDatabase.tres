@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="3_wkujr"]
 [ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="4_5dlua"]
 [ext_resource type="Resource" uid="uid://b66uimowm4y52" path="res://Resources/Items/WovenPaintbrush.tres" id="5_wkujr"]
+[ext_resource type="Resource" uid="uid://divt054n14kij" path="res://Resources/Items/BlueberryPie.tres" id="6_5dlua"]
 
 [resource]
 script = ExtResource("3_r8lrb")
@@ -13,5 +14,6 @@ items = Dictionary[int, ExtResource("1_g3e45")]({
 1: ExtResource("2_g3e45"),
 2: ExtResource("3_wkujr"),
 3: ExtResource("4_5dlua"),
-4: ExtResource("5_wkujr")
+4: ExtResource("5_wkujr"),
+5: ExtResource("6_5dlua")
 })

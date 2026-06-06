@@ -10,9 +10,9 @@
 [ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="9_ou5ub"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="9_sygrt"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://InventoryStuff/InventoryLogic.cs" id="9_x2suf"]
-[ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/BaseCases/ItemDatabase.tres" id="10_sygrt"]
-[ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
-[ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
+[ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
+[ext_resource type="Resource" uid="uid://ddecfdiuwtpg8" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
+[ext_resource type="Resource" uid="uid://dboekfw4yr3rw" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
 [ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
