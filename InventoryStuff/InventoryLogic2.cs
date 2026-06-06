@@ -157,4 +157,14 @@ public partial class InventoryLogic2 : ItemList
 		}
 	}
 
+	[Signal]
+	public delegate void sentItemDataEventHandler(Item item);
+
+	private void _on_item_selected(int index)
+	{
+		Item item = GetInventoryItem(index);
+		EmitSignal(SignalName.sentItemData, item);
+	}
+
+
 }

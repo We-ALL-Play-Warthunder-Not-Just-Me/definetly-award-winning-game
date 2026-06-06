@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/ImportantBlueberry.tres" id="9_sygrt"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://InventoryStuff/InventoryLogic2.cs" id="9_x2suf"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/BaseCases/ItemDatabase.tres" id="10_sygrt"]
+[ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -412,6 +413,14 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/TabContainer/Inventory/PanelContainer" unique_id=90566633]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Panel/TabContainer/Inventory/PanelContainer/MarginContainer" unique_id=782308878]
+[node name="Texturerect" type="TextureRect" parent="Panel/TabContainer/Inventory/PanelContainer/MarginContainer" unique_id=2015891040]
 layout_mode = 2
+script = ExtResource("13_ou5ub")
+
+[connection signal="item_selected" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" method="_on_item_selected"]
+[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
