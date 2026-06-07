@@ -51,6 +51,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
     }
     //Constants
     public const float SPEED = 120.0f;
+	public const float RUNSPEED = 200.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
@@ -104,7 +105,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	//this will eventually be changed to be part of the environmental state process fuction
 	private void _apply_gravity(double delta, ref Vector2 velocity)
 	{
-		if (!PlayerObject.IsOnFloor())
+		if (es == EnvironmentalState.COYOTE || es == EnvironmentalState.AIRBORN)
 		{
 			velocity.Y += GRAVITY * (float)delta;
 		}
@@ -119,13 +120,17 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		{
 			_ces(EnvironmentalState.GROUNDED);
 		}
-		else if(!PlayerObject.IsOnFloor() && es == EnvironmentalState.GROUNDED && pjs != PlayerJumpState.JUMPING)
+		if(!PlayerObject.IsOnFloor() && es == EnvironmentalState.GROUNDED && pjs != PlayerJumpState.JUMPING)
 		{
 			_ces(EnvironmentalState.COYOTE);
 		}
 		else if (!PlayerObject.IsOnFloor())
 		{
 			_ces(EnvironmentalState.AIRBORN);
+		}
+		else
+		{
+			GD.Print("FUCKING ERROR IDIOT");
 		}
 	}
 
@@ -137,6 +142,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		switch(s)
 		{
 			case (EnvironmentalState.GROUNDED):
+				coyote_timer = 0;
 				es = EnvironmentalState.GROUNDED;
 				break;
 			case (EnvironmentalState.COYOTE):
@@ -144,9 +150,14 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				coyote_timer = COYOTEPERIOD;
 				break;
 			case (EnvironmentalState.AIRBORN):
+				if(coyote_timer > 0)
+				{
+					break;
+				}
 				es = EnvironmentalState.AIRBORN;
 				break;
 		}
+		 _environmental_text_helper();
 	}
 
 	//enacts the environmental state
@@ -160,7 +171,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 			case (EnvironmentalState.COYOTE):
 				coyote_timer -= delta;
 				_apply_gravity(delta, ref velocity);
-				if(coyote_timer <= 0)
+				if(coyote_timer <= 0 || pjs == PlayerJumpState.JUMPING)
 				{
 					_ces(EnvironmentalState.AIRBORN);
 				}
@@ -180,18 +191,18 @@ public partial class Player : CharacterBody2D, DamagableEntity
 			_cjs(PlayerJumpState.JUMPING, ref v);
 		}
 		//if velocity is less than 0 we are now falling even if we werent jumping.
-		else if(es == EnvironmentalState.AIRBORN && this.GetRealVelocity().Y > 0.0)
+		if(es == EnvironmentalState.AIRBORN && this.GetRealVelocity().Y > 0.0)
 		{
 			_cjs(PlayerJumpState.FALLING, ref v);
 		}
 		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
-		else if (pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
+		if (pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
 		{
 			_cjs(PlayerJumpState.FALLING, ref v);
 		}
 		//if the player is falling and hits the ground we are now landing. Right now not much is going on with landing, but
 		//this could be used to trigger landing animations or something like that.
-		else if (pjs == PlayerJumpState.FALLING && es == EnvironmentalState.GROUNDED)
+		if (pjs == PlayerJumpState.FALLING && es == EnvironmentalState.GROUNDED)
 		{
 			_cjs(PlayerJumpState.LANDING, ref v);
 			//since landing doesnt do anything we actually just want none
@@ -209,6 +220,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				pjs = PlayerJumpState.NONE;
 				break;
 			case (PlayerJumpState.JUMPING):
+			//we only want to start jumping if your on the ground or in coyote mode 
 				if(es == EnvironmentalState.GROUNDED || es == EnvironmentalState.COYOTE)
 				{
 					pjs = PlayerJumpState.JUMPING;	
@@ -216,13 +228,8 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				}
 				break;
 			case (PlayerJumpState.FALLING):
-				//we were jumping and our velocity has hit 0 so we begin to fall
-				if(pjs == PlayerJumpState.JUMPING && v.Y >= 0)
-				{
-					pjs = PlayerJumpState.FALLING;	
-				}
 				//we were jumping and we let go of the jump button so we begin to fall, this allows for variable jump height.
-				else if(pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump") && v.Y < 0)
+				if(pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump") && v.Y < 0)
 				{
 					//if we are still going upwards I want to keep some of that momentum so its a little smoother transition to falling
 					//instead of just losing all upward momentum and falling
@@ -231,14 +238,18 @@ public partial class Player : CharacterBody2D, DamagableEntity
 						v.Y = -100;
 					}	
 					pjs = PlayerJumpState.FALLING;	
-				}
-				break;
+				} else if (v.Y >= 0)
+                {
+                    pjs = PlayerJumpState.FALLING;
+                }
+                break;
 			case (PlayerJumpState.LANDING):
 				//if the player aint falling then we don't land, eventually we will want to add a timer if this feature is included
-				if(pjs != PlayerJumpState.FALLING) return;
+				if(pjs != PlayerJumpState.FALLING) break;
 				pjs = PlayerJumpState.LANDING;
 				break;
 		}
+		 _jump_text_helper();
 	}
 
 	private void _enact_jump_state(double delta, ref Vector2 velocity)
@@ -259,169 +270,65 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		}
 	}
 
-	//returns true if state changes and false if state is the same as before.
-	private bool _change_Environmental_State(EnvironmentalState s)
+	private void _ppms(ref Vector2 v)
 	{
-		if (s == es)
-		{
-			return false;
-		}
-		switch (s)
-		{
-			case (EnvironmentalState.GROUNDED):
-				// don't change the environmental state to grounded if we are not on the ground
-				if(PlayerObject.IsOnFloor())
-				{
-					es = s;
-					break;
-				}
-				else
-				{
-					return false;
-				}
-			case (EnvironmentalState.AIRBORN):
-				es = s;
-				break;
-			case (EnvironmentalState.LIQUID):
-				es = s;
-				break;
-			case (EnvironmentalState.WALL):
-				es = s;
-				break;
-		}
-		_environmental_text_helper();
-		return true;
-	}
-
-	//returns true if state changes and false if state is the same as before.
-	private bool _change_Jump_State(PlayerJumpState s)
-	{
-		if (s == pjs)
-		{
-			return false;
-		}
-		switch(s)
-		{
-			case (PlayerJumpState.NONE):
-				pjs = s;
-				break;
-			case (PlayerJumpState.JUMPING):
-				pjs = s;
-				break;
-			case (PlayerJumpState.FALLING):
-				pjs = s;
-				break;
-			case (PlayerJumpState.LANDING):
-				pjs = s;
-				break;
-
-		}
-		_jump_text_helper();
-		return true;
-	}
-
-	//returns true if state changes and false it has not changed.
-	private bool _change_Move_State(PlayerMoveState s)
-	{
-		if (s == pms)
-		{
-			return false;
-		}
-		switch (s)
-		{
-			case (PlayerMoveState.IDLE):
-				pms = s;
-				break;
-			case (PlayerMoveState.WALK):
-				pms = s;
-				break;
-			case (PlayerMoveState.RUN):
-				// player can only run if we are on the ground (assuming we want that)
-				if (es == EnvironmentalState.GROUNDED)
-				{
-					pms = s;
-					break;
-				}
-				else
-				{
-					return false;
-				}
-			case (PlayerMoveState.DASH):
-				pms = s;
-				break;
-		}
-		_move_text_helper();
-		return true;
-	}
-
-	// determines if the player is jumping, falling, or landing. Probably mostly for handling animations if we attach them.
-	// also handles variable jump height if the player lets go of the jump button early.
-	private void _process_jump_state(double delta, ref Vector2 velocity)
-	{
-		//if we are on the ground and press jump we jump
-		if (Input.IsActionJustPressed("Jump") && es == EnvironmentalState.GROUNDED)
-		{
-			_change_Jump_State(PlayerJumpState.JUMPING);
-			velocity.Y = JUMPVELOCITY;
-		}
-		//if the player is jumping and the velocity is less than 0 we are now falling
-		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && this.GetRealVelocity().Y > 0.0)
-		{
-			velocity.Y = -40;
-            _change_Jump_State(PlayerJumpState.FALLING);
-		}
-		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
-		else if (es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
-		{
-			velocity.Y = -40;
-			_change_Jump_State(PlayerJumpState.FALLING);
-		}
-		//if the player is falling and hits the ground we are now landing
-		else if (pjs == PlayerJumpState.FALLING && es == EnvironmentalState.GROUNDED)
-		{
-			_change_Jump_State(PlayerJumpState.LANDING);
-		}
-		//if nothing else is going on and we are on the ground then we are doing nothing
-		else if (es == EnvironmentalState.GROUNDED)
-		{
-			_change_Jump_State(PlayerJumpState.NONE);
-		}
-	}
-	//this handles player movement
-	private void _process_move_state(double delta, ref Vector2 velocity)
-	{
-		//get if the player is pressing the move buttons
 		Vector2 direction = Input.GetVector("Left", "Right", "ui_up", "ui_down");
-		//if they are pressing the move buttons then move
+		// we will want to check for dash and run inputs evntually.
 		if (direction != Vector2.Zero)
 		{
-			_change_Move_State(PlayerMoveState.WALK);
-			velocity.X = direction.X * SPEED;
+			_cpms(PlayerMoveState.WALK, ref v);
 		}
-		//if they were moving and let go of the controls then slow down to a stop, this might be wierd with controllers if theres no deadzone
-		else if (pms == PlayerMoveState.IDLE && direction == Vector2.Zero)
-		{
-			velocity.X = Mathf.MoveToward(velocity.X, 0, SPEED);
-		} 
-		// if nothing is happening make sure we are idle
 		else 
 		{
-			_change_Move_State(PlayerMoveState.IDLE);
+			_cpms(PlayerMoveState.IDLE, ref v);
 		}   
 	}
 
-	private void _process_environmental_state(double delta, ref Vector2 velocity)
+	private void _cpms(PlayerMoveState s, ref Vector2 v)
 	{
-		//right now we just check if the player is on the floor or not.
-		if (PlayerObject.IsOnFloor())
+		if(s == pms) return;
+		
+		switch (s)
 		{
-			_change_Environmental_State(EnvironmentalState.GROUNDED);
+			case (PlayerMoveState.IDLE):
+				pms = PlayerMoveState.IDLE;
+				break;
+			case (PlayerMoveState.WALK):
+				pms = PlayerMoveState.WALK;
+				break;
+			case (PlayerMoveState.RUN):
+				if(es == EnvironmentalState.GROUNDED)
+				{
+					pms = PlayerMoveState.RUN;
+				}
+				break;
+			case (PlayerMoveState.DASH):
+				pms = PlayerMoveState.DASH;
+				break;
 		}
-		else
+		_move_text_helper();
+	}
+
+	private void _enact_move_state(double delta, ref Vector2 velocity)
+	{
+		Vector2 direction = Input.GetVector("Left", "Right", "ui_up", "ui_down");
+		switch (pms)
 		{
-			_change_Environmental_State(EnvironmentalState.AIRBORN);
+			case (PlayerMoveState.IDLE):
+				velocity.X = Mathf.MoveToward(velocity.X, 0, SPEED);
+				break;
+			case (PlayerMoveState.WALK):
+				velocity.X = direction.X * SPEED;
+				break;
+			case (PlayerMoveState.RUN):
+				velocity.X = direction.X * RUNSPEED;
+				break;
+			case (PlayerMoveState.DASH):
+				velocity.X = direction.X * DASHSPEED;
+				break;
 		}
-	}	
+		
+	}
 	private void _animation_handler(double delta, ref Vector2 velocity)
 	{
 		//Animation Handler?
@@ -461,20 +368,20 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	{
 		Vector2 velocity = Velocity;
 		_pes(ref velocity, delta);
-		_process_move_state(delta, ref velocity);
+		_ppms(ref velocity);
 		_pjs(ref velocity);
 		
 		_animation_handler(delta, ref velocity);
 		
 		_enact_environmental_state(delta, ref velocity);
 		_enact_jump_state(delta, ref velocity);
+		_enact_move_state(delta, ref velocity);
 		Velocity = velocity;
 		_playerXSpeed_helper();
 		_playerYSpeed_helper();
 
 
 		MoveAndSlide();
-		
 	}
 
 

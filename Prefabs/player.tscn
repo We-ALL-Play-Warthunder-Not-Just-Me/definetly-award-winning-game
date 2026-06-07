@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3qsj1c2jpowp" path="res://Scripts/Player.cs" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dfito6lpduaml" path="res://Images/MVM Witch Character Red.png" id="2_5wxv7"]
-[ext_resource type="PackedScene" path="res://Prefabs/HealthBar.tscn" id="3_y5hcb"]
+[ext_resource type="PackedScene" uid="uid://wh7cc2hwouuu" path="res://Prefabs/HealthBar.tscn" id="3_y5hcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5hcb"]
 size = Vector2(8, 22)
@@ -113,10 +113,9 @@ _data = {
 &"RESET": SubResource("Animation_2nftw")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1876432518 node_paths=PackedStringArray("Health_Bar") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1876432518 groups=["Player"]]
 collision_layer = 129
 script = ExtResource("1_onrkg")
-Health_Bar = NodePath("HealthBar")
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1533614941 groups=["Player"]]
 texture = ExtResource("2_5wxv7")
@@ -143,7 +142,6 @@ text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
-visible = false
 offset_left = -212.0
 offset_top = -122.0
 offset_right = -1.0
@@ -164,7 +162,6 @@ text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
-visible = false
 z_index = 20
 offset_left = -213.0
 offset_top = -90.0
