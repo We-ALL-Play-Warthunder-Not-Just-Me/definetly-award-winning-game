@@ -40,7 +40,9 @@ public partial class CraftingMaterial : ItemList
 	private void SelectItem(long index)
 	{
 		Item sendingItem = GetInventoryItem((int) index);
+		sendingItem.qty = 1;
 		GD.Print($"You selected {sendingItem.Name}");
+
 		EmitSignal(SignalName.SendOverItem, sendingItem);
 	}
 
