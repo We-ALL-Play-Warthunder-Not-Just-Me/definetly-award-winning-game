@@ -10,12 +10,10 @@ public partial class CraftingMaterial : ItemList
 	public override void _Ready()
 	{
 		updateItemlist();
+		materialInventory.Changed += updateItemlist;
+		ItemActivated += SelectItem;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 
 	public void updateItemlist()
 	{
@@ -34,6 +32,29 @@ public partial class CraftingMaterial : ItemList
 			}
 		}
 		ResourceSaver.Save(materialInventory);
+	}
+
+	[Signal]
+	public delegate void SendOverItemEventHandler(Item item);
+
+	private void SelectItem(long index)
+	{
+		Item sendingItem = GetInventoryItem((int) index);
+		GD.Print($"You selected {sendingItem.Name}");
+		EmitSignal(SignalName.SendOverItem, sendingItem);
+	}
+
+	//Waow
+	public Item GetInventoryItem(int index)
+	{
+		if (index < 0 || index >= materialInventory.inventory.Count) return null;
+		int id = (int)GetItemMetadata(index);
+		Item temp = itemDatabase.items[id].shallowCopy();
+		if (materialInventory.inventory.ContainsKey(id))
+		{
+			temp.qty = materialInventory.inventory[id];
+		}
+		return temp;
 	}
 
 }

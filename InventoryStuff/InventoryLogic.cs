@@ -18,6 +18,7 @@ public partial class InventoryLogic : ItemList
 	{
 		UpdateItemlist();
 		ItemClicked += OnInventoryItemClicked;
+		inventory.Changed += UpdateItemlist;
 	}
 
 	public void UpdateItemlist()
@@ -63,7 +64,8 @@ public partial class InventoryLogic : ItemList
 		if (!inventory.inventory.ContainsKey(item.ID))
 		{
 			inventory.inventory.Add(item.ID,item.qty);
-			UpdateItemlist();
+			//UpdateItemlist();
+			inventory.EmitChanged();
 			return true;
 		}
 
@@ -99,7 +101,8 @@ public partial class InventoryLogic : ItemList
 				couldPickup = true;
 			}
 		}
-		UpdateItemlist();
+		//UpdateItemlist();
+		inventory.EmitChanged();
 		return couldPickup;
 	}
 
