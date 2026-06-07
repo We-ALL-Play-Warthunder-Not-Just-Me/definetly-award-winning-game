@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uip62065pfga"
-path="res://.godot/imported/Woven Paintbrush.png-5985b074c73408e1dde215f81a64442f.ctex"
+uid="uid://bvitb33g30ukj"
+path="res://.godot/imported/Test UI Pause Backing.png-bb3921845e8a5ba791dc687fecb9df1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Woven Paintbrush.png"
-dest_files=["res://.godot/imported/Woven Paintbrush.png-5985b074c73408e1dde215f81a64442f.ctex"]
+source_file="res://Images/UIArt/Test UI Pause Backing.png"
+dest_files=["res://.godot/imported/Test UI Pause Backing.png-bb3921845e8a5ba791dc687fecb9df1c.ctex"]
 
 [params]
 

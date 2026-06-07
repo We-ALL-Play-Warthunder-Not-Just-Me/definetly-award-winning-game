@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Prefabs/PauseStatus/ScriptsofPause/PauseScreen.cs" id="1_hbagr"]
 [ext_resource type="Script" uid="uid://csqqi24rpdd4h" path="res://Prefabs/PauseStatus/ScriptsofPause/Resume.cs" id="2_iy0nc"]
+[ext_resource type="Texture2D" uid="uid://bvitb33g30ukj" path="res://Images/UIArt/Test UI Pause Backing.png" id="2_sr6dd"]
+[ext_resource type="Texture2D" uid="uid://doloe1lhbe7h2" path="res://Images/UIArt/Test UI Resume Button.png" id="2_w7fft"]
+[ext_resource type="Texture2D" uid="uid://cwx006qcopycc" path="res://Images/UIArt/Test UI Settings Button.png" id="4_2i225"]
+[ext_resource type="Texture2D" uid="uid://dmx6g6a6iya0w" path="res://Images/UIArt/Test UI Quit Button.png" id="5_sr6dd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sr6dd"]
+texture = ExtResource("2_sr6dd")
 
 [node name="PauseScreen" type="Control" unique_id=431672971]
 process_mode = 2
@@ -20,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sr6dd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1202538356]
 layout_mode = 1
@@ -28,24 +36,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.5
-offset_right = 50.0
-offset_bottom = 50.5
+offset_left = -164.0
+offset_top = -160.0
+offset_right = 164.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=431469758]
 layout_mode = 2
-text = "Resume"
+icon = ExtResource("2_w7fft")
+flat = true
+icon_alignment = 1
 script = ExtResource("2_iy0nc")
 
 [node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=1911109532]
 layout_mode = 2
-text = "Settings"
+icon = ExtResource("4_2i225")
+flat = true
+icon_alignment = 1
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=2124335933]
 layout_mode = 2
-text = "Quit"
+icon = ExtResource("5_sr6dd")
+flat = true
+icon_alignment = 1
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

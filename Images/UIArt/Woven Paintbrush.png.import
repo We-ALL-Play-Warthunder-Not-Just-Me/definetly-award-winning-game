@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t8aidlaga8lm"
-path="res://.godot/imported/blueberry.png-60dd24d569c5a6235747175346bed026.ctex"
+uid="uid://uip62065pfga"
+path="res://.godot/imported/Woven Paintbrush.png-d3721a76608bd0042ccc4617dbf901fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/blueberry.png"
-dest_files=["res://.godot/imported/blueberry.png-60dd24d569c5a6235747175346bed026.ctex"]
+source_file="res://Images/UIArt/Woven Paintbrush.png"
+dest_files=["res://.godot/imported/Woven Paintbrush.png-d3721a76608bd0042ccc4617dbf901fe.ctex"]
 
 [params]
 

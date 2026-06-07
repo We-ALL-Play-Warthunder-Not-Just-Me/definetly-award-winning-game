@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8a0yuoit6vd3"
-path="res://.godot/imported/Flask of Pink Tears.png-7af151c42f5c437e77ade8bd26ec2de3.ctex"
+uid="uid://t8aidlaga8lm"
+path="res://.godot/imported/blueberry.png-d7ca57fafc07376ae36f2139f227b7e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Flask of Pink Tears.png"
-dest_files=["res://.godot/imported/Flask of Pink Tears.png-7af151c42f5c437e77ade8bd26ec2de3.ctex"]
+source_file="res://Images/UIArt/blueberry.png"
+dest_files=["res://.godot/imported/blueberry.png-d7ca57fafc07376ae36f2139f227b7e6.ctex"]
 
 [params]
 

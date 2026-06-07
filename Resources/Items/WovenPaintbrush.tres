@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://b66uimowm4y52"]
 
-[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/Woven Paintbrush.png" id="1_dj3a0"]
+[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/UIArt/Woven Paintbrush.png" id="1_dj3a0"]
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_yh1hd"]
 
 [resource]
