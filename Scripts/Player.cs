@@ -120,6 +120,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		{
 			_ces(EnvironmentalState.GROUNDED);
 		}
+		//if the player walks off something they would no longer be on hte floor, but would not have yet lost the grounded state.
 		if(!PlayerObject.IsOnFloor() && es == EnvironmentalState.GROUNDED && pjs != PlayerJumpState.JUMPING)
 		{
 			_ces(EnvironmentalState.COYOTE);

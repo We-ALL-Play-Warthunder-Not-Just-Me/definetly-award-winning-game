@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rxcsjanls7dq"]
 
-[ext_resource type="Script" uid="uid://drthh8kcbv68y" path="res://Prefabs/TerrifyingMaw.cs" id="1_bsg7f"]
+[ext_resource type="Script" uid="uid://drthh8kcbv68y" path="res://Scripts/TerrifyingMaw.cs" id="1_bsg7f"]
 [ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/MVM Maw.png" id="2_31gip"]
 
 [sub_resource type="Animation" id="Animation_wxf5y"]
@@ -13,6 +13,9 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00odg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsg7f"]
+radius = 271.00183
 
 [node name="TerrifyingMaw" type="CharacterBody2D" unique_id=614449111]
 script = ExtResource("1_bsg7f")
@@ -29,3 +32,8 @@ libraries/ = SubResource("AnimationLibrary_05ldl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1818679338]
 shape = SubResource("RectangleShape2D_00odg")
+
+[node name="EnemyDetector" type="Area2D" parent="." unique_id=1701893687]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector" unique_id=1387074939]
+shape = SubResource("CircleShape2D_bsg7f")
