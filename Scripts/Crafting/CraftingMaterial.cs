@@ -9,13 +9,14 @@ public partial class CraftingMaterial : ItemList
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		updateItemlist();
-		materialInventory.Changed += updateItemlist;
+		UpdateItemlist();
+		materialInventory.Changed += UpdateItemlist;
 		ItemActivated += SelectItem;
+		ItemClicked += OnInventoryItemClicked;
 	}
 
 
-	public void updateItemlist()
+	public void UpdateItemlist()
 	{
 		Clear();
 		foreach (var (id,amount) in materialInventory.inventory)
@@ -57,6 +58,17 @@ public partial class CraftingMaterial : ItemList
 			temp.qty = materialInventory.inventory[id];
 		}
 		return temp;
+	}
+
+	private void OnInventoryItemClicked(long index, Vector2 pos, long mousebuttonindex)
+	{
+		if (mousebuttonindex == 1)
+		{
+			Item sendingItem = GetInventoryItem((int) index);
+			sendingItem.qty = 1;
+			GD.Print($"You selected {sendingItem.Name}");
+			EmitSignal(SignalName.SendOverItem, sendingItem);
+		}
 	}
 
 }

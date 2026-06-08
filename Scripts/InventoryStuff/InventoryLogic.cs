@@ -56,7 +56,7 @@ public partial class InventoryLogic : ItemList
 		{	// we kinda are already checking for this in AddStackable
 			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
-				GD.Print($"Your inventory is full of {item.Name}");
+				//GD.Print($"Your inventory is full of {item.Name}");
 				return couldPickup;
 			}
 		}

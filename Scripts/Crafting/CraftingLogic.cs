@@ -13,20 +13,22 @@ public partial class CraftingLogic : ItemList
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		updateItemlist();
+		UpdateItemlist();
 		materialList.SendOverItem += SentItem;
+		ItemClicked += OnItemClicked;
 	}
 
 	private void SentItem(Item item)
 	{
 		//why does this work and not making a shallowcopy doesn't????? 
+		//It was bc the addtostackingfunction was setting the item.qty to 0
 		//Item tempitem = item.shallowCopy();
-		addToCraftingMenu(item);
+		AddToCraftingMenu(item);
 		//updateItemlist();
 	}
 
 	//Copied from InventoryLogic and modified
-	public bool addToCraftingMenu(Item item)
+	public bool AddToCraftingMenu(Item item)
 	{
 		if (item == null || item.qty <= 0)
 		{
@@ -51,13 +53,13 @@ public partial class CraftingLogic : ItemList
 		if (!craftingMenu.ContainsKey(item.ID))
 		{
 			craftingMenu.Add(item.ID,item.qty);
-			updateItemlist();
+			UpdateItemlist();
 			return true;
 		}
 
 		return couldPickup;
 	}
-	public void updateItemlist()
+	public void UpdateItemlist()
 	{
 		Clear();
 		foreach (var (id,amount) in craftingMenu)
@@ -93,9 +95,48 @@ public partial class CraftingLogic : ItemList
 				couldPickup = true;
 			}
 		}
-		updateItemlist();
+		UpdateItemlist();
 		return couldPickup;
 	}
 
+	// we don't have to be as 'careful' when removing items from the menu on the left in the crafting
+	public void RemoveItemFromCrafting(int index)
+	{
+		if (index < 0 || index >= craftingMenu.Count) return;
+		int id = (int)GetItemMetadata(index);
+        craftingMenu.Remove(id);
+        base.RemoveItem(index);
+		UpdateItemlist();
+	}
+
+	public Item GetItemFromCrafting(int index)
+	{
+		if (index < 0 || index >= craftingMenu.Count) return null;
+		int id = (int)GetItemMetadata(index);
+		Item temp = itemDatabase.items[id].shallowCopy();
+		if (craftingMenu.ContainsKey(id))
+		{
+			temp.qty = craftingMenu[id];
+		}
+		return temp;
+	}
+
+	private void OnItemClicked(long index, Vector2 pos, long mousebuttonindex)
+	{
+		//Right click to take out from the menu
+		if (mousebuttonindex == 2)
+		{
+			RemoveItemFromCrafting((int) index);
+			GD.Print($"You took out an item");
+		}
+		// Left Click to add more items....
+		else if (mousebuttonindex == 1)
+		{
+			Item tempitem = GetItemFromCrafting((int) index);
+			tempitem.qty = 1;
+			AddToCraftingMenu(tempitem);
+		}
+	}
+	
 
 }
