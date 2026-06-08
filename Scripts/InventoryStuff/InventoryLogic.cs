@@ -18,6 +18,8 @@ public partial class InventoryLogic : ItemList
 	{
 		UpdateItemlist();
 		ItemClicked += OnInventoryItemClicked;
+		inventory.Changed += UpdateItemlist;
+		ItemSelected += OnItemSelected;
 	}
 
 	public void UpdateItemlist()
@@ -55,7 +57,7 @@ public partial class InventoryLogic : ItemList
 		{	// we kinda are already checking for this in AddStackable
 			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
-				GD.Print($"Your inventory is full of {item.Name}");
+				//GD.Print($"Your inventory is full of {item.Name}");
 				return couldPickup;
 			}
 		}
@@ -63,7 +65,8 @@ public partial class InventoryLogic : ItemList
 		if (!inventory.inventory.ContainsKey(item.ID))
 		{
 			inventory.inventory.Add(item.ID,item.qty);
-			UpdateItemlist();
+			//UpdateItemlist();
+			inventory.EmitChanged();
 			return true;
 		}
 
@@ -99,7 +102,8 @@ public partial class InventoryLogic : ItemList
 				couldPickup = true;
 			}
 		}
-		UpdateItemlist();
+		//UpdateItemlist();
+		inventory.EmitChanged();
 		return couldPickup;
 	}
 
@@ -115,8 +119,20 @@ public partial class InventoryLogic : ItemList
 			return;
 		}
         inventory.inventory.Remove(id);
-        RemoveItem(index);
-		UpdateItemlist();
+		//UpdateItemlist();
+		inventory.EmitChanged();
+	}
+
+	public void RemoveAmountofItem(int id, int amount)
+	{
+		//if the item is consumable take that amount out
+		if (itemDatabase.items[id].consumable)
+		{
+			inventory.inventory[id] -= amount;
+		}
+		//Probably needs more checks
+		if(inventory.inventory[id] == 0) inventory.inventory.Remove(id);
+		inventory.EmitChanged();
 	}
 
 	public Item GetInventoryItem(int index)
@@ -162,9 +178,9 @@ public partial class InventoryLogic : ItemList
 	[Signal]
 	public delegate void sentItemDataEventHandler(Item item);
 
-	private void _on_item_selected(int index)
+	private void OnItemSelected(long index)
 	{
-		Item item = GetInventoryItem(index);
+		Item item = GetInventoryItem((int)index);
 		EmitSignal(SignalName.sentItemData, item);
 	}
 

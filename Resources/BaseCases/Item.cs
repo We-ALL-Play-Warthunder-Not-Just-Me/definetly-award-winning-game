@@ -10,13 +10,14 @@ using System;
    [Export] public int max_qty;
    [Export] public Texture2D icon;
    [Export] public bool important = false;
+   [Export] public bool consumable = true;
 
     public Item() : this(0,null,0,0,null)
     {
         
     }
 
-    public Item(int ID, string name, int qty, int max_qty, Texture2D icon, bool important = false)
+    public Item(int ID, string name, int qty, int max_qty, Texture2D icon, bool important = false, bool consumable = true)
     {
         this.ID = ID;
         this.Name = name;
@@ -24,6 +25,7 @@ using System;
         this.max_qty = max_qty;
         this.icon = icon;
         this.important = important;
+        this.consumable = consumable;
     }
 
     public Item shallowCopy()
