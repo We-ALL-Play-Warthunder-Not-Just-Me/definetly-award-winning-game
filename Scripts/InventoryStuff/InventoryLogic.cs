@@ -119,6 +119,7 @@ public partial class InventoryLogic : ItemList
 		}
         inventory.inventory.Remove(id);
         RemoveItem(index);
+		inventory.EmitChanged();
 		UpdateItemlist();
 	}
 
