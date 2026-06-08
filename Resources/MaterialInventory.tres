@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_u3fqy")
 inventory = Dictionary[int, int]({
-1: 20,
+1: 30,
 2: 3,
 3: 1,
-5: 3
+5: 9
 })
 metadata/_custom_type_script = "uid://vyw1ws4cgmpn"

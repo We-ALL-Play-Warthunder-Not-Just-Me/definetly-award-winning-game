@@ -47,11 +47,12 @@ public partial class CraftingLogic : ItemList
 		foreach (var (item,amount) in recipeList.recipes[recipeID].ingredients)
 		{
 			materialInventory.RemoveAmountofItem(item.ID,amount);
+			craftingMenu[item.ID] -= amount;
+			if(craftingMenu[item.ID] == 0) craftingMenu.Remove(item.ID);
 		}
-		Clear();
-		craftingMenu.Clear();
-		recipeID = 0;
-		RecipePicture();
+
+		UpdateItemlist();
+		CheckValidRecipe();
 	}
 
 	private void SentItem(Item item)
