@@ -39,8 +39,20 @@ public partial class CraftingLogic : ItemList
 		Item temp = itemDatabase.items[recipeID].shallowCopy();
 		temp.qty = 1;
 		materialInventory.AddInventoryItem(temp);
+		ConsumeIngredients();
 	}
 
+	private void ConsumeIngredients()
+	{
+		foreach (var (item,amount) in recipeList.recipes[recipeID].ingredients)
+		{
+			materialInventory.RemoveAmountofItem(item.ID,amount);
+		}
+		Clear();
+		craftingMenu.Clear();
+		recipeID = 0;
+		RecipePicture();
+	}
 
 	private void SentItem(Item item)
 	{

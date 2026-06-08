@@ -118,9 +118,14 @@ public partial class InventoryLogic : ItemList
 			return;
 		}
         inventory.inventory.Remove(id);
-        RemoveItem(index);
+		//UpdateItemlist();
 		inventory.EmitChanged();
-		UpdateItemlist();
+	}
+
+	public void RemoveAmountofItem(int id, int amount)
+	{
+		inventory.inventory[id] -= amount;
+		inventory.EmitChanged();
 	}
 
 	public Item GetInventoryItem(int index)
