@@ -46,8 +46,12 @@ public partial class CraftingLogic : ItemList
 	{
 		foreach (var (item,amount) in recipeList.recipes[recipeID].ingredients)
 		{
-			materialInventory.RemoveAmountofItem(item.ID,amount);
-			craftingMenu[item.ID] -= amount;
+			//Non-consumable items are reusable, if it's consumable we use them up
+			if (itemDatabase.items[item.ID].consumable)
+			{
+				materialInventory.RemoveAmountofItem(item.ID,amount);
+				craftingMenu[item.ID] -= amount;
+			}
 			if(craftingMenu[item.ID] == 0) craftingMenu.Remove(item.ID);
 		}
 

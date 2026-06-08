@@ -19,6 +19,7 @@ public partial class InventoryLogic : ItemList
 		UpdateItemlist();
 		ItemClicked += OnInventoryItemClicked;
 		inventory.Changed += UpdateItemlist;
+		ItemSelected += OnItemSelected;
 	}
 
 	public void UpdateItemlist()
@@ -124,7 +125,11 @@ public partial class InventoryLogic : ItemList
 
 	public void RemoveAmountofItem(int id, int amount)
 	{
-		inventory.inventory[id] -= amount;
+		//if the item is consumable take that amount out
+		if (itemDatabase.items[id].consumable)
+		{
+			inventory.inventory[id] -= amount;
+		}
 		//Probably needs more checks
 		if(inventory.inventory[id] == 0) inventory.inventory.Remove(id);
 		inventory.EmitChanged();
@@ -173,9 +178,9 @@ public partial class InventoryLogic : ItemList
 	[Signal]
 	public delegate void sentItemDataEventHandler(Item item);
 
-	private void _on_item_selected(int index)
+	private void OnItemSelected(long index)
 	{
-		Item item = GetInventoryItem(index);
+		Item item = GetInventoryItem((int)index);
 		EmitSignal(SignalName.sentItemData, item);
 	}
 
