@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Prefabs/PauseStatus/ScriptsofPause/InventoryScreen.cs" id="1_8w81r"]
-[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/Woven Paintbrush.png" id="2_8jsly"]
+[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/UIArt/Woven Paintbrush.png" id="2_8jsly"]
 [ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="3_1r1x0"]
 [ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Materials.png" id="3_48de8"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
@@ -12,15 +12,15 @@
 [ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="9_ou5ub"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="9_sygrt"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://Scripts/InventoryStuff/InventoryLogic.cs" id="9_x2suf"]
-[ext_resource type="Texture2D" uid="uid://cekkg1uqo046f" path="res://Images/Cauldron.png" id="10_lf1i3"]
+[ext_resource type="Texture2D" uid="uid://cekkg1uqo046f" path="res://Images/UIArt/Cauldron.png" id="10_lf1i3"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
-[ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
+[ext_resource type="Resource" uid="uid://6cfm30oyyifl" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
-[ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/Flask of Pink Tears.png" id="12_lf1i3"]
-[ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
+[ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/UIArt/Flask of Pink Tears.png" id="12_lf1i3"]
+[ext_resource type="Resource" uid="uid://bl4uhourefcjn" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
 [ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://Scripts/InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
-[ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="14_yeari"]
+[ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -63,7 +63,6 @@ offset_right = 620.0
 offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
-tab_alignment = 1
 current_tab = 1
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
@@ -209,7 +208,7 @@ anchors_preset = -1
 anchor_left = 0.58548385
 anchor_top = 0.12172573
 anchor_right = 0.9806452
-anchor_bottom = 0.8767334
+anchor_bottom = 0.7642527
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://cv5uqa6a3cu38"]
 
-[ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/Flask of Pink Tears.png" id="1_v0ubm"]
+[ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/UIArt/Flask of Pink Tears.png" id="1_v0ubm"]
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_dmhdi"]
 
 [resource]
