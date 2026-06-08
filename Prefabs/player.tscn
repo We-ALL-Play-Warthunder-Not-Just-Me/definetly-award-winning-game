@@ -142,6 +142,7 @@ text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
 [node name="EnvironmentalStateLabel" type="RichTextLabel" parent="." unique_id=2022133229]
+visible = false
 offset_left = -212.0
 offset_top = -122.0
 offset_right = -1.0
@@ -162,6 +163,7 @@ text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerJumpStateLabel" type="RichTextLabel" parent="." unique_id=1974177232]
+visible = false
 z_index = 20
 offset_left = -213.0
 offset_top = -90.0
