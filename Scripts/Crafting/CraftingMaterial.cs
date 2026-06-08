@@ -28,24 +28,20 @@ public partial class CraftingMaterial : ItemList
 		
 		foreach (var (id,amount) in materialInventory.inventory)
 		{
-			if (itemDatabase.items[id].max_qty == 1)
+			if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
 			{
-				if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
+				if (itemDatabase.items[id].max_qty == 1)
 				{
-					int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
-					SetItemMetadata(i, itemDatabase.items[id].ID);
+						int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
+						SetItemMetadata(i, itemDatabase.items[id].ID);
 				}
-				
-			}
-			else
-			{
-				if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
+				else
 				{
 					int i = AddItem($"{itemDatabase.items[id].Name} : {amount}", itemDatabase.items[id].icon);
 					SetItemMetadata(i, itemDatabase.items[id].ID);
 				}
-				
 			}
+
 		}
 	}
 
