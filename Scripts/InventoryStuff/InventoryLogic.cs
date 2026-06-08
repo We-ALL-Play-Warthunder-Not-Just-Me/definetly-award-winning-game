@@ -125,6 +125,8 @@ public partial class InventoryLogic : ItemList
 	public void RemoveAmountofItem(int id, int amount)
 	{
 		inventory.inventory[id] -= amount;
+		//Probably needs more checks
+		if(inventory.inventory[id] == 0) inventory.inventory.Remove(id);
 		inventory.EmitChanged();
 	}
 
