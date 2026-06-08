@@ -4,12 +4,25 @@ using System;
 public partial class CraftingLogic : ItemList
 {
 	[Export] ItemDictionary itemDatabase;
-	[Export] InventoryStorage materialInventory;
-	[Export] InventoryStorage keyItemInventory;
+	[Export] InventoryLogic materialInventory;
+	[Export] InventoryLogic keyItemInventory;
 	[Export] RecipesList recipeList;
 	[Export] CraftingMaterial materialList;
+	[Export] Texture2D BlankIcon;
+	[Export] TextureButton craftButton;
 	private Godot.Collections.Dictionary<int,int> craftingMenu = [];
 	private int recipeID = 0;
+
+	[Signal]
+	public delegate void recipePictureEventHandler(Texture2D icon);
+
+	private void RecipePicture()
+	{
+		Texture2D icon;
+		if (recipeID == 0) icon = BlankIcon;
+		else  icon = itemDatabase.items[recipeID].icon;
+		EmitSignal(SignalName.recipePicture, icon);
+	}
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,7 +30,17 @@ public partial class CraftingLogic : ItemList
 		UpdateItemlist();
 		materialList.SendOverItem += SentItem;
 		ItemClicked += OnItemClicked;
+		craftButton.Pressed += CraftItem;
 	}
+
+	private void CraftItem()
+	{
+		if(!CheckValidRecipe()) return;
+		Item temp = itemDatabase.items[recipeID].shallowCopy();
+		temp.qty = 1;
+		materialInventory.AddInventoryItem(temp);
+	}
+
 
 	private void SentItem(Item item)
 	{
@@ -63,11 +86,13 @@ public partial class CraftingLogic : ItemList
 			if (isValid)
 			{
 				recipeID = recipeid;
+				RecipePicture();
 				break;
 			}
 			else
 			{
 				recipeID = 0;
+				RecipePicture();
 			}
 		}
 		GD.Print($"valid recipe: {isValid}");
@@ -89,7 +114,7 @@ public partial class CraftingLogic : ItemList
 
 		if (craftingMenu.ContainsKey(item.ID))
 		{	// we kinda are already checking for this in AddStackable
-			if (craftingMenu[item.ID] >= materialInventory.inventory[item.ID])
+			if (craftingMenu[item.ID] >= materialInventory.inventory.inventory[item.ID])
 			{
 				GD.Print($"You can't put more of {item.Name}!!!");
 				CheckValidRecipe();
@@ -131,13 +156,13 @@ public partial class CraftingLogic : ItemList
 		if (craftingMenu.ContainsKey(item.ID))
 		{
 			// When you try to add more than you actually have
-			if (craftingMenu[item.ID] >= materialInventory.inventory[item.ID])
+			if (craftingMenu[item.ID] >= materialInventory.inventory.inventory[item.ID])
 			{
 				GD.Print($"You can't put more {item.Name}!!!");
 				return couldPickup;
 			}
 			//Pick up ALL the item and add it
-			if (craftingMenu[item.ID] + item.qty <= materialInventory.inventory[item.ID])
+			if (craftingMenu[item.ID] + item.qty <= materialInventory.inventory.inventory[item.ID])
 			{
 				craftingMenu[item.ID] = item.qty + craftingMenu[item.ID];
 				couldPickup = true;
