@@ -6,6 +6,7 @@ public partial class CraftingMaterial : ItemList
 	[Export] ItemDictionary itemDatabase;
 	[Export] RecipesList recipesList;
 	[Export] InventoryStorage materialInventory;
+	[Export] LineEdit searchBar;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -13,8 +14,40 @@ public partial class CraftingMaterial : ItemList
 		materialInventory.Changed += UpdateItemlist;
 		ItemActivated += SelectItem;
 		ItemClicked += OnInventoryItemClicked;
+		searchBar.TextChanged += SearchItemList;
 	}
 
+	private void SearchItemList(String text)
+	{
+		Clear();
+		if(text == null || text == "")
+		{
+			UpdateItemlist();
+			return;
+		}
+		
+		foreach (var (id,amount) in materialInventory.inventory)
+		{
+			if (itemDatabase.items[id].max_qty == 1)
+			{
+				if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
+				{
+					int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
+					SetItemMetadata(i, itemDatabase.items[id].ID);
+				}
+				
+			}
+			else
+			{
+				if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
+				{
+					int i = AddItem($"{itemDatabase.items[id].Name} : {amount}", itemDatabase.items[id].icon);
+					SetItemMetadata(i, itemDatabase.items[id].ID);
+				}
+				
+			}
+		}
+	}
 
 	public void UpdateItemlist()
 	{
@@ -32,7 +65,7 @@ public partial class CraftingMaterial : ItemList
 				SetItemMetadata(i, itemDatabase.items[id].ID);
 			}
 		}
-		ResourceSaver.Save(materialInventory);
+		//ResourceSaver.Save(materialInventory);
 	}
 
 	[Signal]

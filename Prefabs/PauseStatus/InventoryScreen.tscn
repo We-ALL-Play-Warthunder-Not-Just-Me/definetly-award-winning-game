@@ -224,7 +224,7 @@ layout_mode = 2
 layout_mode = 2
 placeholder_text = "Search"
 
-[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/Materials list/VBoxContainer" unique_id=1709631824]
+[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/Materials list/VBoxContainer" unique_id=1709631824 node_paths=PackedStringArray("searchBar")]
 layout_mode = 2
 size_flags_vertical = 3
 item_count = 3
@@ -239,6 +239,7 @@ script = ExtResource("6_j3iwo")
 itemDatabase = ExtResource("10_sygrt")
 recipesList = ExtResource("8_8jsly")
 materialInventory = ExtResource("12_8wvro")
+searchBar = NodePath("../SearchBar")
 
 [node name="CRAFTING?!" type="Panel" parent="Panel/TabContainer/Crafting" unique_id=743441488]
 layout_mode = 1
