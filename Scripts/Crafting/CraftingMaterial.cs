@@ -65,15 +65,18 @@ public partial class CraftingMaterial : ItemList
 	}
 
 	[Signal]
-	public delegate void SendOverItemEventHandler(Item item);
+	public delegate void SendOverItemEventHandler(Item item, int amount = 1);
 
 	private void SelectItem(long index)
 	{
 		Item sendingItem = GetInventoryItem((int) index);
-		sendingItem.qty = 1;
-		GD.Print($"You selected {sendingItem.Name}");
-
-		EmitSignal(SignalName.SendOverItem, sendingItem);
+		int amount = 1;
+		if (Input.IsPhysicalKeyPressed(Key.Shift))
+		{
+			amount = 5;
+		}
+		GD.Print($"You selected {sendingItem.Name} : {sendingItem.qty}");
+		EmitSignal(SignalName.SendOverItem, sendingItem, amount);
 	}
 
 	//Waow
@@ -94,9 +97,13 @@ public partial class CraftingMaterial : ItemList
 		if (mousebuttonindex == 1)
 		{
 			Item sendingItem = GetInventoryItem((int) index);
-			sendingItem.qty = 1;
-			GD.Print($"You selected {sendingItem.Name}");
-			EmitSignal(SignalName.SendOverItem, sendingItem);
+			int amount = 1;
+			if (Input.IsPhysicalKeyPressed(Key.Shift))
+			{
+				amount = 5;
+			}
+			GD.Print($"You selected {sendingItem.Name} : {sendingItem.qty}");
+			EmitSignal(SignalName.SendOverItem, sendingItem, amount);
 		}
 	}
 

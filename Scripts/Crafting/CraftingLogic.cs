@@ -12,6 +12,7 @@ public partial class CraftingLogic : ItemList
 	[Export] TextureButton craftButton;
 	private Godot.Collections.Dictionary<int,int> craftingMenu = [];
 	private int recipeID = 0;
+	[Export] RecipeListDropDown RecipeListdropdown;
 
 	[Signal]
 	public delegate void recipePictureEventHandler(Texture2D icon);
@@ -31,12 +32,20 @@ public partial class CraftingLogic : ItemList
 		materialList.SendOverItem += SentItem;
 		ItemClicked += OnItemClicked;
 		craftButton.Pressed += CraftItem;
+		RecipeListdropdown.SentItem += dropdownRecipe;
+	}
+
+	private void dropdownRecipe(Item item, int amount)
+	{
+		//Item temp = item.shallowCopy(amount);
+		item.qty = amount;
+		AddToCraftingMenu(item);
 	}
 
 	private void CraftItem()
 	{
 		if(!CheckValidRecipe()) return;
-		Item temp = itemDatabase.items[recipeID].shallowCopy();
+		Item temp = itemDatabase.items[recipeID].shallowCopy(1);
 		temp.qty = 1;
 		materialInventory.AddInventoryItem(temp);
 		ConsumeIngredients();
@@ -59,12 +68,12 @@ public partial class CraftingLogic : ItemList
 		CheckValidRecipe();
 	}
 
-	private void SentItem(Item item)
+	private void SentItem(Item item, int amount)
 	{
 		//why does this work and not making a shallowcopy doesn't????? 
 		//It was bc the addtostackingfunction was setting the item.qty to 0
-		//Item tempitem = item.shallowCopy();
-		AddToCraftingMenu(item);
+		Item tempitem = item.shallowCopy(amount);
+		AddToCraftingMenu(tempitem);
 		//updateItemlist();
 	}
 

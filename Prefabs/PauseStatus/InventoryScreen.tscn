@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="9_ou5ub"]
 [ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="9_sygrt"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://Scripts/InventoryStuff/InventoryLogic.cs" id="9_x2suf"]
+[ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
 [ext_resource type="Texture2D" uid="uid://cekkg1uqo046f" path="res://Images/UIArt/Cauldron.png" id="10_lf1i3"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
@@ -30,6 +31,10 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xpnv"]
 bg_color = Color(0.96194917, 0.3059871, 0.67877233, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yeari"]
+
+[sub_resource type="Theme" id="Theme_yeari"]
 
 [node name="InventoryScreen" type="Control" unique_id=1470520716]
 process_mode = 2
@@ -240,6 +245,27 @@ recipesList = ExtResource("8_8jsly")
 materialInventory = ExtResource("12_8wvro")
 searchBar = NodePath("../SearchBar")
 
+[node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Crafting" unique_id=66723388]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6895161
+anchor_top = 0.047765795
+anchor_right = 0.8620968
+anchor_bottom = 0.10939907
+metadata/_edit_use_anchors_ = true
+
+[node name="RecipeListDropdown" type="MenuButton" parent="Panel/TabContainer/Crafting/PanelContainer" unique_id=621834935]
+layout_mode = 2
+text = "Recipes"
+expand_icon = true
+item_count = 1
+popup/item_0/text = "Awa 1"
+popup/item_0/icon = SubResource("PlaceholderTexture2D_yeari")
+popup/item_0/id = 0
+script = ExtResource("10_kexwp")
+itemDatabase = ExtResource("10_sygrt")
+recipesList = ExtResource("8_8jsly")
+
 [node name="CRAFTING?!" type="Panel" parent="Panel/TabContainer/Crafting" unique_id=743441488]
 layout_mode = 1
 anchors_preset = -1
@@ -290,8 +316,9 @@ offset_bottom = 121.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/CRAFTING?!/MarginContainer" unique_id=2046422626 node_paths=PackedStringArray("materialInventory", "keyItemInventory", "materialList", "craftButton")]
+[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/CRAFTING?!/MarginContainer" unique_id=2046422626 node_paths=PackedStringArray("materialInventory", "keyItemInventory", "materialList", "craftButton", "RecipeListdropdown")]
 layout_mode = 2
+theme = SubResource("Theme_yeari")
 item_count = 2
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "Test item 1"
@@ -305,6 +332,7 @@ recipeList = ExtResource("8_8jsly")
 materialList = NodePath("../../../Materials list/VBoxContainer/ItemList")
 BlankIcon = ExtResource("14_yeari")
 craftButton = NodePath("../../CraftButton")
+RecipeListdropdown = NodePath("../../../PanelContainer/RecipeListDropdown")
 
 [node name="CraftButton" type="TextureButton" parent="Panel/TabContainer/Crafting/CRAFTING?!" unique_id=1772850421]
 layout_mode = 0
