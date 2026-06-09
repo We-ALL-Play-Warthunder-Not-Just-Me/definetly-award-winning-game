@@ -11,5 +11,4 @@ qty = 1
 max_qty = 1
 icon = ExtResource("1_dj3a0")
 important = true
-consumable = false
 metadata/_custom_type_script = "uid://nh7pbovwuooe"

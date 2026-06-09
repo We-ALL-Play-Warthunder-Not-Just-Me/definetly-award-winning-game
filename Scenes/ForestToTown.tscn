@@ -445,3 +445,11 @@ NextMap = "Forest11"
 ToChunk = 1
 CurrentMap = "ForestToTown"
 FromChunk = 1
+
+[node name="MapTransitioner2" parent="." unique_id=767450860 instance=ExtResource("4_jvjjb")]
+position = Vector2(-160, 0)
+SpawnSide = "Right"
+NextMap = "Town1"
+ToChunk = 2
+CurrentMap = "ForestToTown"
+FromChunk = 1
