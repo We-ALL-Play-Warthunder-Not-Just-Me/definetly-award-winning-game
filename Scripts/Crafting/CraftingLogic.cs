@@ -75,15 +75,6 @@ public partial class CraftingLogic : ItemList
 		bool isValid = false;
 		foreach (var (recipeid,ingredientsList) in recipeList.recipes)
 		{
-			foreach (var (item, amount) in ingredientsList.ingredients)
-			{
-				// You have not all the ingredients of the recipe
-				if (!craftingMenu.ContainsKey(item.ID))
-				{
-					isValid = false;
-					break;
-				}
-			}
 			foreach (var (id, amount) in craftingMenu)
 			{
 				//there is an ingredient that is not part of the recipe
@@ -98,6 +89,15 @@ public partial class CraftingLogic : ItemList
 					{
 						isValid = true;
 					}
+				}
+			}
+			foreach (var (item, amount) in ingredientsList.ingredients)
+			{
+				// You have not all the ingredients of the recipe
+				if (!craftingMenu.ContainsKey(item.ID))
+				{
+					isValid = false;
+					break;
 				}
 			}
 			if (isValid)
