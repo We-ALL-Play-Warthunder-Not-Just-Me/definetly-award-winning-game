@@ -8,6 +8,9 @@ inventory = Dictionary[int, int]({
 1: 25,
 2: 3,
 3: 1,
-5: 10
+5: 10,
+6: 1,
+7: 5,
+8: 15
 })
 metadata/_custom_type_script = "uid://vyw1ws4cgmpn"

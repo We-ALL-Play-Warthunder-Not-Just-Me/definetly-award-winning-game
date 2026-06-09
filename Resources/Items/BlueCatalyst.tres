@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b2w8k82gkd7ko"]
+
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_04o6b"]
+[ext_resource type="Texture2D" uid="uid://5slra5tp7kp1" path="res://Images/UIArt/Blue Catalyst.png" id="1_10plu"]
+
+[resource]
+script = ExtResource("1_04o6b")
+ID = 6
+Name = "Blue Catalyst"
+qty = 1
+max_qty = 1
+icon = ExtResource("1_10plu")
+important = true
+consumable = false
+metadata/_custom_type_script = "uid://nh7pbovwuooe"
