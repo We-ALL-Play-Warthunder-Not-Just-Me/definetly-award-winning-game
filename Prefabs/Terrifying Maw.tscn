@@ -34,6 +34,8 @@ libraries/ = SubResource("AnimationLibrary_05ldl")
 shape = SubResource("RectangleShape2D_00odg")
 
 [node name="EnemyDetector" type="Area2D" parent="." unique_id=1701893687]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector" unique_id=1387074939]
+visible = false
 shape = SubResource("CircleShape2D_bsg7f")

@@ -10,7 +10,7 @@ public partial class SimpleShooterNPC : CharacterBody2D
     [Export] public double ReloadingTime = 1.0;
     [Export] public PackedScene Bullets;
     //experimental thing that can be changed to slow down the creature while it is reloading.
-    private float loading = 1.0f;
+    private float loadingSpeed = 1.0f;
 
     private enum FiringState
     {
@@ -104,10 +104,10 @@ public partial class SimpleShooterNPC : CharacterBody2D
                 velocity.X = 0;
                 break;
             case MovementState.LEFT:
-                velocity.X = -Speed * loading;
+                velocity.X = -Speed * loadingSpeed;
                 break;
             case MovementState.RIGHT:
-                velocity.X = Speed * loading;
+                velocity.X = Speed * loadingSpeed;
                 break;
         }
     }
@@ -187,11 +187,11 @@ public partial class SimpleShooterNPC : CharacterBody2D
             case FiringState.SHOOTING:
                 currentFiringState = FiringState.SHOOTING;
                 _firing_timer = ShootingTime; 
-                loading = 0.0f;
+                loadingSpeed = 0.0f;
                 break;
             case FiringState.RELOADING:
                 currentFiringState = FiringState.RELOADING;
-                loading = 0.5f;
+                loadingSpeed = 0.5f;
                 _reload_timer = ReloadingTime;
                 break;
         }
