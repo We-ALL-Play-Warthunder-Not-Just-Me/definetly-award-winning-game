@@ -16,11 +16,15 @@ public partial class MapTransitioner : Area2D
 	public int FromChunk;
 	[Export]
 	public bool VertTrans;
+	[Export]
+	public int ExtraRooms;
 	
 	//Empty Values
 	MapManager MapMan;
 	CollisionShape2D CollLR;
 	CollisionShape2D CollUD;
+	float MapHeight = 192f;
+	float ExtraMaps;
 	
 	public override void _Ready()
 	{
@@ -29,6 +33,8 @@ public partial class MapTransitioner : Area2D
 		//Getting the Collisions for swapping purposes.
 		CollLR = GetNode<CollisionShape2D>("TransitionerLeftRight");
 		CollUD = GetNode<CollisionShape2D>("TransitionerUpDown");
+		//Providing the padding number needed for spacing maps.
+		ExtraMaps = MapHeight * ExtraRooms;
 	}
 	
 	public override void _Process(double delta)
@@ -55,9 +61,10 @@ public partial class MapTransitioner : Area2D
 	
 	public void _SendInfo(CharacterBody2D body)
 	{
+		GD.Print("ExtraMaps: " + ExtraMaps);
 		//This will take the stored information and send it to
 		//the MapManager upon the Player entering the Area2D.
 		MapMan.CollectInfo(SpawnSide, NextMap, ToChunk,
-							CurrentMap, FromChunk, VertTrans);
+						CurrentMap, FromChunk, VertTrans, ExtraMaps);
 	}
 }
