@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://cd1dfqgs6bjtv"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_ieeb7"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="2_xnwop"]
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="3_0rpuj"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="4_a8fyu"]
 [ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/MVM Town Tiles.png" id="5_ryl4o"]
+[ext_resource type="Texture2D" uid="uid://d0dc34fr57u2p" path="res://Images/Town Fishing Dock.png" id="6_ieeb7"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_kljao"]
+[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/MVM Bench.png" id="7_xnwop"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -396,6 +397,12 @@ texture = ExtResource("4_a8fyu")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajksq"]
 texture = ExtResource("5_ryl4o")
@@ -788,36 +795,25 @@ sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 sources/2 = SubResource("TileSetAtlasSource_ajksq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnwop"]
+size = Vector2(97, 6)
+
 [node name="Town5" type="Node2D" unique_id=685611168]
 
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_ieeb7")]
 
-[node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
-
-[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1918786056]
-position = Vector2(-118, 26.5)
-texture = ExtResource("2_xnwop")
-region_enabled = true
-region_rect = Rect2(291, 231, 84, 75)
-
-[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1782890640]
-position = Vector2(118, 26.5)
-texture = ExtResource("2_xnwop")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(291, 231, 84, 75)
-
-[node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(0, 42.5)
-texture = ExtResource("2_xnwop")
-region_enabled = true
-region_rect = Rect2(106, 308, 177, 75)
-
-[node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
-tile_map_data = PackedByteArray("AAAEAAUAAgACAAIAAAAFAAUAAgACAAIAAAAGAAQAAgAEAAUAAAAGAAUAAgACAAIAAAAHAAQAAgACAAEAAAAHAAUAAgACAAIAAAAIAAQAAgACAAEAAAAIAAUAAgACAAIAAAAJAAQAAgACAAEAAAAJAAUAAgACAAIAAAAKAAQAAgADAAEAAAAKAAUAAgADAAIAAAD1/wQAAAAAAAIAAAD1/wUAAAAAAAIAAAAFAAQAAgACAAIAAAAKAAYAAgADAAMAAAAJAAYAAgACAAMAAAAIAAYAAgACAAMAAAAHAAYAAgACAAMAAAAGAAYAAgACAAMAAAAFAAYAAgACAAMAAAAEAAYAAgACAAMAAAADAAYAAgABAAMAAAACAAYAAAAEAAAAAAD1/wYAAAAAAAIAAAAEAAQAAgACAAIAAAAKAAIAAgAAAAMAAAAKAAEAAgAAAAIAAAAKAAAAAgAAAAIAAAAKAP//AgAAAAIAAAAKAP7/AgAAAAIAAAAKAP3/AgAAAAIAAAAKAPz/AgAAAAIAAAAKAPv/AgAAAAIAAAAKAPr/AgAAAAEAAAD1/wIAAAAAAAIAAAD1/wEAAAAAAAIAAAD1/wAAAAAAAAIAAAD1////AAAAAAIAAAD1//7/AAAAAAIAAAD1//3/AAAAAAIAAAD1//z/AAAAAAIAAAD1//v/AAAAAAIAAAD1//r/AAAAAAEAAAAGAAMAAgADAAIAAAAGAAIAAgADAAEAAAAFAAMAAgACAAIAAAAFAAIAAgACAAEAAAAEAAMAAgACAAIAAAAEAAIAAgACAAEAAAADAAIAAgABAAEAAAADAAMAAgABAAIAAAADAAUAAgACAAIAAAADAAQAAgABAAIAAAACAAUAAAABAAEAAAD1/wMAAAAAAAIAAAABAAcAAAACAAAAAAAAAAcAAAACAAAAAAD//wcAAAACAAAAAAD+/wcAAAACAAAAAAD9/wcAAAACAAAAAAD8/wcAAAACAAAAAAD7/wcAAAACAAAAAAD6/wcAAAACAAAAAAD5/wcAAAACAAAAAAD4/wcAAAACAAAAAAD3/wcAAAACAAAAAAD2/wcAAAACAAAAAAD1/wcAAAAAAAUAAAACAAcAAAABAAUAAAA=")
+[node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
+z_index = 6
+tile_map_data = PackedByteArray("AAADAAQAAQAAAAIAAAABAAQAAQAAAAIAAAD//wQAAQAAAAIAAAD+/wQAAQAAAAIAAAD8/wQAAQAAAAIAAAD5/wQAAQAAAAIAAAD4/wQAAQAAAAIAAAD3/wQAAQAAAAIAAAD9/wQAAQAAAAMAAAAAAAQAAQAAAAMAAAACAAQAAQAAAAMAAAD7/wQAAQAAAAMAAAD6/wQAAQAAAAMAAAD2/wQAAQAAAAMAAAADAAYAAQACAAIAAAACAAYAAQACAAIAAAABAAYAAQACAAMAAAAAAAYAAQACAAIAAAD//wYAAQACAAMAAAD+/wYAAQACAAMAAAD9/wYAAQACAAIAAAD8/wYAAQACAAIAAAD7/wYAAQACAAMAAAD6/wYAAQACAAMAAAD5/wYAAQACAAIAAAD4/wYAAQACAAMAAAD3/wYAAQACAAIAAAD2/wYAAQACAAMAAAD+/wUAAQABAAIAAAABAAUAAQABAAIAAAADAAUAAQABAAIAAAD6/wUAAQABAAIAAAD4/wUAAQABAAIAAAD3/wUAAQABAAMAAAD2/wUAAQABAAMAAAD5/wUAAQABAAMAAAD7/wUAAQABAAMAAAD8/wUAAQABAAMAAAD9/wUAAQABAAMAAAAAAAUAAQABAAMAAAD//wUAAQABAAMAAAACAAUAAQABAAMAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
-[node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
+z_index = 6
+tile_map_data = PackedByteArray("AAAEAAUAAgACAAIAAAAFAAUAAgACAAIAAAAGAAQAAgAEAAUAAAAGAAUAAgACAAIAAAAHAAQAAgACAAEAAAAHAAUAAgACAAIAAAAIAAQAAgACAAEAAAAIAAUAAgACAAIAAAAJAAQAAgACAAEAAAAJAAUAAgACAAIAAAAKAAQAAgADAAEAAAAKAAUAAgADAAIAAAAFAAQAAgACAAIAAAAKAAYAAgADAAMAAAAJAAYAAgACAAMAAAAIAAYAAgACAAMAAAAHAAYAAgACAAMAAAAGAAYAAgACAAMAAAAFAAYAAgACAAMAAAAEAAYAAgACAAMAAAADAAYAAgABAAMAAAAEAAQAAgACAAIAAAAKAAIAAgAAAAMAAAAKAAEAAgAAAAIAAAAKAAAAAgAAAAIAAAAKAP//AgAAAAIAAAAKAP7/AgAAAAIAAAAKAP3/AgAAAAIAAAAKAPz/AgAAAAIAAAAKAPv/AgAAAAIAAAAKAPr/AgAAAAEAAAAGAAMAAgADAAIAAAAGAAIAAgADAAEAAAAFAAMAAgACAAIAAAAFAAIAAgACAAEAAAAEAAMAAgACAAIAAAAEAAIAAgACAAEAAAADAAIAAgABAAEAAAADAAMAAgABAAIAAAADAAUAAgABAAIAAAADAAQAAgABAAIAAAA=")
+tile_set = SubResource("TileSet_a4htl")
+
+[node name="HiddenGround" type="TileMapLayer" parent="." unique_id=1375157502]
+tile_map_data = PackedByteArray("AAD1//z/AAAAAAIAAAD1//v/AAAAAAIAAAD1//r/AAAAAAEAAAACAAcAAAABAAUAAAACAAYAAAAEAAAAAAACAAUAAAABAAEAAAABAAcAAAACAAAAAAAAAAcAAAACAAAAAAD//wcAAAACAAAAAAD+/wcAAAACAAAAAAD9/wcAAAACAAAAAAD8/wcAAAACAAAAAAD7/wcAAAACAAAAAAD6/wcAAAACAAAAAAD5/wcAAAACAAAAAAD4/wcAAAACAAAAAAD3/wcAAAACAAAAAAD2/wcAAAACAAAAAAD1/wcAAAAAAAUAAAD1/wYAAAAAAAIAAAD1/wUAAAAAAAIAAAD1/wQAAAAAAAIAAAD1/wMAAAAAAAIAAAD1/wIAAAAAAAIAAAD1/wEAAAAAAAIAAAD1/wAAAAAAAAIAAAD1////AAAAAAIAAAD1//7/AAAAAAIAAAD1//3/AAAAAAIAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("6_kljao")]
@@ -827,3 +823,18 @@ NextMap = "Town4"
 ToChunk = 1
 CurrentMap = "Town5"
 FromChunk = 1
+
+[node name="TownFishingDock" type="Sprite2D" parent="." unique_id=1505385315]
+position = Vector2(0, 38)
+texture = ExtResource("6_ieeb7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TownFishingDock" unique_id=842881792]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TownFishingDock/StaticBody2D" unique_id=575883367]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_xnwop")
+one_way_collision = true
+
+[node name="MvmBench" type="Sprite2D" parent="." unique_id=1712835356]
+position = Vector2(80, 22)
+texture = ExtResource("7_xnwop")

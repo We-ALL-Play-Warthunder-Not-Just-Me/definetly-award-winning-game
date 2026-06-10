@@ -839,7 +839,7 @@ position = Vector2(-352, 79)
 texture = ExtResource("2_xowa0")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(7, 308, 88, 75)
+region_rect = Rect2(7, 308, 88, 72)
 
 [node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=2117749578]
 position = Vector2(-239, 80)
@@ -940,6 +940,51 @@ texture = ExtResource("4_8u6ka")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople11" type="Sprite2D" parent="People" unique_id=958318109]
+position = Vector2(-326.5, 52.5)
+texture = ExtResource("4_8u6ka")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople12" type="Sprite2D" parent="People" unique_id=1031917297]
+position = Vector2(-303.5, 52.5)
+texture = ExtResource("4_8u6ka")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople13" type="Sprite2D" parent="People" unique_id=1201455027]
+position = Vector2(-280.5, 52.5)
+texture = ExtResource("4_8u6ka")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople14" type="Sprite2D" parent="People" unique_id=1991786103]
+position = Vector2(-423.5, 52.5)
+texture = ExtResource("4_8u6ka")
+region_enabled = true
+region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople15" type="Sprite2D" parent="People" unique_id=680058279]
+position = Vector2(-400.5, 52.5)
+texture = ExtResource("4_8u6ka")
+region_enabled = true
+region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople16" type="Sprite2D" parent="People" unique_id=1281735242]
+position = Vector2(-377.5, 52.5)
+texture = ExtResource("4_8u6ka")
+region_enabled = true
+region_rect = Rect2(99, 41, 27, 23)
+
+[node name="MvmTownsPeople17" type="Sprite2D" parent="People" unique_id=1205248293]
+position = Vector2(-352.5, 51)
+texture = ExtResource("4_8u6ka")
+region_enabled = true
+region_rect = Rect2(7, 38, 17, 26)
 
 [node name="MvmTownsPeople2" type="Sprite2D" parent="People" unique_id=264027936]
 position = Vector2(244, 52)

@@ -879,6 +879,14 @@ ToChunk = 6
 CurrentMap = "Town3"
 FromChunk = 4
 
+[node name="MapTransitioner3" parent="." unique_id=98299999 instance=ExtResource("6_4i1qh")]
+position = Vector2(320, -96)
+SpawnSide = "Left"
+NextMap = "Town2"
+ToChunk = 1
+CurrentMap = "Town3"
+FromChunk = 2
+
 [node name="MapTransitioner2" parent="." unique_id=1774236160 instance=ExtResource("6_4i1qh")]
 position = Vector2(-320, 96)
 SpawnSide = "Right"
