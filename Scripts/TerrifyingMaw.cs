@@ -6,6 +6,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
+	[Export] public double FallSpeed = 200f;
 	[Export] public double MeleeRange = 50f;
 	[Export] public double RangedRange = 150f;
 	[Export] public double OutOfRangeRange = 500f;
@@ -61,6 +62,8 @@ public partial class TerrifyingMaw : CharacterBody2D
 	private AttackState cats = AttackState.IDLE;
 	private TargetDistance tds = TargetDistance.UNDETECTED;
 
+    [Export]public RichTextLabel l;
+
 
 	private Node2D Target;
 
@@ -77,7 +80,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 		distance_to_target = this.GlobalPosition.DistanceTo(Target.GlobalPosition);
 		switch (distance_to_target)
 		{
-			//double check does this work?
+			//double check does this work? don't yell at me I used var and I hate it
 			case var value when value < MeleeRange:
 				tds = TargetDistance.MELEE;
 				break;
@@ -91,6 +94,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 				tds = TargetDistance.UNDETECTED;
 				break;
 		}
+		_text_helper();
 	}
 
 	//HAHAHA I MADE IT ONE LINE LOSERS. Its hella simple and just calles change environmental state depending on if on ground or not
@@ -119,16 +123,49 @@ public partial class TerrifyingMaw : CharacterBody2D
 		}
 	}
 
+	private void _enact_environmental_state(double delta, ref Vector2 velocity)
+	{
+		if (ces == EnvironmentState.AIRBORN)
+		{
+			velocity.Y += (float)FallSpeed * (float) delta;
+		}
+
+	}
+
+	private void _process_move_state(double delta, ref Vector2 velocity)
+	{
+		//if we are passive we just wander a little
+		if(cas == AggessionState.PASSIVE)
+		{
+			if(this.IsOnWall())
+			{
+
+			}
+		}
+	}
+
 
 
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
+		_process_environmental_state(delta, ref velocity);
+		_process_target_distance(delta, ref velocity);
 
 
 
-
+		_enact_environmental_state(delta, ref velocity);
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+
+	public void _text_helper()
+	{
+		l.Text = tds.ToString();
+	}
 }
+
+
+
+

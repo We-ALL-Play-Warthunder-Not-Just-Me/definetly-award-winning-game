@@ -17,8 +17,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsg7f"]
 radius = 271.00183
 
-[node name="TerrifyingMaw" type="CharacterBody2D" unique_id=614449111]
+[node name="TerrifyingMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
 script = ExtResource("1_bsg7f")
+l = NodePath("StateLabel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=61845971]
 texture = ExtResource("2_31gip")
@@ -39,3 +40,11 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector" unique_id=1387074939]
 visible = false
 shape = SubResource("CircleShape2D_bsg7f")
+
+[node name="StateLabel" type="RichTextLabel" parent="." unique_id=1363682789]
+offset_left = -95.0
+offset_top = -29.0
+offset_right = 95.0
+offset_bottom = -11.0
+theme_override_font_sizes/normal_font_size = 8
+text = "AAAAAAA"
