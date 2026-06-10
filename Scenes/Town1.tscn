@@ -856,7 +856,8 @@ flip_h = true
 [node name="Fountain" type="AnimatedSprite2D" parent="." unique_id=1839857313]
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_ln14s")
-frame_progress = 0.41638854
+autoplay = "default"
+frame_progress = 0.82793933
 
 [node name="People" type="Node2D" parent="." unique_id=1858045932]
 
