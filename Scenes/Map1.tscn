@@ -461,7 +461,7 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("5_uifhc")]
 position = Vector2(-106, -19)
-amount = 10
+amount = 5
 replacementPicture = ExtResource("6_j2fs2")
 
 [node name="ItemPickup2" parent="Items" unique_id=987775448 instance=ExtResource("5_uifhc")]
