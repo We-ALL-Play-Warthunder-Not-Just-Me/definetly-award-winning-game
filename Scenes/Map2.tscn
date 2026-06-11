@@ -479,8 +479,5 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_5t33k")]
 position = Vector2(-320, -96)
-SpawnSide = "Right"
 NextMap = "Map1"
 ToChunk = 2
-CurrentMap = "Map2"
-FromChunk = 1
