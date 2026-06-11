@@ -55,9 +55,11 @@ public partial class MapTransitioner : Area2D
 	
 	public void _SendInfo(CharacterBody2D body)
 	{
-		//This will take the stored information and send it to
-		//the MapManager upon the Player entering the Area2D.
-		MapMan.CollectInfo(SpawnSide, NextMap, ToChunk,
-							CurrentMap, FromChunk, VertTrans);
+		
+			//This will take the stored information and send it to
+			//the MapManager upon the Player entering the Area2D.
+			MapMan.CollectInfo(SpawnSide, NextMap, ToChunk,
+								CurrentMap, FromChunk, VertTrans);
+		
 	}
 }

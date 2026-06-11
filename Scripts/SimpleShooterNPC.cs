@@ -232,7 +232,7 @@ public partial class SimpleShooterNPC : CharacterBody2D
                 }
                 break;
             case MovementState.LEFT:
-                currentMovementState= MovementState.LEFT;
+                currentMovementState = MovementState.LEFT;
                 break;
 
             case MovementState.RIGHT:

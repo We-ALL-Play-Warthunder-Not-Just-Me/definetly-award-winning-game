@@ -4,13 +4,15 @@ using System.Runtime.CompilerServices;
 
 public partial class TerrifyingMaw : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	[Export] public float Speed = 300.0f;
+	[Export] public float JumpVelocity = -400.0f;
 	[Export] public double FallSpeed = 200f;
 	[Export] public double MeleeRange = 50f;
 	[Export] public double RangedRange = 150f;
 	[Export] public double OutOfRangeRange = 500f;
 	[Export] public double UndetectedRange = 1000f;
+	[Export] public double PassiveSpeedMultiplier = 0.5;
+	[Export] public int HP = 100;
 
 
 
@@ -22,7 +24,8 @@ public partial class TerrifyingMaw : CharacterBody2D
 	private enum MoveState
 	{
 		IDLE,
-		MOVING,
+		MOVINGLEFT,
+		MOVINGRIGHT,
 		DASHING,
 		BOUNCING
 	}
@@ -132,29 +135,113 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 	}
 
+
+	private double _wander_time = 0;
 	private void _process_move_state(double delta, ref Vector2 velocity)
 	{
 		//if we are passive we just wander a little
 		if(cas == AggessionState.PASSIVE)
 		{
+			//for the duration travel in a particular direction unless they hit a wall 
+			_wander_time -= delta;
+			//if wander time is 0 lets pick another direction to wander
+			if (_wander_time <= 0)
+			{
+				_wander_time = GD.RandRange(1.0, 3.0);
+                int direction = GD.RandRange(-1, 1);
+				if (direction == 0)
+				{
+					_change_move_state(MoveState.IDLE);
+				}
+				else if (direction == 1)
+				{
+					_change_move_state(MoveState.MOVINGRIGHT);
+				}
+				else
+				{
+					_change_move_state(MoveState.MOVINGLEFT);
+				}
+
+            }
+			//if we hit a wall lets go the other way
 			if(this.IsOnWall())
 			{
-
+				GD.Print("bonk");
+				if(this.GetWallNormal().X > 0)
+				{
+					_change_move_state(MoveState.MOVINGRIGHT);
+				}
+				else
+				{
+                    _change_move_state(MoveState.MOVINGLEFT);
+                }
 			}
+
+		}
+
+		//if we are alerted to the enemy we will run at them
+		if(cas == AggessionState.ALERTED)
+		{
+
+		}
+	}
+
+	private void _change_move_state(MoveState s)
+	{
+		if(cms == s)
+		{
+			return;
+		}
+		switch(s)
+		{
+			case MoveState.IDLE:
+				cms = MoveState.IDLE;
+				break;
+			case MoveState.MOVINGRIGHT: 
+				cms = MoveState.MOVINGRIGHT; 
+				break;
+			case MoveState.MOVINGLEFT: 
+				cms = MoveState.MOVINGLEFT; 
+				break;
+			case MoveState.DASHING: 
+				cms = MoveState.DASHING; 
+				break;
+			case MoveState.BOUNCING: 
+				cms = MoveState.BOUNCING; 
+				break;
 		}
 	}
 
 
+	private void _enact_move_state(double delta, ref Vector2 velocity) 
+	{ 
+		switch (cms)
+		{
+			case MoveState.IDLE:
+				velocity.X = 0;
+				break;
+			case MoveState.MOVINGLEFT:
+				velocity.X = -Speed * (float)PassiveSpeedMultiplier;
+				break;
+			case MoveState.MOVINGRIGHT:
+                velocity.X = Speed * (float)PassiveSpeedMultiplier;
+                break;
+        }
+		GD.Print(cms.ToString());
+	}
 
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 		_process_environmental_state(delta, ref velocity);
 		_process_target_distance(delta, ref velocity);
+		_process_move_state(delta, ref velocity);
 
 
 
 		_enact_environmental_state(delta, ref velocity);
+		_enact_move_state(delta, ref velocity);
 		Velocity = velocity;
 		MoveAndSlide();
 	}
@@ -162,7 +249,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 	public void _text_helper()
 	{
-		l.Text = tds.ToString();
+		l.Text = cms.ToString();
 	}
 }
 

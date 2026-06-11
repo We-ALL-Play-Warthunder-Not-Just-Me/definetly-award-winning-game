@@ -14,11 +14,11 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00odg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bsg7f"]
-radius = 271.00183
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bsg7f"]
 
 [node name="TerrifyingMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
 script = ExtResource("1_bsg7f")
+PassiveSpeedMultiplier = 0.02
 l = NodePath("StateLabel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=61845971]
@@ -39,7 +39,8 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector" unique_id=1387074939]
 visible = false
-shape = SubResource("CircleShape2D_bsg7f")
+position = Vector2(-14, 5)
+shape = SubResource("SegmentShape2D_bsg7f")
 
 [node name="StateLabel" type="RichTextLabel" parent="." unique_id=1363682789]
 offset_left = -95.0
