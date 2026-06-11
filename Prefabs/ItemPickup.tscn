@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c02ekc81ditg5"]
+
+[ext_resource type="Script" uid="uid://bcohevnu8xqjs" path="res://Scripts/InventoryStuff/PickUpItem.cs" id="1_jcn2h"]
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="2_08hnh"]
+[ext_resource type="Texture2D" uid="uid://t8aidlaga8lm" path="res://Images/UIArt/blueberry.png" id="2_tdaro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08hnh"]
+
+[node name="ItemPickup" type="Area2D" unique_id=1507841817]
+script = ExtResource("1_jcn2h")
+baseItem = ExtResource("2_08hnh")
+amount = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749488874]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_08hnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1906956456]
+texture = ExtResource("2_tdaro")
