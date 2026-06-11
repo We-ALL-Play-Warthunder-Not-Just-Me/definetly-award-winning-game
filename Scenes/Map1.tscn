@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_kpjo8"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_f6pk4"]
 [ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="5_uifhc"]
+[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/UIArt/Woven Paintbrush.png" id="6_j2fs2"]
 [ext_resource type="Resource" uid="uid://divt054n14kij" path="res://Resources/Items/BlueberryPie.tres" id="6_uifhc"]
 [ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="8_odaa7"]
 
@@ -461,6 +462,7 @@ tile_set = SubResource("TileSet_a4htl")
 [node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("5_uifhc")]
 position = Vector2(-106, -19)
 amount = 10
+replacementPicture = ExtResource("6_j2fs2")
 
 [node name="ItemPickup2" parent="Items" unique_id=987775448 instance=ExtResource("5_uifhc")]
 position = Vector2(-33, -15)

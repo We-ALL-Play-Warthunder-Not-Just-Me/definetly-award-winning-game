@@ -12,6 +12,7 @@ public partial class PickUpItem : Area2D
 	// [Export] bool MaterialInventory = true;
 	[Export] bool KeyItemInventory = false;
 	private Sprite2D sprite;
+	[Export] Texture2D replacementPicture = null;
 	private Node globals;
 
 
@@ -21,8 +22,15 @@ public partial class PickUpItem : Area2D
 		BodyEntered += ItemTouched;
 		item = baseItem.shallowCopy(amount);
 		sprite = GetNode<Sprite2D>("Sprite2D");
-		sprite.Texture= baseItem.icon;
-		sprite.Scale = new Vector2((float)0.25,(float)0.25);
+		if (replacementPicture != null)
+		{
+			sprite.Texture = replacementPicture;
+		}
+		else
+		{
+			sprite.Texture = baseItem.icon;
+			sprite.Scale = new Vector2((float)0.25,(float)0.25);
+		}
 		// invent = GetNode<InventoryLogic>("../../../PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList");
 		// invent = GetNode<InventoryLogic>("/root/GameScene/PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList");
 		// invent = GetNode<InventoryLogic>("/root/GameScene/PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList");		
