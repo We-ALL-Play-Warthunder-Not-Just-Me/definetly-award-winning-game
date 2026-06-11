@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3yklf5lbir3p"]
+
+[ext_resource type="Texture2D" uid="uid://d0dc34fr57u2p" path="res://Images/Town Fishing Dock.png" id="1_rgdj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnwop"]
+size = Vector2(97, 6)
+
+[node name="TownFishingDock" type="Sprite2D" unique_id=580191820]
+texture = ExtResource("1_rgdj0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1676985883]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1674889050]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_xnwop")
+one_way_collision = true

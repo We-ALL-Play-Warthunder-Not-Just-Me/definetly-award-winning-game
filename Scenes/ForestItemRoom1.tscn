@@ -406,7 +406,7 @@ terrain_set_0/terrain_0/color = Color(0.98039216, 0.16078432, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
-[node name="Forest18" type="Node2D" unique_id=685611168]
+[node name="ForestItemRoom1" type="Node2D" unique_id=685611168]
 
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_neqr6")]
 modulate = Color(0.4509804, 0.7529412, 0.7882353, 1)
