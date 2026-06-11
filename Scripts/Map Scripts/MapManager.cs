@@ -4,7 +4,7 @@ using System;
 public partial class MapManager : Node2D
 {
 	//Empty Values
-	Node2D Player;
+	CharacterBody2D Player;
 	CollisionShape2D PlayerCollision;
 	Node2D SpawnPoint;
 	Node2D SpawnOffset;
@@ -16,7 +16,7 @@ public partial class MapManager : Node2D
 	public override void _Ready()
 	{
 		//More grabbing of relevant information for later use.
-		Player = GetNode<Node2D>("/root/GameScene/Player");
+		Player = GetNode<CharacterBody2D>("/root/GameScene/Player");
 		PlayerCollision = Player.GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		GameScene = GetNode<Node2D>("/root/GameScene");
 		Camera = GetNode<Camera2D>("/root/GameScene/TheCamera");
