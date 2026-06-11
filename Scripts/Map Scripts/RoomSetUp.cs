@@ -54,7 +54,7 @@ public partial class RoomSetUp : Sprite2D
 		HoriChunks = (int)this.Scale.X / ChunkSizeX;
 		VertChunks = (int)this.Scale.Y / ChunkSizeY;
 		//A simple Vector2 to start us up at the Top Left of the map.
-		GD.Print("StartX: " + StartX + " StartY: " + StartY);
+		//GD.Print("StartX: " + StartX + " StartY: " + StartY);
 		ChunksMade = HoriChunks * VertChunks;
 		Vector2 StartingPoint = new Vector2(StartX, StartY);
 		
