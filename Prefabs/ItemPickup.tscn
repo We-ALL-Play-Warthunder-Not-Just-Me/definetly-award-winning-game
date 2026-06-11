@@ -12,7 +12,6 @@ baseItem = ExtResource("2_08hnh")
 amount = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749488874]
-scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_08hnh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1906956456]
