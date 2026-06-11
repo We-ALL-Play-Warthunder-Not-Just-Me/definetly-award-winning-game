@@ -495,5 +495,5 @@ ToChunk = 1
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("6_suymg")]
 position = Vector2(-160, 96)
-NextMap = "Forest15"
-ToChunk = 1
+NextMap = "Forest12"
+ToChunk = 2

@@ -483,7 +483,7 @@ NextMap = "Map1"
 ToChunk = 2
 
 [node name="MapTransitioner2" parent="." unique_id=1483082026 instance=ExtResource("5_5t33k")]
-position = Vector2(160, -191)
+position = Vector2(160, -192)
 NextMap = "Forest24"
 ToChunk = 1
 VertTrans = true
