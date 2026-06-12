@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemDictionary" format=3 uid="uid://b2t4xih7225ws"]
+
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_g3e45"]
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="2_g3e45"]
+[ext_resource type="Script" uid="uid://bfw00m6csyt5i" path="res://Resources/BaseCases/ItemDictionary.cs" id="3_r8lrb"]
+[ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="3_wkujr"]
+[ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="4_5dlua"]
+[ext_resource type="Resource" uid="uid://b66uimowm4y52" path="res://Resources/Items/WovenPaintbrush.tres" id="5_wkujr"]
+[ext_resource type="Resource" uid="uid://divt054n14kij" path="res://Resources/Items/BlueberryPie.tres" id="6_5dlua"]
+[ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/BlueCatalyst.tres" id="7_pfj0f"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/BlueFlower.tres" id="8_y412j"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/RedFlower.tres" id="9_vdfgo"]
+
+[resource]
+script = ExtResource("3_r8lrb")
+items = Dictionary[int, ExtResource("1_g3e45")]({
+1: ExtResource("2_g3e45"),
+2: ExtResource("3_wkujr"),
+3: ExtResource("4_5dlua"),
+4: ExtResource("5_wkujr"),
+5: ExtResource("6_5dlua"),
+6: ExtResource("7_pfj0f"),
+7: ExtResource("8_y412j"),
+8: ExtResource("9_vdfgo")
+})

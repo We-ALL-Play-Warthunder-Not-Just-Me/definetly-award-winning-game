@@ -411,8 +411,21 @@ sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
+[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1918786056]
+position = Vector2(-118, 26.5)
+texture = ExtResource("1_e5h4f")
+region_enabled = true
+region_rect = Rect2(291, 231, 84, 75)
+
+[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1782890640]
+position = Vector2(118, 26.5)
+texture = ExtResource("1_e5h4f")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(291, 231, 84, 75)
+
 [node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(0, 40.5)
+position = Vector2(0, 42.5)
 texture = ExtResource("1_e5h4f")
 region_enabled = true
 region_rect = Rect2(106, 308, 177, 75)
@@ -422,6 +435,7 @@ tile_map_data = PackedByteArray("AAD2/wMAAAACAAEAAAD2/wQAAAACAAIAAAD2/wUAAAACAAI
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
+tile_map_data = PackedByteArray("AAAJAAIAAQAAAAEAAAAGAAMAAQAAAAEAAAABAAMAAQAAAAEAAAD5/wMAAQAAAAEAAAD3/wIAAQAAAAEAAAD+/wMAAQAAAAEAAAD2/wIAAQACAAEAAAAHAAIAAQACAAEAAAACAAMAAQACAAEAAAD9/wMAAQACAAEAAAD6/wMAAQACAAEAAAAEAAMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_jvjjb")]

@@ -2,50 +2,138 @@
 
 [ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Prefabs/PauseStatus/ScriptsofPause/PauseScreen.cs" id="1_hbagr"]
 [ext_resource type="Script" uid="uid://csqqi24rpdd4h" path="res://Prefabs/PauseStatus/ScriptsofPause/Resume.cs" id="2_iy0nc"]
+[ext_resource type="Texture2D" uid="uid://bvitb33g30ukj" path="res://Images/UIArt/Test UI Pause Backing.png" id="2_sr6dd"]
+[ext_resource type="Texture2D" uid="uid://doloe1lhbe7h2" path="res://Images/UIArt/Test UI Resume Button.png" id="2_w7fft"]
+[ext_resource type="Texture2D" uid="uid://cwx006qcopycc" path="res://Images/UIArt/Test UI Settings Button.png" id="4_2i225"]
+[ext_resource type="Texture2D" uid="uid://dmx6g6a6iya0w" path="res://Images/UIArt/Test UI Quit Button.png" id="5_sr6dd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sr6dd"]
+texture = ExtResource("2_sr6dd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoik7"]
+content_margin_top = 96.0
+content_margin_right = 256.0
+texture = ExtResource("2_w7fft")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghxan"]
+content_margin_top = 96.0
+content_margin_right = 256.0
+texture = ExtResource("2_w7fft")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.9439871, 0.553566, 0.9451619, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i225"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cprlw"]
+content_margin_top = 96.0
+content_margin_right = 320.0
+texture = ExtResource("4_2i225")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpo0q"]
+content_margin_top = 96.0
+content_margin_right = 320.0
+texture = ExtResource("4_2i225")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.94509804, 0.5529412, 0.94509804, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr6dd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t048d"]
+content_margin_top = 96.0
+content_margin_right = 192.0
+texture = ExtResource("5_sr6dd")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vy8as"]
+content_margin_top = 96.0
+content_margin_right = 192.0
+texture = ExtResource("5_sr6dd")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.94509804, 0.5529412, 0.94509804, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cprlw"]
 
 [node name="PauseScreen" type="Control" unique_id=431672971]
 process_mode = 2
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hbagr")
 
 [node name="Panel" type="Panel" parent="." unique_id=2072410390]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sr6dd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1202538356]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=2007477989]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.5
-offset_right = 50.0
-offset_bottom = 50.5
+offset_left = -160.0
+offset_top = -148.0
+offset_right = 160.0
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=431469758]
 layout_mode = 2
-text = "Resume"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_qoik7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qoik7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ghxan")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2i225")
+icon_alignment = 1
 script = ExtResource("2_iy0nc")
 
 [node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=1911109532]
 layout_mode = 2
-text = "Settings"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_cprlw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cprlw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jpo0q")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sr6dd")
+icon_alignment = 1
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=2124335933]
 layout_mode = 2
-text = "Quit"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_t048d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t048d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vy8as")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cprlw")
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

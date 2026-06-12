@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryStorage" format=3 uid="uid://mwhcpbbyh8kq"]
+
+[ext_resource type="Script" uid="uid://vyw1ws4cgmpn" path="res://Resources/BaseCases/InventoryStorage.cs" id="1_u3fqy"]
+
+[resource]
+script = ExtResource("1_u3fqy")
+inventory = Dictionary[int, int]({
+1: 20,
+2: 3,
+3: 1,
+5: 22,
+6: 1,
+7: 6,
+8: 14
+})
+metadata/_custom_type_script = "uid://vyw1ws4cgmpn"

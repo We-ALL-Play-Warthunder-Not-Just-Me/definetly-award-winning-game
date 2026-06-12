@@ -43,20 +43,20 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	}
 
 	public void dealDamage(float damage)
-    {
+	{
 		//change the player state here
-        //Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
+		//Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
 		GD.Print(Health_Bar.hurt(damage));
-    }
-    //Constants
-    public const float SPEED = 120.0f;
+	}
+	//Constants
+	public const float SPEED = 120.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
 	public const double FALLGRACEPERIOD = 0.5;
 
-    //player parts
-    public CharacterBody2D PlayerObject;
+	//player parts
+	public CharacterBody2D PlayerObject;
 	public Sprite2D PlayerSprite;
 	public CollisionShape2D PlayerCollisionShape;
 	public RichTextLabel PlayerStateLabel;
@@ -86,7 +86,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
 		PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
 		Health_Bar = GetNode<HealthBar>("HealthBar");
-        _player_text_helper();
+		_player_text_helper();
 		PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
 		_move_text_helper();
 		PlayerJumpStateLabel = GetNode<RichTextLabel>("PlayerJumpStateLabel");
@@ -128,7 +128,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	private void _ces(EnvironmentalState s)
 	{
 		if(s == es) return;
-        
+		
 		switch(s)
 		{
 			case (EnvironmentalState.GROUNDED):
@@ -262,7 +262,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		else if(es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && this.GetRealVelocity().Y > 0.0)
 		{
 			velocity.Y = -40;
-            _change_Jump_State(PlayerJumpState.FALLING);
+			_change_Jump_State(PlayerJumpState.FALLING);
 		}
 		//if the player is jumping and lets go of the jump button we are now falling, this allows for variable jump height.
 		else if (es == EnvironmentalState.AIRBORN && pjs == PlayerJumpState.JUMPING && !Input.IsActionPressed("Jump"))
