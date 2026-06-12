@@ -76,6 +76,18 @@ public partial class TerrifyingMaw : CharacterBody2D
     }
 
 
+	private void _process_agression_state()
+	{
+		if(tds != TargetDistance.OUTOFRANGE && cas == AggessionState.PASSIVE)
+		{
+			cas = AggessionState.ALERTED;
+		}
+		else if(tds >= TargetDistance.UNDETECTED && cas == AggessionState.ALERTED)
+		{
+			cas = AggessionState.PASSIVE;
+		}
+	}
+
 	//simple enough that we don't need a special _change and _enact for this. 
 	private double distance_to_target = 10000;
 	private void _process_target_distance(double delta, ref Vector2 velocity)
@@ -179,10 +191,18 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 		}
 
-		//if we are alerted to the enemy we will run at them
+		//if we are alerted to the enemy we will run at them until we are close
 		if(cas == AggessionState.ALERTED)
 		{
-
+			if(tds == TargetDistance.RANGED)
+			{
+				_change_move_state(MoveState.DASHING);
+			}
+			else if(tds != TargetDistance.MELEE && tds != TargetDistance.RANGED)
+			{
+                _change_move_state(_direction_helper());
+            }
+			
 		}
 	}
 
@@ -226,6 +246,9 @@ public partial class TerrifyingMaw : CharacterBody2D
 			case MoveState.MOVINGRIGHT:
                 velocity.X = Speed * (float)PassiveSpeedMultiplier;
                 break;
+			case MoveState.DASHING:
+
+				break;
         }
 		GD.Print(cms.ToString());
 	}
@@ -236,6 +259,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 		Vector2 velocity = Velocity;
 		_process_environmental_state(delta, ref velocity);
 		_process_target_distance(delta, ref velocity);
+		_process_agression_state();
 		_process_move_state(delta, ref velocity);
 
 
@@ -251,6 +275,24 @@ public partial class TerrifyingMaw : CharacterBody2D
 	{
 		l.Text = cms.ToString();
 	}
+
+	//a little janky. Returns a movestate of the direction the player is in.
+    private MoveState _direction_helper()
+    {
+        if (Target == null)
+        {
+            return 0;
+        }
+        Vector2 directionToTarget = this.GlobalPosition.DirectionTo(Target.GlobalPosition);
+        if (directionToTarget.X < 0)
+        {
+            return MoveState.MOVINGLEFT;
+        }
+        else
+        {
+            return MoveState.MOVINGRIGHT;
+        }
+    }
 }
 
 
