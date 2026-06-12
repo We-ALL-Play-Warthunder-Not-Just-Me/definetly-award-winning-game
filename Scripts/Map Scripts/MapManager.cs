@@ -4,7 +4,7 @@ using System;
 public partial class MapManager : Node2D
 {
 	//Empty Values
-	Node2D Player;
+	CharacterBody2D Player;
 	CollisionShape2D PlayerCollision;
 	Node2D SpawnPoint;
 	Node2D SpawnOffset;
@@ -16,13 +16,13 @@ public partial class MapManager : Node2D
 	public override void _Ready()
 	{
 		//More grabbing of relevant information for later use.
-		Player = GetNode<Node2D>("/root/GameScene/Player");
+		Player = GetNode<CharacterBody2D>("/root/GameScene/Player");
 		PlayerCollision = Player.GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		GameScene = GetNode<Node2D>("/root/GameScene");
 		Camera = GetNode<Camera2D>("/root/GameScene/TheCamera");
 	}
 	
-	private void ChangeMap(string S, string NM, int TC, string CM, int FC)
+	private void ChangeMap(string S, string NM, int TC, string CM, int FC, float EM)
 	{
 		//This isn't the best way to do it, there should probably
 		//be a script that holds all the levels in a series of
@@ -33,7 +33,7 @@ public partial class MapManager : Node2D
 		var NewMap = GD.Load<PackedScene>("res://Scenes/" + NM + ".tscn");
 		var SpawnNewMap = NewMap.Instantiate();
 		GameScene.AddChild(SpawnNewMap);
-		MoveMap(S, NM, TC, CM, FC);
+		MoveMap(S, NM, TC, CM, FC, EM);
 		//This spawns in the New Map when it's safe and adds it to
 		//the scene before killing the Old Map in the safe zone.
 		//We're all about safety here lest Godot screams at us.
@@ -44,7 +44,7 @@ public partial class MapManager : Node2D
 		//been successfully swapped.
 	}
 	
-	private void MoveMap(string S, string NM, int TC, string CM, int FC)
+	private void MoveMap(string S, string NM, int TC, string CM, int FC, float EM)
 	{
 		//Grabbing all of the relevant Nodes and Markers that will be needed
 		//to run the code for Moving the Map.
@@ -60,7 +60,7 @@ public partial class MapManager : Node2D
 		//existing OldMap for best effect.
 		SpawnedMap.Position = OldMap.Position;
 		var MoveX = CCB.Scale.X/2 + NCB.Scale.X/2;
-		var MoveY = CCB.Scale.Y/2 + NCB.Scale.Y/2;
+		var MoveY = CCB.Scale.Y/2 + NCB.Scale.Y/2 + EM;
 		var ChunkDistance = 0f;
 		
 		//All of these if statements are for checking what direction to spawn
@@ -101,9 +101,9 @@ public partial class MapManager : Node2D
 			//Refer to Bottoms comment.
 			ChunkDistance = GTC.Position.X - GFC.Position.X;
 			if (ChunkDistance != 0)
-			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X - ChunkDistance, OldMap.Position.Y - MoveY);}
+			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X - ChunkDistance, OldMap.Position.Y + MoveY);}
 			else
-			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X, OldMap.Position.Y - MoveY);}
+			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X, OldMap.Position.Y + MoveY);}
 		}
 		
 		//Bottom = Entering on Bottom, so Move the Map Up.
@@ -112,9 +112,9 @@ public partial class MapManager : Node2D
 			//Refer to Rights comment.
 			ChunkDistance = GTC.Position.X - GFC.Position.X;
 			if (ChunkDistance != 0)
-			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X - ChunkDistance, OldMap.Position.Y + MoveY);}
+			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X - ChunkDistance, OldMap.Position.Y - MoveY);}
 			else
-			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X, OldMap.Position.Y + MoveY);}
+			{SpawnedMap.Position = new Vector2(SpawnedMap.Position.X, OldMap.Position.Y - MoveY);}
 		}
 	}
 	
@@ -156,12 +156,12 @@ public partial class MapManager : Node2D
 		Camera.LimitRight = (int)(BottomRight.Position.X + Restraints.Position.X);
 	}
 	
-	public void ProcessInformation(string S, string NM, int TC, string CM, int FC, bool VT)
+	public void ProcessInformation(string S, string NM, int TC, string CM, int FC, bool VT, float EM)
 	{
 		//Disables the Player Collision until everything is done.
 		PlayerCollision.SetDisabled(true);
 		//Changes and Moves the maps accordingly to the desired outcome.
-		ChangeMap(S, NM, TC, CM, FC);
+		ChangeMap(S, NM, TC, CM, FC, EM);
 		//Moves the Player to the desired SpawnPoint as defined by the info.
 		MovePlayer(S, NM, VT, Player);
 		//Moves the Camera to its new restraints on the new Map.
@@ -171,11 +171,11 @@ public partial class MapManager : Node2D
 	}
 	
 	public void CollectInfo(string Spawn, string NextMap, int ToChunk,
-					string CurrentMap, int FromChunk, bool VertTrans)
+				string CurrentMap, int FromChunk, bool VertTrans, float ExtraMaps)
 	{
 		//Takes all that Collected information from the MapTransitioner and
 		//procceeds to call the Processing in the safety net of Deferred land.
 		CallDeferred(MapManager.MethodName.ProcessInformation, Spawn, NextMap,
-									ToChunk, CurrentMap, FromChunk, VertTrans);
+								ToChunk, CurrentMap, FromChunk, VertTrans, ExtraMaps);
 	}
 }

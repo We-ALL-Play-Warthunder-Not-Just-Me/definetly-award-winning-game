@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://mmvdpiqdbj4o"]
 
+[ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/Blank Image.png" id="1_nvt2d"]
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_rkxqt"]
 
 [resource]
 script = ExtResource("1_rkxqt")
+icon = ExtResource("1_nvt2d")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bu5e35nfn3msp"]
+
+[ext_resource type="Texture2D" uid="uid://b03grg08445dx" path="res://Images/UIArt/Blue Flower.png" id="1_d8xng"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_tuhqq"]
+
+[resource]
+script = ExtResource("1_tuhqq")
+ID = 7
+Name = "Blue Flower"
+qty = 5
+max_qty = 100
+icon = ExtResource("1_d8xng")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

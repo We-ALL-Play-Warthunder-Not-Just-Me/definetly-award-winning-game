@@ -13,13 +13,16 @@ public partial class RoomSetUp : Sprite2D
 	//Empty Values
 	int HoriChunks;
 	int VertChunks;
+	public int ChunksMade;
 	Node2D BoundBox;
 	Marker2D TopLeft;
 	Marker2D BottomRight;
-	Node2D SpawnLeft;
-	Node2D SpawnRight;
-	Node2D SpawnTop;
-	Node2D SpawnBottom;
+	public Node2D SpawnLeft;
+	public Node2D SpawnRight;
+	public Node2D SpawnTop;
+	public Node2D SpawnBottom;
+	float StartX;
+	float StartY;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -32,6 +35,9 @@ public partial class RoomSetUp : Sprite2D
 		SpawnRight = GetNode<Node2D>("SpawnRight");
 		SpawnTop = GetNode<Node2D>("SpawnTop");
 		SpawnBottom = GetNode<Node2D>("SpawnBottom");
+		//This is for centering the chunks.
+		StartX = (-this.Scale.X/2) + (ChunkSizeX/2);
+		StartY = (-this.Scale.Y/2) + (ChunkSizeY/2);
 		
 		//Runs the code to create the Chunks as soon as the Map exists.
 		CalculateChunks();
@@ -48,30 +54,29 @@ public partial class RoomSetUp : Sprite2D
 		HoriChunks = (int)this.Scale.X / ChunkSizeX;
 		VertChunks = (int)this.Scale.Y / ChunkSizeY;
 		//A simple Vector2 to start us up at the Top Left of the map.
-		Vector2 StartingPoint = new Vector2(-this.Scale.X/2, -this.Scale.Y/2);
+		//GD.Print("StartX: " + StartX + " StartY: " + StartY);
+		ChunksMade = HoriChunks * VertChunks;
+		Vector2 StartingPoint = new Vector2(StartX, StartY);
 		
 		//Inputing the relevant information for Chunk Creation.
-		CreateChunks(HoriChunks, HoriChunks, VertChunks, 0, StartingPoint, 1);
+		CreateChunks(HoriChunks, VertChunks, StartingPoint, 1);
 	}
 	
 	//Just a bunch of fucking math to create the Chunk Markers
 	//for the sake of better Map Spawning and moving.
-	private void CreateChunks(int HCMax, int HC, int VC, int MC, Vector2 SP, int NC)
+	private void CreateChunks(int HC, int VC, Vector2 SP, int NC)
 	{
 		//Basically setting the Rows of Chunks left to do.
-		int VCLeft = VC;
-		if (VCLeft > 0)
+		if (VC > 0)
 		{
 			//Basically setting the Collumns of Chunks left to do.
-			int HCLeft = HC;
-			if (HCLeft > 0)
+			if (HC > 0)
 			{
 				//All of this handles putting in the Chunk Markers
 				//for how many Horizontal Collumns exist in this Row.
 				Marker2D Marker = new Marker2D();
-				if (MC > 0) {SP.X = SP.X + ChunkSizeX;Marker.Position = SP;}
-				else {Marker.Position = SP;}
-				MC += 1;
+				if (HC == HoriChunks) {Marker.Position = SP;}
+				else {SP.X = SP.X + ChunkSizeX;Marker.Position = SP;}
 				//This is just naming the Chunk accordingly, starting
 				//from 1 and ticking up until the function is over.
 				Marker.Name = "Chunk" + NC;
@@ -80,20 +85,19 @@ public partial class RoomSetUp : Sprite2D
 				//ChunkBounds before checking how many collumns
 				//are left and repeating itself until 0.
 				this.AddChild(Marker);
-				HCLeft -= 1;
-				CreateChunks(HCMax, HCLeft, VCLeft, MC, SP, NC);
+				HC -= 1;
+				CreateChunks(HC, VC, SP, NC);
 			}
 			else
 			{
 				//Resets the Starting Point of the Collumns like
 				//a type writer. Pretty simple.
-				MC = 0;
-				SP.X = -this.Scale.X/2;
+				SP.X = StartX;
 				//This moves the row down one Chunk and proceeds to
 				//loop on itself until it's gone through all rows.
 				SP.Y = SP.Y + ChunkSizeY;
-				VCLeft -= 1;
-				CreateChunks(HCMax, HCMax, VCLeft, MC, SP, NC);
+				VC -= 1;
+				CreateChunks(HoriChunks, VC, SP, NC);
 			}
 		}
 	}

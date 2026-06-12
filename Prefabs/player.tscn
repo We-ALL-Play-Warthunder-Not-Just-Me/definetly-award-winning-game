@@ -114,14 +114,14 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1876432518 groups=["Player"]]
-collision_layer = 129
+collision_layer = 3
 script = ExtResource("1_onrkg")
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1533614941 groups=["Player"]]
 texture = ExtResource("2_5wxv7")
 offset = Vector2(0, -13)
 hframes = 4
-vframes = 4
+vframes = 5
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="." unique_id=427782164 groups=["Player"]]
 shape = SubResource("RectangleShape2D_y5hcb")

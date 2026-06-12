@@ -447,21 +447,18 @@ position = Vector2(-80, 8)
 texture = ExtResource("4_iw0qa")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
+z_index = 8
 tile_map_data = PackedByteArray("AAD2/wIAAQAAAAEAAAD4/wMAAQAAAAEAAAD7/wMAAQAAAAEAAAABAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAACAAIAAQACAAEAAAAGAAIAAQACAAEAAAD+/wMAAQACAAEAAAD5/wMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=1095225344 instance=ExtResource("5_0trb5")]
 position = Vector2(160, 0)
-SpawnSide = "Left"
 NextMap = "Map1"
 ToChunk = 1
 CurrentMap = "StartMap"
-FromChunk = 1
 
 [node name="MapTransitioner2" parent="." unique_id=391673480 instance=ExtResource("5_0trb5")]
 position = Vector2(-160, 0)
-SpawnSide = "Right"
 NextMap = "Forest1"
 ToChunk = 2
 CurrentMap = "StartMap"
-FromChunk = 1
