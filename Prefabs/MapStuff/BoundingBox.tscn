@@ -16,7 +16,7 @@ script = ExtResource("1_6365n")
 ChunkSizeX = 320
 ChunkSizeY = 192
 
-[node name="Spawn0" type="Node2D" parent="." unique_id=1015858986]
+[node name="DefaultSpawn" type="Node2D" parent="." unique_id=1015858986]
 
 [node name="SpawnLeft" type="Node2D" parent="." unique_id=2140945456]
 

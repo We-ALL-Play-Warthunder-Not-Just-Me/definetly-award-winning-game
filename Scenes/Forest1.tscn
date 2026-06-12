@@ -490,6 +490,6 @@ FromChunk = 2
 position = Vector2(-320, 0)
 SpawnSide = "Right"
 NextMap = "Forest2"
-ToChunk = 4
+ToChunk = 3
 CurrentMap = "Forest1"
 FromChunk = 1
