@@ -1,14 +1,23 @@
 [gd_scene format=3 uid="uid://wh7cc2hwouuu"]
 
+[ext_resource type="Theme" uid="uid://bg4h5rin6m4pu" path="res://Themes/HealthBarTheme.tres" id="1_wlp2u"]
 [ext_resource type="Script" uid="uid://cfrivlnxrb8bm" path="res://Scripts/HealthBar.cs" id="1_wsc52"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2k36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsc52"]
 bg_color = Color(0.90675926, 0.3297221, 0.59277016, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlp2u"]
 bg_color = Color(0.13592777, 0.1285136, 0.11862678, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
@@ -18,6 +27,10 @@ shadow_offset = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bne81"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="HealthBar" type="ProgressBar" unique_id=286525542]
 z_index = 1
@@ -27,6 +40,7 @@ anchor_bottom = 1.0
 offset_top = -15.0
 offset_right = 200.0
 grow_vertical = 0
+theme = ExtResource("1_wlp2u")
 theme_override_styles/background = SubResource("StyleBoxEmpty_o2k36")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wsc52")
 step = 1.0
