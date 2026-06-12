@@ -7,7 +7,7 @@
 script = ExtResource("1_ywy4t")
 ID = 5
 Name = "Blueberry Pie"
-qty = 1
+qty = 2
 max_qty = 100
 icon = ExtResource("1_foiyl")
 metadata/_custom_type_script = "uid://nh7pbovwuooe"

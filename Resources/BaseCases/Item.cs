@@ -33,6 +33,13 @@ using System;
         return (Item)MemberwiseClone();
     }
 
+    public Item shallowCopy(int newqty)
+    {
+        Item tempItem = (Item)MemberwiseClone();
+        tempItem.qty = newqty;
+        return tempItem;
+    }
+
     // I don't have an Object inside my Object
     // public Item deepCopy()
     // {

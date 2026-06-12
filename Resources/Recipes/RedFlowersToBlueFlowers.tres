@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredients" format=3 uid="uid://cwadsermtq7hd"]
+
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_vmbxi"]
+[ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="2_7qknd"]
+[ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/BlueCatalyst.tres" id="2_8bdcy"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/RedFlower.tres" id="3_b8gnf"]
+
+[resource]
+script = ExtResource("2_7qknd")
+ingredients = Dictionary[ExtResource("1_vmbxi"), int]({
+ExtResource("2_8bdcy"): 1,
+ExtResource("3_b8gnf"): 1
+})
+metadata/_custom_type_script = "uid://clr3e7yjs53yd"
