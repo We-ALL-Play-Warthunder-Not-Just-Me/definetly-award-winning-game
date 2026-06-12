@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvsu80ws1uyuk"
-path="res://.godot/imported/Temp Witch House.png-1ebfbe0d17e8bfc97bfcc3975ae10d40.ctex"
+uid="uid://b50e4jqw7oinh"
+path="res://.godot/imported/MVM Fountain.png-59b74f661c99717106f2eef5797fd85c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Temp Witch House.png"
-dest_files=["res://.godot/imported/Temp Witch House.png-1ebfbe0d17e8bfc97bfcc3975ae10d40.ctex"]
+source_file="res://Images/Objects/MVM Fountain.png"
+dest_files=["res://.godot/imported/MVM Fountain.png-59b74f661c99717106f2eef5797fd85c.ctex"]
 
 [params]
 

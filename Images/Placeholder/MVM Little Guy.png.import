@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddma5roccnajh"
-path="res://.godot/imported/MVM Town Tiles.png-324c780619717f6ead88cbf97ebecfa9.ctex"
+uid="uid://b3gxmf6rxflea"
+path="res://.godot/imported/MVM Little Guy.png-6dc38ace74ad6a6e6cd9446af678cd41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Town Tiles.png"
-dest_files=["res://.godot/imported/MVM Town Tiles.png-324c780619717f6ead88cbf97ebecfa9.ctex"]
+source_file="res://Images/Placeholder/MVM Little Guy.png"
+dest_files=["res://.godot/imported/MVM Little Guy.png-6dc38ace74ad6a6e6cd9446af678cd41.ctex"]
 
 [params]
 

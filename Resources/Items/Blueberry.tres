@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://n4lftern2ytg"]
 
-[ext_resource type="Texture2D" uid="uid://t8aidlaga8lm" path="res://Images/UIArt/blueberry.png" id="1_448ey"]
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_448ey"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tluj6"]
+load_path = "res://.godot/imported/Materials.png-cd9f198d5f3868544abf4f872cd2223d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwtna"]
+atlas = SubResource("CompressedTexture2D_tluj6")
+region = Rect2(32, 64, 32, 32)
 
 [resource]
 script = ExtResource("2_448ey")
@@ -9,5 +15,5 @@ ID = 1
 Name = "Blueberry"
 qty = 1
 max_qty = 50
-icon = ExtResource("1_448ey")
+icon = SubResource("AtlasTexture_jwtna")
 metadata/_custom_type_script = "uid://nh7pbovwuooe"

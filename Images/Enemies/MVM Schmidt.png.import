@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy4h3hdypjxr8"
-path="res://.godot/imported/Base Tiles.png-82fa86f8ddb546ce114be69c7cf6fec6.ctex"
+uid="uid://b0gc7ms2smxwc"
+path="res://.godot/imported/MVM Schmidt.png-59171355506e3f68cf5d4d3e3f28ffca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Base Tiles.png"
-dest_files=["res://.godot/imported/Base Tiles.png-82fa86f8ddb546ce114be69c7cf6fec6.ctex"]
+source_file="res://Images/Enemies/MVM Schmidt.png"
+dest_files=["res://.godot/imported/MVM Schmidt.png-59171355506e3f68cf5d4d3e3f28ffca.ctex"]
 
 [params]
 

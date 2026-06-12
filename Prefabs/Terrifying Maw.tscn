@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rxcsjanls7dq"]
 
 [ext_resource type="Script" uid="uid://drthh8kcbv68y" path="res://Scripts/TerrifyingMaw.cs" id="1_bsg7f"]
-[ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/MVM Maw.png" id="2_31gip"]
+[ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/Enemies/MVM Maw.png" id="2_31gip"]
 
 [sub_resource type="Animation" id="Animation_wxf5y"]
 resource_name = "maw_idle"

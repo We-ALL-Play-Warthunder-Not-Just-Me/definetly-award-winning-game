@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8o1thfxq1xwb"
-path="res://.godot/imported/Materials.png-cd9f198d5f3868544abf4f872cd2223d.ctex"
+uid="uid://bv8owmxh76psh"
+path="res://.godot/imported/MVM Bench.png-2a8c61ceb67970e42540cd9f007a65da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Materials.png"
-dest_files=["res://.godot/imported/Materials.png-cd9f198d5f3868544abf4f872cd2223d.ctex"]
+source_file="res://Images/Objects/MVM Bench.png"
+dest_files=["res://.godot/imported/MVM Bench.png-2a8c61ceb67970e42540cd9f007a65da.ctex"]
 
 [params]
 

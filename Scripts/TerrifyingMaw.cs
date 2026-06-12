@@ -16,7 +16,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 
 
-    private enum EnvironmentState
+	private enum EnvironmentState
 	{
 		GROUNDED,
 		AIRBORN
@@ -65,15 +65,15 @@ public partial class TerrifyingMaw : CharacterBody2D
 	private AttackState cats = AttackState.IDLE;
 	private TargetDistance tds = TargetDistance.UNDETECTED;
 
-    [Export]public RichTextLabel l;
+	[Export]public RichTextLabel l;
 
 
 	private Node2D Target;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		Target = (Node2D)GetTree().GetFirstNodeInGroup("Player");
-    }
+	}
 
 
 	private void _process_agression_state()
@@ -113,7 +113,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 	}
 
 	//HAHAHA I MADE IT ONE LINE LOSERS. Its hella simple and just calles change environmental state depending on if on ground or not
-    private void _process_environmental_state(double delta, ref Vector2 velocity)
+	private void _process_environmental_state(double delta, ref Vector2 velocity)
 	{if (this.IsOnFloor()){_change_environmental_state(EnvironmentState.GROUNDED);}else{_change_environmental_state(EnvironmentState.AIRBORN);}}
 
 	private void _change_environmental_state(EnvironmentState e)
@@ -160,7 +160,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 			if (_wander_time <= 0)
 			{
 				_wander_time = GD.RandRange(1.0, 3.0);
-                int direction = GD.RandRange(-1, 1);
+				int direction = GD.RandRange(-1, 1);
 				if (direction == 0)
 				{
 					_change_move_state(MoveState.IDLE);
@@ -174,7 +174,7 @@ public partial class TerrifyingMaw : CharacterBody2D
 					_change_move_state(MoveState.MOVINGLEFT);
 				}
 
-            }
+			}
 			//if we hit a wall lets go the other way
 			if(this.IsOnWall())
 			{
@@ -185,8 +185,8 @@ public partial class TerrifyingMaw : CharacterBody2D
 				}
 				else
 				{
-                    _change_move_state(MoveState.MOVINGLEFT);
-                }
+					_change_move_state(MoveState.MOVINGLEFT);
+				}
 			}
 
 		}
@@ -200,8 +200,8 @@ public partial class TerrifyingMaw : CharacterBody2D
 			}
 			else if(tds != TargetDistance.MELEE && tds != TargetDistance.RANGED)
 			{
-                _change_move_state(_direction_helper());
-            }
+				_change_move_state(_direction_helper());
+			}
 			
 		}
 	}
@@ -244,12 +244,12 @@ public partial class TerrifyingMaw : CharacterBody2D
 				velocity.X = -Speed * (float)PassiveSpeedMultiplier;
 				break;
 			case MoveState.MOVINGRIGHT:
-                velocity.X = Speed * (float)PassiveSpeedMultiplier;
-                break;
+				velocity.X = Speed * (float)PassiveSpeedMultiplier;
+				break;
 			case MoveState.DASHING:
 
 				break;
-        }
+		}
 		GD.Print(cms.ToString());
 	}
 
@@ -277,24 +277,20 @@ public partial class TerrifyingMaw : CharacterBody2D
 	}
 
 	//a little janky. Returns a movestate of the direction the player is in.
-    private MoveState _direction_helper()
-    {
-        if (Target == null)
-        {
-            return 0;
-        }
-        Vector2 directionToTarget = this.GlobalPosition.DirectionTo(Target.GlobalPosition);
-        if (directionToTarget.X < 0)
-        {
-            return MoveState.MOVINGLEFT;
-        }
-        else
-        {
-            return MoveState.MOVINGRIGHT;
-        }
-    }
+	private MoveState _direction_helper()
+	{
+		if (Target == null)
+		{
+			return 0;
+		}
+		Vector2 directionToTarget = this.GlobalPosition.DirectionTo(Target.GlobalPosition);
+		if (directionToTarget.X < 0)
+		{
+			return MoveState.MOVINGLEFT;
+		}
+		else
+		{
+			return MoveState.MOVINGRIGHT;
+		}
+	}
 }
-
-
-
-

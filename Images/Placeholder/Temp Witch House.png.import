@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do37m73d0d8nw"
-path="res://.godot/imported/MVM Maw.png-ed7ca11bd64fbacee96921fa02b7e01b.ctex"
+uid="uid://bvsu80ws1uyuk"
+path="res://.godot/imported/Temp Witch House.png-6cbd5ea84187bf5d26c9b75e87b586e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Maw.png"
-dest_files=["res://.godot/imported/MVM Maw.png-ed7ca11bd64fbacee96921fa02b7e01b.ctex"]
+source_file="res://Images/Placeholder/Temp Witch House.png"
+dest_files=["res://.godot/imported/Temp Witch House.png-6cbd5ea84187bf5d26c9b75e87b586e9.ctex"]
 
 [params]
 
