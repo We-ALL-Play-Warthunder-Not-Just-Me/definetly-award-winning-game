@@ -71,7 +71,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public AnimationPlayer PlayerAnimations;
 
 	//Random Health Bar class
-	public HealthBar Health_Bar;
+	[Export]public HealthBar Health_Bar;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
@@ -87,7 +87,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
 		PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
-		Health_Bar = GetNode<HealthBar>("HealthBar");
+		if(Health_Bar == null) Health_Bar = GetNode<HealthBar>("CanvasLayer/HealthBar");
 		_player_text_helper();
 		PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
 		_move_text_helper();

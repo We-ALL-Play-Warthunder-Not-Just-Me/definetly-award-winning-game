@@ -113,9 +113,10 @@ _data = {
 &"RESET": SubResource("Animation_2nftw")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1876432518 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1876432518 node_paths=PackedStringArray("Health_Bar") groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_onrkg")
+Health_Bar = NodePath("CanvasLayer/HealthBar")
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1533614941 groups=["Player"]]
 texture = ExtResource("2_5wxv7")
@@ -203,9 +204,14 @@ theme_override_font_sizes/normal_font_size = 10
 text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
-[node name="HealthBar" parent="." unique_id=286525542 instance=ExtResource("3_y5hcb")]
-offset_left = -204.0
-offset_top = 94.0
-offset_right = -4.0
-offset_bottom = 109.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=681730634]
+
+[node name="HealthBar" parent="CanvasLayer" unique_id=286525542 instance=ExtResource("3_y5hcb")]
+anchors_preset = -1
+anchor_left = 0.0078125
+anchor_top = 0.9527778
+anchor_right = 0.39140624
+anchor_bottom = 0.9861111
+offset_top = 0.0
+offset_right = 0.0
 metadata/_edit_use_anchors_ = true
