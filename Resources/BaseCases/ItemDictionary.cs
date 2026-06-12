@@ -5,7 +5,7 @@ using System;
 public partial class ItemDictionary : Resource
 {
     [Export]
-    public Godot.Collections.Dictionary<int,Resource> items = new Godot.Collections.Dictionary<int,Resource>();
+    public Godot.Collections.Dictionary<int,Item> items = [];
 
 
     public ItemDictionary() {}

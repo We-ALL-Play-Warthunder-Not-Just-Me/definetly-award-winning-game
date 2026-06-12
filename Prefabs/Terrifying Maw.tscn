@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://rxcsjanls7dq"]
+
+[ext_resource type="Script" uid="uid://drthh8kcbv68y" path="res://Scripts/TerrifyingMaw.cs" id="1_bsg7f"]
+[ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/MVM Maw.png" id="2_31gip"]
+
+[sub_resource type="Animation" id="Animation_wxf5y"]
+resource_name = "maw_idle"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05ldl"]
+_data = {
+&"maw_idle": SubResource("Animation_wxf5y")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00odg"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bsg7f"]
+
+[node name="TerrifyingMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
+script = ExtResource("1_bsg7f")
+PassiveSpeedMultiplier = 0.02
+l = NodePath("StateLabel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=61845971]
+texture = ExtResource("2_31gip")
+offset = Vector2(0, -5.5)
+hframes = 2
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=2006441210]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_05ldl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1818679338]
+shape = SubResource("RectangleShape2D_00odg")
+
+[node name="EnemyDetector" type="Area2D" parent="." unique_id=1701893687]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector" unique_id=1387074939]
+visible = false
+position = Vector2(-14, 5)
+shape = SubResource("SegmentShape2D_bsg7f")
+
+[node name="StateLabel" type="RichTextLabel" parent="." unique_id=1363682789]
+offset_left = -95.0
+offset_top = -29.0
+offset_right = 95.0
+offset_bottom = -11.0
+theme_override_font_sizes/normal_font_size = 8
+text = "AAAAAAA"

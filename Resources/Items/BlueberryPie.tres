@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://divt054n14kij"]
+
+[ext_resource type="Texture2D" uid="uid://dfycxcjpk6off" path="res://Images/UIArt/Blueberry Pie.png" id="1_foiyl"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_ywy4t"]
+
+[resource]
+script = ExtResource("1_ywy4t")
+ID = 5
+Name = "Blueberry Pie"
+qty = 2
+max_qty = 100
+icon = ExtResource("1_foiyl")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"
