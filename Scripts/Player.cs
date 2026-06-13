@@ -43,7 +43,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		WALL//Uncertain if this should be here
 	}
 
-	public void dealDamage(float damage)
+	public void dealDamage(float damage, int direction)
 	{
 		//change the player state here
 		//Health_Bar.setcurrenthealth(Health_Bar.Value - damage);

@@ -5,7 +5,7 @@ public interface DamagableEntity
 {
 
 
-	public void dealDamage(float damage);
+	public void dealDamage(float damage, int direction);
 
 
 }

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bp5cn3sk8pg6b"]
+
+[ext_resource type="Script" uid="uid://bvhejcq2c01oq" path="res://Prefabs/Attacks/MawMawBite.cs" id="1_h8fdm"]
+[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="2_4ydot"]
+
+[node name="MawMawBite" type="Area2D" unique_id=635776908]
+script = ExtResource("1_h8fdm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2113396194]
+polygon = PackedVector2Array(0, 0, -2, -4, 1, -9, 5, -9, 5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741207603]
+position = Vector2(1.5, -4.5)
+scale = Vector2(0.054687493, 0.0703125)
+texture = ExtResource("2_4ydot")

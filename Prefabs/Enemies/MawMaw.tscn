@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btnjcinjudw2s" path="res://Scripts/MawMaw.cs" id="1_wgu7o"]
 [ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/MVM Maw.png" id="2_g1gtq"]
+[ext_resource type="PackedScene" uid="uid://bp5cn3sk8pg6b" path="res://Prefabs/Attacks/MawMawBite.tscn" id="2_ter1i"]
 
 [sub_resource type="Animation" id="Animation_wxf5y"]
 resource_name = "maw_idle"
@@ -14,9 +15,10 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00odg"]
 
-[node name="TerrifyingMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
+[node name="MawMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
 script = ExtResource("1_wgu7o")
 l = NodePath("StateLabel")
+MeleeAttack1 = ExtResource("2_ter1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=61845971]
 texture = ExtResource("2_g1gtq")

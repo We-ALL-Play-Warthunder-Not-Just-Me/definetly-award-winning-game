@@ -18,11 +18,11 @@ public partial class MawMaw : CharacterBody2D
 	[Export] public double PassiveSpeedMultiplier = 0.5;
     [Export] public double WanderingMinimum = 1.0;
     [Export] public double WanderingMaximum = 3.0;
-	[Export] public int HP = 100;
+    [Export] public double MeleeDuration = 0.5f;
+    [Export] public double MeleeRecovery = 1.5f;
+    [Export] public int HP = 100;
     [Export] public RichTextLabel l;
-
-
-
+    [Export] public PackedScene MeleeAttack1;
 
     private enum State
 	{
@@ -120,6 +120,9 @@ public partial class MawMaw : CharacterBody2D
                     velocity.Y = (float)DashJump;
                     current_state = State.DASHING;
                 }
+                break;
+            case State.MELEEING:
+
                 break;
         }
 
