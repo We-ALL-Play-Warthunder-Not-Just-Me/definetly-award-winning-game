@@ -4,13 +4,13 @@ using System;
 public partial class SimpleShooterNPC : CharacterBody2D
 {
 	[Export]public float Speed = 100.0f;
-    [Export]public float JumpVelocity = -400.0f;
-    [Export] public float GRAVITY = 200.0f;
-    [Export]public double ShootingTime = 0.5;
-    [Export] public double ReloadingTime = 1.0;
-    [Export] public PackedScene Bullets;
-    //experimental thing that can be changed to slow down the creature while it is reloading.
-    private float loadingSpeed = 1.0f;
+	[Export]public float JumpVelocity = -400.0f;
+	[Export] public float GRAVITY = 200.0f;
+	[Export]public double ShootingTime = 0.5;
+	[Export] public double ReloadingTime = 1.0;
+	[Export] public PackedScene Bullets;
+	//experimental thing that can be changed to slow down the creature while it is reloading.
+	private float loadingSpeed = 1.0f;
 
 	private enum FiringState
 	{
@@ -96,21 +96,21 @@ public partial class SimpleShooterNPC : CharacterBody2D
 		}
 	}
 
-    private void _enact_movement_state(ref Vector2 velocity)
-    {
-        switch (currentMovementState)
-        {
-            case MovementState.IDLE:
-                velocity.X = 0;
-                break;
-            case MovementState.LEFT:
-                velocity.X = -Speed * loadingSpeed;
-                break;
-            case MovementState.RIGHT:
-                velocity.X = Speed * loadingSpeed;
-                break;
-        }
-    }
+	private void _enact_movement_state(ref Vector2 velocity)
+	{
+		switch (currentMovementState)
+		{
+			case MovementState.IDLE:
+				velocity.X = 0;
+				break;
+			case MovementState.LEFT:
+				velocity.X = -Speed * loadingSpeed;
+				break;
+			case MovementState.RIGHT:
+				velocity.X = Speed * loadingSpeed;
+				break;
+		}
+	}
 
 	private void _enact_firing_state(double delta)
 	{
@@ -179,24 +179,24 @@ public partial class SimpleShooterNPC : CharacterBody2D
 			return;
 		}
 
-        switch (newState)
-        {
-            case FiringState.IDLE:
-                currentFiringState = FiringState.IDLE;
-                break;
-            case FiringState.SHOOTING:
-                currentFiringState = FiringState.SHOOTING;
-                _firing_timer = ShootingTime; 
-                loadingSpeed = 0.0f;
-                break;
-            case FiringState.RELOADING:
-                currentFiringState = FiringState.RELOADING;
-                loadingSpeed = 0.5f;
-                _reload_timer = ReloadingTime;
-                break;
-        }
-        
-    }
+		switch (newState)
+		{
+			case FiringState.IDLE:
+				currentFiringState = FiringState.IDLE;
+				break;
+			case FiringState.SHOOTING:
+				currentFiringState = FiringState.SHOOTING;
+				_firing_timer = ShootingTime; 
+				loadingSpeed = 0.0f;
+				break;
+			case FiringState.RELOADING:
+				currentFiringState = FiringState.RELOADING;
+				loadingSpeed = 0.5f;
+				_reload_timer = ReloadingTime;
+				break;
+		}
+		
+	}
 
 	private void _change_aggro_state(AggroState newState)
 	{
@@ -212,28 +212,28 @@ public partial class SimpleShooterNPC : CharacterBody2D
 		}
 	}
 
-    private void _change_movement_state(MovementState newState)
-    {
-        if(currentAggroState == AggroState.PASSIVE)
-        {
-            return;
-        }
-        switch (newState)
-        {
-            case MovementState.IDLE:
-                if(target != null)
-                {
-                    // we would want to check how far they are from the player, if the player is too far or too close we might not want to keep moving
-                    return;
-                }
-                else
-                {
-                    currentMovementState = MovementState.IDLE;
-                }
-                break;
-            case MovementState.LEFT:
-                currentMovementState = MovementState.LEFT;
-                break;
+	private void _change_movement_state(MovementState newState)
+	{
+		if(currentAggroState == AggroState.PASSIVE)
+		{
+			return;
+		}
+		switch (newState)
+		{
+			case MovementState.IDLE:
+				if(target != null)
+				{
+					// we would want to check how far they are from the player, if the player is too far or too close we might not want to keep moving
+					return;
+				}
+				else
+				{
+					currentMovementState = MovementState.IDLE;
+				}
+				break;
+			case MovementState.LEFT:
+				currentMovementState = MovementState.LEFT;
+				break;
 
 			case MovementState.RIGHT:
 				currentMovementState = MovementState.RIGHT;

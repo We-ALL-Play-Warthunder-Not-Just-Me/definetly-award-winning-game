@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db5cqbbvq8k2d"
-path="res://.godot/imported/MVM Grass Tiles.png-a12a577d8932291ceda91cf1417f6bc3.ctex"
+uid="uid://cf3tr1d6758k4"
+path="res://.godot/imported/MVM Sprout.png-5e529913646c2127ace02eaaaaaf73b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Grass Tiles.png"
-dest_files=["res://.godot/imported/MVM Grass Tiles.png-a12a577d8932291ceda91cf1417f6bc3.ctex"]
+source_file="res://Images/Enemies/MVM Sprout.png"
+dest_files=["res://.godot/imported/MVM Sprout.png-5e529913646c2127ace02eaaaaaf73b3.ctex"]
 
 [params]
 

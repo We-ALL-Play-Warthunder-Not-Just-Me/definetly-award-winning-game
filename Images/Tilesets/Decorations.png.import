@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8tor7no3yypj"
-path="res://.godot/imported/Base Tiles but Grass.png-5c37d84eef08aa7b39260484f68b8e0d.ctex"
+uid="uid://x3w6xbgifw2b"
+path="res://.godot/imported/Decorations.png-79686471f3081a627e51b0c131a1b3b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Base Tiles but Grass.png"
-dest_files=["res://.godot/imported/Base Tiles but Grass.png-5c37d84eef08aa7b39260484f68b8e0d.ctex"]
+source_file="res://Images/Tilesets/Decorations.png"
+dest_files=["res://.godot/imported/Decorations.png-79686471f3081a627e51b0c131a1b3b0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b50e4jqw7oinh"
-path="res://.godot/imported/MVM Fountain.png-ea7c6008d9ac2c411ca6711d20b32c96.ctex"
+uid="uid://dkb1463p6eitv"
+path="res://.godot/imported/Temp Houses.png-c58ca182f5d138cf6d447ec1d413c358.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Fountain.png"
-dest_files=["res://.godot/imported/MVM Fountain.png-ea7c6008d9ac2c411ca6711d20b32c96.ctex"]
+source_file="res://Images/Placeholder/Temp Houses.png"
+dest_files=["res://.godot/imported/Temp Houses.png-c58ca182f5d138cf6d447ec1d413c358.ctex"]
 
 [params]
 

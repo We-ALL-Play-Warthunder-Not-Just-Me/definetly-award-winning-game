@@ -27,7 +27,7 @@ public partial class PickUpItem : Area2D
 		else
 		{
 			sprite.Texture = baseItem.icon;
-			sprite.Scale = new Vector2((float)0.25,(float)0.25);
+			//sprite.Scale = new Vector2((float)0.25,(float)0.25);
 		}
 		// invent = GetNode<InventoryLogic>("../../../PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList");
 		// invent = GetNode<InventoryLogic>("/root/GameScene/PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList");

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1m07ro35l0sc"]
 
 [ext_resource type="Script" path="res://Scripts/Playerv2.cs" id="1_16fx2"]
-[ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://Images/MVM Little Guy.png" id="2_frmjh"]
+[ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://Images/Placeholder/MVM Little Guy.png" id="2_frmjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jseqb"]
 

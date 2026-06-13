@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3gxmf6rxflea"
-path="res://.godot/imported/MVM Little Guy.png-8175ed0be18961eefee5c994d2995332.ctex"
+uid="uid://dg18xcwe25lfa"
+path="res://.godot/imported/MVM Rock Projectile.png-13b0c4a9de83a8754e0b5bc1104451e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Little Guy.png"
-dest_files=["res://.godot/imported/MVM Little Guy.png-8175ed0be18961eefee5c994d2995332.ctex"]
+source_file="res://Images/Enemies/MVM Rock Projectile.png"
+dest_files=["res://.godot/imported/MVM Rock Projectile.png-13b0c4a9de83a8754e0b5bc1104451e7.ctex"]
 
 [params]
 

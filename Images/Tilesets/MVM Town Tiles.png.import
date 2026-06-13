@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7ahqqtq8kn2"
-path="res://.godot/imported/All Trees.png-e4da6d6883f0ac2843770c0322a92665.ctex"
+uid="uid://ddma5roccnajh"
+path="res://.godot/imported/MVM Town Tiles.png-9542c6d3af8d80bdb324c9cf4d7cb871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/All Trees.png"
-dest_files=["res://.godot/imported/All Trees.png-e4da6d6883f0ac2843770c0322a92665.ctex"]
+source_file="res://Images/Tilesets/MVM Town Tiles.png"
+dest_files=["res://.godot/imported/MVM Town Tiles.png-9542c6d3af8d80bdb324c9cf4d7cb871.ctex"]
 
 [params]
 

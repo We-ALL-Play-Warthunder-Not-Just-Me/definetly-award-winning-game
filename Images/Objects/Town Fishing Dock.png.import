@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0dc34fr57u2p"
-path="res://.godot/imported/Town Fishing Dock.png-63a26213b8d96cde114a64b024a23141.ctex"
+path="res://.godot/imported/Town Fishing Dock.png-320f4796675fa9f65a8f6ff21fa2ec5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Town Fishing Dock.png"
-dest_files=["res://.godot/imported/Town Fishing Dock.png-63a26213b8d96cde114a64b024a23141.ctex"]
+source_file="res://Images/Objects/Town Fishing Dock.png"
+dest_files=["res://.godot/imported/Town Fishing Dock.png-320f4796675fa9f65a8f6ff21fa2ec5f.ctex"]
 
 [params]
 

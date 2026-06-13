@@ -48,9 +48,9 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		//change the player state here
 		//Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
 		GD.Print(Health_Bar.hurt(damage));
-    }
-    //Constants
-    public const float SPEED = 120.0f;
+	}
+	//Constants
+	public const float SPEED = 120.0f;
 	public const float RUNSPEED = 200.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
@@ -240,10 +240,10 @@ public partial class Player : CharacterBody2D, DamagableEntity
 					}	
 					pjs = PlayerJumpState.FALLING;	
 				} else if (v.Y >= 0)
-                {
-                    pjs = PlayerJumpState.FALLING;
-                }
-                break;
+				{
+					pjs = PlayerJumpState.FALLING;
+				}
+				break;
 			case (PlayerJumpState.LANDING):
 				//if the player aint falling then we don't land, eventually we will want to add a timer if this feature is included
 				if(pjs != PlayerJumpState.FALLING) break;
