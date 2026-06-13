@@ -205,6 +205,7 @@ text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=681730634]
+layer = 6
 
 [node name="HealthBar" parent="CanvasLayer" unique_id=286525542 instance=ExtResource("3_y5hcb")]
 anchors_preset = -1

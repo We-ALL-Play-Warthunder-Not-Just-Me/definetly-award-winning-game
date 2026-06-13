@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 
-[GlobalClass] public partial class Item : Resource
+[GlobalClass, Icon("res://Images/UIArt/blueberry.png")] public partial class Item : Resource
 {
    [Export] public int ID;
    [Export] public string Name;
