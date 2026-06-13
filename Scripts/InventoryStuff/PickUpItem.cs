@@ -13,7 +13,7 @@ public partial class PickUpItem : Area2D
 	[Export] bool KeyItemInventory = false;
 	private Sprite2D sprite;
 	[Export] Texture2D replacementPicture = null;
-	private Node globals;
+	// private Node globals;
 
 
 	// Called when the node enters the scene tree for the first time.

@@ -9,6 +9,14 @@ public partial class FullscreenToggle : CheckBox
 	public override void _Ready()
 	{
 		Toggled += ToggleFullScreen;
+		if(DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen)
+		{
+			SetPressedNoSignal(true);
+		}
+		else
+		{
+			SetPressedNoSignal(false);
+		}
 	}
 
 	private void ToggleFullScreen(bool toggle_on)
