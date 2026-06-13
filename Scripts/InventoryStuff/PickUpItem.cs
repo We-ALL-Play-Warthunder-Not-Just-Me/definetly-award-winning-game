@@ -6,7 +6,6 @@ public partial class PickUpItem : Area2D
 
 	[Export] Item baseItem;
 	[Export] int amount;
-	Item item;
 	// Can be the Materials inventory itemlist or the KeyItems inventory Itemlist
 	[Export] InventoryLogic invent;
 	// [Export] bool MaterialInventory = true;
@@ -20,7 +19,6 @@ public partial class PickUpItem : Area2D
 	public override void _Ready()
 	{
 		BodyEntered += ItemTouched;
-		item = baseItem.shallowCopy(amount);
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		if (replacementPicture != null)
 		{
@@ -59,15 +57,16 @@ public partial class PickUpItem : Area2D
 	{
 		if (body.IsInGroup("Player"))
 		{
-			if (AddNewItem())
+			if (AddNewItem(amount))
 			{
 				QueueFree();
 			}
 		}
 	}
 
-	private bool AddNewItem()
+	private bool AddNewItem(int amount)
 	{
+		Item item = baseItem.shallowCopy(amount);
 		return invent.AddInventoryItem(item);
 	}
 
