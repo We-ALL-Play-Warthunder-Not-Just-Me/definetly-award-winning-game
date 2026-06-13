@@ -8,6 +8,7 @@ atlas = ExtResource("1_foiyl")
 region = Rect2(0, 0, 32, 32)
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_ywy4t")
 ID = 5
 Name = "Blueberry Pie"
