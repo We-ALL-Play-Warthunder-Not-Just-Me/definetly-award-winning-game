@@ -26,6 +26,8 @@ limit_bottom = 84
 [node name="MvmSongIdea" type="AudioStreamPlayer" parent="." unique_id=1289639467]
 stream = ExtResource("4_y30xb")
 volume_db = -8.0
+autoplay = true
+bus = &"Music"
 script = ExtResource("5_xhjei")
 
 [node name="PauseStatus" parent="." unique_id=1296144696 instance=ExtResource("6_6vvcf")]
@@ -33,10 +35,5 @@ visible = false
 
 [node name="TerrifyingMaw" parent="." unique_id=614449111 instance=ExtResource("7_x6js8")]
 position = Vector2(77, 33)
-
-[node name="MvmSongIdea(idea#70)" type="AudioStreamPlayer" parent="." unique_id=1773004342]
-stream = ExtResource("4_y30xb")
-bus = &"Music"
-playback_type = 1
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
