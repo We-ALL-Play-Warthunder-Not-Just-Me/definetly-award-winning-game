@@ -17,7 +17,7 @@ public partial class SettingsScreen : Control
 
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("escape"))
+        if (@event.IsActionPressed("escape") && Visible == true)
 		{
 			AcceptEvent();
 			Hide();
