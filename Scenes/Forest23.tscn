@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dd46prv4w1bai"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_rkfd0"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="2_djkvo"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="2_djkvo"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_brmfm"]
 [ext_resource type="PackedScene" uid="uid://3yklf5lbir3p" path="res://Prefabs/WoodenDock.tscn" id="4_hpys1"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="5_hh31h"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="6_fx0pk"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="5_hh31h"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="6_fx0pk"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="7_uabi8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
@@ -495,7 +495,7 @@ tile_map_data = PackedByteArray("AADr////AAAAAAMAAADr/wEAAAABAAEAAADr/wIAAAABAAI
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 8
+z_index = 2
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("7_uabi8")]

@@ -508,7 +508,7 @@ tile_map_data = PackedByteArray("AAAoAAYAAAADAAMAAAAoAAUAAAADAAIAAAAoAAQAAAADAAI
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 8
+z_index = 2
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("6_v0yq1")]
