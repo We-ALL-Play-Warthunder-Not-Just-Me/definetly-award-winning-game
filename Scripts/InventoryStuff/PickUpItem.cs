@@ -66,7 +66,8 @@ public partial class PickUpItem : Area2D
 
 	private bool AddNewItem(int amount)
 	{
-		Item item = baseItem.shallowCopy(amount);
+		baseItem.qty = amount;
+		Item item = baseItem;
 		return invent.AddInventoryItem(item);
 	}
 

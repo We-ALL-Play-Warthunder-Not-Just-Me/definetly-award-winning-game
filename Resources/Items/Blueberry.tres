@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_448ey"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_448ey")
 ID = 1
 Name = "Blueberry"
