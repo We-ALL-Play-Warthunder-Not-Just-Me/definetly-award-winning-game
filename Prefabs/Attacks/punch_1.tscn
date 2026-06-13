@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bbdh52sq3seic"]
+
+[ext_resource type="Script" uid="uid://djcjae7crnfck" path="res://Punch1.cs" id="1_uvl2h"]
+
+[node name="Punch 1" type="Area2D" unique_id=1098024143]
+script = ExtResource("1_uvl2h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2037166904]
+polygon = PackedVector2Array(0, 0, 0, -8, 12, -4)
