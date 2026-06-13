@@ -12,10 +12,9 @@
 
 [node name="StartMap" parent="." unique_id=685611168 instance=ExtResource("3_lg2j6")]
 
-[node name="Player" parent="." unique_id=1876432518 node_paths=PackedStringArray("Health_Bar") instance=ExtResource("1_kilg5")]
+[node name="Player" parent="." unique_id=1876432518 instance=ExtResource("1_kilg5")]
 z_index = 5
 position = Vector2(0, 53)
-Health_Bar = NodePath("")
 
 [node name="TheCamera" parent="." unique_id=946100206 instance=ExtResource("2_x6js8")]
 z_index = 5
@@ -34,5 +33,10 @@ visible = false
 
 [node name="TerrifyingMaw" parent="." unique_id=614449111 instance=ExtResource("7_x6js8")]
 position = Vector2(77, 33)
+
+[node name="MvmSongIdea(idea#70)" type="AudioStreamPlayer" parent="." unique_id=1773004342]
+stream = ExtResource("4_y30xb")
+bus = &"Music"
+playback_type = 1
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]

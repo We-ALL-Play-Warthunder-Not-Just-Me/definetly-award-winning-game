@@ -4,9 +4,16 @@ using System.Diagnostics;
 
 public partial class PauseScreen : Control
 {
+	[Export] private Button resumeButton;
+	[Export] private Button settingsButton;
+	[Export] private Button quitButton;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		resumeButton.Pressed += OnResumePressed;
+		settingsButton.Pressed += OnSettingsPressed;
+		quitButton.Pressed += OnQuitButtonPressed;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,11 +38,27 @@ public partial class PauseScreen : Control
 		}
 	}
 
-	private void _on_resume_pressed()
+	private void OnResumePressed()
 	{
 		OnCloseButtonPressed();
 	}
 
+	private void OnSettingsPressed()
+	{
+		try
+		{
+			GetNode<Control>("Settings").Show();
+		}
+		catch
+		{
+			GD.Print("something went wrong with opening settings");
+		}
+	}
+
+	private void OnQuitButtonPressed()
+	{
+		GetTree().Quit();
+	}
 
 	private void pauseToggle()
 	{

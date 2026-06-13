@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://5s2xomo2al0b"]
+
+[ext_resource type="Script" uid="uid://c6l53al3w2fak" path="res://Scripts/VolumeSlider.cs" id="1_dkehx"]
+[ext_resource type="Script" uid="uid://68hnf76tlp2f" path="res://Prefabs/PauseStatus/ScriptsofPause/SettingsScreen.cs" id="1_wmawr"]
+[ext_resource type="Script" uid="uid://4laccqq62ybv" path="res://Scripts/FullscreenToggle.cs" id="2_jtrx7"]
+
+[node name="Settings" type="Control" unique_id=1429161843 node_paths=PackedStringArray("backButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmawr")
+backButton = NodePath("Panel/PanelContainer/MarginContainer/VSplitContainer/HSplitContainer/Back")
+
+[node name="Panel" type="Panel" parent="." unique_id=985569406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel" unique_id=701678919]
+layout_mode = 0
+anchor_left = 0.02421875
+anchor_top = 0.05
+anchor_right = 0.96171874
+anchor_bottom = 0.46666667
+offset_bottom = -100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/PanelContainer" unique_id=690522168]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/PanelContainer/MarginContainer" unique_id=527521969]
+layout_mode = 2
+size_flags_vertical = 4
+split_offsets = PackedInt32Array(23, 58, 93, 128)
+split_offset = 23
+
+[node name="Master" type="Label" parent="Panel/PanelContainer/MarginContainer/VSplitContainer" unique_id=128187206]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Master Volume" type="HSlider" parent="Panel/PanelContainer/MarginContainer/VSplitContainer/Master" unique_id=1446624345]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111666664
+anchor_top = 0.1521739
+anchor_right = 0.50333333
+anchor_bottom = 0.84782606
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_dkehx")
+busName = "Master"
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="Label" parent="Panel/PanelContainer/MarginContainer/VSplitContainer" unique_id=658028888]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Music Volume" type="HSlider" parent="Panel/PanelContainer/MarginContainer/VSplitContainer/Music" unique_id=996501716]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111666664
+anchor_top = 0.1521739
+anchor_right = 0.50333333
+anchor_bottom = 0.84782606
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_dkehx")
+busName = "Music"
+metadata/_edit_use_anchors_ = true
+
+[node name="SFX" type="Label" parent="Panel/PanelContainer/MarginContainer/VSplitContainer" unique_id=1655607544]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFX Volume" type="HSlider" parent="Panel/PanelContainer/MarginContainer/VSplitContainer/SFX" unique_id=436039004]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111666664
+anchor_top = 0.1521739
+anchor_right = 0.50333333
+anchor_bottom = 0.84782606
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_dkehx")
+busName = "Sound Effects"
+metadata/_edit_use_anchors_ = true
+
+[node name="Fullscreen" type="Label" parent="Panel/PanelContainer/MarginContainer/VSplitContainer" unique_id=1487207881]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Fullscreen Toggle" type="CheckBox" parent="Panel/PanelContainer/MarginContainer/VSplitContainer/Fullscreen" unique_id=1340501973]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1075
+anchor_right = 0.13162465
+anchor_bottom = 1.0434783
+offset_right = 0.3666687
+script = ExtResource("2_jtrx7")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel/PanelContainer/MarginContainer/VSplitContainer" unique_id=1407690744]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Back" type="Button" parent="Panel/PanelContainer/MarginContainer/VSplitContainer/HSplitContainer" unique_id=2045697812]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="Apply" type="Button" parent="Panel/PanelContainer/MarginContainer/VSplitContainer/HSplitContainer" unique_id=1363186179]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Apply"
