@@ -17,9 +17,11 @@ public partial class MawMawBite : Area2D
         }
     }
     // direction should be an int either -1 or 1
-    public void _begin(int direction)
+    public void _begin(int direction, float speed, float lifetime)
     {
         _direction = direction;
+        _speed = speed;
+        _lifetime = lifetime;
     }
 
 

@@ -23,6 +23,8 @@ public partial class MawMaw : CharacterBody2D
     [Export] public double MeleeWindup = 0.3f;
     [Export] public double MeleeRecovery = 1.5f;
     [Export] public int HP = 100;
+    [Export] public double MeleeAttackOffsetX=15;
+    [Export] public double MeleeAttackOffsetY=10;
     [Export] public RichTextLabel l;
     [Export] public PackedScene MeleeAttack1;
     [Export] public PackedScene MeleeAttack2;
@@ -172,8 +174,16 @@ public partial class MawMaw : CharacterBody2D
                 
                 if(_melee_recovery_time <= 0)
                 {
+                    velocity.Y = -30;
                     _melee_time = MeleeDuration;
                     current_state = State.MELEEING1;
+                    MawMawBite biteinstance = MeleeAttack1.Instantiate() as MawMawBite;
+                    Vector2 position = this.GlobalPosition;
+                    position.X += (float)MeleeAttackOffsetX * dash_direction;
+                    position.Y += (float)MeleeAttackOffsetY;
+                    biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 0.8f)), (float)MeleeDuration);
+
+                    
                 }
                 break;
             case State.MELEEING1RECOVERY:
