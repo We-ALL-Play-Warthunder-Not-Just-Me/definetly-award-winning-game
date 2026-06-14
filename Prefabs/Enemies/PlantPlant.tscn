@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6q1e67ykydla"]
+
+[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="1_soael"]
+[ext_resource type="Script" uid="uid://bqkem8f83y60h" path="res://Scripts/PlantPlant.cs" id="1_wwd5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwd5y"]
+size = Vector2(88, 104)
+
+[node name="PlantPlant" type="CharacterBody2D" unique_id=293639400]
+script = ExtResource("1_wwd5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1622468318]
+shape = SubResource("RectangleShape2D_wwd5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=372471701]
+scale = Vector2(0.6875, 0.8125001)
+texture = ExtResource("1_soael")

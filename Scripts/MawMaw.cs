@@ -242,7 +242,7 @@ public partial class MawMaw : CharacterBody2D
                     Vector2 position = this.GlobalPosition;
                     position.X += (float)MeleeAttackOffsetX * dash_direction;
                     position.Y += (float)MeleeAttackOffsetY;
-                    biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 4f)), (float)MeleeDuration+0.3f);
+                    biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 1.1f)), (float)MeleeDuration+0.3f);
                     this.AddChild(biteinstance);
                 }
                 break;
@@ -343,7 +343,7 @@ public partial class MawMaw : CharacterBody2D
     }
     public void _text_helper()
     {
-        l.Text = "State: " + current_state.ToString() + " Target : " + current_target_distance.ToString();
+        l.Text = "State: " + current_state.ToString() + " Target : " + current_target_distance.ToString() + "Dash: " + dash_direction;
     }
    
 

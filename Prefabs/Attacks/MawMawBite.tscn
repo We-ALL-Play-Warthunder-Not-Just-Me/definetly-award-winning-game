@@ -3,13 +3,16 @@
 [ext_resource type="Script" uid="uid://bvhejcq2c01oq" path="res://Prefabs/Attacks/MawMawBite.cs" id="1_h8fdm"]
 [ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="2_4ydot"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8fdm"]
+size = Vector2(20, 24)
+
 [node name="MawMawBite" type="Area2D" unique_id=635776908]
 script = ExtResource("1_h8fdm")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2113396194]
-polygon = PackedVector2Array(0, 6, -5, -2, 1, -9, 5, -9, 5, 6)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741207603]
-position = Vector2(-3.5762787e-07, -1.4999995)
-scale = Vector2(0.078125, 0.11718751)
+position = Vector2(-3.5762787e-07, 0)
+scale = Vector2(0.15625, 0.17968751)
 texture = ExtResource("2_4ydot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=672412684]
+shape = SubResource("RectangleShape2D_h8fdm")
