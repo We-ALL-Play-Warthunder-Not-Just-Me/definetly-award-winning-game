@@ -18,7 +18,6 @@
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
 [ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/UIArt/Flask of Pink Tears.png" id="12_lf1i3"]
 [ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
-[ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://Scripts/InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
 [ext_resource type="Resource" uid="uid://b3txyegnxayve" path="res://Resources/Items/PokemonRuby.tres" id="18_kexwp"]
 [ext_resource type="Resource" uid="uid://frw4ldhk7kl3" path="res://Resources/Items/PokemonSapphire.tres" id="19_uihuo"]
@@ -454,13 +453,14 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889]
+[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889 node_paths=PackedStringArray("inventoryPicture")]
 layout_mode = 2
 allow_rmb_select = true
 fixed_icon_size = Vector2i(50, 50)
 script = ExtResource("9_x2suf")
 itemDatabase = ExtResource("10_sygrt")
 inventory = ExtResource("12_8wvro")
+inventoryPicture = NodePath("../../../../PanelContainer/MarginContainer/Texturerect")
 
 [node name="KeyItems" type="Control" parent="Panel/TabContainer/Inventory/TabContainer" unique_id=945712878]
 visible = false
@@ -479,11 +479,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer" unique_id=907363798]
+[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer" unique_id=907363798 node_paths=PackedStringArray("inventoryPicture")]
 layout_mode = 2
 script = ExtResource("9_x2suf")
 itemDatabase = ExtResource("10_sygrt")
 inventory = ExtResource("13_8wvro")
+inventoryPicture = NodePath("../../../../PanelContainer/MarginContainer/Texturerect")
 
 [node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Inventory" unique_id=1529148487]
 layout_mode = 1
@@ -505,8 +506,5 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Texturerect" type="TextureRect" parent="Panel/TabContainer/Inventory/PanelContainer/MarginContainer" unique_id=2015891040]
 layout_mode = 2
-script = ExtResource("13_ou5ub")
 
-[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
 [connection signal="item_selected" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" method="_on_item_selected"]
-[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]

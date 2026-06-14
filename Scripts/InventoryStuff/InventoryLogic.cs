@@ -7,6 +7,7 @@ public partial class InventoryLogic : ItemList
 {
 	[Export] private ItemDictionary itemDatabase;
 	[Export] public InventoryStorage inventory;
+	[Export] TextureRect inventoryPicture;
 	// [Export] private Resource itemDatabase;
 	// [Export] public Resource inventory;
 	//[Export] int InventorySize = 20;
@@ -135,53 +136,65 @@ public partial class InventoryLogic : ItemList
 		inventory.EmitChanged();
 	}
 
-	public Item GetInventoryItem(int index)
+	public int GetInventoryItemID(int index)
 	{
-		if (index < 0 || index >= inventory.inventory.Count) return null;
+		if (index < 0 || index >= inventory.inventory.Count) return 0;
 		int id = (int)GetItemMetadata(index);
-		Item temp = itemDatabase.items[id].shallowCopy();
 		if (inventory.inventory.ContainsKey(id))
 		{
-			temp.qty = inventory.inventory[id];
+			return id;
 		}
-		return temp;
+		return 0;
+	}
+
+	public int GetInventoryItemQtyFromID (int ID)
+	{
+		if (ID == 0) return 0;
+		if (inventory.inventory.ContainsKey(ID))
+		{
+			return inventory.inventory[ID];
+		}
+		return 0;
+	}
+
+	public String GetItemNameFromID (int ID)
+	{
+		if (ID == 0) return null;
+		return itemDatabase.items[ID].Name;
 	}
 
 	private void OnInventoryItemClicked(long index, Vector2 pos, long mousebuttonindex)
 	{
 		if (mousebuttonindex == 2)
 		{
-			Item item = GetInventoryItem((int)index);
+			int itemID = GetInventoryItemID((int)index);
 
-			if (item == null)
+			if (itemID == 0)
 			{
 				GD.Print("No item here");
 				return;
 			}
 
 			RemoveInventoryItem((int)index);
-			GD.Print($"You dropped {item.qty} of {item.Name}");
+			GD.Print($"You dropped {GetInventoryItemQtyFromID(itemID)} of {GetItemNameFromID(itemID)}");
 		}
 
 		else if (mousebuttonindex == 1)
 		{
-			Item item = GetInventoryItem((int)index);
-			if (item == null)
+			int itemID = GetInventoryItemID((int)index);
+			if (itemID == 0)
 			{
 				GD.Print("No item here");
 				return;
 			}
-			GD.Print($"You Clicked {item.Name} there are {item.qty}");
+			GD.Print($"You Clicked {GetItemNameFromID(itemID)} there are {GetInventoryItemQtyFromID(itemID)}");
 		}
 	}
 
-	[Signal]
-	public delegate void sentItemDataEventHandler(Item item);
-
 	private void OnItemSelected(long index)
 	{
-		Item item = GetInventoryItem((int)index);
-		EmitSignal(SignalName.sentItemData, item);
+		int itemID = GetInventoryItemID((int)index);
+		inventoryPicture.Texture = itemDatabase.items[itemID].icon;
 	}
 
 
