@@ -415,68 +415,56 @@ scale = Vector2(640, 192)
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
-[node name="Trees10" type="Sprite2D" parent="All Trees" unique_id=560277736]
-position = Vector2(41, 298.5)
+[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
+position = Vector2(-208, -15)
 texture = ExtResource("2_ub1or")
+flip_h = true
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(5, 231, 88, 64)
 
-[node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(-61, 314.5)
+[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
+position = Vector2(-235, 26.5)
 texture = ExtResource("2_ub1or")
 region_enabled = true
 region_rect = Rect2(109, 154, 170, 75)
 
-[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
-position = Vector2(109, 252)
-texture = ExtResource("2_ub1or")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
-[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
-position = Vector2(71, 266.5)
-texture = ExtResource("2_ub1or")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
-
 [node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
-position = Vector2(-84, 138.5)
+position = Vector2(-124, -21.5)
 texture = ExtResource("2_ub1or")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(8, 154, 86, 75)
 
 [node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1548162556]
-position = Vector2(-56, 156)
+position = Vector2(134, 73)
 texture = ExtResource("2_ub1or")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
+region_rect = Rect2(339, 77, 44, 64)
 
 [node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=1011616391]
-position = Vector2(-32, 154.5)
+position = Vector2(110, -10)
 texture = ExtResource("2_ub1or")
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
+region_rect = Rect2(87, 77, 44, 52)
 
 [node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1701862565]
-position = Vector2(-120, 90.5)
+position = Vector2(230.5, 26.5)
 texture = ExtResource("2_ub1or")
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
+region_rect = Rect2(106, 308, 177, 75)
 
 [node name="Trees9" type="Sprite2D" parent="All Trees" unique_id=474817867]
-position = Vector2(139, 109)
+position = Vector2(82, 55)
 texture = ExtResource("2_ub1or")
 region_enabled = true
-region_rect = Rect2(253, 82, 42, 70)
+region_rect = Rect2(291, 231, 84, 64)
 
 [node name="Trees8" type="Sprite2D" parent="All Trees" unique_id=54704567]
-position = Vector2(105, 106.5)
+position = Vector2(-55, 60)
 texture = ExtResource("2_ub1or")
 region_enabled = true
-region_rect = Rect2(7, 308, 88, 75)
+region_rect = Rect2(98, 231, 186, 48)
 
 [node name="TestShade" parent="." unique_id=1811497297 instance=ExtResource("3_k1r3y")]
 scale = Vector2(640, 192)
@@ -502,6 +490,7 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2
+tile_map_data = PackedByteArray("AAD8//3/AQABAAAAAAD8//7/AQACAAAAAAD///v/AQABAAAAAAD///z/AQABAAEAAAAFAPz/AQABAAAAAAAFAP3/AQACAAAAAAAKAPv/AQABAAAAAAAKAPz/AQABAAEAAAAQAPz/AQABAAAAAAAQAP3/AQACAAAAAADw//z/AQABAAAAAADw//3/AQABAAEAAADt//7/AQABAAAAAADt////AQABAAEAAAD4//v/AQABAAAAAAD4//z/AQABAAEAAAD1//v/AQAAAAAAAADu//3/AQAAAAAAAAADAPv/AQAAAAAAAAAMAPv/AQAAAAAAAAAPAPz/AQAAAAAAAAASAP7/AQAAAAAAAAANAPz/AQACAAAAAAAHAPz/AQACAAAAAAD9//z/AQABAAEAAADx//z/AQABAAEAAADz//z/AQAAAAAAAAD3/wMAAQABAAEAAAD5/wIAAQAAAAAAAAAHAAIAAQACAAAAAAD5/wAAAQAAAAEAAAD1/wEAAQAAAAEAAADy/wMAAQAAAAEAAADu/wMAAQAAAAEAAAD5/wQAAQAAAAEAAAAEAAMAAQAAAAEAAAAMAAIAAQAAAAEAAAASAAIAAQAAAAEAAAAHAAAAAQAAAAEAAAAGAAAAAQACAAEAAAD+/wMAAQACAAEAAAD//wMAAQACAAEAAAAGAAMAAQACAAEAAAADAAMAAQACAAEAAAAKAAIAAQACAAEAAAARAAIAAQACAAEAAAD7/wQAAQACAAEAAAD3/wAAAQACAAEAAADz/wIAAQACAAEAAADs/wMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("7_lp4jl")]

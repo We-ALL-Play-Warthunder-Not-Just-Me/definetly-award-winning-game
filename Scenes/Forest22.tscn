@@ -416,67 +416,128 @@ scale = Vector2(640, 384)
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
 [node name="Trees10" type="Sprite2D" parent="All Trees" unique_id=560277736]
-position = Vector2(41, 298.5)
+position = Vector2(258, -117.5)
 texture = ExtResource("2_6ou5c")
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(8, 154, 86, 75)
 
-[node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(-61, 314.5)
-texture = ExtResource("2_6ou5c")
-region_enabled = true
-region_rect = Rect2(109, 154, 170, 75)
-
-[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
-position = Vector2(109, 252)
-texture = ExtResource("2_6ou5c")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
-[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
-position = Vector2(71, 266.5)
+[node name="Trees12" type="Sprite2D" parent="All Trees" unique_id=1181514157]
+position = Vector2(266, -37)
 texture = ExtResource("2_6ou5c")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
+region_rect = Rect2(5, 231, 88, 64)
 
-[node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
-position = Vector2(-84, 138.5)
+[node name="Trees13" type="Sprite2D" parent="All Trees" unique_id=786115272]
+position = Vector2(262, 102)
 texture = ExtResource("2_6ou5c")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(291, 231, 84, 52)
 
-[node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1548162556]
-position = Vector2(-56, 156)
+[node name="Trees19" type="Sprite2D" parent="All Trees" unique_id=134472196]
+position = Vector2(-234, 91)
 texture = ExtResource("2_6ou5c")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
+region_rect = Rect2(291, 231, 84, 52)
 
-[node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=1011616391]
-position = Vector2(-32, 154.5)
+[node name="Trees18" type="Sprite2D" parent="All Trees" unique_id=379172590]
+position = Vector2(150, 114)
 texture = ExtResource("2_6ou5c")
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
+region_rect = Rect2(296, 80, 42, 48)
 
-[node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1701862565]
-position = Vector2(-120, 90.5)
+[node name="Trees14" type="Sprite2D" parent="All Trees" unique_id=1578763613]
+position = Vector2(192, 74.5)
 texture = ExtResource("2_6ou5c")
-region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
-
-[node name="Trees9" type="Sprite2D" parent="All Trees" unique_id=474817867]
-position = Vector2(139, 109)
-texture = ExtResource("2_6ou5c")
-region_enabled = true
-region_rect = Rect2(253, 82, 42, 70)
-
-[node name="Trees8" type="Sprite2D" parent="All Trees" unique_id=54704567]
-position = Vector2(105, 106.5)
-texture = ExtResource("2_6ou5c")
+flip_h = true
 region_enabled = true
 region_rect = Rect2(7, 308, 88, 75)
+
+[node name="Trees15" type="Sprite2D" parent="All Trees" unique_id=60849749]
+position = Vector2(110, 124)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(296, 80, 42, 48)
+
+[node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
+position = Vector2(-226, 128)
+texture = ExtResource("2_6ou5c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(98, 231, 186, 64)
+
+[node name="Trees17" type="Sprite2D" parent="All Trees" unique_id=410269198]
+position = Vector2(57, 141)
+texture = ExtResource("2_6ou5c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(5, 231, 88, 64)
+
+[node name="Trees16" type="Sprite2D" parent="All Trees" unique_id=1625476720]
+position = Vector2(-65, 158.5)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(98, 231, 186, 75)
+
+[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
+position = Vector2(3, -168)
+texture = ExtResource("2_6ou5c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(172, 4, 42, 48)
+
+[node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
+position = Vector2(-179.5, -165.5)
+texture = ExtResource("2_6ou5c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(290, 308, 87, 75)
+
+[node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
+position = Vector2(-272, -46)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(5, 231, 88, 48)
+
+[node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1548162556]
+position = Vector2(15, -37.5)
+texture = ExtResource("2_6ou5c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(291, 231, 84, 75)
+
+[node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=1011616391]
+position = Vector2(122, -32)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(287, 154, 90, 64)
+
+[node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1701862565]
+position = Vector2(-121, -28)
+texture = ExtResource("2_6ou5c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(109, 154, 170, 56)
+
+[node name="Trees9" type="Sprite2D" parent="All Trees" unique_id=474817867]
+position = Vector2(-114.5, 38)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(106, 308, 177, 72)
+
+[node name="Trees11" type="Sprite2D" parent="All Trees" unique_id=1652680084]
+position = Vector2(19.5, 38)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(106, 308, 177, 72)
+
+[node name="Trees8" type="Sprite2D" parent="All Trees" unique_id=54704567]
+position = Vector2(-49, 90)
+texture = ExtResource("2_6ou5c")
+region_enabled = true
+region_rect = Rect2(98, 231, 186, 64)
 
 [node name="TestShade" parent="." unique_id=1811497297 instance=ExtResource("3_8kwuf")]
 scale = Vector2(640, 384)
@@ -558,6 +619,7 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2
+tile_map_data = PackedByteArray("AADt/wMAAQABAAAAAADt/wQAAQACAAAAAADz/wQAAQABAAAAAADz/wUAAQABAAEAAAD2/wcAAQABAAAAAAD2/wgAAQACAAAAAAAEAAYAAQABAAAAAAAEAAcAAQABAAEAAAAGAAQAAQABAAAAAAAGAAUAAQACAAAAAAAJAAEAAQABAAAAAAAJAAIAAQABAAEAAAAPAAQAAQABAAAAAAAPAAUAAQABAAEAAAANAPz/AQABAAAAAAANAP3/AQACAAAAAAAIAPr/AQABAAAAAAAIAPv/AQABAAEAAAAAAPj/AQABAAAAAAAAAPn/AQACAAAAAAD3//n/AQABAAAAAAD3//r/AQABAAEAAADy//z/AQABAAAAAADy//3/AQABAAEAAADt//b/AQABAAEAAAD+//n/AQAAAAAAAAAHAPj/AQAAAAAAAAALAPz/AQAAAAAAAAASAAUAAQAAAAAAAAAOAAIAAQAAAAAAAAD5/wgAAQAAAAAAAADv/wMAAQAAAAAAAADw/wQAAQACAAAAAAD4//n/AQACAAAAAAD0//3/AQACAAAAAAATAPb/AQACAAAAAAANAPX/AQABAAAAAAANAPb/AQABAAEAAAASAPX/AQAAAAAAAAAQAPX/AQABAAEAAAAMAPb/AQAAAAAAAAANAPr/AQAAAAEAAAATAPr/AQAAAAEAAAARAP3/AQAAAAEAAAASAAcAAQAAAAEAAAAJAAYAAQAAAAEAAAAEAAkAAQAAAAEAAAADAAkAAQAAAAEAAAD8/wkAAQAAAAEAAAD2/wkAAQAAAAEAAADz/wgAAQAAAAEAAADv/wgAAQAAAAEAAAD2/wIAAQAAAAEAAAAEAAIAAQAAAAEAAAAIAP//AQAAAAEAAAD5////AQAAAAEAAADz////AQAAAAEAAADu//3/AQAAAAEAAADy//f/AQAAAAEAAAD2//b/AQAAAAEAAAD///b/AQACAAEAAAD4//b/AQACAAEAAADz//f/AQACAAEAAADt//z/AQACAAEAAADx////AQACAAEAAAD/////AQACAAEAAAAGAP//AQACAAEAAAADAAIAAQACAAEAAAAAAAUAAQACAAEAAAD9/wkAAQACAAEAAAACAAkAAQACAAEAAAALAAYAAQACAAEAAAARAAcAAQACAAEAAAD3/wkAAQACAAEAAADw/wgAAQACAAEAAADt/wgAAQACAAEAAAD0/wkAAQACAAEAAAD5/wUAAQACAAEAAAD0/wEAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("7_3kreu")]

@@ -504,12 +504,6 @@ texture = ExtResource("2_fp1k0")
 region_enabled = true
 region_rect = Rect2(8, 154, 86, 48)
 
-[node name="Trees9" type="Sprite2D" parent="All Trees" unique_id=474817867]
-position = Vector2(139, 109)
-texture = ExtResource("2_fp1k0")
-region_enabled = true
-region_rect = Rect2(253, 82, 42, 70)
-
 [node name="Trees20" type="Sprite2D" parent="All Trees" unique_id=635437119]
 position = Vector2(-84, -165)
 texture = ExtResource("2_fp1k0")
