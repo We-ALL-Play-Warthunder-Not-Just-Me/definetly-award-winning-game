@@ -3,23 +3,47 @@
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_g3e45"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="2_g3e45"]
 [ext_resource type="Script" uid="uid://bfw00m6csyt5i" path="res://Resources/BaseCases/ItemDictionary.cs" id="3_r8lrb"]
-[ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="3_wkujr"]
-[ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="4_5dlua"]
-[ext_resource type="Resource" uid="uid://b66uimowm4y52" path="res://Resources/Items/WovenPaintbrush.tres" id="5_wkujr"]
+[ext_resource type="Resource" uid="uid://cq11k2aec8vtb" path="res://Resources/Items/Lemonade.tres" id="3_xll3a"]
+[ext_resource type="Resource" uid="uid://dfa2u42g44aw8" path="res://Resources/Items/StrawberryShortcake.tres" id="4_ie3b3"]
+[ext_resource type="Resource" uid="uid://dssvu78m2okab" path="res://Resources/Items/PurpleCatalyst.tres" id="5_pfj0f"]
 [ext_resource type="Resource" uid="uid://divt054n14kij" path="res://Resources/Items/BlueberryPie.tres" id="6_5dlua"]
+[ext_resource type="Resource" uid="uid://mndqsclaaryd" path="res://Resources/Items/Grapes.tres" id="6_ie3b3"]
 [ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/BlueCatalyst.tres" id="7_pfj0f"]
+[ext_resource type="Resource" uid="uid://bu5svmpkpi2ug" path="res://Resources/Items/Nightshade.tres" id="7_xbsbl"]
+[ext_resource type="Resource" uid="uid://ctgldy5fprngn" path="res://Resources/Items/Eggplant.tres" id="8_vt67j"]
 [ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/BlueFlower.tres" id="8_y412j"]
+[ext_resource type="Resource" uid="uid://bqv36c47gbu8p" path="res://Resources/Items/Amethyst.tres" id="9_om287"]
 [ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/RedFlower.tres" id="9_vdfgo"]
+[ext_resource type="Resource" uid="uid://c51v1fpv27m7y" path="res://Resources/Items/VantageCabbage.tres" id="13_ulb56"]
+[ext_resource type="Resource" uid="uid://frw4ldhk7kl3" path="res://Resources/Items/PokemonSapphire.tres" id="14_vt67j"]
+[ext_resource type="Resource" uid="uid://21f5qlj0u21o" path="res://Resources/Items/SchmidtLeaf.tres" id="15_om287"]
+[ext_resource type="Resource" uid="uid://jcs3vxw08wx7" path="res://Resources/Items/RedCatalyst.tres" id="16_ulb56"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Strawberry.tres" id="17_5p1sx"]
+[ext_resource type="Resource" uid="uid://b4sdrtjejp4ng" path="res://Resources/Items/Beet.tres" id="19_xwwkp"]
+[ext_resource type="Resource" uid="uid://b3txyegnxayve" path="res://Resources/Items/PokemonRuby.tres" id="20_athxh"]
+[ext_resource type="Resource" uid="uid://cp3u0i0dus2r" path="res://Resources/Items/SproutTuftofHair.tres" id="21_h315a"]
 
 [resource]
 script = ExtResource("3_r8lrb")
 items = Dictionary[int, ExtResource("1_g3e45")]({
-1: ExtResource("2_g3e45"),
-2: ExtResource("3_wkujr"),
-3: ExtResource("4_5dlua"),
-4: ExtResource("5_wkujr"),
-5: ExtResource("6_5dlua"),
-6: ExtResource("7_pfj0f"),
-7: ExtResource("8_y412j"),
-8: ExtResource("9_vdfgo")
+1: ExtResource("6_5dlua"),
+2: ExtResource("3_xll3a"),
+3: ExtResource("4_ie3b3"),
+4: ExtResource("5_pfj0f"),
+5: ExtResource("6_ie3b3"),
+6: ExtResource("7_xbsbl"),
+7: ExtResource("8_vt67j"),
+8: ExtResource("9_om287"),
+9: ExtResource("7_pfj0f"),
+10: ExtResource("2_g3e45"),
+11: ExtResource("8_y412j"),
+12: ExtResource("13_ulb56"),
+13: ExtResource("14_vt67j"),
+14: ExtResource("15_om287"),
+15: ExtResource("16_ulb56"),
+16: ExtResource("17_5p1sx"),
+17: ExtResource("9_vdfgo"),
+18: ExtResource("19_xwwkp"),
+19: ExtResource("20_athxh"),
+20: ExtResource("21_h315a")
 })

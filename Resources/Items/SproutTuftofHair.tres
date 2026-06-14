@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cp3u0i0dus2r"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_sqw2b"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_cabt1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jjb2"]
+atlas = ExtResource("1_sqw2b")
+region = Rect2(160, 96, 32, 32)
+
+[resource]
+script = ExtResource("2_cabt1")
+Name = "Sprout Tuft of Hair"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_5jjb2")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

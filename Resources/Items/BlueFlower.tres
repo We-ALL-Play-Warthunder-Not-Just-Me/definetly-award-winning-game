@@ -9,9 +9,9 @@ region = Rect2(64, 64, 32, 32)
 
 [resource]
 script = ExtResource("1_tuhqq")
-ID = 7
-Name = "Blue Flower"
-qty = 5
+ID = 11
+Name = "Tulip"
+qty = 1
 max_qty = 100
 icon = SubResource("AtlasTexture_todia")
 metadata/_custom_type_script = "uid://nh7pbovwuooe"

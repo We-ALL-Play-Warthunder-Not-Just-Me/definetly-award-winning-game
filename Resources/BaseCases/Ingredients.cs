@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-[GlobalClass]
+[GlobalClass, Icon("res://Images/UIArt/Cauldron.png")]
 public partial class Ingredients : Resource
 {
     public Ingredients () {}

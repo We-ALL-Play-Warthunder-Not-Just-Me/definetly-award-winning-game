@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ctgldy5fprngn"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_ff67i"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_8r0lx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arrym"]
+atlas = ExtResource("1_ff67i")
+region = Rect2(96, 32, 32, 32)
+
+[resource]
+script = ExtResource("2_8r0lx")
+ID = 7
+Name = "Eggplant"
+qty = 1
+max_qty = 40
+icon = SubResource("AtlasTexture_arrym")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"
