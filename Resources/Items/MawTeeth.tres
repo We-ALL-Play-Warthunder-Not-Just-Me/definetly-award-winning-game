@@ -9,6 +9,7 @@ region = Rect2(160, 128, 32, 32)
 
 [resource]
 script = ExtResource("2_rel6v")
+ID = 26
 Name = "Maw Teeth"
 qty = 1
 max_qty = 100
