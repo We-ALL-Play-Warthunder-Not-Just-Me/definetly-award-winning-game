@@ -154,7 +154,6 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 	}
 
-
 	private double _wander_time = 0;
 	private double _dash_time = -3;
 	private void _process_move_state(double delta, ref Vector2 velocity)

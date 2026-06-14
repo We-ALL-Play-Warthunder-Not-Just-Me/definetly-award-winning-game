@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using static Godot.TextServer;
 
 public partial class MawMaw : CharacterBody2D
 {
@@ -22,6 +23,8 @@ public partial class MawMaw : CharacterBody2D
     [Export] public double MeleeDuration = 0.8f;
     [Export] public double MeleeWindup = 0.3f;
     [Export] public double MeleeRecovery = 1.5f;
+    [Export] public double DashDamage = 20f;
+    [Export] public double TouchDamage = 10f;
     [Export] public int HP = 100;
     [Export] public double MeleeAttackOffsetX=4;
     [Export] public double MeleeAttackOffsetY=1;
@@ -76,6 +79,15 @@ public partial class MawMaw : CharacterBody2D
     private void _process_idle_state(double delta, ref Vector2 velocity)
     {
 
+    }
+
+    public void _touch_damage_helper(Node2D body)
+    {
+        if (body.IsInGroup("Player") && current_state == State.DASHING)
+        {
+            GD.Print("Dashhit?");
+            body.Call("dealDamage", DashDamage, target_direction_helper());
+        }
     }
 
     private void _process_interested_state(double delta, ref Vector2 velocity)
