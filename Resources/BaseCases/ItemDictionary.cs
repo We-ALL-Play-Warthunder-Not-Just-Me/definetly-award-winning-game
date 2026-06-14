@@ -4,11 +4,11 @@ using System;
 [GlobalClass]
 public partial class ItemDictionary : Resource
 {
-    [Export]
-    public Godot.Collections.Dictionary<int,Item> items = [];
+	[Export]
+	public Godot.Collections.Dictionary<int,Item> items = [];
 
 
-    public ItemDictionary() {}
+	public ItemDictionary() {}
 
-    
+	
 }
