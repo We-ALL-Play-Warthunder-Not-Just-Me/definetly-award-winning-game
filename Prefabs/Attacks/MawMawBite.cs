@@ -10,8 +10,9 @@ public partial class MawMawBite : Area2D
 
     public void _on_enemy_detector_body_entered(Node2D body)
     {
-        if (body.IsInGroup("Enemy"))
+        if (body.IsInGroup("Player"))
         {
+            GD.Print("hit?");
             body.Call("dealDamage", _damage, _direction);
             QueueFree();
         }
