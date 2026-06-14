@@ -30,12 +30,12 @@ using System;
 
     public Item Copy()
     {
-        return (Item)DuplicateDeep(DeepDuplicateMode.Internal);
+        return (Item)Duplicate();
     }
 
     public Item Copy(int newqty)
     {
-        Item tempItem = (Item)DuplicateDeep(DeepDuplicateMode.Internal);
+        Item tempItem = (Item)Duplicate();
         tempItem.qty = newqty;
         return tempItem;
     }
