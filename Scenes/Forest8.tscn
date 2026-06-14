@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://48kam2rbjvbc"]
 
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_kqoek"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="1_kqoek"]
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_pwfoa"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_pwfoa"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_c654x"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="2_pwfoa"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_c654x"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_ytr1u"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_ytr1u"]
 
@@ -469,23 +469,18 @@ tile_map_data = PackedByteArray("AAD2/wUAAAACAAEAAAD3/wUAAAACAAEAAAD4/wQAAAABAAE
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
+z_index = 2
 tile_map_data = PackedByteArray("AAD+////AQAAAAEAAAD1/wQAAQAAAAEAAAD3/wQAAQAAAAEAAAD5/wMAAQAAAAEAAAAAAAMAAQAAAAEAAAD8/wMAAQAAAAEAAAD7////AQAAAAEAAAACAAAAAQAAAAEAAAAHAAEAAQAAAAEAAAAKAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAASAAMAAQAAAAEAAAARAAQAAQACAAEAAAAMAAQAAQACAAEAAAAJAAMAAQACAAEAAAAFAAAAAQACAAEAAAABAAIAAQACAAEAAAD9/wMAAQACAAEAAAD2/wQAAQACAAEAAAD6////AQACAAEAAAD7/wIAAQABAAAAAAD7/wMAAQABAAEAAAD+/wEAAQABAAAAAAD+/wIAAQACAAAAAAAQAP7/AQABAAAAAAAQAP//AQABAAEAAAASAAAAAQABAAAAAAASAAEAAQACAAAAAAAPAPz/AQAAAAAAAAD6/wEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_ytr1u")]
 position = Vector2(160, 96)
-SpawnSide = "Top"
 NextMap = "Forest7"
 ToChunk = 1
-CurrentMap = "Forest8"
-FromChunk = 2
 VertTrans = true
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_ytr1u")]
 position = Vector2(-160, 96)
-SpawnSide = "Top"
 NextMap = "Forest9"
 ToChunk = 2
-CurrentMap = "Forest8"
-FromChunk = 1
 VertTrans = true

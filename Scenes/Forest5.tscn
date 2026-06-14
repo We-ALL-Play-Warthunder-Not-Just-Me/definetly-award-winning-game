@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://j3u5lvr5jkxi"]
 
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="1_b3nml"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="1_b3nml"]
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_o0uoj"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="2_o0uoj"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="3_ff0fi"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="2_o0uoj"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_ff0fi"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_wybj1"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_wybj1"]
 
@@ -551,22 +551,16 @@ tile_map_data = PackedByteArray("AADr//X/AAAAAAIAAADr//b/AAAAAAIAAADr//f/AAAAAAI
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 8
+z_index = 2
 tile_map_data = PackedByteArray("AAD1////AQABAAAAAAD1/wAAAQABAAEAAAACAP7/AQABAAAAAAACAP//AQABAAEAAAAFAP3/AQABAAAAAAAFAP7/AQABAAEAAAAHAP//AQABAAAAAAAHAAAAAQABAAEAAAAJAP//AQABAAAAAAAJAAAAAQABAAEAAAANAP7/AQABAAAAAAANAP//AQABAAEAAAATAAAAAQABAAAAAAATAAEAAQABAAEAAAARAAAAAQAAAAAAAAAIAP//AQAAAAAAAAADAP3/AQAAAAAAAAALAP7/AQAAAAAAAAD3/wAAAQAAAAAAAAD0//7/AQAAAAAAAADz/wMAAQAAAAAAAADw/wUAAQACAAAAAADt/wUAAQAAAAAAAADy/wEAAQAAAAEAAADu//z/AQAAAAEAAAD1//v/AQAAAAEAAAD4//n/AQAAAAEAAAD8//n/AQAAAAEAAAAAAPn/AQAAAAEAAAAGAPn/AQAAAAEAAAAJAPr/AQAAAAEAAAANAPv/AQAAAAEAAAASAP3/AQAAAAEAAAANAAAAAQAAAAEAAAADAAIAAQAAAAEAAAAHAAIAAQAAAAEAAAAJAAMAAQAAAAEAAAANAAYAAQAAAAEAAAASAAYAAQAAAAEAAAAPAAEAAQACAAEAAAAQAAYAAQACAAEAAAALAAQAAQACAAEAAAAIAAMAAQACAAEAAAAAAAEAAQACAAEAAAAEAAIAAQACAAEAAAAOAPv/AQACAAEAAAAIAPr/AQACAAEAAAALAPv/AQACAAEAAAADAPn/AQACAAEAAAD///n/AQACAAEAAAD5//n/AQACAAEAAAD2//r/AQACAAEAAADz/wEAAQACAAEAAAD0/wcAAQAAAAEAAADw/wgAAQACAAEAAADz/wcAAQACAAEAAAD1/wUAAQACAAEAAAATAPb/AQACAAEAAADs//f/AQACAAEAAAAAAP7/AQAAAAAAAAD6////AQABAAAAAAD6/wAAAQACAAAAAAD9//3/AQABAAAAAAD9//7/AQACAAAAAAD7//7/AQAAAAAAAAD///3/AQACAAAAAAD5/wAAAQAAAAAAAAD3/wUAAQACAAEAAAD4/wUAAQAAAAEAAADs/wgAAQACAAEAAADu/wgAAQAAAAEAAADv/wEAAQAAAAEAAADw/wEAAQACAAEAAAD8/wIAAQAAAAEAAAD6/wQAAQACAAEAAAD9/wEAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_wybj1")]
 position = Vector2(320, 96)
-SpawnSide = "Left"
 NextMap = "Forest4"
 ToChunk = 1
-CurrentMap = "Forest5"
-FromChunk = 4
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_wybj1")]
 position = Vector2(-320, 96)
-SpawnSide = "Right"
 NextMap = "Forest6"
 ToChunk = 1
-CurrentMap = "Forest5"
-FromChunk = 3

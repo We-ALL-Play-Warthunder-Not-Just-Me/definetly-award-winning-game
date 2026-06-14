@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d00qr55soteyj"]
 
 [ext_resource type="Script" uid="uid://7vsop8081ber" path="res://Scripts/SimpleShooterNPC.cs" id="1_qw5q7"]
-[ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://Images/MVM Little Guy.png" id="2_3uy5i"]
+[ext_resource type="Texture2D" uid="uid://b3gxmf6rxflea" path="res://Images/Placeholder/MVM Little Guy.png" id="2_3uy5i"]
 [ext_resource type="PackedScene" uid="uid://bhj0dajg2c4m3" path="res://Prefabs/bullet.tscn" id="2_4outw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qw5q7"]
