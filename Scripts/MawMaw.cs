@@ -18,11 +18,13 @@ public partial class MawMaw : CharacterBody2D
 	[Export] public double PassiveSpeedMultiplier = 0.5;
     [Export] public double WanderingMinimum = 1.0;
     [Export] public double WanderingMaximum = 3.0;
-    [Export] public double MeleeDuration = 0.5f;
+    [Export] public double MeleeDuration = 0.8f;
+    [Export] public double MeleeWindup = 0.3f;
     [Export] public double MeleeRecovery = 1.5f;
     [Export] public int HP = 100;
     [Export] public RichTextLabel l;
     [Export] public PackedScene MeleeAttack1;
+    [Export] public PackedScene MeleeAttack2;
 
     private enum State
 	{
@@ -30,7 +32,13 @@ public partial class MawMaw : CharacterBody2D
 		INTERESTED,
 		DASHING,
 		HURT,
-		MELEEING
+        MELEEING1WINDUP,
+		MELEEING1,
+        MELEEING1RECOVERY, 
+        MELEEING2WINDUP,
+        MELEEING2,
+        MELEEING2RECOVERY,
+        MELEEEXHAUST
 	}
 
     private enum TargetDistance
@@ -53,6 +61,7 @@ public partial class MawMaw : CharacterBody2D
     private double _wandering_time = 0;
     private double _melee_time = 0;
     private double _melee_recovery_time = 0;
+    private double _melee_windup_time = 0;
 
     public override void _Ready()
     {
@@ -90,6 +99,21 @@ public partial class MawMaw : CharacterBody2D
             change_state(State.INTERESTED, ref velocity);
         }
     }
+
+
+    private void _process_melee_state(double delta, ref Vector2 velocity)
+    {
+        _melee_recovery_time -= delta;
+        _melee_time -= delta;
+        _melee_windup_time -= delta;
+        if(current_state == State.MELEEING1)
+        {
+            if(_melee_windup_time <=0 && _melee_time >= 0)
+            {
+
+            }
+        }
+    }
     private void change_state(State switchto, ref Vector2 velocity)
     {
         //I don't think we need to switch to the same state
@@ -121,8 +145,31 @@ public partial class MawMaw : CharacterBody2D
                     current_state = State.DASHING;
                 }
                 break;
-            case State.MELEEING:
+            case State.MELEEING1WINDUP:
+                //if we are exhausted no melee
+                if(current_state != State.MELEEEXHAUST && current_state != State.DASHING)
+                {
 
+                }
+                break;
+            case State.MELEEING1:
+                //first we want a small windup
+                if(_melee_recovery_time <= 0)
+                {
+                    _melee_windup_time = MeleeWindup;
+                    _melee_time = MeleeDuration;
+                    _melee_recovery_time = MeleeRecovery;
+                    current_state = State.MELEEING1;
+                }
+                break;
+            case State.MELEEING2:
+                if (_melee_recovery_time <= 0)
+                {
+                    _melee_windup_time = MeleeWindup;
+                    _melee_time = MeleeDuration;
+                    _melee_recovery_time = MeleeRecovery;
+                    current_state = State.MELEEING2;
+                }
                 break;
         }
 
@@ -155,7 +202,7 @@ public partial class MawMaw : CharacterBody2D
         {
            change_state(State.IDLING, ref velocity);
         }
-        //if the target is far away, or is close, but the dahs cooldown is going then we walk at them
+        //if the target is far away, or is close, but the dash cooldown is going then we walk at them
         else if(current_target_distance == TargetDistance.OUTOFRANGE || (current_target_distance == TargetDistance.RANGED && _dash_recovery_time >=0 && _dashing_time <=0))
         {
             change_state(State.INTERESTED, ref velocity);
