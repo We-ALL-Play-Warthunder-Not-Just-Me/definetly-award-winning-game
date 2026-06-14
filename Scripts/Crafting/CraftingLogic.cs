@@ -47,7 +47,7 @@ public partial class CraftingLogic : ItemList
 	private void CraftItem()
 	{
 		if(!CheckValidRecipe()) return;
-		Item temp = itemDatabase.items[recipeID].shallowCopy(1);
+		Item temp = itemDatabase.items[recipeID].Copy(1);
 		temp.qty = 1;
 		materialInventory.AddInventoryItem(temp);
 		ConsumeIngredients();
@@ -77,7 +77,7 @@ public partial class CraftingLogic : ItemList
 
 	private void SentItem(Item item, int amount)
 	{
-		Item tempitem = item.shallowCopy(amount);
+		Item tempitem = item.Copy(amount);
 		AddToCraftingMenu(tempitem);
 		//updateItemlist();
 	}
@@ -371,7 +371,7 @@ public partial class CraftingLogic : ItemList
 	{
 		if (index < 0 || index >= craftingMenu.Count) return null;
 		int id = (int)GetItemMetadata(index);
-		Item temp = itemDatabase.items[id].shallowCopy();
+		Item temp = itemDatabase.items[id].Copy();
 		if (craftingMenu.ContainsKey(id))
 		{
 			temp.qty = craftingMenu[id];

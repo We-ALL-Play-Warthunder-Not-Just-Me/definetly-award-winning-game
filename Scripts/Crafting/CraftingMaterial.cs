@@ -84,7 +84,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		if (index < 0 || index >= materialInventory.inventory.Count) return null;
 		int id = (int)GetItemMetadata(index);
-		Item temp = itemDatabase.items[id].shallowCopy();
+		Item temp = itemDatabase.items[id].Copy();
 		if (materialInventory.inventory.ContainsKey(id))
 		{
 			temp.qty = materialInventory.inventory[id];

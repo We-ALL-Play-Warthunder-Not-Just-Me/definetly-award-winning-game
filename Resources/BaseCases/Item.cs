@@ -28,14 +28,14 @@ using System;
         this.consumable = consumable;
     }
 
-    public Item shallowCopy()
+    public Item Copy()
     {
-        return (Item)Duplicate();
+        return (Item)DuplicateDeep(DeepDuplicateMode.Internal);
     }
 
-    public Item shallowCopy(int newqty)
+    public Item Copy(int newqty)
     {
-        Item tempItem = (Item)Duplicate();
+        Item tempItem = (Item)DuplicateDeep(DeepDuplicateMode.Internal);
         tempItem.qty = newqty;
         return tempItem;
     }
