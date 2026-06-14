@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 public partial class MawMaw : CharacterBody2D
@@ -50,6 +51,7 @@ public partial class MawMaw : CharacterBody2D
     }
     private Node2D Target;
     private double distance_to_target;
+    //also used by melee attacks to choose their direction
     private int dash_direction;
     private Vector2 target_direction;
     private State current_state = State.IDLING;
@@ -101,17 +103,29 @@ public partial class MawMaw : CharacterBody2D
     }
 
 
+
     private void _process_melee_state(double delta, ref Vector2 velocity)
     {
         _melee_recovery_time -= delta;
         _melee_time -= delta;
         _melee_windup_time -= delta;
-        if(current_state == State.MELEEING1)
+        switch (current_state)
         {
-            if(_melee_windup_time <=0 && _melee_time >= 0)
-            {
-
-            }
+            case State.MELEEING1WINDUP:
+                velocity.X = Speed * dash_direction * 0.2f;
+                if (_melee_windup_time <= 0)
+                {
+                    change_state(State.MELEEING1, ref velocity);
+                }
+                break;
+            case State.MELEEING1:
+                //Wierd scaling jump forwards
+                velocity.X = Speed * dash_direction * ((float)_melee_time * 0.8f);
+                if (_melee_time <= 0)
+                {
+                    change_state(State.MELEEING1RECOVERY, ref velocity);
+                }
+                break;
         }
     }
     private void change_state(State switchto, ref Vector2 velocity)
@@ -146,28 +160,33 @@ public partial class MawMaw : CharacterBody2D
                 }
                 break;
             case State.MELEEING1WINDUP:
-                //if we are exhausted no melee
+                //if we are not exhausted and not dashing we can start meleeing
                 if(current_state != State.MELEEEXHAUST && current_state != State.DASHING)
                 {
-
+                    _melee_windup_time = MeleeWindup;
+                    dash_direction = target_direction_helper();
+                    current_state = State.MELEEING1WINDUP;
                 }
                 break;
             case State.MELEEING1:
-                //first we want a small windup
+                
                 if(_melee_recovery_time <= 0)
                 {
-                    _melee_windup_time = MeleeWindup;
                     _melee_time = MeleeDuration;
-                    _melee_recovery_time = MeleeRecovery;
                     current_state = State.MELEEING1;
+                }
+                break;
+            case State.MELEEING1RECOVERY:
+                if(_melee_time <= 0)
+                {
+                    _melee_recovery_time = MeleeRecovery;
+                    current_state = State.MELEEING1RECOVERY;
                 }
                 break;
             case State.MELEEING2:
                 if (_melee_recovery_time <= 0)
                 {
-                    _melee_windup_time = MeleeWindup;
                     _melee_time = MeleeDuration;
-                    _melee_recovery_time = MeleeRecovery;
                     current_state = State.MELEEING2;
                 }
                 break;
@@ -197,6 +216,11 @@ public partial class MawMaw : CharacterBody2D
 
     private void _pick_state(double delta, ref Vector2 velocity)
     {
+        //if we are in the attacking zone we don't want to check these other things
+        if ((int)current_state >= 3)
+        {
+            return;
+        }
         //ok the player has gone too far, become idle
         if(current_target_distance == TargetDistance.UNDETECTED)
         {
@@ -211,6 +235,10 @@ public partial class MawMaw : CharacterBody2D
         else if(current_target_distance == TargetDistance.RANGED && _dash_recovery_time < 0)
         {
             change_state(State.DASHING, ref velocity);
+        } 
+        else if(current_state != State.DASHING && current_target_distance == TargetDistance.MELEE)
+        {
+            change_state(State.MELEEING1WINDUP, ref velocity);
         }
     }
     private void _apply_gravity(double delta, ref Vector2 velocity)
