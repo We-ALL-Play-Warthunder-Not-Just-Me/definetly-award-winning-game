@@ -9,6 +9,7 @@ region = Rect2(64, 128, 32, 32)
 
 [resource]
 script = ExtResource("2_frmqn")
+ID = 23
 Name = "Daffodil"
 qty = 1
 max_qty = 100
