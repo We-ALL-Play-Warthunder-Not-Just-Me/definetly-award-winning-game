@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public partial class CraftingLogic : ItemList
 {
@@ -53,6 +55,11 @@ public partial class CraftingLogic : ItemList
 
 	private void ConsumeIngredients()
 	{
+		if(HasCatalyst() != 0)
+		{
+			CatalystConsumeIngredient();
+			return;
+		}
 		foreach (var (item,amount) in recipeList.recipes[recipeID].ingredients)
 		{
 			//Non-consumable items are reusable, if it's consumable we use them up
@@ -70,18 +77,168 @@ public partial class CraftingLogic : ItemList
 
 	private void SentItem(Item item, int amount)
 	{
-		//why does this work and not making a shallowcopy doesn't????? 
-		//It was bc the addtostackingfunction was setting the item.qty to 0
 		Item tempitem = item.shallowCopy(amount);
 		AddToCraftingMenu(tempitem);
 		//updateItemlist();
 	}
 
+	private int HasCatalyst()
+	{
+		int HasCatalyst = 0;
+		if(ItemCount > 2) return HasCatalyst;
+		for(int i = 0; i < ItemCount; i++)
+		{
+			// The Item ID is stored in the metadata
+			int itemID = (int)GetItemMetadata(i);
+			switch (itemID)
+			{
+				case 4: //purple catalyst
+					HasCatalyst = 4;
+					break;
+				case 9:	//blue catalyst
+					HasCatalyst = 9;
+					break;
+				case 15: //red catalyst
+					HasCatalyst = 15;
+					break;
+				case 21: //yellow catalyst
+					HasCatalyst = 21;				
+					break;
+			}
+		}
+		return HasCatalyst;
+	}
+
+	private void CatalystConsumeIngredient()
+	{
+		for (int i = 0; i < ItemCount; i++)
+		{
+			int itemID = (int)GetItemMetadata(i);
+			if (itemDatabase.items[itemID].consumable)
+			{
+				materialInventory.RemoveAmountofItem(itemID, 1);
+				craftingMenu[itemID] -= 1;
+			}
+			if(craftingMenu[itemID] == 0) craftingMenu.Remove(itemID);
+		}
+		UpdateItemlist();
+		CheckValidRecipe();
+	}
+
+	private void CatalystConvert(int catalystID)
+	{
+		if (craftingMenu.ContainsKey(catalystID))
+		{
+			switch (catalystID)
+			{
+				case 4: //purple catalyst
+					if (craftingMenu.ContainsKey(10) || craftingMenu.ContainsKey(16) || craftingMenu.ContainsKey(22))
+					{
+						recipeID = 5;
+					}
+					else if (craftingMenu.ContainsKey(11) || craftingMenu.ContainsKey(17) || craftingMenu.ContainsKey(23))
+					{
+						recipeID = 6;
+					}
+					else if (craftingMenu.ContainsKey(12) || craftingMenu.ContainsKey(18) || craftingMenu.ContainsKey(24))
+					{
+						recipeID = 7;
+					}
+					else if (craftingMenu.ContainsKey(13) || craftingMenu.ContainsKey(19) || craftingMenu.ContainsKey(25))
+					{
+						recipeID = 8;
+					}
+					else
+					{
+						recipeID = 0;
+					}								
+					break;
+				case 9:	//blue catalyst
+					if (craftingMenu.ContainsKey(5) || craftingMenu.ContainsKey(16) || craftingMenu.ContainsKey(22))
+					{
+						recipeID = 10;
+					}
+					else if (craftingMenu.ContainsKey(6) || craftingMenu.ContainsKey(17) || craftingMenu.ContainsKey(23))
+					{
+						recipeID = 11;
+					}
+					else if (craftingMenu.ContainsKey(7) || craftingMenu.ContainsKey(18) || craftingMenu.ContainsKey(24))
+					{
+						recipeID = 12;
+					}
+					else if (craftingMenu.ContainsKey(8) || craftingMenu.ContainsKey(19) || craftingMenu.ContainsKey(25))
+					{
+						recipeID = 13;
+					}
+					else
+					{
+						recipeID = 0;
+					}															
+					break;
+				case 15: //red catalyst
+					if (craftingMenu.ContainsKey(10) || craftingMenu.ContainsKey(5) || craftingMenu.ContainsKey(22))
+					{
+						recipeID = 16;
+					}
+					else if (craftingMenu.ContainsKey(11) || craftingMenu.ContainsKey(6) || craftingMenu.ContainsKey(23))
+					{
+						recipeID = 17;
+					}
+					else if (craftingMenu.ContainsKey(12) || craftingMenu.ContainsKey(7) || craftingMenu.ContainsKey(24))
+					{
+						recipeID = 18;
+					}
+					else if (craftingMenu.ContainsKey(13) || craftingMenu.ContainsKey(8) || craftingMenu.ContainsKey(25))
+					{
+						recipeID = 19;
+					}
+					else
+					{
+						recipeID = 0;
+					}											 
+					break;
+				case 21: //yellow catalyst		
+					if (craftingMenu.ContainsKey(10) || craftingMenu.ContainsKey(16) || craftingMenu.ContainsKey(5))
+					{
+						recipeID = 22;
+					}
+					else if (craftingMenu.ContainsKey(11) || craftingMenu.ContainsKey(17) || craftingMenu.ContainsKey(6))
+					{
+						recipeID = 23;
+					}
+					else if (craftingMenu.ContainsKey(12) || craftingMenu.ContainsKey(18) || craftingMenu.ContainsKey(7))
+					{
+						recipeID = 24;
+					}
+					else if (craftingMenu.ContainsKey(13) || craftingMenu.ContainsKey(19) || craftingMenu.ContainsKey(8))
+					{
+						recipeID = 25;
+					}
+					else
+					{
+						recipeID = 0;
+					}												
+					break;
+			}
+		}
+
+	}
 
 	//Evil recipe validation
 	private bool CheckValidRecipe()
 	{
 		bool isValid = false;
+		int CatalystID = HasCatalyst();
+		if (CatalystID != 0)
+		{
+			CatalystConvert(CatalystID);
+			if(recipeID != 0)
+			{
+				isValid = true;
+			}
+			RecipePicture();
+			return isValid;
+		}
 		foreach (var (recipeid,ingredientsList) in recipeList.recipes)
 		{
 			foreach (var (id, amount) in craftingMenu)
