@@ -30,12 +30,12 @@ using System;
 
     public Item shallowCopy()
     {
-        return (Item)MemberwiseClone();
+        return (Item)Duplicate();
     }
 
     public Item shallowCopy(int newqty)
     {
-        Item tempItem = (Item)MemberwiseClone();
+        Item tempItem = (Item)Duplicate();
         tempItem.qty = newqty;
         return tempItem;
     }

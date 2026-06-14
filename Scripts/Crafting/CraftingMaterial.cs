@@ -32,8 +32,8 @@ public partial class CraftingMaterial : ItemList
 			{
 				if (itemDatabase.items[id].max_qty == 1)
 				{
-						int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
-						SetItemMetadata(i, itemDatabase.items[id].ID);
+					int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
+					SetItemMetadata(i, itemDatabase.items[id].ID);
 				}
 				else
 				{

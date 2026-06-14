@@ -157,7 +157,7 @@ public partial class InventoryLogic : ItemList
 		return 0;
 	}
 
-	public String GetItemNameFromID (int ID)
+	public string GetItemNameFromID (int ID)
 	{
 		if (ID == 0) return null;
 		return itemDatabase.items[ID].Name;
