@@ -17,8 +17,11 @@ _data = {
 
 [node name="MawMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
 script = ExtResource("1_wgu7o")
+MeleeAttackOffsetX = 5.0
+MeleeAttackOffsetY = 1.0
 l = NodePath("StateLabel")
 MeleeAttack1 = ExtResource("2_ter1i")
+MeleeAttack2 = ExtResource("2_ter1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=61845971]
 texture = ExtResource("2_g1gtq")

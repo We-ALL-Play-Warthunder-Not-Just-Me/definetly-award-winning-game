@@ -23,8 +23,8 @@ public partial class MawMaw : CharacterBody2D
     [Export] public double MeleeWindup = 0.3f;
     [Export] public double MeleeRecovery = 1.5f;
     [Export] public int HP = 100;
-    [Export] public double MeleeAttackOffsetX=15;
-    [Export] public double MeleeAttackOffsetY=10;
+    [Export] public double MeleeAttackOffsetX=4;
+    [Export] public double MeleeAttackOffsetY=1;
     [Export] public RichTextLabel l;
     [Export] public PackedScene MeleeAttack1;
     [Export] public PackedScene MeleeAttack2;
@@ -35,13 +35,14 @@ public partial class MawMaw : CharacterBody2D
 		INTERESTED,
 		DASHING,
 		HURT,
+        MELEEEXHAUST,
         MELEEING1WINDUP,
 		MELEEING1,
         MELEEING1RECOVERY, 
         MELEEING2WINDUP,
         MELEEING2,
         MELEEING2RECOVERY,
-        MELEEEXHAUST
+        
 	}
 
     private enum TargetDistance
@@ -98,7 +99,7 @@ public partial class MawMaw : CharacterBody2D
             }
             velocity.X = DashSpeed * dash_direction;
         }
-        if(_dashing_time <= 0)
+        if(_dashing_time <= 0 && (int)current_state <=3)
         {
             change_state(State.INTERESTED, ref velocity);
         }
@@ -123,9 +124,37 @@ public partial class MawMaw : CharacterBody2D
             case State.MELEEING1:
                 //Wierd scaling jump forwards
                 velocity.X = Speed * dash_direction * ((float)_melee_time * 0.8f);
+                
                 if (_melee_time <= 0)
                 {
                     change_state(State.MELEEING1RECOVERY, ref velocity);
+                }
+                break;
+            case State.MELEEING1RECOVERY:
+                if(_melee_recovery_time<=0)
+                {
+                    change_state(State.MELEEING2WINDUP, ref velocity);
+                }
+                break;
+            case State.MELEEING2WINDUP:
+                velocity.X = Speed * dash_direction * 0.2f;
+                if (_melee_windup_time <= 0)
+                {
+                    change_state(State.MELEEING2, ref velocity);
+                }
+                break;
+            case State.MELEEING2:
+                //Wierd scaling jump forwards
+                velocity.X = Speed * dash_direction * ((float)_melee_time * 0.3f);
+                if (_melee_time <= 0)
+                {
+                    change_state(State.MELEEING2RECOVERY, ref velocity);
+                }
+                break;
+            case State.MELEEING2RECOVERY:
+                if (_melee_recovery_time <= 0)
+                {
+                    change_state(State.MELEEING2WINDUP, ref velocity);
                 }
                 break;
         }
@@ -163,8 +192,9 @@ public partial class MawMaw : CharacterBody2D
                 break;
             case State.MELEEING1WINDUP:
                 //if we are not exhausted and not dashing we can start meleeing
-                if(current_state != State.MELEEEXHAUST && current_state != State.DASHING)
+                if(current_state != State.MELEEEXHAUST && current_state != State.DASHING && _melee_recovery_time <= 0)
                 {
+                    GD.Print("woooo");
                     _melee_windup_time = MeleeWindup;
                     dash_direction = target_direction_helper();
                     current_state = State.MELEEING1WINDUP;
@@ -172,8 +202,9 @@ public partial class MawMaw : CharacterBody2D
                 break;
             case State.MELEEING1:
                 
-                if(_melee_recovery_time <= 0)
+                if(current_state == State.MELEEING1WINDUP)
                 {
+                    GD.Print("Noooo");
                     velocity.Y = -30;
                     _melee_time = MeleeDuration;
                     current_state = State.MELEEING1;
@@ -182,24 +213,47 @@ public partial class MawMaw : CharacterBody2D
                     position.X += (float)MeleeAttackOffsetX * dash_direction;
                     position.Y += (float)MeleeAttackOffsetY;
                     biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 0.8f)), (float)MeleeDuration);
-
-                    
+                    this.AddChild(biteinstance);
                 }
                 break;
             case State.MELEEING1RECOVERY:
-                if(_melee_time <= 0)
+                if(current_state == State.MELEEING1)
                 {
                     _melee_recovery_time = MeleeRecovery;
                     current_state = State.MELEEING1RECOVERY;
                 }
                 break;
-            case State.MELEEING2:
-                if (_melee_recovery_time <= 0)
+
+            case State.MELEEING2WINDUP:
+                if(current_state == State.MELEEING1RECOVERY)
                 {
-                    _melee_time = MeleeDuration;
-                    current_state = State.MELEEING2;
+                    _melee_windup_time = MeleeWindup * 0.8;
+                    current_state = State.MELEEING2WINDUP;
                 }
                 break;
+            case State.MELEEING2:
+                if (current_state == State.MELEEING2WINDUP)
+                {
+                    GD.Print("Noooo");
+                    velocity.Y = -30;
+                    _melee_time = MeleeDuration;
+                    current_state = State.MELEEING2;
+                    MawMawBite biteinstance = MeleeAttack1.Instantiate() as MawMawBite;
+                    Vector2 position = this.GlobalPosition;
+                    position.X += (float)MeleeAttackOffsetX * dash_direction;
+                    position.Y += (float)MeleeAttackOffsetY;
+                    biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 4f)), (float)MeleeDuration+0.3f);
+                    this.AddChild(biteinstance);
+                }
+                break;
+            case State.MELEEING2RECOVERY:
+                if (_melee_time <= 0)
+                {
+                    _melee_recovery_time = MeleeRecovery;
+                    current_state = State.IDLING;
+                }
+                break;
+            
         }
 
     }
@@ -236,6 +290,10 @@ public partial class MawMaw : CharacterBody2D
         {
            change_state(State.IDLING, ref velocity);
         }
+        else if (current_state != State.DASHING && current_target_distance == TargetDistance.MELEE)
+        {
+            change_state(State.MELEEING1WINDUP, ref velocity);
+        }
         //if the target is far away, or is close, but the dash cooldown is going then we walk at them
         else if(current_target_distance == TargetDistance.OUTOFRANGE || (current_target_distance == TargetDistance.RANGED && _dash_recovery_time >=0 && _dashing_time <=0))
         {
@@ -246,10 +304,7 @@ public partial class MawMaw : CharacterBody2D
         {
             change_state(State.DASHING, ref velocity);
         } 
-        else if(current_state != State.DASHING && current_target_distance == TargetDistance.MELEE)
-        {
-            change_state(State.MELEEING1WINDUP, ref velocity);
-        }
+        
     }
     private void _apply_gravity(double delta, ref Vector2 velocity)
     {
@@ -266,6 +321,7 @@ public partial class MawMaw : CharacterBody2D
         
         _process_target_distance(delta, ref velocity);
         _pick_state(delta, ref velocity);
+        _process_melee_state(delta, ref velocity);
         _process_dashing_state(delta, ref velocity);
         _process_interested_state(delta, ref velocity);
         _process_idle_state(delta, ref velocity);
@@ -273,7 +329,7 @@ public partial class MawMaw : CharacterBody2D
         _apply_gravity(delta, ref velocity);
 
         Velocity = velocity;
-        GD.Print(_dashing_time + " : Dash time, " + _dash_recovery_time + " : dash recov");
+        //GD.Print(_dashing_time + " : Dash time, " + _dash_recovery_time + " : dash recov");
         MoveAndSlide();
         
     }

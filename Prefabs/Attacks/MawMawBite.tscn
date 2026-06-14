@@ -7,9 +7,9 @@
 script = ExtResource("1_h8fdm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2113396194]
-polygon = PackedVector2Array(0, 0, -2, -4, 1, -9, 5, -9, 5, 0)
+polygon = PackedVector2Array(0, 6, -5, -2, 1, -9, 5, -9, 5, 6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741207603]
-position = Vector2(1.5, -4.5)
-scale = Vector2(0.054687493, 0.0703125)
+position = Vector2(-3.5762787e-07, -1.4999995)
+scale = Vector2(0.078125, 0.11718751)
 texture = ExtResource("2_4ydot")
