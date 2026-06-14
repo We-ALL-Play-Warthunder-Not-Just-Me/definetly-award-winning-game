@@ -416,67 +416,73 @@ scale = Vector2(960, 192)
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
 [node name="Trees10" type="Sprite2D" parent="All Trees" unique_id=560277736]
-position = Vector2(41, 298.5)
+position = Vector2(270, -5.5)
 texture = ExtResource("2_mmthj")
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(291, 231, 84, 75)
 
 [node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(-61, 314.5)
+position = Vector2(389, 26.5)
+texture = ExtResource("2_mmthj")
+region_enabled = true
+region_rect = Rect2(106, 308, 177, 75)
+
+[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
+position = Vector2(201, 42.5)
 texture = ExtResource("2_mmthj")
 region_enabled = true
 region_rect = Rect2(109, 154, 170, 75)
 
-[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
-position = Vector2(109, 252)
-texture = ExtResource("2_mmthj")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
 [node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
-position = Vector2(71, 266.5)
+position = Vector2(-229, -16)
 texture = ExtResource("2_mmthj")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
+region_rect = Rect2(8, 154, 86, 64)
 
 [node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
-position = Vector2(-84, 138.5)
+position = Vector2(-366, 16)
 texture = ExtResource("2_mmthj")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 75)
+region_rect = Rect2(98, 231, 186, 64)
 
 [node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1548162556]
-position = Vector2(-56, 156)
+position = Vector2(-96, 69.5)
 texture = ExtResource("2_mmthj")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
+region_rect = Rect2(5, 231, 88, 75)
 
 [node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=1011616391]
-position = Vector2(-32, 154.5)
+position = Vector2(-177, 61.5)
 texture = ExtResource("2_mmthj")
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
-
-[node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1701862565]
-position = Vector2(-120, 90.5)
-texture = ExtResource("2_mmthj")
-region_enabled = true
-region_rect = Rect2(87, 77, 44, 75)
+region_rect = Rect2(291, 231, 84, 75)
 
 [node name="Trees9" type="Sprite2D" parent="All Trees" unique_id=474817867]
-position = Vector2(139, 109)
+position = Vector2(122, -58)
 texture = ExtResource("2_mmthj")
 region_enabled = true
-region_rect = Rect2(253, 82, 42, 70)
+region_rect = Rect2(287, 154, 90, 52)
+
+[node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1701862565]
+position = Vector2(176, -51)
+texture = ExtResource("2_mmthj")
+region_enabled = true
+region_rect = Rect2(1, 82, 42, 70)
 
 [node name="Trees8" type="Sprite2D" parent="All Trees" unique_id=54704567]
-position = Vector2(105, 106.5)
+position = Vector2(-16, -21)
 texture = ExtResource("2_mmthj")
 region_enabled = true
-region_rect = Rect2(7, 308, 88, 75)
+region_rect = Rect2(290, 308, 87, 75)
+
+[node name="Trees11" type="Sprite2D" parent="All Trees" unique_id=1409164442]
+position = Vector2(-320, -72)
+texture = ExtResource("2_mmthj")
+region_enabled = true
+region_rect = Rect2(172, 4, 42, 48)
 
 [node name="TestShade" parent="." unique_id=1811497297 instance=ExtResource("3_lbwvf")]
 scale = Vector2(960, 192)
@@ -496,6 +502,7 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2
+tile_map_data = PackedByteArray("AAD4//v/AQABAAAAAAD4//z/AQABAAEAAAD1//3/AQABAAAAAAD1//7/AQACAAAAAADq//7/AQABAAAAAADq////AQABAAEAAADm//v/AQABAAAAAADm//z/AQACAAAAAAABAAMAAQABAAAAAAABAAQAAQACAAAAAAAGAAAAAQABAAAAAAAGAAEAAQABAAEAAAD2////AQAAAAAAAAD0//z/AQAAAAAAAADl//3/AQAAAAAAAADs////AQAAAAAAAAALAAAAAQACAAAAAAAJAAEAAQAAAAAAAAAHAAQAAQACAAEAAAALAAMAAQACAAEAAAAOAAMAAQACAAEAAAAQAAEAAQACAAEAAAAUAAMAAQACAAEAAAAZAAMAAQACAAEAAAAbAAIAAQACAAEAAAAKAP7/AQACAAEAAAD8/wAAAQACAAEAAAAAAAAAAQACAAEAAAD7/wIAAQACAAEAAAD0/wMAAQACAAEAAADz/wAAAQACAAEAAADu/wEAAQACAAEAAADr/wIAAQACAAEAAADm////AQACAAEAAADt//z/AQACAAEAAADo/wIAAQAAAAEAAADt/wIAAQAAAAEAAADn/wEAAQAAAAEAAADw/wAAAQAAAAEAAAD2/wMAAQAAAAEAAAD5/wMAAQAAAAEAAAABAAAAAQAAAAEAAAAKAAMAAQAAAAEAAAASAAEAAQAAAAEAAAAXAAMAAQAAAAEAAAAcAAIAAQAAAAEAAAAJAP3/AQAAAAEAAADq//z/AQAAAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("6_e8yc1")]

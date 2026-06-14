@@ -429,6 +429,7 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2
+tile_map_data = PackedByteArray("AAACAAIAAQABAAAAAAAEAAEAAQABAAEAAAD7/wEAAQABAAAAAAD7/wIAAQABAAEAAAADAAMAAQACAAAAAAD8/wMAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQABAAEAAAACAAMAAQABAAEAAAD9/wIAAQABAAEAAAABAP//AQAAAAEAAAAEAP7/AQAAAAEAAAD/////AQACAAEAAAD8//7/AQACAAEAAAADAP7/AQACAAEAAAD7//7/AQAAAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("7_4eok7")]
