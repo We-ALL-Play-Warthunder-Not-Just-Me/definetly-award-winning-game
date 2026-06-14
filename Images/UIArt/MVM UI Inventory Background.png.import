@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbxpfqlobecsu"
-path="res://.godot/imported/MVM Healthbar1.png-c569066d9928640a60ccbe5027bee0df.ctex"
+uid="uid://bpot1vbf4npy1"
+path="res://.godot/imported/MVM UI Inventory Background.png-95162877a0487107ead8a27cd16cbeb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Healthbar1.png"
-dest_files=["res://.godot/imported/MVM Healthbar1.png-c569066d9928640a60ccbe5027bee0df.ctex"]
+source_file="res://Images/UIArt/MVM UI Inventory Background.png"
+dest_files=["res://.godot/imported/MVM UI Inventory Background.png-95162877a0487107ead8a27cd16cbeb7.ctex"]
 
 [params]
 

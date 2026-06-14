@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvitb33g30ukj"
-path="res://.godot/imported/Test UI Pause Backing.png-bb3921845e8a5ba791dc687fecb9df1c.ctex"
+uid="uid://cwx006qcopycc"
+path="res://.godot/imported/Test UI Settings Button.png-8e4e14fddd1e5ca1f0e5bffee66edc39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UIArt/Test UI Pause Backing.png"
-dest_files=["res://.godot/imported/Test UI Pause Backing.png-bb3921845e8a5ba791dc687fecb9df1c.ctex"]
+source_file="res://Images/Placeholder/Test UI Settings Button.png"
+dest_files=["res://.godot/imported/Test UI Settings Button.png-8e4e14fddd1e5ca1f0e5bffee66edc39.ctex"]
 
 [params]
 

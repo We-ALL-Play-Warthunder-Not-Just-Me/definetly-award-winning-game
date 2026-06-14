@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwx006qcopycc"
-path="res://.godot/imported/Test UI Settings Button.png-19482dad738cfd24a82187f7892e0b11.ctex"
+uid="uid://mvl77ibdwjdj"
+path="res://.godot/imported/MVM Healthbar2.png-27e29530c3be5a40e59ba57244976649.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UIArt/Test UI Settings Button.png"
-dest_files=["res://.godot/imported/Test UI Settings Button.png-19482dad738cfd24a82187f7892e0b11.ctex"]
+source_file="res://Images/UIArt/MVM Healthbar2.png"
+dest_files=["res://.godot/imported/MVM Healthbar2.png-27e29530c3be5a40e59ba57244976649.ctex"]
 
 [params]
 

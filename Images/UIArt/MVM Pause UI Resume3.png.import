@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ihi36ps2m7s"
-path="res://.godot/imported/MVM Cauldron.png-ede2b02a4322defd06aee284ff3a7246.ctex"
+uid="uid://yi1nwbyi2dke"
+path="res://.godot/imported/MVM Pause UI Resume3.png-d6ef7b63c5e7076e074c5ff834967900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Cauldron.png"
-dest_files=["res://.godot/imported/MVM Cauldron.png-ede2b02a4322defd06aee284ff3a7246.ctex"]
+source_file="res://Images/UIArt/MVM Pause UI Resume3.png"
+dest_files=["res://.godot/imported/MVM Pause UI Resume3.png-d6ef7b63c5e7076e074c5ff834967900.ctex"]
 
 [params]
 

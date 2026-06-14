@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cudklxvjowmae"
-path="res://.godot/imported/MVM Healthbar Backing.png-0ba32d1e9260b20a32235de3e631cbea.ctex"
+uid="uid://b3lwbch7nyp2h"
+path="res://.godot/imported/MVM Craft Button3.png-a97a59554cc2bb3f219e32f6ccf03b05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Healthbar Backing.png"
-dest_files=["res://.godot/imported/MVM Healthbar Backing.png-0ba32d1e9260b20a32235de3e631cbea.ctex"]
+source_file="res://Images/UIArt/MVM Craft Button3.png"
+dest_files=["res://.godot/imported/MVM Craft Button3.png-a97a59554cc2bb3f219e32f6ccf03b05.ctex"]
 
 [params]
 

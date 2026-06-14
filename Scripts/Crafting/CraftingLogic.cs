@@ -204,8 +204,8 @@ public partial class CraftingLogic : ItemList
 	{
 		if (index < 0 || index >= craftingMenu.Count) return;
 		int id = (int)GetItemMetadata(index);
-        craftingMenu.Remove(id);
-        //RemoveItem(index);
+		craftingMenu.Remove(id);
+		//RemoveItem(index);
 		UpdateItemlist();
 		CheckValidRecipe();
 	}

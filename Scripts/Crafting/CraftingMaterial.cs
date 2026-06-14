@@ -12,7 +12,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		UpdateItemlist();
 		materialInventory.Changed += UpdateItemlist;
-		ItemActivated += SelectItem;
+		//ItemActivated += SelectItem;
 		ItemClicked += OnInventoryItemClicked;
 		searchBar.TextChanged += SearchItemList;
 	}
@@ -67,24 +67,24 @@ public partial class CraftingMaterial : ItemList
 	[Signal]
 	public delegate void SendOverItemEventHandler(Item item, int amount = 1);
 
-	private void SelectItem(long index)
-	{
-		Item sendingItem = GetInventoryItem((int) index);
-		int amount = 1;
-		if (Input.IsPhysicalKeyPressed(Key.Shift))
-		{
-			amount = 5;
-		}
-		GD.Print($"You selected {sendingItem.Name} : {sendingItem.qty}");
-		EmitSignal(SignalName.SendOverItem, sendingItem, amount);
-	}
+	//private void SelectItem(long index)
+	//{
+		//Item sendingItem = GetInventoryItem((int) index);
+		//int amount = 1;
+		//if (Input.IsPhysicalKeyPressed(Key.Shift))
+		//{
+			//amount = 5;
+		//}
+		//GD.Print($"You selected {sendingItem.Name} : {sendingItem.qty}");
+		//EmitSignal(SignalName.SendOverItem, sendingItem, amount);
+	//}
 
 	//Waow
 	public Item GetInventoryItem(int index)
 	{
 		if (index < 0 || index >= materialInventory.inventory.Count) return null;
 		int id = (int)GetItemMetadata(index);
-		Item temp = itemDatabase.items[id].shallowCopy();
+		Item temp = itemDatabase.items[id];//.shallowCopy();
 		if (materialInventory.inventory.ContainsKey(id))
 		{
 			temp.qty = materialInventory.inventory[id];

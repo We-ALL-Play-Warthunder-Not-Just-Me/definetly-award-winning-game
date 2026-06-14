@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bysvxkpp6pxx5"
-path="res://.godot/imported/MVM Craft Button1.png-753f9bb7f33de3a89d336fc04480f54e.ctex"
+uid="uid://cgk1hwoi4yb1d"
+path="res://.godot/imported/MVM Pause UI Settings2.png-f5644e61b559eb40b02b8c470f18d7ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/MVM Craft Button1.png"
-dest_files=["res://.godot/imported/MVM Craft Button1.png-753f9bb7f33de3a89d336fc04480f54e.ctex"]
+source_file="res://Images/UIArt/MVM Pause UI Settings2.png"
+dest_files=["res://.godot/imported/MVM Pause UI Settings2.png-f5644e61b559eb40b02b8c470f18d7ea.ctex"]
 
 [params]
 
