@@ -34,10 +34,6 @@ window/stretch/mode="viewport"
 
 project/assembly_name="DefinetlyAwardWinningGame"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/teleporttomap/plugin.cfg")
-
 [global_group]
 
 Enemy=""
