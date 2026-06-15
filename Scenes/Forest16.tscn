@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="4_x6v4j"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="5_41s1t"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_scuec"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_ci4dh"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="9_c46b7"]
+[ext_resource type="Resource" uid="uid://b4sdrtjejp4ng" path="res://Resources/Items/Red Items/Beet.tres" id="10_qxt1k"]
+[ext_resource type="Resource" uid="uid://clychdpwcicy1" path="res://Resources/Items/Yellow Items/Topaz.tres" id="11_irvgk"]
+[ext_resource type="Resource" uid="uid://c0gc3w1riamwd" path="res://Resources/Items/Yellow Items/Daffodil.tres" id="12_keo3d"]
+[ext_resource type="Resource" uid="uid://06qnln20ik1b" path="res://Resources/Items/Yellow Items/Lemon.tres" id="13_0j4n8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -544,3 +550,37 @@ VertTrans = true
 position = Vector2(-160, 96)
 NextMap = "Forest15"
 ToChunk = 2
+
+[node name="Items" type="Node2D" parent="." unique_id=1130965669]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_ci4dh")]
+position = Vector2(-260, 36)
+baseItem = ExtResource("9_c46b7")
+
+[node name="ItemPickup2" parent="Items" unique_id=1601600022 instance=ExtResource("8_ci4dh")]
+position = Vector2(-95, -28)
+baseItem = ExtResource("10_qxt1k")
+
+[node name="ItemPickup10" parent="Items" unique_id=659503689 instance=ExtResource("8_ci4dh")]
+position = Vector2(-102, -166)
+baseItem = ExtResource("11_irvgk")
+
+[node name="ItemPickup15" parent="Items" unique_id=689255693 instance=ExtResource("8_ci4dh")]
+position = Vector2(132, -124)
+baseItem = ExtResource("12_keo3d")
+
+[node name="ItemPickup11" parent="Items" unique_id=1312332187 instance=ExtResource("8_ci4dh")]
+position = Vector2(-131, -61)
+baseItem = ExtResource("10_qxt1k")
+
+[node name="ItemPickup12" parent="Items" unique_id=210849264 instance=ExtResource("8_ci4dh")]
+position = Vector2(46, 61)
+baseItem = ExtResource("13_0j4n8")
+
+[node name="ItemPickup13" parent="Items" unique_id=1454651959 instance=ExtResource("8_ci4dh")]
+position = Vector2(20, 133)
+baseItem = ExtResource("13_0j4n8")
+
+[node name="ItemPickup14" parent="Items" unique_id=358073014 instance=ExtResource("8_ci4dh")]
+position = Vector2(-12, 137)
+baseItem = ExtResource("13_0j4n8")
