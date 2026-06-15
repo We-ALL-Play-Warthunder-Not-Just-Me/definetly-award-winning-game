@@ -13,8 +13,7 @@ public partial class MapManager : Node2D
 	Node2D Restraints;
 	MvmSongIdea Music;
 	
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public void CollectObjects()
 	{
 		//More grabbing of relevant information for later use.
 		Player = GetNode<CharacterBody2D>("/root/GameScene/Player");

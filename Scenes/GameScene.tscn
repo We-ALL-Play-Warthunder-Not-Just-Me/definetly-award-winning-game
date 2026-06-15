@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bwvmk5l8bfwat"]
 
 [ext_resource type="PackedScene" uid="uid://ccobfdldi45wb" path="res://Prefabs/player.tscn" id="1_kilg5"]
+[ext_resource type="Script" uid="uid://df7tdvfb3luy0" path="res://Scripts/Map Scripts/GameScene.cs" id="1_lg2j6"]
 [ext_resource type="PackedScene" uid="uid://dl0qjx7n7r4g8" path="res://Prefabs/TheCamera.tscn" id="2_x6js8"]
 [ext_resource type="PackedScene" uid="uid://djtcug1akay2d" path="res://Scenes/StartMap.tscn" id="3_lg2j6"]
 [ext_resource type="AudioStream" uid="uid://cy8s4qhyq3y21" path="res://Audio/Music/MVM Song Idea (Idea #70).wav" id="4_y30xb"]
@@ -9,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bgn01fmxd7t7q" path="res://Audio/SingLark (NGGYU).wav" id="6_x6js8"]
 
 [node name="GameScene" type="Node2D" unique_id=359298613]
+script = ExtResource("1_lg2j6")
 
 [node name="StartMap" parent="." unique_id=685611168 instance=ExtResource("3_lg2j6")]
 
@@ -24,7 +26,7 @@ limit_bottom = 84
 
 [node name="MvmSongIdea" type="AudioStreamPlayer" parent="." unique_id=1289639467]
 stream = ExtResource("4_y30xb")
-volume_db = -8.0
+volume_db = -16.0
 autoplay = true
 script = ExtResource("5_xhjei")
 OriginalSong = ExtResource("4_y30xb")
