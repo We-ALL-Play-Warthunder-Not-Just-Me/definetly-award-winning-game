@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://dcyivqkfh0ikb" path="res://04B_03__.TTF" id="2_hb6lx"]
 [ext_resource type="Texture2D" uid="uid://b0800t8ihojva" path="res://Images/UIArt/Witch Portraits2.png" id="2_kexwp"]
 [ext_resource type="Texture2D" uid="uid://bpot1vbf4npy1" path="res://Images/UIArt/MVM UI Inventory Background.png" id="2_oa2n3"]
-[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="3_1r1x0"]
 [ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="3_48de8"]
 [ext_resource type="Texture2D" uid="uid://b4152jcje8ki4" path="res://Images/UIArt/MVM UI Tabs2.png" id="3_e5xi4"]
 [ext_resource type="Texture2D" uid="uid://cs4d8yaswpwnh" path="res://Images/UIArt/MVM UI Tabs1.png" id="4_l7lvi"]
@@ -15,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://Scripts/InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://cjud4tr1avren" path="res://Resources/Recipes/_RecipesList.tres" id="8_8jsly"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="9_6r2q2"]
+[ext_resource type="Texture2D" uid="uid://drm388i7e0ocx" path="res://Images/UIArt/MVM UI Inventory Bag.png" id="9_e5xi4"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://Scripts/InventoryStuff/InventoryLogic.cs" id="9_x2suf"]
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
@@ -265,16 +265,19 @@ metadata/_tab_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.55080646
-anchor_top = 0.2504731
+anchor_top = 0.22790366
 anchor_right = 0.9459678
-anchor_bottom = 0.89300007
-offset_bottom = 3.0
+anchor_bottom = 0.87043065
+offset_left = 0.47094727
+offset_top = 0.7274933
+offset_right = 0.24511719
+offset_bottom = 30.631958
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Crafting/Materials list" unique_id=642577612]
 layout_mode = 2
-texture = ExtResource("3_1r1x0")
+texture = ExtResource("9_e5xi4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Crafting/Materials list" unique_id=1439479942]
 layout_mode = 2
@@ -307,13 +310,13 @@ searchBar = NodePath("../SearchBar")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.66048384
-anchor_top = 0.17161663
+anchor_top = 0.12647775
 anchor_right = 0.8330645
-anchor_bottom = 0.23324992
+anchor_bottom = 0.18811104
 offset_left = -0.8773804
-offset_top = -0.2835083
-offset_right = -0.8773804
-offset_bottom = -0.2835083
+offset_top = 7.148819
+offset_right = 0.30969238
+offset_bottom = 7.648041
 metadata/_edit_use_anchors_ = true
 
 [node name="RecipeListDropdown" type="MenuButton" parent="Panel/TabContainer/Crafting/PanelContainer" unique_id=621834935]
