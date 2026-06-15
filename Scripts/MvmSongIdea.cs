@@ -17,7 +17,7 @@ public partial class MvmSongIdea : AudioStreamPlayer
 	{
 		GameScene = GetNode<Node2D>("..");
 		SingLarkRoom = "ForestSave1";
-		EndRoom = "Forest23";
+		EndRoom = "Forest24";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

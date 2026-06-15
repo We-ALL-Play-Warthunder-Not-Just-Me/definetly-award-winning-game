@@ -10,6 +10,8 @@
 [ext_resource type="FontFile" uid="uid://dcyivqkfh0ikb" path="res://04B_03__.TTF" id="8_brmfm"]
 [ext_resource type="Script" uid="uid://clbom7x2y7anl" path="res://Scripts/Map Scripts/EndTextScroll.cs" id="9_hpys1"]
 [ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="10_hpys1"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="11_fx0pk"]
+[ext_resource type="Resource" uid="uid://mndqsclaaryd" path="res://Resources/Items/Purple Items/Grapes.tres" id="12_uabi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brmfm"]
 size = Vector2(20, 192)
@@ -531,5 +533,19 @@ ExtraRooms = 4
 position = Vector2(116, -10)
 texture = ExtResource("10_hpys1")
 flip_h = true
+
+[node name="Items" type="Node2D" parent="." unique_id=302405569]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("11_fx0pk")]
+position = Vector2(-240, -7)
+baseItem = ExtResource("12_uabi8")
+
+[node name="ItemPickup3" parent="Items" unique_id=1103002129 instance=ExtResource("11_fx0pk")]
+position = Vector2(-146, -5)
+baseItem = ExtResource("12_uabi8")
+
+[node name="ItemPickup2" parent="Items" unique_id=69468118 instance=ExtResource("11_fx0pk")]
+position = Vector2(-69, -25)
+baseItem = ExtResource("12_uabi8")
 
 [connection signal="body_entered" from="Text/Area2D" to="Text" method="_CheckPlayer"]

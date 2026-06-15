@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="6_xdl78"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="7_4eok7"]
 [ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_fnj8f"]
-[ext_resource type="Resource" uid="uid://cpb6r661f3qac" path="res://Resources/Items/Yellow Items/YellowCatalyst.tres" id="8_2qb1o"]
+[ext_resource type="Resource" uid="uid://bu5svmpkpi2ug" path="res://Resources/Items/Purple Items/Nightshade.tres" id="8_fnj8f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -444,4 +444,4 @@ VertTrans = true
 
 [node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_fnj8f")]
 position = Vector2(-1, -17)
-baseItem = ExtResource("8_2qb1o")
+baseItem = ExtResource("8_fnj8f")

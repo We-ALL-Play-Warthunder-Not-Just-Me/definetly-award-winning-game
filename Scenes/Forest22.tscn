@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="5_5ofpi"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="6_dtpqm"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="7_3kreu"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_3kreu"]
+[ext_resource type="Resource" uid="uid://mndqsclaaryd" path="res://Resources/Items/Purple Items/Grapes.tres" id="9_5pgx6"]
+[ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/Yellow Items/BellPepper.tres" id="10_80uut"]
+[ext_resource type="Resource" uid="uid://06qnln20ik1b" path="res://Resources/Items/Yellow Items/Lemon.tres" id="11_s8j8q"]
+[ext_resource type="Resource" uid="uid://clychdpwcicy1" path="res://Resources/Items/Yellow Items/Topaz.tres" id="12_eohe2"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="13_bey8o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -636,3 +642,83 @@ ToChunk = 1
 position = Vector2(320, -96)
 NextMap = "ForestSave2"
 ToChunk = 1
+
+[node name="Items" type="Node2D" parent="." unique_id=1103947639]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_3kreu")]
+position = Vector2(181, 69)
+baseItem = ExtResource("9_5pgx6")
+
+[node name="ItemPickup3" parent="Items" unique_id=883224355 instance=ExtResource("8_3kreu")]
+position = Vector2(253, 116)
+baseItem = ExtResource("9_5pgx6")
+
+[node name="ItemPickup4" parent="Items" unique_id=1370775248 instance=ExtResource("8_3kreu")]
+position = Vector2(296, 116)
+baseItem = ExtResource("9_5pgx6")
+
+[node name="ItemPickup5" parent="Items" unique_id=1331968762 instance=ExtResource("8_3kreu")]
+position = Vector2(35, 146)
+baseItem = ExtResource("10_80uut")
+
+[node name="ItemPickup6" parent="Items" unique_id=1049082492 instance=ExtResource("8_3kreu")]
+position = Vector2(79, 142)
+baseItem = ExtResource("10_80uut")
+
+[node name="ItemPickup7" parent="Items" unique_id=702138117 instance=ExtResource("8_3kreu")]
+position = Vector2(-34, 142)
+baseItem = ExtResource("10_80uut")
+
+[node name="ItemPickup13" parent="Items" unique_id=763230559 instance=ExtResource("8_3kreu")]
+position = Vector2(-168, -23)
+baseItem = ExtResource("11_s8j8q")
+
+[node name="ItemPickup14" parent="Items" unique_id=771966732 instance=ExtResource("8_3kreu")]
+position = Vector2(-127, -34)
+baseItem = ExtResource("11_s8j8q")
+
+[node name="ItemPickup15" parent="Items" unique_id=1269102533 instance=ExtResource("8_3kreu")]
+position = Vector2(-72, -20)
+baseItem = ExtResource("11_s8j8q")
+
+[node name="ItemPickup16" parent="Items" unique_id=373931141 instance=ExtResource("8_3kreu")]
+position = Vector2(116, -45)
+baseItem = ExtResource("11_s8j8q")
+
+[node name="ItemPickup20" parent="Items" unique_id=390020248 instance=ExtResource("8_3kreu")]
+position = Vector2(5, -155)
+baseItem = ExtResource("12_eohe2")
+
+[node name="ItemPickup17" parent="Items" unique_id=516628946 instance=ExtResource("8_3kreu")]
+position = Vector2(138, -30)
+baseItem = ExtResource("11_s8j8q")
+
+[node name="ItemPickup18" parent="Items" unique_id=1937673243 instance=ExtResource("8_3kreu")]
+position = Vector2(244, -119)
+baseItem = ExtResource("13_bey8o")
+
+[node name="ItemPickup19" parent="Items" unique_id=159917156 instance=ExtResource("8_3kreu")]
+position = Vector2(271, -123)
+baseItem = ExtResource("13_bey8o")
+
+[node name="ItemPickup8" parent="Items" unique_id=1097222686 instance=ExtResource("8_3kreu")]
+position = Vector2(2, 149)
+baseItem = ExtResource("10_80uut")
+
+[node name="ItemPickup9" parent="Items" unique_id=867417189 instance=ExtResource("8_3kreu")]
+position = Vector2(-141, 140)
+baseItem = ExtResource("10_80uut")
+
+[node name="ItemPickup11" parent="Items" unique_id=872425028 instance=ExtResource("8_3kreu")]
+position = Vector2(-263, 103)
+
+[node name="ItemPickup12" parent="Items" unique_id=1952088361 instance=ExtResource("8_3kreu")]
+position = Vector2(-213, 95)
+
+[node name="ItemPickup10" parent="Items" unique_id=303672262 instance=ExtResource("8_3kreu")]
+position = Vector2(-105, 147)
+baseItem = ExtResource("10_80uut")
+
+[node name="ItemPickup2" parent="Items" unique_id=686802450 instance=ExtResource("8_3kreu")]
+position = Vector2(200, 50)
+baseItem = ExtResource("10_80uut")
