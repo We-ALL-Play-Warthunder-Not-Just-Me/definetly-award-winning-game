@@ -28,6 +28,7 @@
 [ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/BellPepper.tres" id="25_w072o"]
 [ext_resource type="Resource" uid="uid://clychdpwcicy1" path="res://Resources/Items/Topaz.tres" id="26_2m3db"]
 [ext_resource type="Resource" uid="uid://5pq55wp0444t" path="res://Resources/Items/MawTeeth.tres" id="27_rntdb"]
+[ext_resource type="Resource" uid="uid://b150fuhlavpfo" path="res://Resources/Items/Garland.tres" id="28_jix0e"]
 
 [resource]
 script = ExtResource("3_r8lrb")
@@ -57,5 +58,6 @@ items = Dictionary[int, ExtResource("1_g3e45")]({
 23: ExtResource("24_g8c6o"),
 24: ExtResource("25_w072o"),
 25: ExtResource("26_2m3db"),
-26: ExtResource("27_rntdb")
+26: ExtResource("27_rntdb"),
+27: ExtResource("28_jix0e")
 })
