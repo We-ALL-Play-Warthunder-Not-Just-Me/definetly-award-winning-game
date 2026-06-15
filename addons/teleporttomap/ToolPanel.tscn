@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cj3cvffgjdnae"]
+
+[ext_resource type="Script" uid="uid://41tftrj4xnpp" path="res://addons/teleporttomap/ToolPanel.cs" id="1_juqmr"]
+
+[node name="ToolPanel" type="VBoxContainer" unique_id=531341526 node_paths=PackedStringArray("spinBoxX", "spinBoxY", "goButton")]
+size_flags_horizontal = 4
+script = ExtResource("1_juqmr")
+spinBoxX = NodePath("HBoxContainer/SpinBox")
+spinBoxY = NodePath("HBoxContainer/SpinBox2")
+goButton = NodePath("HBoxContainer/Button")
+
+[node name="Label" type="Label" parent="." unique_id=1076453404]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Teleport"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=745321993]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer" unique_id=1235488637]
+layout_mode = 2
+max_value = 500.0
+
+[node name="SpinBox2" type="SpinBox" parent="HBoxContainer" unique_id=1317038879]
+layout_mode = 2
+max_value = 500.0
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=440884693]
+layout_mode = 2
+text = "GO"
