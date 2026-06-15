@@ -33,7 +33,7 @@ public partial class RecipeListDropDown : MenuButton
 		int itemID = (int)GetPopup().GetItemMetadata((int)id);
 		foreach (var (item,amount) in recipesList.recipes[itemID].ingredients)
 		{
-			Item tempItem = item.shallowCopy(amount);
+			Item tempItem = item.Copy(amount);
 			EmitSignal(SignalName.SentItem, tempItem, amount);
 		}
 	}

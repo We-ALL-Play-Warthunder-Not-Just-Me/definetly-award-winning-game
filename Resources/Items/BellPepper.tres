@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://etijdq1jrcbs"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_l0bnc"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_pispj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qklvq"]
+atlas = ExtResource("1_l0bnc")
+region = Rect2(96, 128, 32, 32)
+
+[resource]
+script = ExtResource("2_pispj")
+ID = 24
+Name = "Bell Pepper"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_qklvq")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

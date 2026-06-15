@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("2_dmhdi")
-ID = 3
 Name = "Flask of Pink Tears"
 qty = 1
 max_qty = 1

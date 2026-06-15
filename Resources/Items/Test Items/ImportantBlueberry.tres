@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_daca8")
-ID = 2
 Name = "Important Blueberry"
 qty = 1
 max_qty = 25

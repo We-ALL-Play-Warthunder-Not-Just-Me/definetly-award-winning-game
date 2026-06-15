@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="InventoryStorage" format=3 uid="uid://dxo3xqblarkkv"]
+[gd_resource type="Resource" script_class="InventoryStorage" format=3]
 
-[ext_resource type="Script" uid="uid://vyw1ws4cgmpn" path="res://Resources/BaseCases/InventoryStorage.cs" id="1_js4bq"]
+[ext_resource type="Script" path="res://Resources/BaseCases/InventoryStorage.cs" id="1_js4bq"]
 
 [resource]
 script = ExtResource("1_js4bq")
-inventory = Dictionary[int, int]({
-3: 1,
-4: 1
-})
 metadata/_custom_type_script = "uid://vyw1ws4cgmpn"

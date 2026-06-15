@@ -9,7 +9,7 @@ region = Rect2(0, 64, 32, 32)
 
 [resource]
 script = ExtResource("1_04o6b")
-ID = 6
+ID = 9
 Name = "Blue Catalyst"
 qty = 1
 max_qty = 1
