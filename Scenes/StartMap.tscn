@@ -447,7 +447,7 @@ position = Vector2(-80, 8)
 texture = ExtResource("4_iw0qa")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 8
+z_index = 2
 tile_map_data = PackedByteArray("AAD2/wIAAQAAAAEAAAD4/wMAAQAAAAEAAAD7/wMAAQAAAAEAAAABAAMAAQAAAAEAAAAIAAIAAQAAAAEAAAAEAAIAAQAAAAEAAAACAAIAAQACAAEAAAAGAAIAAQACAAEAAAD+/wMAAQACAAEAAAD5/wMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 

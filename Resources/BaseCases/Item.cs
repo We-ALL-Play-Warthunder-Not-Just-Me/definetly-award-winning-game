@@ -18,16 +18,16 @@ public partial class Item : Resource
 
     }
 
-    public Item(int ID, string name, int qty, int max_qty, Texture2D icon, bool important = false, bool consumable = true)
-    {
-        this.ID = ID;
-        this.Name = name;
-        this.qty = qty;
-        this.max_qty = max_qty;
-        this.icon = icon;
-        this.important = important;
-        this.consumable = consumable;
-    }
+	public Item(int ID, string name, int qty, int max_qty, Texture2D icon, bool important = false, bool consumable = true)
+	{
+		this.ID = ID;
+		this.Name = name;
+		this.qty = qty;
+		this.max_qty = max_qty;
+		this.icon = icon;
+		this.important = important;
+		this.consumable = consumable;
+	}
 
     public Item Copy()
     {
@@ -41,12 +41,12 @@ public partial class Item : Resource
         return tempItem;
     }
 
-    // I don't have an Object inside my Object
-    // public Item deepCopy()
-    // {
-    //     Item other = (Item)MemberwiseClone();
-    //     other.
-    //     return other;
-    // }
+	// I don't have an Object inside my Object
+	// public Item deepCopy()
+	// {
+	//     Item other = (Item)MemberwiseClone();
+	//     other.
+	//     return other;
+	// }
 
 }
