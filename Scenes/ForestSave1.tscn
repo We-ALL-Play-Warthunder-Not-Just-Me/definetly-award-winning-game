@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3yklf5lbir3p" path="res://Prefabs/WoodenDock.tscn" id="4_edvoh"]
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="4_wabmj"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="5_ga3d4"]
+[ext_resource type="Texture2D" uid="uid://cdi4gq0wg212u" path="res://Images/MVM Towns People.png" id="5_wabmj"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_t3ehi"]
 [ext_resource type="Texture2D" uid="uid://blim2bdu5n6nq" path="res://Images/Objects/Campfire Save.png" id="8_jmhea"]
 
@@ -894,6 +895,79 @@ position = Vector2(72, 54)
 offset = Vector2(0, -3)
 region_enabled = true
 region_rect = Rect2(0, 34, 98, 6)
+
+[node name="TownFishingDock3" parent="Platforms" unique_id=264436621 instance=ExtResource("4_edvoh")]
+position = Vector2(-15, -26)
+offset = Vector2(-1, -3)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 34, 98, 6)
+
+[node name="TownFishingDock4" parent="Platforms" unique_id=971251391 instance=ExtResource("4_edvoh")]
+position = Vector2(14, -26)
+offset = Vector2(0, -3)
+region_enabled = true
+region_rect = Rect2(0, 34, 98, 6)
+
+[node name="SingLark" type="Node2D" parent="." unique_id=324863765]
+
+[node name="MvmTownsPeople" type="Sprite2D" parent="SingLark" unique_id=1651827318]
+position = Vector2(0, -48)
+texture = ExtResource("5_wabmj")
+region_enabled = true
+region_rect = Rect2(64, 64, 32, 32)
+
+[node name="MvmTownsPeople2" type="Sprite2D" parent="SingLark" unique_id=2048817144]
+position = Vector2(-45, -53)
+texture = ExtResource("5_wabmj")
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 32)
+
+[node name="MvmTownsPeople3" type="Sprite2D" parent="SingLark" unique_id=1143261810]
+position = Vector2(38, -48)
+texture = ExtResource("5_wabmj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(32, 64, 32, 32)
+
+[node name="MvmTownsPeople4" type="Sprite2D" parent="SingLark" unique_id=1979210374]
+position = Vector2(-90, -17)
+texture = ExtResource("5_wabmj")
+region_enabled = true
+region_rect = Rect2(96, 64, 32, 32)
+
+[node name="MvmTownsPeople5" type="Sprite2D" parent="SingLark" unique_id=612146475]
+position = Vector2(95, -45)
+texture = ExtResource("5_wabmj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(128, 64, 32, 32)
+
+[node name="MvmTownsPeople6" type="Sprite2D" parent="SingLark" unique_id=1868323012]
+position = Vector2(120, 16)
+texture = ExtResource("5_wabmj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 32)
+
+[node name="MvmTownsPeople7" type="Sprite2D" parent="SingLark" unique_id=227920405]
+position = Vector2(-64, 32)
+texture = ExtResource("5_wabmj")
+region_enabled = true
+region_rect = Rect2(32, 64, 32, 32)
+
+[node name="MvmTownsPeople8" type="Sprite2D" parent="SingLark" unique_id=1754958537]
+position = Vector2(64, 32)
+texture = ExtResource("5_wabmj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(96, 64, 32, 32)
+
+[node name="MvmTownsPeople9" type="Sprite2D" parent="SingLark" unique_id=1171838207]
+position = Vector2(-109, 16)
+texture = ExtResource("5_wabmj")
+region_enabled = true
+region_rect = Rect2(128, 64, 32, 32)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
 z_index = 1

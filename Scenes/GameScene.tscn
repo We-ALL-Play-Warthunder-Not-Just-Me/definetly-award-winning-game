@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cy8s4qhyq3y21" path="res://Audio/Music/MVM Song Idea (Idea #70).wav" id="4_y30xb"]
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scripts/MvmSongIdea.cs" id="5_xhjei"]
 [ext_resource type="PackedScene" uid="uid://bkxfy70udf36n" path="res://Prefabs/PauseStatus/PauseStatus.tscn" id="6_6vvcf"]
+[ext_resource type="AudioStream" uid="uid://bgn01fmxd7t7q" path="res://Audio/SingLark (NGGYU).wav" id="6_x6js8"]
 
 [node name="GameScene" type="Node2D" unique_id=359298613]
 
@@ -24,7 +25,10 @@ limit_bottom = 84
 [node name="MvmSongIdea" type="AudioStreamPlayer" parent="." unique_id=1289639467]
 stream = ExtResource("4_y30xb")
 volume_db = -8.0
+autoplay = true
 script = ExtResource("5_xhjei")
+OriginalSong = ExtResource("4_y30xb")
+SingLark = ExtResource("6_x6js8")
 
 [node name="PauseStatus" parent="." unique_id=1296144696 instance=ExtResource("6_6vvcf")]
 visible = false

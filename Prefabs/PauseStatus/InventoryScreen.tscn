@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Prefabs/PauseStatus/ScriptsofPause/InventoryScreen.cs" id="1_8w81r"]
-[ext_resource type="Texture2D" uid="uid://b0800t8ihojva" path="res://Images/Witch Portraits2.png" id="2_kexwp"]
+[ext_resource type="Texture2D" uid="uid://b0800t8ihojva" path="res://Images/UIArt/Witch Portraits2.png" id="2_kexwp"]
 [ext_resource type="Texture2D" uid="uid://bpot1vbf4npy1" path="res://Images/UIArt/MVM UI Inventory Background.png" id="2_oa2n3"]
 [ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="3_1r1x0"]
 [ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="3_48de8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bwbmmtqygtfxm" path="res://Images/UIArt/MVM UI Tabs3.png" id="5_uvv1k"]
 [ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Placeholder/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Script" uid="uid://5hfqkgk7au4i" path="res://Scripts/Crafting/CraftingMaterial.cs" id="6_j3iwo"]
+[ext_resource type="Texture2D" uid="uid://bdsur5v6u15yj" path="res://Images/SingLark.png" id="7_uvv1k"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://Scripts/InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://cjud4tr1avren" path="res://Resources/Recipes/_RecipesList.tres" id="8_8jsly"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="9_6r2q2"]
@@ -19,9 +20,9 @@
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
-[ext_resource type="Resource" uid="uid://ic34020dpmw0" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
+[ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
-[ext_resource type="Resource" uid="uid://bcfqek4y6r8sl" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
+[ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
 [ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://Scripts/InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
 [ext_resource type="Texture2D" uid="uid://b2ihi36ps2m7s" path="res://Images/UIArt/MVM Cauldron.png" id="13_uihuo"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
@@ -73,6 +74,9 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xpnv"]
 bg_color = Color(0.96194917, 0.3059871, 0.67877233, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb6lx"]
+bg_color = Color(0.92156863, 0.6627451, 0.4509804, 0.1764706)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yeari"]
 
@@ -199,6 +203,14 @@ text = "Other thing"
 layout_mode = 2
 text = "Other Status"
 
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Status" unique_id=1029251993]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 321.0
+offset_right = 1072.0
+offset_bottom = 401.0
+texture = ExtResource("7_uvv1k")
+
 [node name="Equipment" type="PanelContainer" parent="Panel/TabContainer/Status" unique_id=1888484757]
 layout_mode = 1
 anchors_preset = 6
@@ -212,6 +224,7 @@ offset_right = -80.0
 offset_bottom = 102.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hb6lx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Status/Equipment" unique_id=1636720512]
 layout_mode = 2
@@ -224,12 +237,15 @@ layout_mode = 2
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.6039216, 0.21960784, 0.27450982, 1)
 theme_override_font_sizes/font_size = 15
-text = "I'll tell ya'll a story 'bout a girl I once knew, who grew up in Jersey but to Cali she flew. We lost touch for a moment, or maybe a year. Always carried her memory right between both my ears. She was birght, funny, always wanted the best, put a smile in my history and I said 'fore she left...
+text = "We're no strangers to love, you know the rules and so do I. A full commitment's what I'm thinking of, you wouldn't get this from any other guy. I just want to tell you how I'm feeling. Gotta make you understand!
 
-\"There'll be time to catch up with you. Maybe over coffee, or a quick bite to eat, when you're 22.\"
+Never gonna give you up, never gonna let you down, never gonna run around and desert you. Never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you.
 
-So I'll take a little moment to say I really really miss you, and I'll be really honest you were never one I thought we'd lose. So I'll take another moment to say I really really miss you, and now we really can't undo the time we could of should of used. So I'll tell mom and dad I love them, cause forever's not far if tomorrow's not coming."
+We've known each other, for so long. Your hearts been aching but you're to shy to say it. Inside, we both know what's been going on. We know the game, and we're gonna play it.
+
+And if you ask me how I'm feeling, don't tell me you're too blind to see!"
 autowrap_mode = 2
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
@@ -582,6 +598,4 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 script = ExtResource("13_ou5ub")
 
-[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
 [connection signal="item_selected" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" method="_on_item_selected"]
-[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
