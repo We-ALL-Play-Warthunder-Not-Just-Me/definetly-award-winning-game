@@ -26,16 +26,6 @@ limit_bottom = 84
 stream = ExtResource("4_y30xb")
 volume_db = -8.0
 autoplay = true
-bus = &"Sound Effects"
-script = ExtResource("5_xhjei")
-OriginalSong = ExtResource("4_y30xb")
-SingLark = ExtResource("6_x6js8")
-
-[node name="MvmSongIdea2" type="AudioStreamPlayer" parent="." unique_id=750845917]
-stream = ExtResource("4_y30xb")
-volume_db = -8.0
-autoplay = true
-bus = &"Music"
 script = ExtResource("5_xhjei")
 OriginalSong = ExtResource("4_y30xb")
 SingLark = ExtResource("6_x6js8")
@@ -44,4 +34,3 @@ SingLark = ExtResource("6_x6js8")
 visible = false
 
 [connection signal="finished" from="MvmSongIdea" to="MvmSongIdea" method="SongFinished"]
-[connection signal="finished" from="MvmSongIdea2" to="MvmSongIdea2" method="SongFinished"]

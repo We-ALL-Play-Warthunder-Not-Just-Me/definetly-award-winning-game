@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Prefabs/PauseStatus/ScriptsofPause/InventoryScreen.cs" id="1_8w81r"]
+[ext_resource type="FontFile" uid="uid://dcyivqkfh0ikb" path="res://04B_03__.TTF" id="2_hb6lx"]
 [ext_resource type="Texture2D" uid="uid://b0800t8ihojva" path="res://Images/UIArt/Witch Portraits2.png" id="2_kexwp"]
 [ext_resource type="Texture2D" uid="uid://bpot1vbf4npy1" path="res://Images/UIArt/MVM UI Inventory Background.png" id="2_oa2n3"]
 [ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="3_1r1x0"]
@@ -18,9 +19,9 @@
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
-[ext_resource type="Resource" uid="uid://dr2ywngr5j77y" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
+[ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
-[ext_resource type="Resource" uid="uid://dxo3xqblarkkv" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
+[ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
 [ext_resource type="Texture2D" uid="uid://b2ihi36ps2m7s" path="res://Images/UIArt/MVM Cauldron.png" id="13_uihuo"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
 [ext_resource type="Texture2D" uid="uid://dh11eqa28ru63" path="res://Images/UIArt/MVM UI Crafted Item Holder.png" id="15_l7lvi"]
@@ -34,16 +35,18 @@ texture = ExtResource("2_oa2n3")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmjmk"]
 texture = ExtResource("3_e5xi4")
 texture_margin_left = 8.0
+texture_margin_top = 28.0
 texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+texture_margin_bottom = 4.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_154ae"]
 texture = ExtResource("4_l7lvi")
 texture_margin_left = 8.0
+texture_margin_top = 12.0
 texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+texture_margin_bottom = 4.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 128, 40)
@@ -51,13 +54,19 @@ region_rect = Rect2(0, 0, 128, 40)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7v4bx"]
 texture = ExtResource("5_uvv1k")
 texture_margin_left = 8.0
+texture_margin_top = 28.0
 texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+texture_margin_bottom = 4.0
 axis_stretch_vertical = 1
 
 [sub_resource type="Theme" id="Theme_chdmw"]
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("2_hb6lx")
+TabContainer/colors/font_hovered_color = Color(0.94509804, 0.8352941, 0.42352942, 1)
+TabContainer/colors/font_unselected_color = Color(0.8, 0.50980395, 0.3647059, 1)
 TabContainer/constants/side_margin = 24
-TabContainer/font_sizes/font_size = 20
+TabContainer/font_sizes/font_size = 24
+TabContainer/fonts/font = ExtResource("2_hb6lx")
 TabContainer/styles/panel = SubResource("StyleBoxTexture_hb6lx")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_nmjmk")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_154ae")
@@ -118,7 +127,7 @@ offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_chdmw")
-current_tab = 2
+current_tab = 1
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
@@ -191,6 +200,7 @@ show_percentage = false
 [node name="HealthNum" type="Label" parent="Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" unique_id=1540667226]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 text = "128"
 
 [node name="RichTextLabel2" type="Label" parent="Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer" unique_id=39778107]
@@ -236,7 +246,8 @@ custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.6039216, 0.21960784, 0.27450982, 1)
-theme_override_font_sizes/font_size = 15
+theme_override_fonts/font = ExtResource("2_hb6lx")
+theme_override_font_sizes/font_size = 16
 text = "We're no strangers to love, you know the rules and so do I. A full commitment's what I'm thinking of, you wouldn't get this from any other guy. I just want to tell you how I'm feeling. Gotta make you understand!
 
 Never gonna give you up, never gonna let you down, never gonna run around and desert you. Never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you.
@@ -247,7 +258,6 @@ And if you ask me how I'm feeling, don't tell me you're too blind to see!"
 autowrap_mode = 2
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -271,11 +281,14 @@ layout_mode = 2
 
 [node name="SearchBar" type="LineEdit" parent="Panel/TabContainer/Crafting/Materials list/VBoxContainer" unique_id=411456111]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
+theme_override_font_sizes/font_size = 20
 placeholder_text = "Search"
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/Materials list/VBoxContainer" unique_id=1709631824 node_paths=PackedStringArray("searchBar")]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hb6lx")
 item_count = 3
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "ITEM 1"
@@ -305,6 +318,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RecipeListDropdown" type="MenuButton" parent="Panel/TabContainer/Crafting/PanelContainer" unique_id=621834935]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 text = "Recipes"
 expand_icon = true
 item_count = 1
@@ -396,6 +410,7 @@ grow_vertical = 2
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/CRAFTING?!/MarginContainer" unique_id=2046422626 node_paths=PackedStringArray("materialInventory", "keyItemInventory", "materialList", "craftButton", "RecipeListdropdown")]
 layout_mode = 2
 theme = SubResource("Theme_yeari")
+theme_override_fonts/font = ExtResource("2_hb6lx")
 item_count = 2
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "Test item 1"
@@ -431,6 +446,7 @@ stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -542,6 +558,7 @@ theme_override_constants/margin_bottom = 22
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889 node_paths=PackedStringArray("inventoryPicture")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 allow_rmb_select = true
 fixed_icon_size = Vector2i(50, 50)
 script = ExtResource("9_x2suf")
@@ -568,6 +585,7 @@ theme_override_constants/margin_bottom = 22
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer" unique_id=907363798 node_paths=PackedStringArray("inventoryPicture")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 script = ExtResource("9_x2suf")
 itemDatabase = ExtResource("10_sygrt")
 inventory = ExtResource("13_8wvro")

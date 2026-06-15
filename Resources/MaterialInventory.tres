@@ -10,10 +10,12 @@ inventory = Dictionary[int, int]({
 5: 9,
 8: 1,
 9: 1,
-10: 67,
+10: 66,
 13: 20,
 15: 1,
-19: 19,
-21: 1
+16: 1,
+19: 18,
+21: 1,
+25: 1
 })
 metadata/_custom_type_script = "uid://vyw1ws4cgmpn"
