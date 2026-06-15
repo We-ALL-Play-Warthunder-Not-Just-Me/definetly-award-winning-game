@@ -163,6 +163,23 @@ public partial class InventoryLogic : ItemList
 		return itemDatabase.items[ID].Name;
 	}
 
+	public Item GetInventoryItemfromID(int ID)
+	{
+		if (ID == 0) return null;
+		if (inventory.inventory.ContainsKey(ID))
+		{
+			return itemDatabase.items[ID].Copy(GetInventoryItemQtyFromID(ID));
+		}
+		return null;
+	}
+
+	public Item GetInventoryItemfromindex (int index)
+	{
+		if (index < 0 || index >= inventory.inventory.Count) return null;
+		int id = (int)GetItemMetadata(index);
+		return GetInventoryItemfromID(id);
+	}
+
 	private void OnInventoryItemClicked(long index, Vector2 pos, long mousebuttonindex)
 	{
 		if (mousebuttonindex == 2)
