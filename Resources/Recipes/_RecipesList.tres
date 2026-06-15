@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="1_elok7"]
 [ext_resource type="Resource" uid="uid://ptac64tt3fvw" path="res://Resources/Recipes/BlueberryPieRecipe.tres" id="2_uomo0"]
 [ext_resource type="Script" uid="uid://dvdn1ky531oj6" path="res://Resources/BaseCases/RecipesList.cs" id="3_7pemj"]
+[ext_resource type="Resource" uid="uid://cjt36v1kxum3h" path="res://Resources/Recipes/LemonsToLemonade.tres" id="3_g3qp0"]
+[ext_resource type="Resource" uid="uid://di0i4l76tfjld" path="res://Resources/Recipes/StrawberryShortcakeRecipe.tres" id="4_d8h8c"]
 
 [resource]
 script = ExtResource("3_7pemj")
 recipes = Dictionary[int, ExtResource("1_elok7")]({
-1: ExtResource("2_uomo0")
+1: ExtResource("2_uomo0"),
+2: ExtResource("3_g3qp0"),
+3: ExtResource("4_d8h8c")
 })
 metadata/_custom_type_script = "uid://dvdn1ky531oj6"
