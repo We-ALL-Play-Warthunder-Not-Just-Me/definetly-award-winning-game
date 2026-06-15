@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://bg4h5rin6m4pu"]
+
+[ext_resource type="Texture2D" uid="uid://dbxpfqlobecsu" path="res://Images/UIArt/MVM Healthbar1.png" id="1_bw6r0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f78qq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exc18"]
+texture = ExtResource("1_bw6r0")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(4, 4, 444, 64)
+
+[resource]
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_f78qq")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_exc18")

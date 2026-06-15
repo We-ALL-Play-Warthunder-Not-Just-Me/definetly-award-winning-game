@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cq11k2aec8vtb"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_r5i0l"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_hx75j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1kkj"]
+atlas = ExtResource("1_r5i0l")
+region = Rect2(33, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_hx75j")
+ID = 2
+Name = "Lemonade"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_o1kkj")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

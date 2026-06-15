@@ -12,7 +12,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		UpdateItemlist();
 		materialInventory.Changed += UpdateItemlist;
-		ItemActivated += SelectItem;
+		//ItemActivated += SelectItem;
 		ItemClicked += OnInventoryItemClicked;
 		searchBar.TextChanged += SearchItemList;
 	}
@@ -20,20 +20,20 @@ public partial class CraftingMaterial : ItemList
 	private void SearchItemList(String text)
 	{
 		Clear();
-		if(text == null || text == "")
+		if (text == null || text == "")
 		{
 			UpdateItemlist();
 			return;
 		}
-		
-		foreach (var (id,amount) in materialInventory.inventory)
+
+		foreach (var (id, amount) in materialInventory.inventory)
 		{
-			if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
+			if (itemDatabase.items[id].Name.Contains(text, StringComparison.OrdinalIgnoreCase))
 			{
 				if (itemDatabase.items[id].max_qty == 1)
 				{
-						int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
-						SetItemMetadata(i, itemDatabase.items[id].ID);
+					int i = AddItem(itemDatabase.items[id].Name, itemDatabase.items[id].icon);
+					SetItemMetadata(i, itemDatabase.items[id].ID);
 				}
 				else
 				{
@@ -48,7 +48,7 @@ public partial class CraftingMaterial : ItemList
 	public void UpdateItemlist()
 	{
 		Clear();
-		foreach (var (id,amount) in materialInventory.inventory)
+		foreach (var (id, amount) in materialInventory.inventory)
 		{
 			if (itemDatabase.items[id].max_qty == 1)
 			{
@@ -69,7 +69,7 @@ public partial class CraftingMaterial : ItemList
 
 	private void SelectItem(long index)
 	{
-		Item sendingItem = GetInventoryItem((int) index);
+		Item sendingItem = GetInventoryItem((int)index);
 		int amount = 1;
 		if (Input.IsPhysicalKeyPressed(Key.Shift))
 		{
@@ -84,7 +84,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		if (index < 0 || index >= materialInventory.inventory.Count) return null;
 		int id = (int)GetItemMetadata(index);
-		Item temp = itemDatabase.items[id].shallowCopy();
+		Item temp = itemDatabase.items[id].Copy();
 		if (materialInventory.inventory.ContainsKey(id))
 		{
 			temp.qty = materialInventory.inventory[id];
@@ -96,7 +96,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		if (mousebuttonindex == 1)
 		{
-			Item sendingItem = GetInventoryItem((int) index);
+			Item sendingItem = GetInventoryItem((int)index);
 			int amount = 1;
 			if (Input.IsPhysicalKeyPressed(Key.Shift))
 			{

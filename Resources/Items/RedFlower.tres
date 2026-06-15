@@ -1,13 +1,17 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://cw3bxc8atgj1e"]
 
-[ext_resource type="Texture2D" uid="uid://dmay3twpocg1d" path="res://Images/UIArt/Red Flower.png" id="1_a80tu"]
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_a80tu"]
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_efudf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxqac"]
+atlas = ExtResource("1_a80tu")
+region = Rect2(64, 96, 32, 32)
 
 [resource]
 script = ExtResource("1_efudf")
-ID = 8
-Name = "Red Flower"
-qty = 5
+ID = 17
+Name = "Poppy"
+qty = 1
 max_qty = 100
-icon = ExtResource("1_a80tu")
+icon = SubResource("AtlasTexture_oxqac")
 metadata/_custom_type_script = "uid://nh7pbovwuooe"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dssvu78m2okab"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_8mx0x"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_1e3rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mx0x"]
+atlas = ExtResource("1_8mx0x")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+script = ExtResource("2_1e3rt")
+ID = 4
+Name = "Purple Catalyst"
+qty = 1
+max_qty = 1
+icon = SubResource("AtlasTexture_8mx0x")
+important = true
+consumable = false
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

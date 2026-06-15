@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://mndqsclaaryd"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_oxm7o"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_s4mpx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxm7o"]
+atlas = ExtResource("1_oxm7o")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+script = ExtResource("2_s4mpx")
+ID = 5
+Name = "Grapes"
+qty = 1
+max_qty = 40
+icon = SubResource("AtlasTexture_oxm7o")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

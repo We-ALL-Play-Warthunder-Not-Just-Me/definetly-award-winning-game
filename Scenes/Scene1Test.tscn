@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://btkleiwt6n17y"]
 
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="1_47obr"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="1_47obr"]
 [ext_resource type="PackedScene" uid="uid://ccobfdldi45wb" path="res://Prefabs/player.tscn" id="2_aydrw"]
 [ext_resource type="PackedScene" uid="uid://r427386qtinh" path="res://Prefabs/potionmaterials.tscn" id="3_47obr"]
 [ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="4_47obr"]

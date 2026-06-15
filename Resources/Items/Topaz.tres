@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://clychdpwcicy1"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_5hnou"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_xddd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xddd5"]
+atlas = ExtResource("1_5hnou")
+region = Rect2(128, 128, 32, 32)
+
+[resource]
+script = ExtResource("2_xddd5")
+ID = 25
+Name = "Topaz"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_xddd5")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

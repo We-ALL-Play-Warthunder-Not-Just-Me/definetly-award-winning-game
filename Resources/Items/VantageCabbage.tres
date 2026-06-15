@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c51v1fpv27m7y"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_60b8k"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_o81kp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b412p"]
+atlas = ExtResource("1_60b8k")
+region = Rect2(96, 64, 32, 32)
+
+[resource]
+script = ExtResource("2_o81kp")
+ID = 12
+Name = "Vantage Cabbage"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_b412p")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

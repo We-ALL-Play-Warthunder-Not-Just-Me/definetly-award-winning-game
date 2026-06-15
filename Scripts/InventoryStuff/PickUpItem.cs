@@ -6,21 +6,19 @@ public partial class PickUpItem : Area2D
 
 	[Export] Item baseItem;
 	[Export] int amount;
-	Item item;
 	// Can be the Materials inventory itemlist or the KeyItems inventory Itemlist
 	[Export] InventoryLogic invent;
 	// [Export] bool MaterialInventory = true;
 	[Export] bool KeyItemInventory = false;
 	private Sprite2D sprite;
 	[Export] Texture2D replacementPicture = null;
-	private Node globals;
+	// private Node globals;
 
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		BodyEntered += ItemTouched;
-		item = baseItem.shallowCopy(amount);
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		if (replacementPicture != null)
 		{
@@ -29,7 +27,7 @@ public partial class PickUpItem : Area2D
 		else
 		{
 			sprite.Texture = baseItem.icon;
-			sprite.Scale = new Vector2((float)0.25,(float)0.25);
+			//sprite.Scale = new Vector2((float)0.25,(float)0.25);
 		}
 		// invent = GetNode<InventoryLogic>("../../../PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList");
 		// invent = GetNode<InventoryLogic>("/root/GameScene/PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList");
@@ -59,15 +57,17 @@ public partial class PickUpItem : Area2D
 	{
 		if (body.IsInGroup("Player"))
 		{
-			if (AddNewItem())
+			if (AddNewItem(amount))
 			{
 				QueueFree();
 			}
 		}
 	}
 
-	private bool AddNewItem()
+	private bool AddNewItem(int amount)
 	{
+		baseItem.qty = amount;
+		Item item = baseItem;
 		return invent.AddInventoryItem(item);
 	}
 

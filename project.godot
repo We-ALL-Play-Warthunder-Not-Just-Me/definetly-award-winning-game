@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="DefinetlyAwardWinningGame"
-run/main_scene="uid://bwvmk5l8bfwat"
+run/main_scene="uid://bpsngil7crafg"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://Images/icon.svg"
 run/size/viewport_width=1280
+
+[audio]
+
+buses/default_bus_layout="uid://retmvm800f86"
 
 [autoload]
 
@@ -24,6 +28,7 @@ MapManager="*uid://ci01wourqhhwe"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [dotnet]
 

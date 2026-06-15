@@ -48,14 +48,14 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		//change the player state here
 		//Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
 		GD.Print(Health_Bar.hurt(damage));
-    }
-    //Constants
-    public const float SPEED = 120.0f;
+	}
+	//Constants
+	public const float SPEED = 120.0f;
 	public const float RUNSPEED = 200.0f;
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
-	public const double COYOTEPERIOD = 0.5;
+	public const double COYOTEPERIOD = 0.15;
 
 	//player parts
 	public CharacterBody2D PlayerObject;
@@ -71,7 +71,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public AnimationPlayer PlayerAnimations;
 
 	//Random Health Bar class
-	public HealthBar Health_Bar;
+	[Export]public HealthBar Health_Bar;
 
 	public PlayerMoveState pms = PlayerMoveState.IDLE;
 	public PlayerState ps = PlayerState.FINE;
@@ -87,7 +87,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		PlayerCollisionShape = GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		PlayerAnimations = GetNode<AnimationPlayer>("AnimationPlayer");
 		PlayerStateLabel = GetNode<RichTextLabel>("PlayerStateLabel");
-		Health_Bar = GetNode<HealthBar>("HealthBar");
+		if(Health_Bar == null) Health_Bar = GetNode<HealthBar>("CanvasLayer/HealthBar");
 		_player_text_helper();
 		PlayerMoveStateLabel = GetNode<RichTextLabel>("PlayerMoveStateLabel");
 		_move_text_helper();
@@ -240,10 +240,10 @@ public partial class Player : CharacterBody2D, DamagableEntity
 					}	
 					pjs = PlayerJumpState.FALLING;	
 				} else if (v.Y >= 0)
-                {
-                    pjs = PlayerJumpState.FALLING;
-                }
-                break;
+				{
+					pjs = PlayerJumpState.FALLING;
+				}
+				break;
 			case (PlayerJumpState.LANDING):
 				//if the player aint falling then we don't land, eventually we will want to add a timer if this feature is included
 				if(pjs != PlayerJumpState.FALLING) break;

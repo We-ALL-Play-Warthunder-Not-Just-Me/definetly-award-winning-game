@@ -1,27 +1,76 @@
 [gd_scene format=3 uid="uid://2fsdvfr1lhbl"]
 
 [ext_resource type="Script" uid="uid://dq4jymiqhpnr2" path="res://Prefabs/PauseStatus/ScriptsofPause/InventoryScreen.cs" id="1_8w81r"]
-[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/UIArt/Woven Paintbrush.png" id="2_8jsly"]
-[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="3_1r1x0"]
-[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Materials.png" id="3_48de8"]
-[ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Temp Witch House.png" id="5_wkbcb"]
+[ext_resource type="FontFile" uid="uid://dcyivqkfh0ikb" path="res://04B_03__.TTF" id="2_hb6lx"]
+[ext_resource type="Texture2D" uid="uid://b0800t8ihojva" path="res://Images/UIArt/Witch Portraits2.png" id="2_kexwp"]
+[ext_resource type="Texture2D" uid="uid://bpot1vbf4npy1" path="res://Images/UIArt/MVM UI Inventory Background.png" id="2_oa2n3"]
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="3_48de8"]
+[ext_resource type="Texture2D" uid="uid://b4152jcje8ki4" path="res://Images/UIArt/MVM UI Tabs2.png" id="3_e5xi4"]
+[ext_resource type="Texture2D" uid="uid://cs4d8yaswpwnh" path="res://Images/UIArt/MVM UI Tabs1.png" id="4_l7lvi"]
+[ext_resource type="Texture2D" uid="uid://bwbmmtqygtfxm" path="res://Images/UIArt/MVM UI Tabs3.png" id="5_uvv1k"]
+[ext_resource type="Texture2D" uid="uid://bvsu80ws1uyuk" path="res://Images/Placeholder/Temp Witch House.png" id="5_wkbcb"]
 [ext_resource type="Script" uid="uid://5hfqkgk7au4i" path="res://Scripts/Crafting/CraftingMaterial.cs" id="6_j3iwo"]
+[ext_resource type="Texture2D" uid="uid://bdsur5v6u15yj" path="res://Images/SingLark.png" id="7_uvv1k"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://Scripts/InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://cjud4tr1avren" path="res://Resources/Recipes/_RecipesList.tres" id="8_8jsly"]
 [ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="9_6r2q2"]
-[ext_resource type="Resource" uid="uid://cv5uqa6a3cu38" path="res://Resources/Items/FlaskofPinkTears.tres" id="9_ou5ub"]
-[ext_resource type="Resource" uid="uid://dhijo03lrhqp8" path="res://Resources/Items/ImportantBlueberry.tres" id="9_sygrt"]
+[ext_resource type="Texture2D" uid="uid://drm388i7e0ocx" path="res://Images/UIArt/MVM UI Inventory Bag.png" id="9_e5xi4"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://Scripts/InventoryStuff/InventoryLogic.cs" id="9_x2suf"]
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
-[ext_resource type="Texture2D" uid="uid://cekkg1uqo046f" path="res://Images/UIArt/Cauldron.png" id="10_lf1i3"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
 [ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
-[ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/UIArt/Flask of Pink Tears.png" id="12_lf1i3"]
 [ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
-[ext_resource type="Script" uid="uid://cbehad663o8w7" path="res://Scripts/InventoryStuff/InventoryPicture.cs" id="13_ou5ub"]
+[ext_resource type="Texture2D" uid="uid://b2ihi36ps2m7s" path="res://Images/UIArt/MVM Cauldron.png" id="13_uihuo"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
+[ext_resource type="Texture2D" uid="uid://dh11eqa28ru63" path="res://Images/UIArt/MVM UI Crafted Item Holder.png" id="15_l7lvi"]
+[ext_resource type="Texture2D" uid="uid://n6of6qwvlg7r" path="res://Images/UIArt/MVM Craft Button2.png" id="15_y74ji"]
+[ext_resource type="Texture2D" uid="uid://b3lwbch7nyp2h" path="res://Images/UIArt/MVM Craft Button3.png" id="16_oa2n3"]
+[ext_resource type="Texture2D" uid="uid://bysvxkpp6pxx5" path="res://Images/UIArt/MVM Craft Button1.png" id="17_wolsn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hb6lx"]
+texture = ExtResource("2_oa2n3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmjmk"]
+texture = ExtResource("3_e5xi4")
+texture_margin_left = 8.0
+texture_margin_top = 28.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_154ae"]
+texture = ExtResource("4_l7lvi")
+texture_margin_left = 8.0
+texture_margin_top = 12.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 128, 40)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7v4bx"]
+texture = ExtResource("5_uvv1k")
+texture_margin_left = 8.0
+texture_margin_top = 28.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+axis_stretch_vertical = 1
+
+[sub_resource type="Theme" id="Theme_chdmw"]
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("2_hb6lx")
+TabContainer/colors/font_hovered_color = Color(0.94509804, 0.8352941, 0.42352942, 1)
+TabContainer/colors/font_unselected_color = Color(0.8, 0.50980395, 0.3647059, 1)
+TabContainer/constants/side_margin = 24
+TabContainer/font_sizes/font_size = 24
+TabContainer/fonts/font = ExtResource("2_hb6lx")
+TabContainer/styles/panel = SubResource("StyleBoxTexture_hb6lx")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_nmjmk")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_154ae")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_7v4bx")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -32,12 +81,21 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xpnv"]
 bg_color = Color(0.96194917, 0.3059871, 0.67877233, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb6lx"]
+bg_color = Color(0.92156863, 0.6627451, 0.4509804, 0.1764706)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yeari"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa2n3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7lvi"]
+texture = ExtResource("15_l7lvi")
 
 [sub_resource type="Theme" id="Theme_yeari"]
 
 [node name="InventoryScreen" type="Control" unique_id=1470520716]
 process_mode = 2
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,41 +120,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -620.0
-offset_top = -340.0
-offset_right = 620.0
-offset_bottom = 340.0
+offset_left = -576.0
+offset_top = -316.0
+offset_right = 576.0
+offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_chdmw")
 current_tab = 1
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
-
-[node name="Button2" type="Button" parent="Panel/TabContainer/Status" unique_id=2111496788]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 31.0
-grow_horizontal = 2
-text = "BUTTON 2"
-
-[node name="Button" type="Button" parent="Panel/TabContainer/Status" unique_id=1078618117]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.5
-offset_top = -285.5
-offset_right = 63.5
-offset_bottom = -254.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "I AM A BUTTON"
 
 [node name="CharacterPortrait" type="PanelContainer" parent="Panel/TabContainer/Status" unique_id=418447028]
 layout_mode = 1
@@ -105,33 +141,29 @@ anchor_left = 0.069000006
 anchor_top = 0.37
 anchor_right = 0.069000006
 anchor_bottom = 0.37
-offset_left = 0.4399948
-offset_top = -168.13
-offset_right = 367.76202
-offset_bottom = 167.87
+offset_left = 0.5119934
+offset_top = -140.52
+offset_right = 320.512
+offset_bottom = 179.48
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pa6dh")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/TabContainer/Status/CharacterPortrait" unique_id=113122982]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Status/CharacterPortrait/MarginContainer" unique_id=70201287]
 layout_mode = 2
-texture = ExtResource("2_8jsly")
+texture = ExtResource("2_kexwp")
 
 [node name="Stats" type="PanelContainer" parent="Panel/TabContainer/Status" unique_id=1410666638]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 59.0
-offset_top = -201.0
-offset_right = 934.0
-offset_bottom = -46.0
+offset_left = 52.0
+offset_top = -176.0
+offset_right = 1092.0
+offset_bottom = -36.0
 grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/TabContainer/Status/Stats" unique_id=1094650131]
@@ -168,6 +200,7 @@ show_percentage = false
 [node name="HealthNum" type="Label" parent="Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer/HealthContainer" unique_id=1540667226]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 text = "128"
 
 [node name="RichTextLabel2" type="Label" parent="Panel/TabContainer/Status/Stats/MarginContainer/VBoxContainer" unique_id=39778107]
@@ -178,6 +211,14 @@ text = "Other thing"
 layout_mode = 2
 text = "Other Status"
 
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Status" unique_id=1029251993]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 321.0
+offset_right = 1072.0
+offset_bottom = 401.0
+texture = ExtResource("7_uvv1k")
+
 [node name="Equipment" type="PanelContainer" parent="Panel/TabContainer/Status" unique_id=1888484757]
 layout_mode = 1
 anchors_preset = 6
@@ -185,12 +226,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -751.0
-offset_top = -252.5
-offset_right = -15.0
-offset_bottom = 83.5
+offset_left = -720.0
+offset_top = -218.0
+offset_right = -80.0
+offset_bottom = 102.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hb6lx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Status/Equipment" unique_id=1636720512]
 layout_mode = 2
@@ -200,8 +242,20 @@ alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/TabContainer/Status/Equipment/HBoxContainer" unique_id=1409067442]
+custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
-text = "wah Flask"
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.6039216, 0.21960784, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("2_hb6lx")
+theme_override_font_sizes/font_size = 16
+text = "We're no strangers to love, you know the rules and so do I. A full commitment's what I'm thinking of, you wouldn't get this from any other guy. I just want to tell you how I'm feeling. Gotta make you understand!
+
+Never gonna give you up, never gonna let you down, never gonna run around and desert you. Never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you.
+
+We've known each other, for so long. Your hearts been aching but you're to shy to say it. Inside, we both know what's been going on. We know the game, and we're gonna play it.
+
+And if you ask me how I'm feeling, don't tell me you're too blind to see!"
+autowrap_mode = 2
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
 layout_mode = 2
@@ -210,27 +264,34 @@ metadata/_tab_index = 1
 [node name="Materials list" type="PanelContainer" parent="Panel/TabContainer/Crafting" unique_id=19567499]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.58548385
-anchor_top = 0.12172573
-anchor_right = 0.9806452
-anchor_bottom = 0.7642527
+anchor_left = 0.55080646
+anchor_top = 0.22790366
+anchor_right = 0.9459678
+anchor_bottom = 0.87043065
+offset_left = 0.47094727
+offset_top = 0.7274933
+offset_right = 0.24511719
+offset_bottom = 30.631958
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Crafting/Materials list" unique_id=642577612]
 layout_mode = 2
-texture = ExtResource("3_1r1x0")
+texture = ExtResource("9_e5xi4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Crafting/Materials list" unique_id=1439479942]
 layout_mode = 2
 
 [node name="SearchBar" type="LineEdit" parent="Panel/TabContainer/Crafting/Materials list/VBoxContainer" unique_id=411456111]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
+theme_override_font_sizes/font_size = 20
 placeholder_text = "Search"
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/Materials list/VBoxContainer" unique_id=1709631824 node_paths=PackedStringArray("searchBar")]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hb6lx")
 item_count = 3
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "ITEM 1"
@@ -248,14 +309,19 @@ searchBar = NodePath("../SearchBar")
 [node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Crafting" unique_id=66723388]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6895161
-anchor_top = 0.047765795
-anchor_right = 0.8620968
-anchor_bottom = 0.10939907
+anchor_left = 0.66048384
+anchor_top = 0.12647775
+anchor_right = 0.8330645
+anchor_bottom = 0.18811104
+offset_left = -0.8773804
+offset_top = 7.148819
+offset_right = 0.30969238
+offset_bottom = 7.648041
 metadata/_edit_use_anchors_ = true
 
 [node name="RecipeListDropdown" type="MenuButton" parent="Panel/TabContainer/Crafting/PanelContainer" unique_id=621834935]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 text = "Recipes"
 expand_icon = true
 item_count = 1
@@ -269,38 +335,66 @@ recipesList = ExtResource("8_8jsly")
 [node name="CRAFTING?!" type="Panel" parent="Panel/TabContainer/Crafting" unique_id=743441488]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025806451
-anchor_top = 0.12172573
-anchor_right = 0.525
-anchor_bottom = 0.8767334
-grow_vertical = 2
+anchor_left = 0.052
+anchor_top = 0.101
+anchor_right = 0.53800005
+anchor_bottom = 0.95300007
+offset_left = 0.09600067
+offset_top = -0.19600296
+offset_right = 0.22393799
+offset_bottom = 0.011962891
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oa2n3")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Crafting/CRAFTING?!" unique_id=39124818]
-layout_mode = 0
-anchor_left = 0.41357028
-anchor_right = 0.57512116
-anchor_bottom = 0.20408164
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4507874
+anchor_right = 0.5
+anchor_bottom = 0.4507874
+offset_left = -110.0
+offset_top = -181.0
+offset_right = 110.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_l7lvi")
 metadata/_edit_use_anchors_ = true
 
-[node name="CraftedItemPicture" type="TextureRect" parent="Panel/TabContainer/Crafting/CRAFTING?!/PanelContainer" unique_id=1710379239 node_paths=PackedStringArray("crafting")]
-z_index = 2
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
+[node name="CraftedItemPicture" type="TextureRect" parent="Panel/TabContainer/Crafting/CRAFTING?!" unique_id=1710379239 node_paths=PackedStringArray("crafting")]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017857144
+anchor_top = -0.031496063
+anchor_right = 0.017857144
+anchor_bottom = -0.031496063
+offset_left = 190.0
+offset_top = -16.0
+offset_right = 350.0
+offset_bottom = 144.0
 texture = ExtResource("14_yeari")
 expand_mode = 5
 script = ExtResource("11_kexwp")
-crafting = NodePath("../../MarginContainer/ItemList")
+crafting = NodePath("../MarginContainer/ItemList")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Crafting/CRAFTING?!" unique_id=1461098979]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -205.0
+offset_right = 288.0
+offset_bottom = 275.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_lf1i3")
+texture = ExtResource("13_uihuo")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/TabContainer/Crafting/CRAFTING?!" unique_id=114771733]
 layout_mode = 1
@@ -309,16 +403,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -163.61888
-offset_top = -121.0
-offset_right = 163.61888
-offset_bottom = 121.0
+offset_left = -95.5
+offset_top = -73.0
+offset_right = 96.5
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ItemList" type="ItemList" parent="Panel/TabContainer/Crafting/CRAFTING?!/MarginContainer" unique_id=2046422626 node_paths=PackedStringArray("materialInventory", "keyItemInventory", "materialList", "craftButton", "RecipeListdropdown")]
 layout_mode = 2
 theme = SubResource("Theme_yeari")
+theme_override_fonts/font = ExtResource("2_hb6lx")
 item_count = 2
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "Test item 1"
@@ -335,14 +430,21 @@ craftButton = NodePath("../../CraftButton")
 RecipeListdropdown = NodePath("../../../PanelContainer/RecipeListDropdown")
 
 [node name="CraftButton" type="TextureButton" parent="Panel/TabContainer/Crafting/CRAFTING?!" unique_id=1772850421]
-layout_mode = 0
-anchor_left = 0.31825525
-anchor_top = 0.8061224
-anchor_right = 0.67689824
-anchor_bottom = 0.8897959
-texture_normal = ExtResource("3_1r1x0")
-texture_pressed = ExtResource("10_lf1i3")
-texture_hover = ExtResource("12_lf1i3")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0040816
+anchor_right = 0.5
+anchor_bottom = 1.0040816
+offset_left = -128.0
+offset_top = -80.0
+offset_right = 128.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("15_y74ji")
+texture_pressed = ExtResource("16_oa2n3")
+texture_hover = ExtResource("17_wolsn")
 stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
@@ -352,6 +454,7 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="Blueberry" type="Button" parent="Panel/TabContainer/Inventory" unique_id=1369581487 node_paths=PackedStringArray("inv")]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -370,6 +473,7 @@ qty = 1
 itemData = ExtResource("9_6r2q2")
 
 [node name="Blueberry5" type="Button" parent="Panel/TabContainer/Inventory" unique_id=2129708712 node_paths=PackedStringArray("inv")]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -388,6 +492,7 @@ qty = 5
 itemData = ExtResource("9_6r2q2")
 
 [node name="ImportantBlueberry" type="Button" parent="Panel/TabContainer/Inventory" unique_id=1838932799 node_paths=PackedStringArray("inv")]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -399,13 +504,13 @@ offset_top = -31.0
 offset_right = -85.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Add an Important Blueberry"
+text = "POKEMON RUBY!!!!"
 script = ExtResource("7_x2suf")
 inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 1
-itemData = ExtResource("9_sygrt")
 
 [node name="FlaskofPinkTears" type="Button" parent="Panel/TabContainer/Inventory" unique_id=866026083 node_paths=PackedStringArray("inv")]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -418,11 +523,10 @@ offset_right = 100.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Add a Flask of Pink Tears"
+text = "POKEMON SAPPHIRE!!!!!!!!"
 script = ExtResource("7_x2suf")
 inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 1
-itemData = ExtResource("9_ou5ub")
 
 [node name="TabContainer" type="TabContainer" parent="Panel/TabContainer/Inventory" unique_id=898869370]
 layout_mode = 1
@@ -431,9 +535,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -568.0
-offset_top = -245.5
-offset_bottom = 244.5
+offset_left = -612.0
+offset_top = -218.0
+offset_right = -36.0
+offset_bottom = 226.0
 grow_horizontal = 0
 grow_vertical = 2
 current_tab = 0
@@ -449,18 +554,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 22
 
-[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889]
+[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer" unique_id=1004634889 node_paths=PackedStringArray("inventoryPicture")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 allow_rmb_select = true
 fixed_icon_size = Vector2i(50, 50)
 script = ExtResource("9_x2suf")
 itemDatabase = ExtResource("10_sygrt")
 inventory = ExtResource("12_8wvro")
+inventoryPicture = NodePath("../../../../PanelContainer/MarginContainer/Texturerect")
 
 [node name="KeyItems" type="Control" parent="Panel/TabContainer/Inventory/TabContainer" unique_id=945712878]
 visible = false
@@ -474,26 +581,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 22
 
-[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer" unique_id=907363798]
+[node name="ItemList" type="ItemList" parent="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer" unique_id=907363798 node_paths=PackedStringArray("inventoryPicture")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hb6lx")
 script = ExtResource("9_x2suf")
 itemDatabase = ExtResource("10_sygrt")
 inventory = ExtResource("13_8wvro")
+inventoryPicture = NodePath("../../../../PanelContainer/MarginContainer/Texturerect")
 
 [node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Inventory" unique_id=1529148487]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = -245.5
-offset_right = 575.0
-offset_bottom = 244.5
+offset_left = 52.0
+offset_top = -226.0
+offset_right = 532.0
+offset_bottom = 254.0
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/TabContainer/Inventory/PanelContainer" unique_id=90566633]
@@ -505,8 +614,5 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Texturerect" type="TextureRect" parent="Panel/TabContainer/Inventory/PanelContainer/MarginContainer" unique_id=2015891040]
 layout_mode = 2
-script = ExtResource("13_ou5ub")
 
-[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/Materials/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]
 [connection signal="item_selected" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" method="_on_item_selected"]
-[connection signal="sentItemData" from="Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList" to="Panel/TabContainer/Inventory/PanelContainer/MarginContainer/Texturerect" method="_on_item_list_sent_item_data"]

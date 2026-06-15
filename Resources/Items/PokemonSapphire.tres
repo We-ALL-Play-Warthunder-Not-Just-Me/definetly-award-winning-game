@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://frw4ldhk7kl3"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_hb7s2"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_bbkdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rqmj"]
+atlas = ExtResource("1_hb7s2")
+region = Rect2(128, 64, 32, 32)
+
+[resource]
+script = ExtResource("2_bbkdg")
+ID = 13
+Name = "Sapphire"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_0rqmj")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"
