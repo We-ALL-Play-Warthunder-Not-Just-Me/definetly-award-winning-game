@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="6_dtpqm"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="7_3kreu"]
 [ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_3kreu"]
-[ext_resource type="Resource" uid="uid://mndqsclaaryd" path="res://Resources/Items/Purple Items/Grapes.tres" id="9_5pgx6"]
+[ext_resource type="Resource" uid="uid://c0gc3w1riamwd" path="res://Resources/Items/Yellow Items/Daffodil.tres" id="10_3kreu"]
 [ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/Yellow Items/BellPepper.tres" id="10_80uut"]
 [ext_resource type="Resource" uid="uid://06qnln20ik1b" path="res://Resources/Items/Yellow Items/Lemon.tres" id="11_s8j8q"]
 [ext_resource type="Resource" uid="uid://clychdpwcicy1" path="res://Resources/Items/Yellow Items/Topaz.tres" id="12_eohe2"]
@@ -647,15 +647,15 @@ ToChunk = 1
 
 [node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_3kreu")]
 position = Vector2(181, 69)
-baseItem = ExtResource("9_5pgx6")
+baseItem = ExtResource("11_s8j8q")
 
 [node name="ItemPickup3" parent="Items" unique_id=883224355 instance=ExtResource("8_3kreu")]
 position = Vector2(253, 116)
-baseItem = ExtResource("9_5pgx6")
+baseItem = ExtResource("10_3kreu")
 
 [node name="ItemPickup4" parent="Items" unique_id=1370775248 instance=ExtResource("8_3kreu")]
 position = Vector2(296, 116)
-baseItem = ExtResource("9_5pgx6")
+baseItem = ExtResource("10_3kreu")
 
 [node name="ItemPickup5" parent="Items" unique_id=1331968762 instance=ExtResource("8_3kreu")]
 position = Vector2(35, 146)
@@ -721,4 +721,4 @@ baseItem = ExtResource("10_80uut")
 
 [node name="ItemPickup2" parent="Items" unique_id=686802450 instance=ExtResource("8_3kreu")]
 position = Vector2(200, 50)
-baseItem = ExtResource("10_80uut")
+baseItem = ExtResource("11_s8j8q")

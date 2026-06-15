@@ -19,9 +19,9 @@
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
-[ext_resource type="Resource" uid="uid://cfyl817lpf47t" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
+[ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
-[ext_resource type="Resource" uid="uid://jiwak7xq5gfc" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
+[ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
 [ext_resource type="Texture2D" uid="uid://b2ihi36ps2m7s" path="res://Images/UIArt/MVM Cauldron.png" id="13_uihuo"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
 [ext_resource type="Texture2D" uid="uid://dh11eqa28ru63" path="res://Images/UIArt/MVM UI Crafted Item Holder.png" id="15_l7lvi"]
@@ -127,7 +127,7 @@ offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_chdmw")
-current_tab = 1
+current_tab = 2
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
@@ -258,6 +258,7 @@ And if you ask me how I'm feeling, don't tell me you're too blind to see!"
 autowrap_mode = 2
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -449,7 +450,6 @@ stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
