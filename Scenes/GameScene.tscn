@@ -20,6 +20,7 @@ position = Vector2(0, 53)
 
 [node name="TheCamera" parent="." unique_id=946100206 instance=ExtResource("2_x6js8")]
 z_index = 5
+process_callback = 0
 limit_left = -160
 limit_top = -96
 limit_right = 160

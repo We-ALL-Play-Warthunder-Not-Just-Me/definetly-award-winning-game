@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_r7lxo"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_wxxhi"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_wxxhi"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_pfehh"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="8_v7ol2"]
+[ext_resource type="Resource" uid="uid://frw4ldhk7kl3" path="res://Resources/Items/Blue Items/PokemonSapphire.tres" id="9_gt2op"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="10_cg5u6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -516,3 +520,38 @@ ToChunk = 3
 position = Vector2(-160, 96)
 NextMap = "Forest7"
 ToChunk = 3
+
+[node name="Items" type="Node2D" parent="." unique_id=1603767255]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_pfehh")]
+position = Vector2(-98, -15)
+
+[node name="ItemPickup6" parent="Items" unique_id=7465747 instance=ExtResource("7_pfehh")]
+position = Vector2(-50, -15)
+
+[node name="ItemPickup7" parent="Items" unique_id=741115225 instance=ExtResource("7_pfehh")]
+position = Vector2(41, 148)
+baseItem = ExtResource("8_v7ol2")
+
+[node name="ItemPickup8" parent="Items" unique_id=1559851740 instance=ExtResource("7_pfehh")]
+position = Vector2(-32, 148)
+baseItem = ExtResource("8_v7ol2")
+
+[node name="ItemPickup9" parent="Items" unique_id=57506270 instance=ExtResource("7_pfehh")]
+position = Vector2(-109, 116)
+baseItem = ExtResource("8_v7ol2")
+
+[node name="ItemPickup5" parent="Items" unique_id=892341077 instance=ExtResource("7_pfehh")]
+position = Vector2(-27, -108)
+
+[node name="ItemPickup2" parent="Items" unique_id=595793767 instance=ExtResource("7_pfehh")]
+position = Vector2(106, -12)
+baseItem = ExtResource("9_gt2op")
+
+[node name="ItemPickup3" parent="Items" unique_id=1079538709 instance=ExtResource("7_pfehh")]
+position = Vector2(98, -150)
+baseItem = ExtResource("10_cg5u6")
+
+[node name="ItemPickup4" parent="Items" unique_id=1383384594 instance=ExtResource("7_pfehh")]
+position = Vector2(43, -137)
+baseItem = ExtResource("10_cg5u6")

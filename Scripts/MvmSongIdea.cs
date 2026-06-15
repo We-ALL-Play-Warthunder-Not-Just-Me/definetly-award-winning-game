@@ -10,11 +10,14 @@ public partial class MvmSongIdea : AudioStreamPlayer
 	
 	Node2D GameScene;
 	string SingLarkRoom;
+	string EndRoom;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		GameScene = GetNode<Node2D>("..");
 		SingLarkRoom = "ForestSave1";
+		EndRoom = "Forest23";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,6 +34,10 @@ public partial class MvmSongIdea : AudioStreamPlayer
 			{
 				this.SetStream(SingLark);
 				this.Play();
+			}
+			else if (child.Name == EndRoom)
+			{
+				this.SetStream(SingLark);
 			}
 			else if (CurrentSong != OriginalSong)
 			{

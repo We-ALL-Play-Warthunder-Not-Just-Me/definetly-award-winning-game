@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="5_hh31h"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="6_fx0pk"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="7_uabi8"]
+[ext_resource type="FontFile" uid="uid://dcyivqkfh0ikb" path="res://04B_03__.TTF" id="8_brmfm"]
+[ext_resource type="Script" uid="uid://clbom7x2y7anl" path="res://Scripts/Map Scripts/EndTextScroll.cs" id="9_hpys1"]
+[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="10_hpys1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brmfm"]
+size = Vector2(20, 192)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -448,6 +454,49 @@ region_rect = Rect2(106, 308, 177, 75)
 [node name="TestShade" parent="." unique_id=1811497297 instance=ExtResource("3_brmfm")]
 scale = Vector2(640, 192)
 
+[node name="Text" type="Node2D" parent="." unique_id=1035369423]
+script = ExtResource("9_hpys1")
+
+[node name="Label" type="Label" parent="Text" unique_id=968796704]
+offset_left = 100.0
+offset_top = 96.0
+offset_right = 275.0
+offset_bottom = 601.0
+theme_override_fonts/font = ExtResource("8_brmfm")
+theme_override_font_sizes/font_size = 8
+text = "Hey. Listen. You don't want to go down there. That's the end down there. I know there's not much, but do you really want the game to end? Think about how much bigger you can make number go up. Number go 'brrrrrr', am I right?
+
+
+
+...
+
+
+
+This hasn't convinced you, has it?
+
+You're still reading. You want to see the end. It's not pretty. It's rather mundane, actually.
+
+
+
+But that's life, I suppose. We all live and die eventually, even fun little game ideas you make with your friends. It was a nice ride. I hope you enjoyed it.
+
+Did you make it to the town? I know it ain't much, but I tried to make it lively. My friends also did their best with the code, especially with this being their first proper jam. Show them some love and respect, I'm sure they'd appreciate it. I'm damn proud of them and what we've managed to accomplish in out one month timelimit.
+
+This was honestly really fun to just have a few laughs and headaches with friends over making a game together.
+
+So even though we're at the end of this game and the experience is more or less over, I will cherish the memories made, and I hope that you, Player, are able to walk away with a bit of a smile on your face today. 
+                              -G"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="Text" unique_id=1477505728]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Text/Area2D" unique_id=1436503824]
+shape = SubResource("RectangleShape2D_brmfm")
+debug_color = Color(0.2677473, 0.6334207, 7.70092e-07, 0.41960785)
+
 [node name="Platforms" type="Node2D" parent="." unique_id=2090194934]
 
 [node name="TownFishingDock" parent="Platforms" unique_id=580191820 instance=ExtResource("4_hpys1")]
@@ -477,3 +526,10 @@ NextMap = "Forest24"
 ToChunk = 1
 VertTrans = true
 ExtraRooms = 4
+
+[node name="MvmBench" type="Sprite2D" parent="." unique_id=1887486771]
+position = Vector2(116, -10)
+texture = ExtResource("10_hpys1")
+flip_h = true
+
+[connection signal="body_entered" from="Text/Area2D" to="Text" method="_CheckPlayer"]

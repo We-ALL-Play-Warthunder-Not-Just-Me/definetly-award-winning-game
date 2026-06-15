@@ -19,6 +19,10 @@ public partial class PickUpItem : Area2D
 	float FrameTime = 48;
 	Vector2 NewOffset;
 	float CountDown;
+	
+	//Item checks...
+	//ItemChecker CheckItem;
+	//bool PickedUp;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -27,6 +31,7 @@ public partial class PickUpItem : Area2D
 		BodyEntered += ItemTouched;
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		PickUpSound = GetNode<AudioStreamPlayer>("/root/GameScene/SFX");
+		//CheckItem = GetNode<ItemChecker>("/root/ItemChecker");
 		if (replacementPicture != null)
 		{
 			sprite.Texture = replacementPicture;
@@ -57,6 +62,11 @@ public partial class PickUpItem : Area2D
 		{
 			invent = GetNode<InventoryLogic>("/root/GameScene/PauseStatus/InventoryScreen/Panel/TabContainer/Inventory/TabContainer/KeyItems/MarginContainer/ItemList");
 		}
+		//This will be figured out later maybe
+		//if (PickedUp == true)
+		//{
+			//this.QueueFree();
+		//}
 
 	}
 	
@@ -89,6 +99,8 @@ public partial class PickUpItem : Area2D
 		{
 			if (AddNewItem(amount))
 			{
+				//GD.Print(this);
+				//CheckItem.AddItemToCollected(this);
 				PickUpSound.Play();
 				QueueFree();
 			}
