@@ -20,15 +20,15 @@ public partial class CraftingMaterial : ItemList
 	private void SearchItemList(String text)
 	{
 		Clear();
-		if(text == null || text == "")
+		if (text == null || text == "")
 		{
 			UpdateItemlist();
 			return;
 		}
-		
-		foreach (var (id,amount) in materialInventory.inventory)
+
+		foreach (var (id, amount) in materialInventory.inventory)
 		{
-			if (itemDatabase.items[id].Name.Contains(text,StringComparison.OrdinalIgnoreCase))
+			if (itemDatabase.items[id].Name.Contains(text, StringComparison.OrdinalIgnoreCase))
 			{
 				if (itemDatabase.items[id].max_qty == 1)
 				{
@@ -48,7 +48,7 @@ public partial class CraftingMaterial : ItemList
 	public void UpdateItemlist()
 	{
 		Clear();
-		foreach (var (id,amount) in materialInventory.inventory)
+		foreach (var (id, amount) in materialInventory.inventory)
 		{
 			if (itemDatabase.items[id].max_qty == 1)
 			{
@@ -69,7 +69,7 @@ public partial class CraftingMaterial : ItemList
 
 	private void SelectItem(long index)
 	{
-		Item sendingItem = GetInventoryItem((int) index);
+		Item sendingItem = GetInventoryItem((int)index);
 		int amount = 1;
 		if (Input.IsPhysicalKeyPressed(Key.Shift))
 		{
@@ -96,7 +96,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		if (mousebuttonindex == 1)
 		{
-			Item sendingItem = GetInventoryItem((int) index);
+			Item sendingItem = GetInventoryItem((int)index);
 			int amount = 1;
 			if (Input.IsPhysicalKeyPressed(Key.Shift))
 			{

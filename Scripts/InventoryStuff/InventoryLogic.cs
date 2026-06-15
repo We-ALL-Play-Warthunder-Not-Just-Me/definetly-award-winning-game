@@ -26,7 +26,7 @@ public partial class InventoryLogic : ItemList
 	public void UpdateItemlist()
 	{
 		Clear();
-		foreach (var (id,amount) in inventory.inventory)
+		foreach (var (id, amount) in inventory.inventory)
 		{
 			if (itemDatabase.items[id].max_qty == 1)
 			{
@@ -55,7 +55,7 @@ public partial class InventoryLogic : ItemList
 		if (item.qty == 0) return true;
 
 		if (inventory.inventory.ContainsKey(item.ID))
-		{	// we kinda are already checking for this in AddStackable
+		{   // we kinda are already checking for this in AddStackable
 			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
 				//GD.Print($"Your inventory is full of {item.Name}");
@@ -65,7 +65,7 @@ public partial class InventoryLogic : ItemList
 		// if there is no item in the bag yet
 		if (!inventory.inventory.ContainsKey(item.ID))
 		{
-			inventory.inventory.Add(item.ID,item.qty);
+			inventory.inventory.Add(item.ID, item.qty);
 			//UpdateItemlist();
 			inventory.EmitChanged();
 			return true;
@@ -119,7 +119,7 @@ public partial class InventoryLogic : ItemList
 			GD.Print("This is an important item!!");
 			return;
 		}
-        inventory.inventory.Remove(id);
+		inventory.inventory.Remove(id);
 		//UpdateItemlist();
 		inventory.EmitChanged();
 	}
@@ -132,7 +132,7 @@ public partial class InventoryLogic : ItemList
 			inventory.inventory[id] -= amount;
 		}
 		//Probably needs more checks
-		if(inventory.inventory[id] == 0) inventory.inventory.Remove(id);
+		if (inventory.inventory[id] == 0) inventory.inventory.Remove(id);
 		inventory.EmitChanged();
 	}
 
@@ -147,7 +147,7 @@ public partial class InventoryLogic : ItemList
 		return 0;
 	}
 
-	public int GetInventoryItemQtyFromID (int ID)
+	public int GetInventoryItemQtyFromID(int ID)
 	{
 		if (ID == 0) return 0;
 		if (inventory.inventory.ContainsKey(ID))
@@ -157,7 +157,7 @@ public partial class InventoryLogic : ItemList
 		return 0;
 	}
 
-	public string GetItemNameFromID (int ID)
+	public string GetItemNameFromID(int ID)
 	{
 		if (ID == 0) return null;
 		return itemDatabase.items[ID].Name;
@@ -173,7 +173,7 @@ public partial class InventoryLogic : ItemList
 		return null;
 	}
 
-	public Item GetInventoryItemfromindex (int index)
+	public Item GetInventoryItemfromindex(int index)
 	{
 		if (index < 0 || index >= inventory.inventory.Count) return null;
 		int id = (int)GetItemMetadata(index);

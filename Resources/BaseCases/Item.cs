@@ -2,19 +2,20 @@ using Godot;
 using System;
 
 
-[GlobalClass, Icon("res://Images/UIArt/blueberry.png")] public partial class Item : Resource
+[GlobalClass, Icon("res://Images/UIArt/blueberry.png")]
+public partial class Item : Resource
 {
-   [Export] public int ID;
-   [Export] public string Name;
-   [Export] public int qty;
-   [Export] public int max_qty;
-   [Export] public Texture2D icon;
-   [Export] public bool important = false;
-   [Export] public bool consumable = true;
+    [Export] public int ID;
+    [Export] public string Name;
+    [Export] public int qty;
+    [Export] public int max_qty;
+    [Export] public Texture2D icon;
+    [Export] public bool important = false;
+    [Export] public bool consumable = true;
 
-    public Item() : this(0,null,0,0,null)
+    public Item() : this(0, null, 0, 0, null)
     {
-        
+
     }
 
     public Item(int ID, string name, int qty, int max_qty, Texture2D icon, bool important = false, bool consumable = true)
