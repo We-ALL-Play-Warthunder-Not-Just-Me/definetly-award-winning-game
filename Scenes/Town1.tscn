@@ -1,14 +1,19 @@
 [gd_scene format=4 uid="uid://d248hsynj1olk"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_hvfnt"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="2_pouwt"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="3_ajksq"]
-[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/MVM Bench.png" id="3_r4wpd"]
-[ext_resource type="Texture2D" uid="uid://b50e4jqw7oinh" path="res://Images/MVM Fountain.png" id="4_r08jo"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="4_ulmna"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="2_pouwt"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="3_ajksq"]
+[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="3_r4wpd"]
+[ext_resource type="Texture2D" uid="uid://b50e4jqw7oinh" path="res://Images/Objects/MVM Fountain.png" id="4_r08jo"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="4_ulmna"]
 [ext_resource type="Texture2D" uid="uid://cdi4gq0wg212u" path="res://Images/MVM Towns People.png" id="5_mel35"]
-[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/MVM Town Tiles.png" id="5_pouwt"]
+[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/Tilesets/MVM Town Tiles.png" id="5_pouwt"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_r4wpd"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="10_ln14s"]
+[ext_resource type="Resource" uid="uid://06qnln20ik1b" path="res://Resources/Items/Yellow Items/Lemon.tres" id="11_fgjep"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="12_h4kky"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="13_4todt"]
+[ext_resource type="Resource" uid="uid://c0gc3w1riamwd" path="res://Resources/Items/Yellow Items/Daffodil.tres" id="14_onthq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtuam"]
 atlas = ExtResource("4_r08jo")
@@ -910,24 +915,48 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("5_r4wpd")]
 position = Vector2(320, 0)
-SpawnSide = "Left"
 NextMap = "ForestToTown"
 ToChunk = 1
-CurrentMap = "Town1"
-FromChunk = 2
 
 [node name="MapTransitioner2" parent="." unique_id=872304213 instance=ExtResource("5_r4wpd")]
 position = Vector2(-320, 0)
-SpawnSide = "Right"
 NextMap = "Town2"
 ToChunk = 6
-CurrentMap = "Town1"
-FromChunk = 1
 
 [node name="MapTransitioner3" parent="." unique_id=2069253544 instance=ExtResource("5_r4wpd")]
 position = Vector2(-320, -192)
-SpawnSide = "Right"
 NextMap = "Town2"
 ToChunk = 6
-CurrentMap = "Town1"
-FromChunk = 1
+
+[node name="Items" type="Node2D" parent="." unique_id=662218538]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("10_ln14s")]
+position = Vector2(-154, 19)
+
+[node name="ItemPickup2" parent="Items" unique_id=674046095 instance=ExtResource("10_ln14s")]
+position = Vector2(-99, 16)
+baseItem = ExtResource("11_fgjep")
+
+[node name="ItemPickup4" parent="Items" unique_id=997524077 instance=ExtResource("10_ln14s")]
+position = Vector2(117, 23)
+baseItem = ExtResource("11_fgjep")
+
+[node name="ItemPickup5" parent="Items" unique_id=572143303 instance=ExtResource("10_ln14s")]
+position = Vector2(94, 10)
+baseItem = ExtResource("12_h4kky")
+
+[node name="ItemPickup9" parent="Items" unique_id=446030867 instance=ExtResource("10_ln14s")]
+position = Vector2(147, 16)
+baseItem = ExtResource("12_h4kky")
+
+[node name="ItemPickup6" parent="Items" unique_id=827960213 instance=ExtResource("10_ln14s")]
+position = Vector2(-137, 52)
+baseItem = ExtResource("13_4todt")
+
+[node name="ItemPickup7" parent="Items" unique_id=1959174085 instance=ExtResource("10_ln14s")]
+position = Vector2(134, 52)
+baseItem = ExtResource("14_onthq")
+
+[node name="ItemPickup8" parent="Items" unique_id=428282109 instance=ExtResource("10_ln14s")]
+position = Vector2(-121, 10)
+baseItem = ExtResource("11_fgjep")
