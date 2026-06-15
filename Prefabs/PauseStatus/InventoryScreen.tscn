@@ -18,10 +18,9 @@
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
 [ext_resource type="Resource" uid="uid://b2t4xih7225ws" path="res://Resources/ItemDatabase.tres" id="10_sygrt"]
 [ext_resource type="Script" uid="uid://cj8f4pp50qv0a" path="res://Scripts/Crafting/CraftedItemPicture.cs" id="11_kexwp"]
-[ext_resource type="Resource" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
+[ext_resource type="Resource" uid="uid://dr2ywngr5j77y" path="res://Resources/MaterialInventory.tres" id="12_8wvro"]
 [ext_resource type="Script" uid="uid://bbsu13dsc64y2" path="res://Scripts/Crafting/CraftingLogic.cs" id="12_avi5r"]
-[ext_resource type="Texture2D" uid="uid://b8a0yuoit6vd3" path="res://Images/UIArt/Flask of Pink Tears.png" id="12_lf1i3"]
-[ext_resource type="Resource" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
+[ext_resource type="Resource" uid="uid://dxo3xqblarkkv" path="res://Resources/KeyItemInventory.tres" id="13_8wvro"]
 [ext_resource type="Texture2D" uid="uid://b2ihi36ps2m7s" path="res://Images/UIArt/MVM Cauldron.png" id="13_uihuo"]
 [ext_resource type="Texture2D" uid="uid://ccbb8lgu2g7a2" path="res://Images/UIArt/Blank Image.png" id="14_yeari"]
 [ext_resource type="Texture2D" uid="uid://dh11eqa28ru63" path="res://Images/UIArt/MVM UI Crafted Item Holder.png" id="15_l7lvi"]
@@ -63,8 +62,6 @@ TabContainer/styles/panel = SubResource("StyleBoxTexture_hb6lx")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_nmjmk")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_154ae")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_7v4bx")
-[ext_resource type="Resource" uid="uid://b3txyegnxayve" path="res://Resources/Items/PokemonRuby.tres" id="18_kexwp"]
-[ext_resource type="Resource" uid="uid://frw4ldhk7kl3" path="res://Resources/Items/PokemonSapphire.tres" id="19_uihuo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa6dh"]
 bg_color = Color(0.576812, 0.5993311, 0.66213185, 1)
@@ -121,9 +118,10 @@ offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_chdmw")
-current_tab = 0
+current_tab = 2
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -491,7 +489,6 @@ text = "POKEMON RUBY!!!!"
 script = ExtResource("7_x2suf")
 inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 1
-itemData = ExtResource("18_kexwp")
 
 [node name="FlaskofPinkTears" type="Button" parent="Panel/TabContainer/Inventory" unique_id=866026083 node_paths=PackedStringArray("inv")]
 visible = false
@@ -511,7 +508,6 @@ text = "POKEMON SAPPHIRE!!!!!!!!"
 script = ExtResource("7_x2suf")
 inv = NodePath("../TabContainer/Materials/MarginContainer/ItemList")
 qty = 1
-itemData = ExtResource("19_uihuo")
 
 [node name="TabContainer" type="TabContainer" parent="Panel/TabContainer/Inventory" unique_id=898869370]
 layout_mode = 1
