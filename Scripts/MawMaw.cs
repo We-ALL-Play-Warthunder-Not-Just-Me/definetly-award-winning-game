@@ -345,7 +345,22 @@ public partial class MawMaw : CharacterBody2D
         Velocity = velocity;
         //GD.Print(_dashing_time + " : Dash time, " + _dash_recovery_time + " : dash recov");
         MoveAndSlide();
-        
+        // eugh
+        //MoveAndCollide(velocity);
+        int max = GetSlideCollisionCount();
+        for (int i = 0; i < max; i++)
+        {
+            var collision = GetSlideCollision(i).GetCollider();
+            if(collision.IsClass("CharacterBody2D"))
+            {
+                CharacterBody2D a = collision as CharacterBody2D;
+                if (a.IsInGroup("Player"))
+                {
+                    _touch_damage_helper(a);
+                }
+            }
+            
+        }
     }
 
     private int target_direction_helper()

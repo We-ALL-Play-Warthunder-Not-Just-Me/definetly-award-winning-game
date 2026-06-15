@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_f6pk4"]
 [ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="5_uifhc"]
 [ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="6_j2fs2"]
+[ext_resource type="Texture2D" uid="uid://ts1knm8xkxit" path="res://Resources/Items/MaterialSpriteAtlas.tres" id="6_ynalf"]
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="7_kpjo8"]
 [ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="8_odaa7"]
+[ext_resource type="PackedScene" uid="uid://g5ys7dxu5ggy" path="res://Prefabs/Enemies/MawMaw.tscn" id="10_246nu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -409,11 +411,25 @@ terrain_set_0/terrain_0/color = Color(0.98039216, 0.16078432, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwtna"]
+atlas = ExtResource("6_ynalf")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="Resource" id="Resource_yyfkx"]
+resource_local_to_scene = true
+script = ExtResource("7_kpjo8")
+ID = 1
+Name = "Blueberry"
+qty = 1
+max_qty = 50
+icon = SubResource("AtlasTexture_jwtna")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nu08"]
 atlas = ExtResource("6_j2fs2")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="Resource" id="Resource_ynalf"]
+[sub_resource type="Resource" id="Resource_eka4w"]
 resource_local_to_scene = true
 script = ExtResource("7_kpjo8")
 ID = 5
@@ -475,17 +491,21 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("5_uifhc")]
 position = Vector2(-106, -19)
+baseItem = SubResource("Resource_yyfkx")
 amount = 5
 
 [node name="ItemPickup2" parent="Items" unique_id=987775448 instance=ExtResource("5_uifhc")]
 position = Vector2(-33, -15)
-baseItem = SubResource("Resource_ynalf")
+baseItem = SubResource("Resource_eka4w")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=471699235]
 
 [node name="Maw" parent="Enemies" unique_id=1423301954 instance=ExtResource("8_odaa7")]
 position = Vector2(90, 48)
 IsSproutMaw = true
+
+[node name="MawMaw" parent="Enemies" unique_id=614449111 instance=ExtResource("10_246nu")]
+position = Vector2(78, -29)
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2

@@ -1,17 +1,8 @@
 [gd_scene format=3 uid="uid://g5ys7dxu5ggy"]
 
 [ext_resource type="Script" uid="uid://btnjcinjudw2s" path="res://Scripts/MawMaw.cs" id="1_wgu7o"]
-[ext_resource type="Texture2D" uid="uid://do37m73d0d8nw" path="res://Images/MVM Maw.png" id="2_g1gtq"]
 [ext_resource type="PackedScene" uid="uid://bp5cn3sk8pg6b" path="res://Prefabs/Attacks/MawMawBite.tscn" id="2_ter1i"]
-
-[sub_resource type="Animation" id="Animation_wxf5y"]
-resource_name = "maw_idle"
-length = 0.5
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_05ldl"]
-_data = {
-&"maw_idle": SubResource("Animation_wxf5y")
-}
+[ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="3_g1gtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00odg"]
 
@@ -22,19 +13,6 @@ l = NodePath("StateLabel")
 MeleeAttack1 = ExtResource("2_ter1i")
 MeleeAttack2 = ExtResource("2_ter1i")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=61845971]
-texture = ExtResource("2_g1gtq")
-offset = Vector2(0, -5.5)
-hframes = 2
-vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=2006441210]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_05ldl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1818679338]
-shape = SubResource("RectangleShape2D_00odg")
-
 [node name="StateLabel" type="RichTextLabel" parent="." unique_id=1363682789]
 offset_left = -95.0
 offset_top = -29.0
@@ -42,3 +20,9 @@ offset_right = 152.0
 offset_bottom = -9.0
 theme_override_font_sizes/normal_font_size = 8
 text = "AAAAAAA"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1818679338]
+shape = SubResource("RectangleShape2D_00odg")
+
+[node name="Maw" parent="." unique_id=1423301954 instance=ExtResource("3_g1gtq")]
+offset = Vector2(0, -6)

@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public partial class Player : CharacterBody2D, DamagableEntity
 {
@@ -29,7 +30,10 @@ public partial class Player : CharacterBody2D, DamagableEntity
 
 	public enum  PlayerAttackState
 	{
-		ATTACKING,    
+		ATTACKING,
+		COMBO1,
+		COMBO2,
+		BLOCKING,
 		RECOVERING,
 		IDLE
 	}
@@ -45,9 +49,18 @@ public partial class Player : CharacterBody2D, DamagableEntity
 
 	public void dealDamage(float damage, int direction)
 	{
-		//change the player state here
-		//Health_Bar.setcurrenthealth(Health_Bar.Value - damage);
-		GD.Print(Health_Bar.hurt(damage));
+		if(parry_timer>= 0)
+		{
+			//we will do something here later. Hopefully
+		}
+		else if(pas == PlayerAttackState.BLOCKING)
+		{
+            GD.Print(Health_Bar.hurt(damage/2));
+        }
+		else
+		{
+            GD.Print(Health_Bar.hurt(damage));
+        }
 	}
 	//Constants
 	public const float SPEED = 120.0f;
@@ -56,9 +69,18 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
 	public const double COYOTEPERIOD = 0.15;
+	
+	//other thingies
+	[Export] public double AttackRecoveryTimer = 0.3f;
+    [Export] public double AttackTimer = 0.6f;
+	[Export] public double ParryTimer = 0.7f;//this is generous for testing purposes
+	[Export] public float BlockingSpeedMultiplier;
+	private float Knockback = 0;
+	private float MovementModifier = 1;
+	private int PlayerDirection = 1;
 
-	//player parts
-	public CharacterBody2D PlayerObject;
+    //player parts
+    public CharacterBody2D PlayerObject;
 	public Sprite2D PlayerSprite;
 	public CollisionShape2D PlayerCollisionShape;
 	public RichTextLabel PlayerStateLabel;
@@ -69,6 +91,8 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public RichTextLabel PlayerXSpeedLabel;
 	public RichTextLabel PlayerYSpeedLabel;
 	public AnimationPlayer PlayerAnimations;
+	[Export] public Area2D Punch1;
+	private Punch1 AttackScript;
 
 	//Random Health Bar class
 	[Export]public HealthBar Health_Bar;
@@ -99,10 +123,12 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		_attack_text_helper();
 		PlayerXSpeedLabel = GetNode<RichTextLabel>("XSpeed");
 		PlayerYSpeedLabel = GetNode<RichTextLabel>("YSpeed");
+		AttackScript = Punch1 as Punch1;
 	}
 
 	//this will eventually be changed to be part of the environmental state process fuction
 	//this will eventually be changed to be part of the environmental state process fuction
+	//lies
 	private void _apply_gravity(double delta, ref Vector2 velocity)
 	{
 		if (es == EnvironmentalState.COYOTE || es == EnvironmentalState.AIRBORN)
@@ -114,6 +140,8 @@ public partial class Player : CharacterBody2D, DamagableEntity
 
 	//check if there are events that might change your environmental state
 	private double coyote_timer = 0.0;
+	//Player Environmental State checker. This is constantly checking weather the player is in the air or on the ground, or just walked off a ledge
+	//no other state limits what the player environmental state can be making this pretty simple.
 	private void _pes(ref Vector2 v, double delta)
 	{
 		if (PlayerObject.IsOnFloor())
@@ -183,7 +211,8 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		}
 	}
 
-	//check if there are events that might change your jumping state
+	//check if there are events that might change your jumping state.
+	
 	private void _pjs(ref Vector2 v)
 	{
 		//lets try to jump.
@@ -211,7 +240,11 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		}
 	}
 
-	private void _cjs(PlayerJumpState s, ref Vector2 v)
+    //Jump State Jumping N, Falling N, Landing N, None Y,
+    //Environmental state Grounded Y Coyote Y Airborn N
+    //
+
+    private void _cjs(PlayerJumpState s, ref Vector2 v)
 	{
 		if(s == pjs) return;
 		
@@ -278,6 +311,14 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		if (direction != Vector2.Zero)
 		{
 			_cpms(PlayerMoveState.WALK, ref v);
+			if(direction.X > 0)
+			{
+				PlayerDirection = 1;
+			}
+			else
+			{
+				PlayerDirection = -1;
+			}
 		}
 		else 
 		{
@@ -319,16 +360,204 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				velocity.X = Mathf.MoveToward(velocity.X, 0, SPEED);
 				break;
 			case (PlayerMoveState.WALK):
-				velocity.X = direction.X * SPEED;
+				velocity.X = direction.X * SPEED * MovementModifier;
 				break;
 			case (PlayerMoveState.RUN):
-				velocity.X = direction.X * RUNSPEED;
+				velocity.X = direction.X * RUNSPEED * MovementModifier;
 				break;
 			case (PlayerMoveState.DASH):
-				velocity.X = direction.X * DASHSPEED;
+				velocity.X = direction.X * DASHSPEED * MovementModifier;
+				break;
+		}	
+	}
+
+	private void _pas(double delta, ref Vector2 velocity)
+	{
+		if (Input.IsActionJustPressed("Attack") )
+		{
+            
+            if (attack_timer <= 0.5 && attack_timer > 0)
+			{
+				
+				attack_queued = true;
+			}
+			else
+			{
+				if(pas == PlayerAttackState.ATTACKING)
+				{
+					
+					_cas(PlayerAttackState.COMBO1, ref velocity);
+				}
+				else if(pas == PlayerAttackState.COMBO1)
+				{
+				
+					_cas(PlayerAttackState.COMBO2, ref  velocity);
+				}
+				else
+				{
+					
+                    _cas(PlayerAttackState.ATTACKING, ref velocity);
+                }
+            }
+		}
+		else if (Input.IsActionJustPressed("Defend") || Input.IsActionPressed("Defend"))
+		{
+			_cas(PlayerAttackState.BLOCKING, ref velocity);
+		}
+		else
+		{
+			_cas(PlayerAttackState.IDLE, ref velocity);
+		}
+	}
+
+
+	private double recovery_timer = 0;
+	private double attack_timer = 0;
+	private double parry_timer = 0;
+
+	//I would like to make it so if someone spam clicks they can attack on cooldown without having to have hit the button RIGHT as the timer expires
+	//currently not implemented
+	private bool attack_queued = false;
+	private void _cas(PlayerAttackState c, ref Vector2 velocity)
+	{
+		//essentially we should not be changing this state while recovering
+		if (pas == c || recovery_timer >= 0)
+		{
+			return;
+		}
+
+		switch (c)
+		{
+			case PlayerAttackState.ATTACKING:
+				if(pms is PlayerMoveState.IDLE or PlayerMoveState.WALK && ps is PlayerState.FINE && pas is not PlayerAttackState.ATTACKING or PlayerAttackState.BLOCKING or PlayerAttackState.RECOVERING)
+				{
+
+					attack_queued = false;
+					attack_timer = AttackTimer;
+					MovementModifier = 0.4f;
+					pas = PlayerAttackState.ATTACKING;
+
+				}
+				break;
+			case PlayerAttackState.COMBO1:
+				if(attack_timer <= 0 && attack_queued)
+				{
+                    attack_queued = false;
+                    attack_timer = AttackTimer;
+                    MovementModifier = 0.4f;
+                    pas = PlayerAttackState.COMBO1;
+				}
+				break;
+			case PlayerAttackState.COMBO2:
+				if(attack_timer <= 0 && attack_queued)
+				{
+                    attack_queued = false;
+                    attack_timer = AttackTimer;
+                    MovementModifier = 0.2f;
+                    pas = PlayerAttackState.COMBO2;
+				}
+				break;
+			case PlayerAttackState.BLOCKING:
+                if (pms is PlayerMoveState.IDLE or PlayerMoveState.WALK && ps is PlayerState.FINE)
+                {
+					MovementModifier = 0.2f;
+					parry_timer = ParryTimer;
+					pas = PlayerAttackState.BLOCKING;
+                }
+                break;
+			case PlayerAttackState.IDLE:
+				
+				if(recovery_timer <= 0 && attack_timer <= 0)
+				{
+					MovementModifier = 1.0f;
+                    pas = PlayerAttackState.IDLE;
+                }
+				break;
+			case PlayerAttackState.RECOVERING:
+				recovery_timer = AttackRecoveryTimer;
+                MovementModifier = 1.0f;
+                pas = PlayerAttackState.RECOVERING;
 				break;
 		}
-		
+
+	}
+
+	private void _attack_state_helper(bool startorfinish)
+	{
+
+		//Punch1.Call("_activate", PlayerDirection, );
+	}
+	private void _enact_attack_state(double delta, ref Vector2 velocity)
+	{
+		attack_timer -= delta;
+		recovery_timer -= delta;
+		parry_timer -= delta;
+		switch(pas)
+		{
+			case PlayerAttackState.ATTACKING:
+				if(attack_timer <= 0 && attack_queued)
+				{
+					_cas(PlayerAttackState.COMBO1, ref velocity);
+				}
+                else if (attack_timer <= 0)
+                {
+                    _cas(PlayerAttackState.RECOVERING, ref velocity);
+                }
+                break;
+			case PlayerAttackState.COMBO1:
+                if (attack_timer <= 0 && attack_queued)
+                {
+                    _cas(PlayerAttackState.COMBO2, ref velocity);
+                }
+				else if(attack_timer <= 0)
+				{
+					_cas(PlayerAttackState.RECOVERING, ref velocity);
+				}
+				break;
+			case PlayerAttackState.COMBO2:
+				if(attack_timer <= 0)
+				{
+					_cas(PlayerAttackState.RECOVERING, ref velocity);
+				}
+				break;
+            case PlayerAttackState.BLOCKING:
+
+				break;
+
+			case PlayerAttackState.RECOVERING:
+
+				break;
+
+			case PlayerAttackState.IDLE:
+				//nothing happens
+				break;
+		}
+
+		if(pas == PlayerAttackState.ATTACKING)
+		{
+			attack_timer-=delta;
+		}
+		else if(pas == PlayerAttackState.RECOVERING)
+		{
+			recovery_timer -=delta;
+			if(recovery_timer <= 0)
+			{
+				
+				_cas(PlayerAttackState.IDLE, ref velocity);
+                //change state to idle, if the player had an attack qeued up then we q the attack up again
+				if (attack_queued)
+                {
+                    attack_queued = false;
+                    _cas(PlayerAttackState.ATTACKING, ref velocity);
+                }
+            }
+		}
+		else if (pas == PlayerAttackState.BLOCKING)
+		{
+			parry_timer -=delta;
+		}
+		//not much to do if you are idle, yet....
+
 	}
 	private void _animation_handler(double delta, ref Vector2 velocity)
 	{
@@ -371,16 +600,18 @@ public partial class Player : CharacterBody2D, DamagableEntity
 		_pes(ref velocity, delta);
 		_ppms(ref velocity);
 		_pjs(ref velocity);
+		_pas(delta, ref velocity);
 		
 		_animation_handler(delta, ref velocity);
 		
 		_enact_environmental_state(delta, ref velocity);
 		_enact_jump_state(delta, ref velocity);
 		_enact_move_state(delta, ref velocity);
+		_enact_attack_state(delta, ref velocity);
 		Velocity = velocity;
 		_playerXSpeed_helper();
 		_playerYSpeed_helper();
-
+		_attack_text_helper();
 
 		MoveAndSlide();
 	}
