@@ -2,23 +2,47 @@
 
 [ext_resource type="Theme" uid="uid://bg4h5rin6m4pu" path="res://Themes/HealthBarTheme.tres" id="1_wlp2u"]
 [ext_resource type="Script" uid="uid://cfrivlnxrb8bm" path="res://Scripts/HealthBar.cs" id="1_wsc52"]
-[ext_resource type="Texture2D" uid="uid://cudklxvjowmae" path="res://Images/UIArt/MVM Healthbar Backing.png" id="3_bne81"]
-[ext_resource type="Texture2D" uid="uid://mvl77ibdwjdj" path="res://Images/UIArt/MVM Healthbar2.png" id="4_gluot"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bne81"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2k36"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_napv7"]
-texture = ExtResource("4_gluot")
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(4, 4, 444, 64)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsc52"]
+bg_color = Color(0.90675926, 0.3297221, 0.59277016, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlp2u"]
+bg_color = Color(0.13592777, 0.1285136, 0.11862678, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27450982)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bne81"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="HealthBar" type="ProgressBar" unique_id=286525542]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 456.0
-offset_bottom = 76.0
+z_index = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -15.0
+offset_right = 200.0
+grow_vertical = 0
 theme = ExtResource("1_wlp2u")
+theme_override_styles/background = SubResource("StyleBoxEmpty_o2k36")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wsc52")
 step = 1.0
 value = 30.0
 show_percentage = false
@@ -32,19 +56,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxEmpty_bne81")
-theme_override_styles/fill = SubResource("StyleBoxTexture_napv7")
+theme_override_styles/background = SubResource("StyleBoxFlat_wlp2u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bne81")
 value = 50.0
 show_percentage = false
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=675587803]
-z_index = -2
-layout_mode = 0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 476.0
-offset_bottom = 84.0
-texture = ExtResource("3_bne81")
 
 [node name="Timer" type="Timer" parent="." unique_id=139221107]
 wait_time = 0.4

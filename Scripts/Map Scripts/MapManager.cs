@@ -11,7 +11,6 @@ public partial class MapManager : Node2D
 	Node2D GameScene;
 	Camera2D Camera;
 	Node2D Restraints;
-	MvmSongIdea Music;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -21,8 +20,6 @@ public partial class MapManager : Node2D
 		PlayerCollision = Player.GetNode<CollisionShape2D>("PlayerCollisionShape2D");
 		GameScene = GetNode<Node2D>("/root/GameScene");
 		Camera = GetNode<Camera2D>("/root/GameScene/TheCamera");
-		//Some Music Fun
-		Music = GetNode<MvmSongIdea>("../GameScene/MvmSongIdea");
 	}
 	
 	private void ChangeMap(string S, string NM, int TC, string CM, int FC, float EM)
@@ -171,8 +168,6 @@ public partial class MapManager : Node2D
 		MoveCamera(NM);
 		//Allowing the Player to collide again now that it's all complete.
 		PlayerCollision.SetDisabled(false);
-		//Just doing a little funny goof.
-		Music.SwitchSong();
 	}
 	
 	public void CollectInfo(string Spawn, string NextMap, int ToChunk,

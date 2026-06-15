@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://cd1dfqgs6bjtv"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_ieeb7"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="3_0rpuj"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="4_a8fyu"]
-[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/Tilesets/MVM Town Tiles.png" id="5_ryl4o"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="3_0rpuj"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="4_a8fyu"]
+[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/MVM Town Tiles.png" id="5_ryl4o"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_kljao"]
 [ext_resource type="PackedScene" uid="uid://3yklf5lbir3p" path="res://Prefabs/WoodenDock.tscn" id="6_xnwop"]
-[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="7_xnwop"]
+[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/MVM Bench.png" id="7_xnwop"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -800,12 +800,12 @@ sources/2 = SubResource("TileSetAtlasSource_ajksq")
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_ieeb7")]
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 2
+z_index = 6
 tile_map_data = PackedByteArray("AAADAAQAAQAAAAIAAAABAAQAAQAAAAIAAAD//wQAAQAAAAIAAAD+/wQAAQAAAAIAAAD8/wQAAQAAAAIAAAD5/wQAAQAAAAIAAAD4/wQAAQAAAAIAAAD3/wQAAQAAAAIAAAD9/wQAAQAAAAMAAAAAAAQAAQAAAAMAAAACAAQAAQAAAAMAAAD7/wQAAQAAAAMAAAD6/wQAAQAAAAMAAAD2/wQAAQAAAAMAAAADAAYAAQACAAIAAAACAAYAAQACAAIAAAABAAYAAQACAAMAAAAAAAYAAQACAAIAAAD//wYAAQACAAMAAAD+/wYAAQACAAMAAAD9/wYAAQACAAIAAAD8/wYAAQACAAIAAAD7/wYAAQACAAMAAAD6/wYAAQACAAMAAAD5/wYAAQACAAIAAAD4/wYAAQACAAMAAAD3/wYAAQACAAIAAAD2/wYAAQACAAMAAAD+/wUAAQABAAIAAAABAAUAAQABAAIAAAADAAUAAQABAAIAAAD6/wUAAQABAAIAAAD4/wUAAQABAAIAAAD3/wUAAQABAAMAAAD2/wUAAQABAAMAAAD5/wUAAQABAAMAAAD7/wUAAQABAAMAAAD8/wUAAQABAAMAAAD9/wUAAQABAAMAAAAAAAUAAQABAAMAAAD//wUAAQABAAMAAAACAAUAAQABAAMAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
-z_index = 2
+z_index = 6
 tile_map_data = PackedByteArray("AAAEAAUAAgACAAIAAAAFAAUAAgACAAIAAAAGAAQAAgAEAAUAAAAGAAUAAgACAAIAAAAHAAQAAgACAAEAAAAHAAUAAgACAAIAAAAIAAQAAgACAAEAAAAIAAUAAgACAAIAAAAJAAQAAgACAAEAAAAJAAUAAgACAAIAAAAKAAQAAgADAAEAAAAKAAUAAgADAAIAAAAFAAQAAgACAAIAAAAKAAYAAgADAAMAAAAJAAYAAgACAAMAAAAIAAYAAgACAAMAAAAHAAYAAgACAAMAAAAGAAYAAgACAAMAAAAFAAYAAgACAAMAAAAEAAYAAgACAAMAAAADAAYAAgABAAMAAAAEAAQAAgACAAIAAAAKAAIAAgAAAAMAAAAKAAEAAgAAAAIAAAAKAAAAAgAAAAIAAAAKAP//AgAAAAIAAAAKAP7/AgAAAAIAAAAKAP3/AgAAAAIAAAAKAPz/AgAAAAIAAAAKAPv/AgAAAAIAAAAKAPr/AgAAAAEAAAAGAAMAAgADAAIAAAAGAAIAAgADAAEAAAAFAAMAAgACAAIAAAAFAAIAAgACAAEAAAAEAAMAAgACAAIAAAAEAAIAAgACAAEAAAADAAIAAgABAAEAAAADAAMAAgABAAIAAAADAAUAAgABAAIAAAADAAQAAgABAAIAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 

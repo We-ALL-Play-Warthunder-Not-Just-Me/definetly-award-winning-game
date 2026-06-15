@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://bgk36k3vjjqov"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_rdikw"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="2_favc3"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="2_favc3"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_d20b6"]
 [ext_resource type="PackedScene" uid="uid://3yklf5lbir3p" path="res://Prefabs/WoodenDock.tscn" id="4_favc3"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="4_x6v4j"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="5_41s1t"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="4_x6v4j"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="5_41s1t"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_scuec"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
@@ -416,95 +416,67 @@ scale = Vector2(320, 384)
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
 [node name="Trees10" type="Sprite2D" parent="All Trees" unique_id=560277736]
-position = Vector2(-126, -62)
+position = Vector2(41, 298.5)
 texture = ExtResource("2_favc3")
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 48)
-
-[node name="Trees11" type="Sprite2D" parent="All Trees" unique_id=110921982]
-position = Vector2(137, -130)
-texture = ExtResource("2_favc3")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
-[node name="Trees13" type="Sprite2D" parent="All Trees" unique_id=2052336631]
-position = Vector2(149, -112)
-texture = ExtResource("2_favc3")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(296, 80, 42, 72)
-
-[node name="Trees14" type="Sprite2D" parent="All Trees" unique_id=515231764]
-position = Vector2(42, -168)
-texture = ExtResource("2_favc3")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(215, 1, 44, 48)
-
-[node name="Trees12" type="Sprite2D" parent="All Trees" unique_id=353579143]
-position = Vector2(116, -109)
-texture = ExtResource("2_favc3")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
-[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
-position = Vector2(55, 162)
-texture = ExtResource("2_favc3")
-region_enabled = true
-region_rect = Rect2(172, 4, 42, 72)
-
-[node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1548162556]
-position = Vector2(-72, 106.5)
-texture = ExtResource("2_favc3")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(291, 231, 84, 75)
+region_rect = Rect2(339, 77, 44, 75)
 
 [node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(2, 138.5)
+position = Vector2(-61, 314.5)
 texture = ExtResource("2_favc3")
 region_enabled = true
-region_rect = Rect2(290, 308, 87, 75)
+region_rect = Rect2(109, 154, 170, 75)
+
+[node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1898501844]
+position = Vector2(109, 252)
+texture = ExtResource("2_favc3")
+region_enabled = true
+region_rect = Rect2(172, 4, 42, 72)
 
 [node name="Trees3" type="Sprite2D" parent="All Trees" unique_id=1243910722]
-position = Vector2(16.5, -100)
+position = Vector2(71, 266.5)
 texture = ExtResource("2_favc3")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(290, 308, 87, 48)
+region_rect = Rect2(87, 77, 44, 75)
 
 [node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1224290505]
-position = Vector2(-93, -30)
+position = Vector2(-84, 138.5)
 texture = ExtResource("2_favc3")
 flip_h = true
 region_enabled = true
-region_rect = Rect2(339, 77, 44, 48)
+region_rect = Rect2(339, 77, 44, 75)
+
+[node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1548162556]
+position = Vector2(-56, 156)
+texture = ExtResource("2_favc3")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(172, 4, 42, 72)
 
 [node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=1011616391]
-position = Vector2(59, 56)
+position = Vector2(-32, 154.5)
 texture = ExtResource("2_favc3")
-flip_h = true
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 48)
+region_rect = Rect2(87, 77, 44, 75)
 
 [node name="Trees7" type="Sprite2D" parent="All Trees" unique_id=1701862565]
-position = Vector2(-126, 104)
+position = Vector2(-120, 90.5)
 texture = ExtResource("2_favc3")
 region_enabled = true
-region_rect = Rect2(87, 77, 44, 48)
+region_rect = Rect2(87, 77, 44, 75)
 
 [node name="Trees9" type="Sprite2D" parent="All Trees" unique_id=474817867]
-position = Vector2(111, 115)
+position = Vector2(139, 109)
 texture = ExtResource("2_favc3")
-flip_h = true
 region_enabled = true
-region_rect = Rect2(253, 82, 42, 48)
+region_rect = Rect2(253, 82, 42, 70)
 
 [node name="Trees8" type="Sprite2D" parent="All Trees" unique_id=54704567]
-position = Vector2(-13, 8)
+position = Vector2(105, 106.5)
 texture = ExtResource("2_favc3")
 region_enabled = true
-region_rect = Rect2(5, 231, 88, 48)
+region_rect = Rect2(7, 308, 88, 75)
 
 [node name="TestShade" parent="." unique_id=1811497297 instance=ExtResource("3_d20b6")]
 scale = Vector2(320, 384)
@@ -530,8 +502,7 @@ tile_map_data = PackedByteArray("AAD1/wgAAAABAAEAAAD1/wkAAAABAAIAAAD1/woAAAABAAI
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 2
-tile_map_data = PackedByteArray("AAD6//X/AQABAAAAAAD6//b/AQABAAEAAAD+//f/AQABAAAAAAD+//j/AQACAAAAAAAGAPz/AQABAAAAAAAGAP3/AQABAAEAAAAIAAEAAQABAAAAAAAIAAIAAQABAAEAAAABAAQAAQABAAAAAAABAAUAAQACAAAAAAD9/wMAAQABAAAAAAD9/wQAAQABAAEAAAD3/wAAAQABAAAAAAD3/wEAAQACAAAAAAD5/wEAAQABAAAAAAD5/wIAAQABAAEAAAD///7/AQABAAAAAAD/////AQABAAEAAAD3//f/AQABAAAAAAD3//j/AQACAAAAAAD9//b/AQAAAAAAAAADAPj/AQAAAAAAAAAHAP7/AQAAAAAAAAADAAYAAQAAAAAAAAD//wQAAQAAAAAAAAD4/wEAAQAAAAAAAAD+//3/AQAAAAAAAAD4//b/AQACAAAAAAACAP3/AQACAAAAAAAIAAQAAQAAAAEAAAADAAoAAQAAAAEAAAD8/wgAAQAAAAEAAAD4/wcAAQAAAAEAAAAAAAEAAQAAAAEAAAD+/wAAAQAAAAEAAAD4//z/AQAAAAEAAAD+//r/AQAAAAEAAAADAPr/AQAAAAEAAAADAPb/AQAAAAEAAAAHAPj/AQAAAAEAAAAGAPj/AQACAAEAAAABAPX/AQACAAEAAAABAPr/AQACAAEAAAD5//7/AQACAAEAAAD9/wAAAQACAAEAAAAFAAcAAQACAAEAAAABAAoAAQACAAEAAAD9/wgAAQACAAEAAAD6/wcAAQACAAEAAAD3/wcAAQACAAEAAAA=")
+z_index = 8
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("6_scuec")]

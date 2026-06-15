@@ -469,18 +469,23 @@ tile_map_data = PackedByteArray("AAD2/wUAAAACAAEAAAD3/wUAAAACAAEAAAD4/wQAAAABAAE
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
-z_index = 2
 tile_map_data = PackedByteArray("AAD+////AQAAAAEAAAD1/wQAAQAAAAEAAAD3/wQAAQAAAAEAAAD5/wMAAQAAAAEAAAAAAAMAAQAAAAEAAAD8/wMAAQAAAAEAAAD7////AQAAAAEAAAACAAAAAQAAAAEAAAAHAAEAAQAAAAEAAAAKAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAASAAMAAQAAAAEAAAARAAQAAQACAAEAAAAMAAQAAQACAAEAAAAJAAMAAQACAAEAAAAFAAAAAQACAAEAAAABAAIAAQACAAEAAAD9/wMAAQACAAEAAAD2/wQAAQACAAEAAAD6////AQACAAEAAAD7/wIAAQABAAAAAAD7/wMAAQABAAEAAAD+/wEAAQABAAAAAAD+/wIAAQACAAAAAAAQAP7/AQABAAAAAAAQAP//AQABAAEAAAASAAAAAQABAAAAAAASAAEAAQACAAAAAAAPAPz/AQAAAAAAAAD6/wEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_ytr1u")]
 position = Vector2(160, 96)
+SpawnSide = "Top"
 NextMap = "Forest7"
 ToChunk = 1
+CurrentMap = "Forest8"
+FromChunk = 2
 VertTrans = true
 
 [node name="MapTransitioner2" parent="." unique_id=1025300927 instance=ExtResource("4_ytr1u")]
 position = Vector2(-160, 96)
+SpawnSide = "Top"
 NextMap = "Forest9"
 ToChunk = 2
+CurrentMap = "Forest8"
+FromChunk = 1
 VertTrans = true

@@ -12,7 +12,7 @@ public partial class CraftingMaterial : ItemList
 	{
 		UpdateItemlist();
 		materialInventory.Changed += UpdateItemlist;
-		//ItemActivated += SelectItem;
+		ItemActivated += SelectItem;
 		ItemClicked += OnInventoryItemClicked;
 		searchBar.TextChanged += SearchItemList;
 	}
