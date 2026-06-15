@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvitb33g30ukj"
-path="res://.godot/imported/Test UI Pause Backing.png-bb3921845e8a5ba791dc687fecb9df1c.ctex"
+uid="uid://er0kt2xnc18r"
+path="res://.godot/imported/MVM Pause UI Quit2.png-e36b4626f9d0fc373b0118517a017f97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UIArt/Test UI Pause Backing.png"
-dest_files=["res://.godot/imported/Test UI Pause Backing.png-bb3921845e8a5ba791dc687fecb9df1c.ctex"]
+source_file="res://Images/UIArt/MVM Pause UI Quit2.png"
+dest_files=["res://.godot/imported/MVM Pause UI Quit2.png-e36b4626f9d0fc373b0118517a017f97.ctex"]
 
 [params]
 

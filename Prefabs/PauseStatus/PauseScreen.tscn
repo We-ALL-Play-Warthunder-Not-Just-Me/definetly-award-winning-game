@@ -1,68 +1,93 @@
 [gd_scene format=3 uid="uid://gcbkh1y08iwi"]
 
 [ext_resource type="Script" uid="uid://quevfhvv6pht" path="res://Prefabs/PauseStatus/ScriptsofPause/PauseScreen.cs" id="1_hbagr"]
-[ext_resource type="Texture2D" uid="uid://bvitb33g30ukj" path="res://Images/UIArt/Test UI Pause Backing.png" id="2_sr6dd"]
-[ext_resource type="Texture2D" uid="uid://doloe1lhbe7h2" path="res://Images/UIArt/Test UI Resume Button.png" id="2_w7fft"]
-[ext_resource type="Texture2D" uid="uid://cwx006qcopycc" path="res://Images/UIArt/Test UI Settings Button.png" id="4_2i225"]
-[ext_resource type="Texture2D" uid="uid://dmx6g6a6iya0w" path="res://Images/UIArt/Test UI Quit Button.png" id="5_sr6dd"]
+[ext_resource type="Texture2D" uid="uid://bvitb33g30ukj" path="res://Images/Placeholder/Test UI Pause Backing.png" id="2_sr6dd"]
+[ext_resource type="Texture2D" uid="uid://b7fc0j4pi7tgn" path="res://Images/UIArt/MVM Pause UI Resume2.png" id="3_t048d"]
+[ext_resource type="Texture2D" uid="uid://yi1nwbyi2dke" path="res://Images/UIArt/MVM Pause UI Resume3.png" id="4_ghxan"]
+[ext_resource type="Texture2D" uid="uid://dqr28l86vo04" path="res://Images/UIArt/MVM Pause UI Resume1.png" id="5_jpo0q"]
+[ext_resource type="Texture2D" uid="uid://cgk1hwoi4yb1d" path="res://Images/UIArt/MVM Pause UI Settings2.png" id="6_jpo0q"]
 [ext_resource type="PackedScene" uid="uid://5s2xomo2al0b" path="res://Prefabs/PauseStatus/SettingsScreen.tscn" id="6_sr6dd"]
+[ext_resource type="Texture2D" uid="uid://b50n8sskuqg3b" path="res://Images/UIArt/MVM Pause UI Settings3.png" id="7_vy8as"]
+[ext_resource type="Texture2D" uid="uid://w38e38u8ysk2" path="res://Images/UIArt/MVM Pause UI Settings1.png" id="8_8tkdh"]
+[ext_resource type="Texture2D" uid="uid://er0kt2xnc18r" path="res://Images/UIArt/MVM Pause UI Quit2.png" id="9_8tkdh"]
+[ext_resource type="Texture2D" uid="uid://hj4uyb6ugtyg" path="res://Images/UIArt/MVM Pause UI Quit3.png" id="10_1vajj"]
+[ext_resource type="Texture2D" uid="uid://pgclj6ib7nb6" path="res://Images/UIArt/MVM Pause UI Quit1.png" id="11_wgvfr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sr6dd"]
 texture = ExtResource("2_sr6dd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoik7"]
-content_margin_top = 96.0
+content_margin_top = 108.0
 content_margin_right = 256.0
-texture = ExtResource("2_w7fft")
+texture = ExtResource("3_t048d")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8tkdh"]
+content_margin_top = 108.0
+content_margin_right = 256.0
+texture = ExtResource("4_ghxan")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghxan"]
-content_margin_top = 96.0
+content_margin_top = 108.0
 content_margin_right = 256.0
-texture = ExtResource("2_w7fft")
+texture = ExtResource("5_jpo0q")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color(0.9439871, 0.553566, 0.9451619, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i225"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cprlw"]
-content_margin_top = 96.0
+content_margin_top = 108.0
 content_margin_right = 320.0
-texture = ExtResource("4_2i225")
+texture = ExtResource("6_jpo0q")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vajj"]
+content_margin_top = 108.0
+content_margin_right = 320.0
+texture = ExtResource("7_vy8as")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpo0q"]
-content_margin_top = 96.0
+content_margin_top = 108.0
 content_margin_right = 320.0
-texture = ExtResource("4_2i225")
+texture = ExtResource("8_8tkdh")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color(0.94509804, 0.5529412, 0.94509804, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr6dd"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t048d"]
-content_margin_top = 96.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nryrk"]
+content_margin_top = 108.0
 content_margin_right = 192.0
-texture = ExtResource("5_sr6dd")
+texture = ExtResource("9_8tkdh")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t048d"]
+content_margin_top = 108.0
+content_margin_right = 192.0
+texture = ExtResource("10_1vajj")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vy8as"]
-content_margin_top = 96.0
+content_margin_top = 108.0
 content_margin_right = 192.0
-texture = ExtResource("5_sr6dd")
+texture = ExtResource("11_wgvfr")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color(0.94509804, 0.5529412, 0.94509804, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cprlw"]
 
 [node name="PauseScreen" type="Control" unique_id=431672971 node_paths=PackedStringArray("resumeButton", "settingsButton", "quitButton")]
 process_mode = 2
+z_index = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -103,9 +128,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -160.0
-offset_top = -148.0
+offset_top = -166.0
 offset_right = 160.0
-offset_bottom = 148.0
+offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -114,7 +139,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_qoik7")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qoik7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8tkdh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ghxan")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2i225")
 icon_alignment = 1
@@ -124,7 +149,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_cprlw")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_cprlw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1vajj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jpo0q")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sr6dd")
 icon_alignment = 1
@@ -133,7 +158,7 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_t048d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nryrk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t048d")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vy8as")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cprlw")

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="2_ys0pu"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_frkhq"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_jvjjb"]
+[ext_resource type="Texture2D" uid="uid://blim2bdu5n6nq" path="res://Images/Objects/Campfire Save.png" id="6_frkhq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -411,6 +412,19 @@ sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
 [node name="All Trees" type="Node2D" parent="." unique_id=2076436320]
 
+[node name="Trees6" type="Sprite2D" parent="All Trees" unique_id=740480101]
+position = Vector2(-4, 4.5)
+texture = ExtResource("1_e5h4f")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(98, 231, 186, 75)
+
+[node name="Trees5" type="Sprite2D" parent="All Trees" unique_id=1057486239]
+position = Vector2(0, 61.5)
+texture = ExtResource("1_e5h4f")
+region_enabled = true
+region_rect = Rect2(98, 231, 186, 75)
+
 [node name="Trees2" type="Sprite2D" parent="All Trees" unique_id=1918786056]
 position = Vector2(-118, 26.5)
 texture = ExtResource("1_e5h4f")
@@ -425,31 +439,37 @@ region_enabled = true
 region_rect = Rect2(291, 231, 84, 75)
 
 [node name="Trees" type="Sprite2D" parent="All Trees" unique_id=357783314]
-position = Vector2(0, 42.5)
+position = Vector2(-70, 26.5)
+texture = ExtResource("1_e5h4f")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(87, 77, 44, 75)
+
+[node name="Trees4" type="Sprite2D" parent="All Trees" unique_id=1669335730]
+position = Vector2(70, 26.5)
 texture = ExtResource("1_e5h4f")
 region_enabled = true
-region_rect = Rect2(106, 308, 177, 75)
+region_rect = Rect2(87, 77, 44, 75)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1176760088]
 tile_map_data = PackedByteArray("AAD2/wMAAAACAAEAAAD2/wQAAAACAAIAAAD2/wUAAAACAAIAAAD3/wMAAAACAAEAAAD3/wQAAAACAAIAAAD3/wUAAAACAAIAAAD4/wMAAAADAAEAAAD4/wQAAAAEAAUAAAD4/wUAAAACAAIAAAD5/wQAAAACAAEAAAD5/wUAAAACAAIAAAD6/wQAAAACAAEAAAD6/wUAAAACAAIAAAD7/wUAAAACAAIAAAD8/wUAAAACAAIAAAD9/wUAAAACAAIAAAD+/wUAAAACAAIAAAD//wUAAAACAAIAAAAAAAUAAAACAAIAAAABAAUAAAACAAIAAAACAAUAAAACAAIAAAADAAUAAAACAAIAAAAEAAUAAAACAAIAAAAFAAUAAAACAAIAAAAGAAQAAAACAAEAAAAGAAUAAAACAAIAAAAHAAQAAAAFAAUAAAAHAAUAAAACAAIAAAAIAAMAAAACAAEAAAAIAAQAAAACAAIAAAAIAAUAAAACAAIAAAAJAAMAAAACAAEAAAAJAAQAAAACAAIAAAAJAAUAAAACAAIAAAAKAAMAAAADAAEAAAAKAAQAAAADAAIAAAAKAAUAAAADAAIAAAD1//r/AAAAAAEAAAD1//v/AAAAAAIAAAD1//z/AAAAAAIAAAD1//3/AAAAAAIAAAD1//7/AAAAAAIAAAD1////AAAAAAIAAAD1/wAAAAAAAAIAAAD1/wEAAAAAAAMAAAD1/wMAAAABAAEAAAD1/wQAAAABAAIAAAD1/wUAAAABAAIAAAAFAAQAAAACAAEAAAAHAAMAAAABAAEAAAAKAPr/AAAAAAEAAAAKAPv/AAAAAAIAAAAKAPz/AAAAAAIAAAAKAP3/AAAAAAIAAAAKAP7/AAAAAAIAAAAKAP//AAAAAAIAAAAKAAAAAAAAAAIAAAAKAAEAAAAAAAMAAAAKAAYAAAADAAMAAAAJAAYAAAACAAMAAAAIAAYAAAACAAMAAAAHAAYAAAACAAMAAAAGAAYAAAACAAMAAAAFAAYAAAACAAMAAAAEAAYAAAACAAMAAAADAAYAAAACAAMAAAACAAYAAAACAAMAAAABAAYAAAACAAMAAAAAAAYAAAACAAMAAAD//wYAAAACAAMAAAD+/wYAAAACAAMAAAD9/wYAAAACAAMAAAD8/wYAAAACAAMAAAD7/wYAAAACAAMAAAD6/wYAAAACAAMAAAD5/wYAAAACAAMAAAD4/wYAAAACAAMAAAD3/wYAAAACAAMAAAD2/wYAAAACAAMAAAD1/wYAAAABAAMAAAAEAAQAAAACAAEAAAADAAQAAAACAAEAAAACAAQAAAACAAEAAAABAAQAAAACAAEAAAAAAAQAAAACAAEAAAD//wQAAAACAAEAAAD+/wQAAAACAAEAAAD9/wQAAAACAAEAAAD8/wQAAAACAAEAAAD7/wQAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
+z_index = 2
 tile_map_data = PackedByteArray("AAAJAAIAAQAAAAEAAAAGAAMAAQAAAAEAAAABAAMAAQAAAAEAAAD5/wMAAQAAAAEAAAD3/wIAAQAAAAEAAAD+/wMAAQAAAAEAAAD2/wIAAQACAAEAAAAHAAIAAQACAAEAAAACAAMAAQACAAEAAAD9/wMAAQACAAEAAAD6/wMAAQACAAEAAAAEAAMAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("4_jvjjb")]
 position = Vector2(160, 0)
-SpawnSide = "Left"
 NextMap = "Forest9"
 ToChunk = 1
-CurrentMap = "ForestToTown"
-FromChunk = 1
 
 [node name="MapTransitioner2" parent="." unique_id=767450860 instance=ExtResource("4_jvjjb")]
 position = Vector2(-160, 0)
-SpawnSide = "Right"
 NextMap = "Town1"
 ToChunk = 2
-CurrentMap = "ForestToTown"
-FromChunk = 1
+
+[node name="CampfireSave" type="Sprite2D" parent="." unique_id=1381719822]
+position = Vector2(0, 52)
+texture = ExtResource("6_frkhq")

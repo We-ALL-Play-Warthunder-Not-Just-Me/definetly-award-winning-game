@@ -55,7 +55,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 	public const float DASHSPEED = 350.0f;
 	public const float JUMPVELOCITY = -225.0f;
 	public const float GRAVITY = 500.0f;
-	public const double COYOTEPERIOD = 0.5;
+	public const double COYOTEPERIOD = 0.15;
 
 	//player parts
 	public CharacterBody2D PlayerObject;
