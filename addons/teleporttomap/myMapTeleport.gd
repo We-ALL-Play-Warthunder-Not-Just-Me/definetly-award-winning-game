@@ -12,7 +12,7 @@ func _disable_plugin() -> void:
 
 func _enter_tree() -> void:
 	# Initialization of the plugin goes here.
-	var dock_scene = preload("uid://cj3cvffgjdnae").instantiate()
+	var dock_scene = preload("res://addons/teleporttomap/ToolPanel.tscn").instantiate()
 	dock = EditorDock.new()
 	dock.add_child(dock_scene);
 	
