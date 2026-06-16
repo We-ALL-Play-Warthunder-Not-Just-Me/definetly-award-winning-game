@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bdsur5v6u15yj" path="res://Images/SingLark.png" id="7_uvv1k"]
 [ext_resource type="Script" uid="uid://c3iyt6vjdml3h" path="res://Scripts/InventoryStuff/AddItemButton.cs" id="7_x2suf"]
 [ext_resource type="Resource" uid="uid://cjud4tr1avren" path="res://Resources/Recipes/_RecipesList.tres" id="8_8jsly"]
-[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="9_6r2q2"]
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blue Items/Blueberry.tres" id="9_6r2q2"]
 [ext_resource type="Texture2D" uid="uid://drm388i7e0ocx" path="res://Images/UIArt/MVM UI Inventory Bag.png" id="9_e5xi4"]
 [ext_resource type="Script" uid="uid://nmjrwyf2yfi7" path="res://Scripts/InventoryStuff/InventoryLogic.cs" id="9_x2suf"]
 [ext_resource type="Script" uid="uid://0kljpwx2ckev" path="res://Scripts/Crafting/RecipeListDropDown.cs" id="10_kexwp"]
@@ -127,7 +127,7 @@ offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_chdmw")
-current_tab = 1
+current_tab = 2
 
 [node name="Status" type="Control" parent="Panel/TabContainer" unique_id=2114024243]
 visible = false
@@ -258,6 +258,7 @@ And if you ask me how I'm feeling, don't tell me you're too blind to see!"
 autowrap_mode = 2
 
 [node name="Crafting" type="Control" parent="Panel/TabContainer" unique_id=395767587]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -449,7 +450,6 @@ stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Inventory" type="Control" parent="Panel/TabContainer" unique_id=1152981402]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

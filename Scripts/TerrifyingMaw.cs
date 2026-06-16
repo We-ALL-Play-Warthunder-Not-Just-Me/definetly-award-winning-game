@@ -4,9 +4,12 @@ using System.Runtime.CompilerServices;
 
 public partial class TerrifyingMaw : CharacterBody2D
 {
-	[Export] public float Speed = 300.0f;
-	[Export] public float JumpVelocity = -400.0f;
-	[Export] public double FallSpeed = 200f;
+	[Export] public float Speed = 50.0f;
+    [Export] public float DashSpeed = 100.0f;
+    [Export] public float JumpVelocity = -400.0f;
+	[Export] public double DashJump = -100f;
+	[Export] public double DashDuration = 1.0f;
+    [Export] public double FallSpeed = 200f;
 	[Export] public double MeleeRange = 50f;
 	[Export] public double RangedRange = 150f;
 	[Export] public double OutOfRangeRange = 500f;
@@ -26,13 +29,15 @@ public partial class TerrifyingMaw : CharacterBody2D
 		IDLE,
 		MOVINGLEFT,
 		MOVINGRIGHT,
-		DASHING,
+		DASHINGLEFT,
+		DASHINGRIGHT,
 		BOUNCING
 	}
 
 	private enum JumpState
 	{
 		IDLE,
+		DASHING,
 		JUMPING,
 		FALLING,
 	}
@@ -80,10 +85,12 @@ public partial class TerrifyingMaw : CharacterBody2D
 	{
 		if(tds != TargetDistance.OUTOFRANGE && cas == AggessionState.PASSIVE)
 		{
+			PassiveSpeedMultiplier = 1;
 			cas = AggessionState.ALERTED;
 		}
 		else if(tds >= TargetDistance.UNDETECTED && cas == AggessionState.ALERTED)
 		{
+			PassiveSpeedMultiplier = 0.5;
 			cas = AggessionState.PASSIVE;
 		}
 	}
@@ -147,8 +154,8 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 	}
 
-
 	private double _wander_time = 0;
+	private double _dash_time = -3;
 	private void _process_move_state(double delta, ref Vector2 velocity)
 	{
 		//if we are passive we just wander a little
@@ -194,14 +201,35 @@ public partial class TerrifyingMaw : CharacterBody2D
 		//if we are alerted to the enemy we will run at them until we are close
 		if(cas == AggessionState.ALERTED)
 		{
-			if(tds == TargetDistance.RANGED)
+			//if we are not already dashing, and we are not recharging our dash, we jump at them
+			if((cms != MoveState.DASHINGLEFT || cms != MoveState.DASHINGRIGHT) && tds == TargetDistance.RANGED && (_dash_time <= -3 || _dash_time >= 0))
 			{
-				_change_move_state(MoveState.DASHING);
-			}
-			else if(tds != TargetDistance.MELEE && tds != TargetDistance.RANGED)
+                if (_illegal_direction_helper() == -1)
+                {
+                    _change_move_state(MoveState.DASHINGLEFT);
+                }
+                else if (_illegal_direction_helper() == 1)
+                {
+                    _change_move_state(MoveState.DASHINGRIGHT);
+                }
+            }
+			// we are far away, lets walk at them
+			else if (tds != TargetDistance.MELEE && tds != TargetDistance.RANGED)
 			{
 				_change_move_state(_direction_helper());
 			}
+			//oh no, we hit a wall, lets bounce!
+			else if ((cms == MoveState.DASHINGLEFT || cms == MoveState.DASHINGRIGHT) && this.IsOnWall())
+			{
+                if (this.GetWallNormal().X > 0)
+                {
+                    _change_move_state(MoveState.DASHINGRIGHT);
+                }
+                else
+                {
+                    _change_move_state(MoveState.DASHINGLEFT);
+                }
+            }
 			
 		}
 	}
@@ -223,10 +251,35 @@ public partial class TerrifyingMaw : CharacterBody2D
 			case MoveState.MOVINGLEFT: 
 				cms = MoveState.MOVINGLEFT; 
 				break;
-			case MoveState.DASHING: 
-				cms = MoveState.DASHING; 
-				break;
-			case MoveState.BOUNCING: 
+			case MoveState.DASHINGRIGHT:
+                GD.Print("Checking dash time: " + _dash_time);
+                if (cms != MoveState.DASHINGLEFT && cms != MoveState.DASHINGRIGHT && _dash_time <= 3)
+                {
+
+                    _dash_time = DashDuration;
+                    GD.Print("Time now: " + _dash_time);
+                    cms = MoveState.DASHINGRIGHT;
+                }
+                if (_dash_time >= 0)
+				{
+                    cms = MoveState.DASHINGRIGHT;
+                }
+                break;
+            case MoveState.DASHINGLEFT:
+                GD.Print("Checking dash time: " + _dash_time);
+                if (cms != MoveState.DASHINGLEFT && cms != MoveState.DASHINGRIGHT && _dash_time <= 3)
+                {
+
+                    _dash_time = DashDuration;
+                    GD.Print("Time now: " + _dash_time);
+                    cms = MoveState.DASHINGLEFT;
+                }
+                if (_dash_time >= 0)
+                {
+                    cms = MoveState.DASHINGLEFT;
+                }
+                break;
+            case MoveState.BOUNCING: 
 				cms = MoveState.BOUNCING; 
 				break;
 		}
@@ -234,8 +287,10 @@ public partial class TerrifyingMaw : CharacterBody2D
 
 
 	private void _enact_move_state(double delta, ref Vector2 velocity) 
-	{ 
-		switch (cms)
+	{
+        _dash_time -= delta;
+        GD.Print("Time now: : " + _dash_time);
+        switch (cms)
 		{
 			case MoveState.IDLE:
 				velocity.X = 0;
@@ -244,12 +299,15 @@ public partial class TerrifyingMaw : CharacterBody2D
 				velocity.X = -Speed * (float)PassiveSpeedMultiplier;
 				break;
 			case MoveState.MOVINGRIGHT:
-				velocity.X = Speed * (float)PassiveSpeedMultiplier;
+                velocity.X = Speed * (float)PassiveSpeedMultiplier;
+                break;
+			case MoveState.DASHINGLEFT:
+				velocity.X = -DashSpeed;
 				break;
-			case MoveState.DASHING:
-
-				break;
-		}
+            case MoveState.DASHINGRIGHT:
+                velocity.X = DashSpeed;
+                break;
+        }
 		GD.Print(cms.ToString());
 	}
 
@@ -277,20 +335,32 @@ public partial class TerrifyingMaw : CharacterBody2D
 	}
 
 	//a little janky. Returns a movestate of the direction the player is in.
-	private MoveState _direction_helper()
+
+    private MoveState _direction_helper()
+    {
+        if (Target == null)
+        {
+            return 0;
+        }
+        Vector2 directionToTarget = this.GlobalPosition.DirectionTo(Target.GlobalPosition);
+        if (directionToTarget.X < 0)
+        {
+            return MoveState.MOVINGLEFT;
+        }
+        else
+        {
+            return MoveState.MOVINGRIGHT;
+        }
+    }
+	private int _illegal_direction_helper()
 	{
-		if (Target == null)
-		{
-			return 0;
-		}
-		Vector2 directionToTarget = this.GlobalPosition.DirectionTo(Target.GlobalPosition);
-		if (directionToTarget.X < 0)
-		{
-			return MoveState.MOVINGLEFT;
-		}
+		MoveState m = _direction_helper();
+
+		if (m == MoveState.MOVINGLEFT) { return -1; }
 		else
 		{
-			return MoveState.MOVINGRIGHT;
+			return 1;
+
 		}
 	}
 }

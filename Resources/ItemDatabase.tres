@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ItemDictionary" format=3 uid="uid://b2t4xih7225ws"]
 
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_g3e45"]
-[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="2_g3e45"]
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blue Items/Blueberry.tres" id="2_g3e45"]
 [ext_resource type="Script" uid="uid://bfw00m6csyt5i" path="res://Resources/BaseCases/ItemDictionary.cs" id="3_r8lrb"]
 [ext_resource type="Resource" uid="uid://cq11k2aec8vtb" path="res://Resources/Items/Lemonade.tres" id="3_xll3a"]
 [ext_resource type="Resource" uid="uid://dfa2u42g44aw8" path="res://Resources/Items/StrawberryShortcake.tres" id="4_ie3b3"]
-[ext_resource type="Resource" uid="uid://dssvu78m2okab" path="res://Resources/Items/PurpleCatalyst.tres" id="5_pfj0f"]
+[ext_resource type="Resource" uid="uid://dssvu78m2okab" path="res://Resources/Items/Purple Items/PurpleCatalyst.tres" id="5_pfj0f"]
 [ext_resource type="Resource" uid="uid://divt054n14kij" path="res://Resources/Items/BlueberryPie.tres" id="6_5dlua"]
 [ext_resource type="Resource" uid="uid://mndqsclaaryd" path="res://Resources/Items/Grapes.tres" id="6_ie3b3"]
 [ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/BlueCatalyst.tres" id="7_pfj0f"]
@@ -28,6 +28,7 @@
 [ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/BellPepper.tres" id="25_w072o"]
 [ext_resource type="Resource" uid="uid://clychdpwcicy1" path="res://Resources/Items/Topaz.tres" id="26_2m3db"]
 [ext_resource type="Resource" uid="uid://5pq55wp0444t" path="res://Resources/Items/MawTeeth.tres" id="27_rntdb"]
+[ext_resource type="Resource" uid="uid://b150fuhlavpfo" path="res://Resources/Items/Garland.tres" id="28_jix0e"]
 
 [resource]
 script = ExtResource("3_r8lrb")
@@ -57,5 +58,6 @@ items = Dictionary[int, ExtResource("1_g3e45")]({
 23: ExtResource("24_g8c6o"),
 24: ExtResource("25_w072o"),
 25: ExtResource("26_2m3db"),
-26: ExtResource("27_rntdb")
+26: ExtResource("27_rntdb"),
+27: ExtResource("28_jix0e")
 })

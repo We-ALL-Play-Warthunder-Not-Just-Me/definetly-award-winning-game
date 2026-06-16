@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scripts/MvmSongIdea.cs" id="5_xhjei"]
 [ext_resource type="PackedScene" uid="uid://bkxfy70udf36n" path="res://Prefabs/PauseStatus/PauseStatus.tscn" id="6_6vvcf"]
 [ext_resource type="AudioStream" uid="uid://bgn01fmxd7t7q" path="res://Audio/SingLark (NGGYU).wav" id="6_x6js8"]
+[ext_resource type="AudioStream" uid="uid://bxyo4ypak67qp" path="res://Audio/Pickup.wav" id="8_y30xb"]
 
 [node name="GameScene" type="Node2D" unique_id=359298613]
 script = ExtResource("1_lg2j6")
@@ -19,6 +20,7 @@ position = Vector2(0, 53)
 
 [node name="TheCamera" parent="." unique_id=946100206 instance=ExtResource("2_x6js8")]
 z_index = 5
+process_callback = 0
 limit_left = -160
 limit_top = -96
 limit_right = 160
@@ -28,9 +30,15 @@ limit_bottom = 84
 stream = ExtResource("4_y30xb")
 volume_db = -16.0
 autoplay = true
+bus = &"Music"
 script = ExtResource("5_xhjei")
 OriginalSong = ExtResource("4_y30xb")
 SingLark = ExtResource("6_x6js8")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1685460417]
+stream = ExtResource("8_y30xb")
+volume_db = -16.0
+bus = &"Sound Effects"
 
 [node name="PauseStatus" parent="." unique_id=1296144696 instance=ExtResource("6_6vvcf")]
 visible = false

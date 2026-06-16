@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://c02ekc81ditg5"]
 
 [ext_resource type="Script" uid="uid://bcohevnu8xqjs" path="res://Scripts/InventoryStuff/PickUpItem.cs" id="1_jcn2h"]
-[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blueberry.tres" id="2_08hnh"]
-[ext_resource type="Texture2D" uid="uid://t8aidlaga8lm" path="res://Images/UIArt/blueberry.png" id="2_tdaro"]
+[ext_resource type="Resource" uid="uid://n4lftern2ytg" path="res://Resources/Items/Blue Items/Blueberry.tres" id="2_08hnh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08hnh"]
 
@@ -15,4 +14,3 @@ amount = 1
 shape = SubResource("RectangleShape2D_08hnh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1906956456]
-texture = ExtResource("2_tdaro")

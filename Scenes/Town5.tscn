@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_kljao"]
 [ext_resource type="PackedScene" uid="uid://3yklf5lbir3p" path="res://Prefabs/WoodenDock.tscn" id="6_xnwop"]
 [ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="7_xnwop"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_a8fyu"]
+[ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/Blue Items/BlueCatalyst.tres" id="9_ryl4o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -824,3 +826,9 @@ position = Vector2(0, 38)
 [node name="MvmBench" type="Sprite2D" parent="." unique_id=1712835356]
 position = Vector2(80, 22)
 texture = ExtResource("7_xnwop")
+
+[node name="Items" type="Node2D" parent="." unique_id=1966612470]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_a8fyu")]
+position = Vector2(0, 53)
+baseItem = ExtResource("9_ryl4o")

@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_aoeht"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_hik1n"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_ybs72"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_ybs72"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="8_m7pcg"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="9_wj12l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -487,3 +490,21 @@ ToChunk = 1
 position = Vector2(-320, 0)
 NextMap = "Forest2"
 ToChunk = 3
+
+[node name="Items" type="Node2D" parent="." unique_id=1689150392]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_ybs72")]
+position = Vector2(-106, -12)
+baseItem = ExtResource("8_m7pcg")
+
+[node name="ItemPickup2" parent="Items" unique_id=1765491854 instance=ExtResource("7_ybs72")]
+position = Vector2(88, -12)
+baseItem = ExtResource("8_m7pcg")
+
+[node name="ItemPickup3" parent="Items" unique_id=404259178 instance=ExtResource("7_ybs72")]
+position = Vector2(19, -42)
+baseItem = ExtResource("9_wj12l")
+
+[node name="ItemPickup4" parent="Items" unique_id=1749478849 instance=ExtResource("7_ybs72")]
+position = Vector2(-28, -44)
+baseItem = ExtResource("9_wj12l")

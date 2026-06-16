@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="4_p8rn2"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="5_do3rv"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_qhtva"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_do3rv"]
+[ext_resource type="Resource" uid="uid://cpb6r661f3qac" path="res://Resources/Items/Yellow Items/YellowCatalyst.tres" id="9_qhtva"]
+[ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/Yellow Items/BellPepper.tres" id="10_comqg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -512,3 +515,17 @@ tile_set = SubResource("TileSet_a4htl")
 position = Vector2(-160, 0)
 NextMap = "Forest22"
 ToChunk = 4
+
+[node name="Items" type="Node2D" parent="." unique_id=631602542]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_do3rv")]
+position = Vector2(80, 9)
+baseItem = ExtResource("9_qhtva")
+
+[node name="ItemPickup2" parent="Items" unique_id=1882768497 instance=ExtResource("8_do3rv")]
+position = Vector2(58, 20)
+baseItem = ExtResource("10_comqg")
+
+[node name="ItemPickup3" parent="Items" unique_id=293104054 instance=ExtResource("8_do3rv")]
+position = Vector2(106, 19)
+baseItem = ExtResource("10_comqg")

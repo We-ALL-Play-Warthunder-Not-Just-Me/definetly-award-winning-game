@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_kpjo8"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_f6pk4"]
 [ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="5_uifhc"]
-[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="6_j2fs2"]
-[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="7_kpjo8"]
-[ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="8_odaa7"]
+[ext_resource type="Resource" uid="uid://c0gc3w1riamwd" path="res://Resources/Items/Yellow Items/Daffodil.tres" id="6_uifhc"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="7_j2fs2"]
+[ext_resource type="PackedScene" uid="uid://g5ys7dxu5ggy" path="res://Prefabs/Enemies/MawMaw.tscn" id="10_246nu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -409,20 +409,6 @@ terrain_set_0/terrain_0/color = Color(0.98039216, 0.16078432, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_aw55h")
 sources/1 = SubResource("TileSetAtlasSource_tc4t5")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nu08"]
-atlas = ExtResource("6_j2fs2")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="Resource" id="Resource_ynalf"]
-resource_local_to_scene = true
-script = ExtResource("7_kpjo8")
-ID = 5
-Name = "Blueberry Pie"
-qty = 2
-max_qty = 100
-icon = SubResource("AtlasTexture_2nu08")
-metadata/_custom_type_script = "uid://nh7pbovwuooe"
-
 [node name="Map1" type="Node2D" unique_id=685611168]
 
 [node name="BoundingBox" parent="." unique_id=524676693 instance=ExtResource("1_es4yc")]
@@ -474,18 +460,25 @@ tile_set = SubResource("TileSet_a4htl")
 [node name="Items" type="Node2D" parent="." unique_id=428841795]
 
 [node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("5_uifhc")]
-position = Vector2(-106, -19)
-amount = 5
+position = Vector2(-106, -12)
+baseItem = ExtResource("6_uifhc")
 
 [node name="ItemPickup2" parent="Items" unique_id=987775448 instance=ExtResource("5_uifhc")]
-position = Vector2(-33, -15)
-baseItem = SubResource("Resource_ynalf")
+position = Vector2(-33, -12)
+baseItem = ExtResource("7_j2fs2")
+
+[node name="ItemPickup3" parent="Items" unique_id=1468318421 instance=ExtResource("5_uifhc")]
+position = Vector2(-223, 4)
+baseItem = ExtResource("6_uifhc")
+
+[node name="ItemPickup4" parent="Items" unique_id=597454611 instance=ExtResource("5_uifhc")]
+position = Vector2(275, -12)
+baseItem = ExtResource("6_uifhc")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=471699235]
 
-[node name="Maw" parent="Enemies" unique_id=1423301954 instance=ExtResource("8_odaa7")]
-position = Vector2(90, 48)
-IsSproutMaw = true
+[node name="MawMaw" parent="Enemies" unique_id=614449111 instance=ExtResource("10_246nu")]
+position = Vector2(77, -29)
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2

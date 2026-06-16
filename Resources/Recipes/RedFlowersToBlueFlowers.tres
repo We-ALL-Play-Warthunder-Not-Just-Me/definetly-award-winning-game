@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="1_vmbxi"]
 [ext_resource type="Script" uid="uid://clr3e7yjs53yd" path="res://Resources/BaseCases/Ingredients.cs" id="2_7qknd"]
-[ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/BlueCatalyst.tres" id="2_8bdcy"]
-[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/RedFlower.tres" id="3_b8gnf"]
+[ext_resource type="Resource" uid="uid://b2w8k82gkd7ko" path="res://Resources/Items/Blue Items/BlueCatalyst.tres" id="2_8bdcy"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="3_b8gnf"]
 
 [resource]
 script = ExtResource("2_7qknd")
