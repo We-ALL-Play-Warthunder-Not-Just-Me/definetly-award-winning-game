@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbdh52sq3seic"]
+
+[ext_resource type="Script" uid="uid://djcjae7crnfck" path="res://Punch1.cs" id="1_uvl2h"]
+[ext_resource type="Texture2D" uid="uid://duetnlxtja2ou" path="res://Images/icon.svg" id="2_stpv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stpv3"]
+size = Vector2(12, 12)
+
+[node name="Punch_1" type="Area2D" unique_id=1098024143]
+script = ExtResource("1_uvl2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1096630768]
+position = Vector2(0, 1.1920929e-07)
+scale = Vector2(0.09375, 0.09375)
+texture = ExtResource("2_stpv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1591129889]
+shape = SubResource("RectangleShape2D_stpv3")
+
+[connection signal="body_entered" from="." to="." method="_on_enemy_detector_body_entered"]
