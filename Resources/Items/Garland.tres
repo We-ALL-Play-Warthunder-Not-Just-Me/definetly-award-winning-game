@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b150fuhlavpfo"]
+
+[ext_resource type="Texture2D" uid="uid://uip62065pfga" path="res://Images/UIArt/Woven Paintbrush.png" id="1_5lnc7"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_5m26g"]
+
+[resource]
+script = ExtResource("2_5m26g")
+ID = 27
+Name = "Garland"
+qty = 1
+max_qty = 1
+icon = ExtResource("1_5lnc7")
+important = true
+consumable = false
+metadata/_custom_type_script = "uid://nh7pbovwuooe"
