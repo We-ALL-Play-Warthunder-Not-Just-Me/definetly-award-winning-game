@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="1_np7t7"]
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="2_4ajgc"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_3yqh8"]
-[ext_resource type="PackedScene" uid="uid://dau2v1lpi4lgw" path="res://Prefabs/Maw.tscn" id="4_sgv1u"]
+[ext_resource type="PackedScene" uid="uid://g5ys7dxu5ggy" path="res://Prefabs/Enemies/MawMaw.tscn" id="5_0uwms"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="5_5t33k"]
 [ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_0uwms"]
 [ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/Yellow Items/BellPepper.tres" id="8_sre2j"]
@@ -462,19 +462,14 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=471699235]
 
-[node name="Maw" parent="Enemies" unique_id=1423301954 instance=ExtResource("4_sgv1u")]
-position = Vector2(108, 80)
-flip_h = true
-IsSproutMaw = true
+[node name="MawMaw" parent="Enemies" unique_id=614449111 instance=ExtResource("5_0uwms")]
+position = Vector2(-186, 132)
 
-[node name="Maw2" parent="Enemies" unique_id=1627034082 instance=ExtResource("4_sgv1u")]
-position = Vector2(-215, 128)
-flip_h = true
-IsSproutMaw = true
+[node name="MawMaw2" parent="Enemies" unique_id=1732071908 instance=ExtResource("5_0uwms")]
+position = Vector2(91, 82)
 
-[node name="Maw3" parent="Enemies" unique_id=302478017 instance=ExtResource("4_sgv1u")]
-position = Vector2(-64, 96)
-IsSproutMaw = true
+[node name="MawMaw3" parent="Enemies" unique_id=1053948204 instance=ExtResource("5_0uwms")]
+position = Vector2(-25, 84)
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2

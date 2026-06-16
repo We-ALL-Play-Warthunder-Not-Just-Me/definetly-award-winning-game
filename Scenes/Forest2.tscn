@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="8_nlcnh"]
 [ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="9_exa85"]
 [ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="10_tpxgk"]
+[ext_resource type="PackedScene" uid="uid://g5ys7dxu5ggy" path="res://Prefabs/Enemies/MawMaw.tscn" id="11_nlcnh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -555,3 +556,8 @@ baseItem = ExtResource("8_nlcnh")
 
 [node name="ItemPickup7" parent="Items" unique_id=1022516650 instance=ExtResource("7_d6doj")]
 position = Vector2(327, -41)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1945313328]
+
+[node name="MawMaw" parent="Enemies" unique_id=614449111 instance=ExtResource("11_nlcnh")]
+position = Vector2(-67, 53)
