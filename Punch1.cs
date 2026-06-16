@@ -12,10 +12,13 @@ public partial class Punch1 : Area2D
 
     public void _on_enemy_detector_body_entered(Node2D body)
     {
+        GD.Print("Test");
         if (active)
         {
+            GD.Print("Active");
             if (body.IsInGroup("Enemy"))
             {
+                GD.Print("I HIT YOU");
                 body.Call("dealDamage", _damage, _knockback);
             }
         }

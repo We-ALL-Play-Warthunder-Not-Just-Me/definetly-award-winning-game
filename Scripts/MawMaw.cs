@@ -1,10 +1,11 @@
 using Godot;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using static Godot.TextServer;
 
-public partial class MawMaw : CharacterBody2D
+public partial class MawMaw : CharacterBody2D, DamagableEntity
 {
 	[Export] public float Speed = 10.0f;
     [Export] public float DashSpeed = 100.0f;
@@ -81,11 +82,19 @@ public partial class MawMaw : CharacterBody2D
 
     }
 
+    public void dealDamage(float damage, int direction)
+    {
+        HP -= (int)damage;
+        if(HP <= 0)
+        {
+            QueueFree();
+        }
+    }
     public void _touch_damage_helper(Node2D body)
     {
         if (body.IsInGroup("Player") && current_state == State.DASHING)
         {
-            GD.Print("Dashhit?");
+            
             body.Call("dealDamage", DashDamage, target_direction_helper());
         }
     }
@@ -95,6 +104,10 @@ public partial class MawMaw : CharacterBody2D
         if (current_state == State.INTERESTED)
         {
             velocity.X = Speed * target_direction_helper();
+            if((Target.GlobalPosition.Y -20) > this.GlobalPosition.Y)
+            {
+                velocity.Y = 150;
+            }
         }
         
     }
@@ -206,7 +219,7 @@ public partial class MawMaw : CharacterBody2D
                 //if we are not exhausted and not dashing we can start meleeing
                 if(current_state != State.MELEEEXHAUST && current_state != State.DASHING && _melee_recovery_time <= 0)
                 {
-                    GD.Print("woooo");
+                    
                     _melee_windup_time = MeleeWindup;
                     dash_direction = target_direction_helper();
                     current_state = State.MELEEING1WINDUP;
@@ -216,7 +229,7 @@ public partial class MawMaw : CharacterBody2D
                 
                 if(current_state == State.MELEEING1WINDUP)
                 {
-                    GD.Print("Noooo");
+                    
                     velocity.Y = -30;
                     _melee_time = MeleeDuration;
                     current_state = State.MELEEING1;
@@ -247,7 +260,7 @@ public partial class MawMaw : CharacterBody2D
             case State.MELEEING2:
                 if (current_state == State.MELEEING2WINDUP)
                 {
-                    GD.Print("Noooo");
+                    
                     velocity.Y = -30;
                     _melee_time = MeleeDuration;
                     current_state = State.MELEEING2;

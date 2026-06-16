@@ -434,6 +434,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 
 					attack_queued = false;
 					attack_timer = AttackTimer;
+					_attack_state_helper(true);
 					MovementModifier = 0.4f;
 					pas = PlayerAttackState.ATTACKING;
 
@@ -444,6 +445,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				{
                     attack_queued = false;
                     attack_timer = AttackTimer;
+                    _attack_state_helper(true);
                     MovementModifier = 0.4f;
                     pas = PlayerAttackState.COMBO1;
 				}
@@ -453,6 +455,7 @@ public partial class Player : CharacterBody2D, DamagableEntity
 				{
                     attack_queued = false;
                     attack_timer = AttackTimer;
+                    _attack_state_helper(true);
                     MovementModifier = 0.2f;
                     pas = PlayerAttackState.COMBO2;
 				}
@@ -484,8 +487,19 @@ public partial class Player : CharacterBody2D, DamagableEntity
 
 	private void _attack_state_helper(bool startorfinish)
 	{
-
-		//Punch1.Call("_activate", PlayerDirection, );
+		if (startorfinish)
+		{
+			Vector2 curpos = Vector2.Zero;
+            curpos.X += (10 * PlayerDirection);
+            Punch1.Position = curpos;
+            Punch1.Call("_activate", PlayerDirection, 10, 10);
+        }
+		else
+		{
+			Punch1.Position = Vector2.Zero;
+			Punch1.Call("_deactivate");
+		}
+		
 	}
 	private void _enact_attack_state(double delta, ref Vector2 velocity)
 	{
@@ -497,27 +511,32 @@ public partial class Player : CharacterBody2D, DamagableEntity
 			case PlayerAttackState.ATTACKING:
 				if(attack_timer <= 0 && attack_queued)
 				{
-					_cas(PlayerAttackState.COMBO1, ref velocity);
+                    _attack_state_helper(false);
+                    _cas(PlayerAttackState.COMBO1, ref velocity);
 				}
                 else if (attack_timer <= 0)
                 {
+                    _attack_state_helper(false);
                     _cas(PlayerAttackState.RECOVERING, ref velocity);
                 }
                 break;
 			case PlayerAttackState.COMBO1:
                 if (attack_timer <= 0 && attack_queued)
                 {
+                    _attack_state_helper(false);
                     _cas(PlayerAttackState.COMBO2, ref velocity);
                 }
 				else if(attack_timer <= 0)
 				{
-					_cas(PlayerAttackState.RECOVERING, ref velocity);
+                    _attack_state_helper(false);
+                    _cas(PlayerAttackState.RECOVERING, ref velocity);
 				}
 				break;
 			case PlayerAttackState.COMBO2:
 				if(attack_timer <= 0)
 				{
-					_cas(PlayerAttackState.RECOVERING, ref velocity);
+                    _attack_state_helper(false);
+                    _cas(PlayerAttackState.RECOVERING, ref velocity);
 				}
 				break;
             case PlayerAttackState.BLOCKING:

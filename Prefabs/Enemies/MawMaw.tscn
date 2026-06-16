@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00odg"]
 
-[node name="MawMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l")]
+[node name="MawMaw" type="CharacterBody2D" unique_id=614449111 node_paths=PackedStringArray("l") groups=["Enemy"]]
 script = ExtResource("1_wgu7o")
 MeleeAttackOffsetX = 5.0
 l = NodePath("StateLabel")

@@ -505,7 +505,7 @@ position = Vector2(90, 48)
 IsSproutMaw = true
 
 [node name="MawMaw" parent="Enemies" unique_id=614449111 instance=ExtResource("10_246nu")]
-position = Vector2(78, -29)
+position = Vector2(77, -29)
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=216537511]
 z_index = 2
