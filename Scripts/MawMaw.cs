@@ -106,6 +106,7 @@ public partial class MawMaw : CharacterBody2D, DamagableEntity
             velocity.X = Speed * target_direction_helper();
             if((Target.GlobalPosition.Y -20) > this.GlobalPosition.Y)
             {
+                GD.Print("aaaaaa");
                 velocity.Y = 150;
             }
         }
@@ -270,7 +271,7 @@ public partial class MawMaw : CharacterBody2D, DamagableEntity
                     position.Y += (float)MeleeAttackOffsetY;
                     biteinstance.Position = position;
                     biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 1.1f)), (float)MeleeDuration+0.3f);
-                    GetParent().AddChild(biteinstance);
+                    this.AddChild(biteinstance);
                 }
                 break;
             case State.MELEEING2RECOVERY:
