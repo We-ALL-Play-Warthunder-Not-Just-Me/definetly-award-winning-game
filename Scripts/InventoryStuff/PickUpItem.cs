@@ -99,19 +99,10 @@ public partial class PickUpItem : Area2D
 		{
 			if (AddNewItem(amount))
 			{
-<<<<<<< Updated upstream
-				//GD.Print(this);
-				//CheckItem.AddItemToCollected(this);
-				PickUpSound.Play();
-=======
-<<<<<<< Updated upstream
-=======
 				RandomNoise();
 				//GD.Print(this);
 				//CheckItem.AddItemToCollected(this);
 				PickUpSound.Play();
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 				QueueFree();
 			}
 		}

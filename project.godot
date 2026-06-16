@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="DefinetlyAwardWinningGame"
-run/main_scene="uid://bwvmk5l8bfwat"
+config/name="WitchsBrew"
+run/main_scene="uid://bpsngil7crafg"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="uid://vtnyyf8uv3ra"
 run/size/viewport_width=1280

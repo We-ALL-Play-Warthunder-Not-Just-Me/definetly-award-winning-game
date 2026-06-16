@@ -177,6 +177,7 @@ text = "aaaaaaa"
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerAttackStateLabel" type="RichTextLabel" parent="." unique_id=765422879]
+visible = false
 offset_left = -211.0
 offset_top = -3.0
 offset_right = 20.0
@@ -211,3 +212,4 @@ layer = 6
 [node name="HealthBar" parent="CanvasLayer" unique_id=286525542 instance=ExtResource("3_y5hcb")]
 
 [node name="Punch_1" parent="." unique_id=1098024143 instance=ExtResource("4_2nftw")]
+visible = false

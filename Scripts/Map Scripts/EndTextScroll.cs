@@ -20,11 +20,7 @@ public partial class EndTextScroll : Node2D
 		if (ScrollText == true)
 		{
 			this.Position = new Vector2(this.Position.X, this.Position.Y - ScrollSpeed);
-<<<<<<< Updated upstream
-			Music.Stop();
-=======
 			//Music.Stop();
->>>>>>> Stashed changes
 		}
 	}
 	
