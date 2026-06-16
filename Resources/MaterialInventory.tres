@@ -1,16 +1,23 @@
-[gd_resource type="Resource" script_class="InventoryStorage" format=3]
+[gd_resource type="Resource" script_class="InventoryStorage" format=3 uid="uid://cn3cxnjfydtlj"]
 
-[ext_resource type="Script" path="res://Resources/BaseCases/InventoryStorage.cs" id="1_u3fqy"]
+[ext_resource type="Script" uid="uid://vyw1ws4cgmpn" path="res://Resources/BaseCases/InventoryStorage.cs" id="1_u3fqy"]
 
 [resource]
 script = ExtResource("1_u3fqy")
 inventory = Dictionary[int, int]({
-1: 50,
-2: 3,
-3: 1,
-5: 52,
-6: 1,
-7: 7,
-8: 13
+5: 9,
+6: 2,
+8: 1,
+9: 1,
+10: 66,
+11: 44,
+13: 20,
+15: 1,
+16: 1,
+17: 2,
+19: 18,
+21: 1,
+23: 2,
+25: 1
 })
 metadata/_custom_type_script = "uid://vyw1ws4cgmpn"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://21f5qlj0u21o"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_annm3"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_r6tom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6kcw"]
+atlas = ExtResource("1_annm3")
+region = Rect2(160, 64, 32, 32)
+
+[resource]
+script = ExtResource("2_r6tom")
+ID = 14
+Name = "Schmidt Leaf"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_l6kcw")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

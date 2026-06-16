@@ -8,11 +8,10 @@ atlas = ExtResource("1_foiyl")
 region = Rect2(0, 0, 32, 32)
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("1_ywy4t")
-ID = 5
+ID = 1
 Name = "Blueberry Pie"
-qty = 2
+qty = 1
 max_qty = 100
 icon = SubResource("AtlasTexture_2nu08")
 metadata/_custom_type_script = "uid://nh7pbovwuooe"

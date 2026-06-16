@@ -7,6 +7,7 @@ public partial class InventoryLogic : ItemList
 {
 	[Export] private ItemDictionary itemDatabase;
 	[Export] public InventoryStorage inventory;
+	[Export] TextureRect inventoryPicture;
 	// [Export] private Resource itemDatabase;
 	// [Export] public Resource inventory;
 	//[Export] int InventorySize = 20;
@@ -25,7 +26,7 @@ public partial class InventoryLogic : ItemList
 	public void UpdateItemlist()
 	{
 		Clear();
-		foreach (var (id,amount) in inventory.inventory)
+		foreach (var (id, amount) in inventory.inventory)
 		{
 			if (itemDatabase.items[id].max_qty == 1)
 			{
@@ -54,7 +55,7 @@ public partial class InventoryLogic : ItemList
 		if (item.qty == 0) return true;
 
 		if (inventory.inventory.ContainsKey(item.ID))
-		{	// we kinda are already checking for this in AddStackable
+		{   // we kinda are already checking for this in AddStackable
 			if (inventory.inventory[item.ID] >= item.max_qty)
 			{
 				//GD.Print($"Your inventory is full of {item.Name}");
@@ -64,7 +65,7 @@ public partial class InventoryLogic : ItemList
 		// if there is no item in the bag yet
 		if (!inventory.inventory.ContainsKey(item.ID))
 		{
-			inventory.inventory.Add(item.ID,item.qty);
+			inventory.inventory.Add(item.ID, item.qty);
 			//UpdateItemlist();
 			inventory.EmitChanged();
 			return true;
@@ -118,7 +119,7 @@ public partial class InventoryLogic : ItemList
 			GD.Print("This is an important item!!");
 			return;
 		}
-        inventory.inventory.Remove(id);
+		inventory.inventory.Remove(id);
 		//UpdateItemlist();
 		inventory.EmitChanged();
 	}
@@ -131,57 +132,86 @@ public partial class InventoryLogic : ItemList
 			inventory.inventory[id] -= amount;
 		}
 		//Probably needs more checks
-		if(inventory.inventory[id] == 0) inventory.inventory.Remove(id);
+		if (inventory.inventory[id] == 0) inventory.inventory.Remove(id);
 		inventory.EmitChanged();
 	}
 
-	public Item GetInventoryItem(int index)
+	public int GetInventoryItemID(int index)
+	{
+		if (index < 0 || index >= inventory.inventory.Count) return 0;
+		int id = (int)GetItemMetadata(index);
+		if (inventory.inventory.ContainsKey(id))
+		{
+			return id;
+		}
+		return 0;
+	}
+
+	public int GetInventoryItemQtyFromID(int ID)
+	{
+		if (ID == 0) return 0;
+		if (inventory.inventory.ContainsKey(ID))
+		{
+			return inventory.inventory[ID];
+		}
+		return 0;
+	}
+
+	public string GetItemNameFromID(int ID)
+	{
+		if (ID == 0) return null;
+		return itemDatabase.items[ID].Name;
+	}
+
+	public Item GetInventoryItemfromID(int ID)
+	{
+		if (ID == 0) return null;
+		if (inventory.inventory.ContainsKey(ID))
+		{
+			return itemDatabase.items[ID].Copy(GetInventoryItemQtyFromID(ID));
+		}
+		return null;
+	}
+
+	public Item GetInventoryItemfromindex(int index)
 	{
 		if (index < 0 || index >= inventory.inventory.Count) return null;
 		int id = (int)GetItemMetadata(index);
-		Item temp = itemDatabase.items[id].shallowCopy();
-		if (inventory.inventory.ContainsKey(id))
-		{
-			temp.qty = inventory.inventory[id];
-		}
-		return temp;
+		return GetInventoryItemfromID(id);
 	}
 
 	private void OnInventoryItemClicked(long index, Vector2 pos, long mousebuttonindex)
 	{
 		if (mousebuttonindex == 2)
 		{
-			Item item = GetInventoryItem((int)index);
+			int itemID = GetInventoryItemID((int)index);
 
-			if (item == null)
+			if (itemID == 0)
 			{
 				GD.Print("No item here");
 				return;
 			}
 
 			RemoveInventoryItem((int)index);
-			GD.Print($"You dropped {item.qty} of {item.Name}");
+			GD.Print($"You dropped {GetInventoryItemQtyFromID(itemID)} of {GetItemNameFromID(itemID)}");
 		}
 
 		else if (mousebuttonindex == 1)
 		{
-			Item item = GetInventoryItem((int)index);
-			if (item == null)
+			int itemID = GetInventoryItemID((int)index);
+			if (itemID == 0)
 			{
 				GD.Print("No item here");
 				return;
 			}
-			GD.Print($"You Clicked {item.Name} there are {item.qty}");
+			GD.Print($"You Clicked {GetItemNameFromID(itemID)} there are {GetInventoryItemQtyFromID(itemID)}");
 		}
 	}
 
-	[Signal]
-	public delegate void sentItemDataEventHandler(Item item);
-
 	private void OnItemSelected(long index)
 	{
-		Item item = GetInventoryItem((int)index);
-		EmitSignal(SignalName.sentItemData, item);
+		int itemID = GetInventoryItemID((int)index);
+		inventoryPicture.Texture = itemDatabase.items[itemID].icon;
 	}
 
 

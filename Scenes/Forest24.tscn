@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="5_cib3q"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="6_xdl78"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="7_4eok7"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_fnj8f"]
+[ext_resource type="Resource" uid="uid://bu5svmpkpi2ug" path="res://Resources/Items/Purple Items/Nightshade.tres" id="8_fnj8f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -437,3 +439,9 @@ position = Vector2(0, 96)
 NextMap = "Map2"
 ToChunk = 2
 VertTrans = true
+
+[node name="Items" type="Node2D" parent="." unique_id=921324985]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_fnj8f")]
+position = Vector2(-1, -17)
+baseItem = ExtResource("8_fnj8f")

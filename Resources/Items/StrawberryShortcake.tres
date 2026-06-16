@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dfa2u42g44aw8"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_qbaxr"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_qv4t2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbaxr"]
+atlas = ExtResource("1_qbaxr")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_qv4t2")
+ID = 3
+Name = "Strawberry Shortcake"
+qty = 1
+max_qty = 100
+icon = SubResource("AtlasTexture_qbaxr")
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

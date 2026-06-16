@@ -13,16 +13,17 @@ config_version=5
 config/name="DefinetlyAwardWinningGame"
 run/main_scene="uid://bwvmk5l8bfwat"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
-config/icon="res://Images/icon.svg"
+config/icon="uid://vtnyyf8uv3ra"
 run/size/viewport_width=1280
 
 [audio]
 
-buses/default_bus_layout="uid://cdmyphcatvale"
+buses/default_bus_layout="uid://retmvm800f86"
 
 [autoload]
 
 MapManager="*uid://ci01wourqhhwe"
+ItemChecker="*uid://40m4r71sl76l"
 
 [display]
 
@@ -38,6 +39,10 @@ project/assembly_name="DefinetlyAwardWinningGame"
 
 Enemy=""
 Player=""
+
+[gui]
+
+theme/default_font_antialiasing=0
 
 [input]
 

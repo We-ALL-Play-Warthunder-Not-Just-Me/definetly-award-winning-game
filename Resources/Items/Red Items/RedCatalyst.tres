@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://jcs3vxw08wx7"]
+
+[ext_resource type="Texture2D" uid="uid://8o1thfxq1xwb" path="res://Images/Items/Materials.png" id="1_tlnau"]
+[ext_resource type="Script" uid="uid://nh7pbovwuooe" path="res://Resources/BaseCases/Item.cs" id="2_qmpjc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2weh"]
+atlas = ExtResource("1_tlnau")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+script = ExtResource("2_qmpjc")
+ID = 15
+Name = "Red Catalyst"
+qty = 1
+max_qty = 1
+icon = SubResource("AtlasTexture_q2weh")
+important = true
+consumable = false
+metadata/_custom_type_script = "uid://nh7pbovwuooe"

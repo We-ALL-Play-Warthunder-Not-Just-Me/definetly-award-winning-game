@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://gcbkh1y08iwi" path="res://Prefabs/PauseStatus/PauseScreen.tscn" id="3_njtq0"]
 
 [node name="PauseStatus" type="CanvasLayer" unique_id=1296144696]
-layer = 2
+layer = 10
 script = ExtResource("1_iml0i")
 
 [node name="InventoryScreen" parent="." unique_id=1270476485 instance=ExtResource("2_4dlbn")]

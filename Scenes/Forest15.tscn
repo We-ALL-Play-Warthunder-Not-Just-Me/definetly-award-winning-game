@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="4_ppk4j"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="5_p2358"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_nhiha"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_p2358"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="9_nhiha"]
+[ext_resource type="Resource" uid="uid://b3txyegnxayve" path="res://Resources/Items/Red Items/PokemonRuby.tres" id="10_d472l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -565,3 +568,29 @@ ToChunk = 2
 position = Vector2(-320, 0)
 NextMap = "Forest14"
 ToChunk = 1
+
+[node name="Items" type="Node2D" parent="." unique_id=2056837864]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_p2358")]
+position = Vector2(-260, 36)
+baseItem = ExtResource("9_nhiha")
+
+[node name="ItemPickup2" parent="Items" unique_id=347771713 instance=ExtResource("8_p2358")]
+position = Vector2(195, 62)
+baseItem = ExtResource("10_d472l")
+
+[node name="ItemPickup9" parent="Items" unique_id=94942646 instance=ExtResource("8_p2358")]
+position = Vector2(-152, -12)
+baseItem = ExtResource("9_nhiha")
+
+[node name="ItemPickup10" parent="Items" unique_id=468685983 instance=ExtResource("8_p2358")]
+position = Vector2(242, -25)
+
+[node name="ItemPickup5" parent="Items" unique_id=1627726220 instance=ExtResource("8_p2358")]
+position = Vector2(192, -22)
+
+[node name="ItemPickup11" parent="Items" unique_id=886992693 instance=ExtResource("8_p2358")]
+position = Vector2(154, -82)
+
+[node name="ItemPickup12" parent="Items" unique_id=1497238098 instance=ExtResource("8_p2358")]
+position = Vector2(124, -83)

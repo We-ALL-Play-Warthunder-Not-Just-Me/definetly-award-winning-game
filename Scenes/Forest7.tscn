@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_bkdni"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_lxygv"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_lxygv"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_pf73b"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="8_nwrrs"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="9_ea3iu"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="10_hfirr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -494,3 +498,29 @@ position = Vector2(-320, -96)
 NextMap = "Forest8"
 ToChunk = 2
 VertTrans = true
+
+[node name="Items" type="Node2D" parent="." unique_id=2048667701]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_pf73b")]
+position = Vector2(1, 20)
+baseItem = ExtResource("8_nwrrs")
+
+[node name="ItemPickup5" parent="Items" unique_id=1617777507 instance=ExtResource("7_pf73b")]
+position = Vector2(-311, -44)
+baseItem = ExtResource("8_nwrrs")
+
+[node name="ItemPickup2" parent="Items" unique_id=756071772 instance=ExtResource("7_pf73b")]
+position = Vector2(234, 52)
+baseItem = ExtResource("9_ea3iu")
+
+[node name="ItemPickup3" parent="Items" unique_id=877223020 instance=ExtResource("7_pf73b")]
+position = Vector2(103, 8)
+baseItem = ExtResource("10_hfirr")
+
+[node name="ItemPickup6" parent="Items" unique_id=1563481177 instance=ExtResource("7_pf73b")]
+position = Vector2(335, 15)
+baseItem = ExtResource("10_hfirr")
+
+[node name="ItemPickup4" parent="Items" unique_id=617624537 instance=ExtResource("7_pf73b")]
+position = Vector2(-159, 23)
+baseItem = ExtResource("10_hfirr")

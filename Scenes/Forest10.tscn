@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://3yklf5lbir3p" path="res://Prefabs/WoodenDock.tscn" id="4_ytr1u"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="5_bgr8m"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_lswn5"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="8_lswn5"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="9_fp1fp"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="10_edkmv"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="11_pf55t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -497,3 +501,29 @@ position = Vector2(-160, -96)
 NextMap = "Forest11"
 ToChunk = 4
 VertTrans = true
+
+[node name="Items" type="Node2D" parent="." unique_id=672208263]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("8_lswn5")]
+position = Vector2(-236, 52)
+baseItem = ExtResource("9_fp1fp")
+
+[node name="ItemPickup2" parent="Items" unique_id=1764851821 instance=ExtResource("8_lswn5")]
+position = Vector2(194, 8)
+baseItem = ExtResource("10_edkmv")
+
+[node name="ItemPickup3" parent="Items" unique_id=556319095 instance=ExtResource("8_lswn5")]
+position = Vector2(-148, 19)
+baseItem = ExtResource("11_pf55t")
+
+[node name="ItemPickup6" parent="Items" unique_id=1888835209 instance=ExtResource("8_lswn5")]
+position = Vector2(95, 6)
+baseItem = ExtResource("10_edkmv")
+
+[node name="ItemPickup7" parent="Items" unique_id=2035302586 instance=ExtResource("8_lswn5")]
+position = Vector2(24, 24)
+baseItem = ExtResource("10_edkmv")
+
+[node name="ItemPickup8" parent="Items" unique_id=901745902 instance=ExtResource("8_lswn5")]
+position = Vector2(-67, 26)
+baseItem = ExtResource("10_edkmv")

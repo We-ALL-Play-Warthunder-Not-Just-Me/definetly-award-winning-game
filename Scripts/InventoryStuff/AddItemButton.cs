@@ -22,7 +22,7 @@ public partial class AddItemButton : Button
 		if(itemData is Item item)
 		{
 			//Make the copy of the item to not change the resource
-			Item tempitem = item.shallowCopy();
+			Item tempitem = item.Copy();
 			tempitem.qty = qty;
 			inv.AddInventoryItem(tempitem);
 		}
