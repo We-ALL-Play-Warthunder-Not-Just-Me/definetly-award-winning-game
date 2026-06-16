@@ -234,12 +234,12 @@ public partial class MawMaw : CharacterBody2D, DamagableEntity
                     _melee_time = MeleeDuration;
                     current_state = State.MELEEING1;
                     MawMawBite biteinstance = MeleeAttack1.Instantiate() as MawMawBite;
-                    Vector2 position = this.GlobalPosition;
+                    Vector2 position = Vector2.Zero;
                     position.X += (float)MeleeAttackOffsetX * dash_direction;
                     position.Y += (float)MeleeAttackOffsetY;
-                    biteinstance.GlobalPosition = position; 
+                    biteinstance.Position = position; 
                     biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 0.8f)), (float)MeleeDuration);
-                    GetParent().AddChild(biteinstance);
+                    this.AddChild(biteinstance);
                 }
                 break;
             case State.MELEEING1RECOVERY:
@@ -265,10 +265,10 @@ public partial class MawMaw : CharacterBody2D, DamagableEntity
                     _melee_time = MeleeDuration;
                     current_state = State.MELEEING2;
                     MawMawBite biteinstance = MeleeAttack2.Instantiate() as MawMawBite;
-                    Vector2 position = this.GlobalPosition;
+                    Vector2 position = Vector2.Zero;
                     position.X += (float)MeleeAttackOffsetX * dash_direction;
                     position.Y += (float)MeleeAttackOffsetY;
-                    biteinstance.GlobalPosition = position;
+                    biteinstance.Position = position;
                     biteinstance._begin(dash_direction, (Speed * ((float)_melee_time * 1.1f)), (float)MeleeDuration+0.3f);
                     GetParent().AddChild(biteinstance);
                 }
