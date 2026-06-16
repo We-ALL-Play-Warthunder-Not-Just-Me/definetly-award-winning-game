@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_1p4jt"]
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_qu823"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_1p4jt"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_gsnq1"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="8_8fohs"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="9_x3t4j"]
+[ext_resource type="Resource" uid="uid://b4sdrtjejp4ng" path="res://Resources/Items/Red Items/Beet.tres" id="10_fj74l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -533,3 +537,52 @@ ToChunk = 4
 position = Vector2(-480, 0)
 NextMap = "Forest5"
 ToChunk = 4
+
+[node name="Items" type="Node2D" parent="." unique_id=1539506097]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_gsnq1")]
+position = Vector2(-268, 36)
+baseItem = ExtResource("8_8fohs")
+
+[node name="ItemPickup2" parent="Items" unique_id=1062392019 instance=ExtResource("7_gsnq1")]
+position = Vector2(88, -12)
+baseItem = ExtResource("9_x3t4j")
+
+[node name="ItemPickup13" parent="Items" unique_id=1110788415 instance=ExtResource("7_gsnq1")]
+position = Vector2(-395, 4)
+baseItem = ExtResource("9_x3t4j")
+
+[node name="ItemPickup3" parent="Items" unique_id=1183320473 instance=ExtResource("7_gsnq1")]
+position = Vector2(-4, 36)
+baseItem = ExtResource("8_8fohs")
+
+[node name="ItemPickup5" parent="Items" unique_id=803893924 instance=ExtResource("7_gsnq1")]
+position = Vector2(90, 47)
+baseItem = ExtResource("10_fj74l")
+
+[node name="ItemPickup7" parent="Items" unique_id=631606416 instance=ExtResource("7_gsnq1")]
+position = Vector2(62, 52)
+baseItem = ExtResource("10_fj74l")
+
+[node name="ItemPickup6" parent="Items" unique_id=1274115732 instance=ExtResource("7_gsnq1")]
+position = Vector2(118, 52)
+baseItem = ExtResource("10_fj74l")
+
+[node name="ItemPickup8" parent="Items" unique_id=942957097 instance=ExtResource("7_gsnq1")]
+position = Vector2(315, 0)
+
+[node name="ItemPickup10" parent="Items" unique_id=688451859 instance=ExtResource("7_gsnq1")]
+position = Vector2(-127, -63)
+
+[node name="ItemPickup12" parent="Items" unique_id=68661829 instance=ExtResource("7_gsnq1")]
+position = Vector2(-85, -72)
+
+[node name="ItemPickup11" parent="Items" unique_id=1331557188 instance=ExtResource("7_gsnq1")]
+position = Vector2(-40, -59)
+
+[node name="ItemPickup9" parent="Items" unique_id=346381778 instance=ExtResource("7_gsnq1")]
+position = Vector2(398, 18)
+
+[node name="ItemPickup4" parent="Items" unique_id=1070886224 instance=ExtResource("7_gsnq1")]
+position = Vector2(-216, 51)
+baseItem = ExtResource("8_8fohs")

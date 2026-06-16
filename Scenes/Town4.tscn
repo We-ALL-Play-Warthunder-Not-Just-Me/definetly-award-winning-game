@@ -1,14 +1,19 @@
 [gd_scene format=4 uid="uid://dsa26ystkqln8"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_h5aer"]
-[ext_resource type="Texture2D" uid="uid://dkb1463p6eitv" path="res://Images/Temp Houses.png" id="2_8u6ka"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="2_xowa0"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="3_8u6ka"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="4_2shp5"]
+[ext_resource type="Texture2D" uid="uid://dkb1463p6eitv" path="res://Images/Placeholder/Temp Houses.png" id="2_8u6ka"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="2_xowa0"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="3_8u6ka"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="4_2shp5"]
 [ext_resource type="Texture2D" uid="uid://cdi4gq0wg212u" path="res://Images/MVM Towns People.png" id="4_8u6ka"]
-[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/MVM Bench.png" id="4_ilu2v"]
-[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/MVM Town Tiles.png" id="5_ilu2v"]
+[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="4_ilu2v"]
+[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/Tilesets/MVM Town Tiles.png" id="5_ilu2v"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_0mske"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="10_hn3y6"]
+[ext_resource type="Resource" uid="uid://06qnln20ik1b" path="res://Resources/Items/Yellow Items/Lemon.tres" id="11_88a4u"]
+[ext_resource type="Resource" uid="uid://c51v1fpv27m7y" path="res://Resources/Items/Blue Items/VantageCabbage.tres" id="12_bmj3b"]
+[ext_resource type="Resource" uid="uid://etijdq1jrcbs" path="res://Resources/Items/Yellow Items/BellPepper.tres" id="13_3yplh"]
+[ext_resource type="Resource" uid="uid://frw4ldhk7kl3" path="res://Resources/Items/Blue Items/PokemonSapphire.tres" id="14_14ude"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -1047,16 +1052,80 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("6_0mske")]
 position = Vector2(480, 0)
-SpawnSide = "Left"
 NextMap = "Town3"
 ToChunk = 3
-CurrentMap = "Town4"
-FromChunk = 3
 
 [node name="MapTransitioner2" parent="." unique_id=1795218675 instance=ExtResource("6_0mske")]
 position = Vector2(-480, 0)
-SpawnSide = "Right"
 NextMap = "Town5"
 ToChunk = 1
-CurrentMap = "Town4"
-FromChunk = 1
+
+[node name="Items" type="Node2D" parent="." unique_id=933488439]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("10_hn3y6")]
+position = Vector2(-120, -35)
+baseItem = ExtResource("11_88a4u")
+
+[node name="ItemPickup13" parent="Items" unique_id=1361850988 instance=ExtResource("10_hn3y6")]
+position = Vector2(-104, -29)
+baseItem = ExtResource("11_88a4u")
+
+[node name="ItemPickup2" parent="Items" unique_id=1304669363 instance=ExtResource("10_hn3y6")]
+position = Vector2(-347, -30)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup11" parent="Items" unique_id=10263765 instance=ExtResource("10_hn3y6")]
+position = Vector2(-326, -46)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup12" parent="Items" unique_id=1332706108 instance=ExtResource("10_hn3y6")]
+position = Vector2(-307, -28)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup3" parent="Items" unique_id=713183173 instance=ExtResource("10_hn3y6")]
+position = Vector2(129, 48)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup4" parent="Items" unique_id=2035804914 instance=ExtResource("10_hn3y6")]
+position = Vector2(69, 48)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup14" parent="Items" unique_id=1553719582 instance=ExtResource("10_hn3y6")]
+position = Vector2(52, 46)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup15" parent="Items" unique_id=1211993869 instance=ExtResource("10_hn3y6")]
+position = Vector2(85, 43)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup16" parent="Items" unique_id=1562933437 instance=ExtResource("10_hn3y6")]
+position = Vector2(116, 44)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup17" parent="Items" unique_id=1572290128 instance=ExtResource("10_hn3y6")]
+position = Vector2(145, 45)
+baseItem = ExtResource("13_3yplh")
+
+[node name="ItemPickup5" parent="Items" unique_id=1355774174 instance=ExtResource("10_hn3y6")]
+position = Vector2(36, 51)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup6" parent="Items" unique_id=500362249 instance=ExtResource("10_hn3y6")]
+position = Vector2(100, 51)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup7" parent="Items" unique_id=1613790387 instance=ExtResource("10_hn3y6")]
+position = Vector2(160, 52)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup8" parent="Items" unique_id=1754297756 instance=ExtResource("10_hn3y6")]
+position = Vector2(356, -14)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup9" parent="Items" unique_id=1345425758 instance=ExtResource("10_hn3y6")]
+position = Vector2(332, -14)
+baseItem = ExtResource("12_bmj3b")
+
+[node name="ItemPickup10" parent="Items" unique_id=266190039 instance=ExtResource("10_hn3y6")]
+position = Vector2(-41, 48)
+baseItem = ExtResource("14_14ude")

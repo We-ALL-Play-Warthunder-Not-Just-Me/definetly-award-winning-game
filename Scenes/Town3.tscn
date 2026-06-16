@@ -1,14 +1,15 @@
 [gd_scene format=4 uid="uid://gpkxnf33fs2r"]
 
 [ext_resource type="PackedScene" uid="uid://bmt7vjmpofedt" path="res://Prefabs/MapStuff/BoundingBox.tscn" id="1_wmfh2"]
-[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/All Trees.png" id="2_ugma2"]
-[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/MVM Grass Tiles.png" id="3_a7e3b"]
+[ext_resource type="Texture2D" uid="uid://be7ahqqtq8kn2" path="res://Images/Objects/All Trees.png" id="2_ugma2"]
+[ext_resource type="Texture2D" uid="uid://db5cqbbvq8k2d" path="res://Images/Tilesets/MVM Grass Tiles.png" id="3_a7e3b"]
 [ext_resource type="Texture2D" uid="uid://cdi4gq0wg212u" path="res://Images/MVM Towns People.png" id="4_a7e3b"]
-[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Decorations.png" id="4_dxfdd"]
-[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/MVM Bench.png" id="4_wgm17"]
-[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/MVM Town Tiles.png" id="5_wgm17"]
+[ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="4_dxfdd"]
+[ext_resource type="Texture2D" uid="uid://bv8owmxh76psh" path="res://Images/Objects/MVM Bench.png" id="4_wgm17"]
+[ext_resource type="Texture2D" uid="uid://ddma5roccnajh" path="res://Images/Tilesets/MVM Town Tiles.png" id="5_wgm17"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="6_4i1qh"]
-[ext_resource type="Texture2D" uid="uid://dkb1463p6eitv" path="res://Images/Temp Houses.png" id="7_ugma2"]
+[ext_resource type="Texture2D" uid="uid://dkb1463p6eitv" path="res://Images/Placeholder/Temp Houses.png" id="7_ugma2"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="10_wgm17"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -873,24 +874,47 @@ tile_set = SubResource("TileSet_a4htl")
 
 [node name="MapTransitioner" parent="." unique_id=910484519 instance=ExtResource("6_4i1qh")]
 position = Vector2(320, 96)
-SpawnSide = "Left"
 NextMap = "Town2"
 ToChunk = 6
-CurrentMap = "Town3"
-FromChunk = 4
 
 [node name="MapTransitioner3" parent="." unique_id=98299999 instance=ExtResource("6_4i1qh")]
 position = Vector2(320, -96)
-SpawnSide = "Left"
 NextMap = "Town2"
 ToChunk = 1
-CurrentMap = "Town3"
-FromChunk = 2
 
 [node name="MapTransitioner2" parent="." unique_id=1774236160 instance=ExtResource("6_4i1qh")]
 position = Vector2(-320, 96)
-SpawnSide = "Right"
 NextMap = "Town4"
 ToChunk = 3
-CurrentMap = "Town3"
-FromChunk = 3
+
+[node name="Items" type="Node2D" parent="." unique_id=1040417376]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("10_wgm17")]
+position = Vector2(-172, 73)
+
+[node name="ItemPickup2" parent="Items" unique_id=719464027 instance=ExtResource("10_wgm17")]
+position = Vector2(-110, 72)
+
+[node name="ItemPickup3" parent="Items" unique_id=1986922985 instance=ExtResource("10_wgm17")]
+position = Vector2(-155, 54)
+
+[node name="ItemPickup10" parent="Items" unique_id=225848124 instance=ExtResource("10_wgm17")]
+position = Vector2(-126, 53)
+
+[node name="ItemPickup4" parent="Items" unique_id=1807550168 instance=ExtResource("10_wgm17")]
+position = Vector2(161, 65)
+
+[node name="ItemPickup5" parent="Items" unique_id=1230537228 instance=ExtResource("10_wgm17")]
+position = Vector2(122, 51)
+
+[node name="ItemPickup9" parent="Items" unique_id=243311083 instance=ExtResource("10_wgm17")]
+position = Vector2(148, 52)
+
+[node name="ItemPickup6" parent="Items" unique_id=705158231 instance=ExtResource("10_wgm17")]
+position = Vector2(109, 67)
+
+[node name="ItemPickup7" parent="Items" unique_id=1413597174 instance=ExtResource("10_wgm17")]
+position = Vector2(136, 69)
+
+[node name="ItemPickup8" parent="Items" unique_id=661636613 instance=ExtResource("10_wgm17")]
+position = Vector2(-140, 76)

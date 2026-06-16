@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://x3w6xbgifw2b" path="res://Images/Tilesets/Decorations.png" id="3_cft3l"]
 [ext_resource type="PackedScene" uid="uid://bo8irciandaui" path="res://Prefabs/MapStuff/TestShade.tscn" id="3_l5dwt"]
 [ext_resource type="PackedScene" uid="uid://6vpvyy06qabc" path="res://Prefabs/MapStuff/MapTransitioner.tscn" id="4_l5dwt"]
+[ext_resource type="PackedScene" uid="uid://c02ekc81ditg5" path="res://Prefabs/ItemPickup.tscn" id="7_t20nd"]
+[ext_resource type="Resource" uid="uid://bu5e35nfn3msp" path="res://Resources/Items/Blue Items/BlueFlower.tres" id="8_q3c0t"]
+[ext_resource type="Resource" uid="uid://cw3bxc8atgj1e" path="res://Resources/Items/Red Items/RedFlower.tres" id="9_kp0mw"]
+[ext_resource type="Resource" uid="uid://civ36skuhvvf" path="res://Resources/Items/Red Items/Strawberry.tres" id="10_ne4ss"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gw7rx"]
 
@@ -493,3 +497,25 @@ VertTrans = true
 position = Vector2(-320, 0)
 NextMap = "ForestToTown"
 ToChunk = 1
+
+[node name="Items" type="Node2D" parent="." unique_id=1410258672]
+
+[node name="ItemPickup" parent="Items" unique_id=1507841817 instance=ExtResource("7_t20nd")]
+position = Vector2(-62, 52)
+baseItem = ExtResource("8_q3c0t")
+
+[node name="ItemPickup2" parent="Items" unique_id=248936772 instance=ExtResource("7_t20nd")]
+position = Vector2(-259, 36)
+baseItem = ExtResource("8_q3c0t")
+
+[node name="ItemPickup3" parent="Items" unique_id=1189789037 instance=ExtResource("7_t20nd")]
+position = Vector2(21, 52)
+baseItem = ExtResource("9_kp0mw")
+
+[node name="ItemPickup6" parent="Items" unique_id=1337021473 instance=ExtResource("7_t20nd")]
+position = Vector2(-178, 36)
+baseItem = ExtResource("8_q3c0t")
+
+[node name="ItemPickup7" parent="Items" unique_id=686526092 instance=ExtResource("7_t20nd")]
+position = Vector2(-185, -71)
+baseItem = ExtResource("10_ne4ss")
