@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqspya88tlxmg"
+path="res://.godot/imported/2026-06-15 20-49-10.mp3-9288f37a07b123a3df8db1ddd928bb17.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/2026-06-15 20-49-10.mp3"
+dest_files=["res://.godot/imported/2026-06-15 20-49-10.mp3-9288f37a07b123a3df8db1ddd928bb17.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

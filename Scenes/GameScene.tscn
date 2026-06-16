@@ -8,7 +8,15 @@
 [ext_resource type="Script" uid="uid://bwsudrwtqfjyd" path="res://Scripts/MvmSongIdea.cs" id="5_xhjei"]
 [ext_resource type="PackedScene" uid="uid://bkxfy70udf36n" path="res://Prefabs/PauseStatus/PauseStatus.tscn" id="6_6vvcf"]
 [ext_resource type="AudioStream" uid="uid://bgn01fmxd7t7q" path="res://Audio/SingLark (NGGYU).wav" id="6_x6js8"]
+<<<<<<< Updated upstream
 [ext_resource type="AudioStream" uid="uid://bxyo4ypak67qp" path="res://Audio/Pickup.wav" id="8_y30xb"]
+=======
+<<<<<<< Updated upstream
+=======
+[ext_resource type="AudioStream" uid="uid://cqspya88tlxmg" path="res://Audio/Music/2026-06-15 20-49-10.mp3" id="8_xhjei"]
+[ext_resource type="AudioStream" uid="uid://bxyo4ypak67qp" path="res://Audio/Pickup.wav" id="8_y30xb"]
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 [node name="GameScene" type="Node2D" unique_id=359298613]
 script = ExtResource("1_lg2j6")
@@ -34,6 +42,7 @@ bus = &"Music"
 script = ExtResource("5_xhjei")
 OriginalSong = ExtResource("4_y30xb")
 SingLark = ExtResource("6_x6js8")
+EndSong = ExtResource("8_xhjei")
 
 [node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1685460417]
 stream = ExtResource("8_y30xb")

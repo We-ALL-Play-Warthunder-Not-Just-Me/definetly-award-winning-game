@@ -7,6 +7,9 @@ public partial class MvmSongIdea : AudioStreamPlayer
 	AudioStream OriginalSong;
 	[Export]
 	AudioStream SingLark;
+	[Export]
+	AudioStream EndSong;
+	
 	
 	Node2D GameScene;
 	string SingLarkRoom;
@@ -17,7 +20,14 @@ public partial class MvmSongIdea : AudioStreamPlayer
 	{
 		GameScene = GetNode<Node2D>("..");
 		SingLarkRoom = "ForestSave1";
+<<<<<<< Updated upstream
 		EndRoom = "Forest24";
+=======
+<<<<<<< Updated upstream
+=======
+		EndRoom = "Forest23";
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,10 +45,21 @@ public partial class MvmSongIdea : AudioStreamPlayer
 				this.SetStream(SingLark);
 				this.Play();
 			}
+<<<<<<< Updated upstream
 			else if (child.Name == EndRoom)
 			{
 				this.SetStream(SingLark);
 			}
+=======
+<<<<<<< Updated upstream
+=======
+			else if (child.Name == EndRoom)
+			{
+				this.SetStream(EndSong);
+				this.Play();
+			}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 			else if (CurrentSong != OriginalSong)
 			{
 				this.SetStream(OriginalSong);

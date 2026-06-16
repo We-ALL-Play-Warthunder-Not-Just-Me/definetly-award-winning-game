@@ -99,9 +99,19 @@ public partial class PickUpItem : Area2D
 		{
 			if (AddNewItem(amount))
 			{
+<<<<<<< Updated upstream
 				//GD.Print(this);
 				//CheckItem.AddItemToCollected(this);
 				PickUpSound.Play();
+=======
+<<<<<<< Updated upstream
+=======
+				RandomNoise();
+				//GD.Print(this);
+				//CheckItem.AddItemToCollected(this);
+				PickUpSound.Play();
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 				QueueFree();
 			}
 		}
@@ -112,6 +122,23 @@ public partial class PickUpItem : Area2D
 		baseItem.qty = amount;
 		Item item = baseItem;
 		return invent.AddInventoryItem(item);
+	}
+	
+	private void RandomNoise()
+	{
+		int RandomNumber = (int)(GD.Randi() % 3);
+		if (RandomNumber == 0)
+		{
+			PickUpSound.PitchScale = 1f;
+		}
+		if (RandomNumber == 1)
+		{
+			PickUpSound.PitchScale = 1.2f;
+		}
+		if (RandomNumber == 2)
+		{
+			PickUpSound.PitchScale = 0.8f;
+		}
 	}
 
 }
